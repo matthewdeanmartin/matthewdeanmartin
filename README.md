@@ -7,6 +7,6 @@ I care a lot about build scripts and deployment pipelines.
 
 📬 My social media
 
-Twitter: [twitter.com/mistersql](http://twitter.com/mistersql)
-Blog: [suburbandestiny.com/Tech](http://www.suburbandestiny.com/Tech/)
-LinkedIn: [linkedin.com/in/matthewdeanmartin](https://linkedin.com/in/matthewdeanmartin)
+- Twitter: [twitter.com/mistersql](http://twitter.com/mistersql)
+- Blog: [suburbandestiny.com/Tech](http://www.suburbandestiny.com/Tech/)
+- LinkedIn: [linkedin.com/in/matthewdeanmartin](https://linkedin.com/in/matthewdeanmartin)
