@@ -14,3 +14,16 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+
+Hey 👋🏻,
+
+I am Software Developer currently in (greater) Washington, DC. I used to code all the time in .NET, now I code all
+the time in python.
+
+You can see what I am currently up to on wakayos.com.
+
+📬 Let's get in touch
+Twitter: twitter.com/mistersql
+Blog: wakayos.com/Tech
+LinkedIn: linkedin.com/in/matthewdeanmartin
