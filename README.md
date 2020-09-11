@@ -21,9 +21,8 @@ Hey 👋🏻,
 I am Software Developer currently in (greater) Washington, DC. I used to code all the time in .NET, now I code all
 the time in python.
 
-You can see what I am currently up to on wakayos.com.
-
 📬 Let's get in touch
-Twitter: twitter.com/mistersql
-Blog: wakayos.com/Tech
-LinkedIn: linkedin.com/in/matthewdeanmartin
+
+Twitter: [twitter.com/mistersql](http://twitter.com/mistersql)
+Blog: [suburbandestiny.com/Tech](http://www.suburbandestiny.com/Tech/)
+LinkedIn: [linkedin.com/in/matthewdeanmartin](https://linkedin.com/in/matthewdeanmartin)
