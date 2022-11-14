@@ -12,3 +12,6 @@ I care a lot about build scripts and deployment pipelines.
 - Twitter: [twitter.com/mistersql](http://twitter.com/mistersql)
 - Blog: [suburbandestiny.com/Tech](http://www.suburbandestiny.com/Tech/)
 - LinkedIn: [linkedin.com/in/matthewdeanmartin](https://linkedin.com/in/matthewdeanmartin)
+
+Identity links
+<a rel="me" href="https://mastodon.social/@mistersql">Mastodon</a>
