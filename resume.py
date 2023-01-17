@@ -55,7 +55,7 @@ resume = {
         {
             "degree": "Bachelors of Science in Business Administration",
             "university": "The University of Akron",
-            "start_year": 1994,
+            "start_year": 1990,
             "end_year": 1996
         }
     ]
