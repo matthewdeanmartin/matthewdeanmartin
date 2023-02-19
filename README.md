@@ -1,9 +1,8 @@
 ### 👋
 
-I am Software Developer currently in (greater) Washington, DC. I used to code all the time in .NET, now I code all
-the time in python.
+I am Software Developer currently in (greater) Washington, DC. I'm a tech lead at a big organization in DC.
 
-I care a lot about build scripts and deployment pipelines.
+I code a lot in python and I care a lot about build scripts and deployment pipelines.
 
 📬 My social media
 
