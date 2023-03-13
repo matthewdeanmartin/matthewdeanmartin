@@ -9,7 +9,6 @@ I am Software Developer currently in greater Washington, DC. I'm a tech lead at 
 - Python (current main language) 🐍
 - C# #️⃣
 - Javascript/Typescript 🌐
-- Legacy VB.NET, VB6, even Atari BASIC 🕹️
 
 **Projects/Applications**
 
