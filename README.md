@@ -9,7 +9,7 @@ I am Software Developer currently in greater Washington, DC. I'm a tech lead at 
 - Python (current main language) 🐍
 - C# #️⃣
 - Javascript/Typescript 🌐
-- Dabble in [Go](https://github.com/matthewdeanmartin/isopod_go), advanced [Bash](https://github.com/matthewdeanmartin/isopod_shell), [Ruby](https://github.com/matthewdeanmartin/isopod_ruby), [Rust](https://github.com/matthewdeanmartin/isopod_rust), PHP, [COBOL](https://github.com/matthewdeanmartin/isopod_cobol), Lua, C, C++
+- Dabble in [Go](https://github.com/matthewdeanmartin/isopod_go), advanced [Bash](https://github.com/matthewdeanmartin/isopod_shell), [Ruby](https://github.com/matthewdeanmartin/isopod_ruby), [Rust](https://github.com/matthewdeanmartin/isopod_rust), PHP, [COBOL](https://github.com/matthewdeanmartin/isopod_cob), Lua, C, C++
 - Ssh! Don't tell anyone I know TSQL, VBA, VB6, VB.NET
 
 **Python Build and Package Tools**
