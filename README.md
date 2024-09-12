@@ -4,14 +4,6 @@ My name is Matthew Martin.
 
 I am Software Developer currently in greater Washington, DC. I'm a tech lead at a big organization in DC.
 
-**Languages**
-
-- Python (current main language) 🐍
-- C# #️⃣
-- Javascript/Typescript 🌐
-- Dabble in [Go](https://github.com/matthewdeanmartin/isopod_go), advanced [Bash](https://github.com/matthewdeanmartin/isopod_shell), [Ruby](https://github.com/matthewdeanmartin/isopod_ruby), [Rust](https://github.com/matthewdeanmartin/isopod_rust), PHP, [COBOL](https://github.com/matthewdeanmartin/isopod_cob), Lua, C, C++
-- Ssh! Don't tell anyone I know TSQL, VBA, VB6, VB.NET
-
 **Python Build and Package Tools**
 
 - [cli_tool_audit](https://github.com/matthewdeanmartin/cli_tool_audit/) Check for existence and version of tools not managed by your main package manager.
@@ -49,6 +41,14 @@ Significant LLM code use to make ai_shell and ai_fish_tank.
 **Other People's Code I try to maintain**
 - openmock
 - terminaltables3
+
+**Languages**
+
+- Python (current main language) 🐍
+- C# #️⃣
+- Javascript/Typescript 🌐
+- Dabble in [Go](https://github.com/matthewdeanmartin/isopod_go), advanced [Bash](https://github.com/matthewdeanmartin/isopod_shell), [Ruby](https://github.com/matthewdeanmartin/isopod_ruby), [Rust](https://github.com/matthewdeanmartin/isopod_rust), PHP, [COBOL](https://github.com/matthewdeanmartin/isopod_cob), Lua, C, C++
+- Ssh! Don't tell anyone I know TSQL, VBA, VB6, VB.NET
 
 📬 My social media
 
