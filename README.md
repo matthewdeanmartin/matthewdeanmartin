@@ -28,7 +28,7 @@ Significant LLM code in cli_tool_audit, git_mirror, metametameta.
 - [dedlin](https://github.com/matthewdeanmartin/dedlin) Text editor, similar to edlin. ✏️
 - psyledger ... not yet published. Self administer daily psychology type tests.
 
-** LLM Based AI Projects **
+**AI Projects build around LLMs**
 - [ai_shell](https://github.com/matthewdeanmartin/ai_shell) Autonomous sofware development with CLI tools optimized for use as LLM tool/function calls
 - llm_build ... not yet published. Generate unit tests with LLMs.
 - [ai_fish_tank](https://github.com/matthewdeanmartin/ai_fish_tank) Proof of concept of a terminal fish tank with AI agents for each fish.
@@ -39,8 +39,14 @@ Significant LLM code use to make ai_shell and ai_fish_tank.
 
 - [random_names](https://github.com/matthewdeanmartin/random_names) Phrase to number and number to phrase. 🔢-🔤
 - [whats_that_code](https://github.com/matthewdeanmartin/whats_that_code) Democratic source code identifier
+- [untruncate_json](https://github.com/matthewdeanmartin/untruncate_json) Turn truncated json into valid json. Translation of someone elses javascript to python. Fast.
+ 
+**Python Coding Novelties**
+- [hissbytenotation](https://github.com/matthewdeanmartin/hissbytenotation) Use python dict source code as a data format.
+- [markmodule](https://github.com/matthewdeanmartin/markmodule) Import python in a markdown file as if it was a python file.
+- [markpickle](https://github.com/matthewdeanmartin/markpickle) Serialize python types to analogous types in Markdown. Not quite a DOM, not quite a usable serialization format either.
 
-**Other Peoples Code I try to maintain**
+**Other People's Code I try to maintain**
 - openmock
 - terminaltables3
 
