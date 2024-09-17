@@ -1,8 +1,14 @@
 ### 👋
 
-My name is Matthew Martin.
+I am a tech lead in greater Washington, DC. My most recent position was tech lead for a search engine website at a government agency.
 
-I am Software Developer currently in greater Washington, DC. I'm a tech lead at a big organization in DC.
+I'm looking for a role as a tech lead or invidividual contributor, either Remote in the US or Hybrid in Herndon or Reston, VA.
+
+[One Page Resume](https://matthewdeanmartin.github.io/Matthew_Martin_Sept_2024_One_Page.pdf)
+
+[Long Resume](https://matthewdeanmartin.github.io/Matthew_Martin_Sept_2024_Long_Format.pdf)
+
+Here is *side project* work, some hand written, some AI Assisted Development.
 
 **Python Build and Package Tools**
 
