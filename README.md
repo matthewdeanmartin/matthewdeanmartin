@@ -8,6 +8,10 @@ I'm looking for a role as a tech lead or invidividual contributor, either Remote
 
 [Long Resume](https://matthewdeanmartin.github.io/Matthew_Martin_Sept_2024_Long_Format.pdf)
 
+### Specialized Resumes
+[Open Page RPA/UIPath](https://matthewdeanmartin.github.io/Matthew_Martin_Sept_2024_One_Page_Python_RPA_ML.pdf)
+[Example RPA/UIPath Code](https://github.com/matthewdeanmartin/uipath)
+
 Here is *side project* work, some hand written, some AI Assisted Development.
 
 **Python Build and Package Tools**
