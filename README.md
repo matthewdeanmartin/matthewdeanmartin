@@ -57,7 +57,7 @@ Significant LLM code use to make ai_shell and ai_fish_tank.
 - C# #️⃣
 - Javascript/Typescript 🌐
 - Dabble in [Go](https://github.com/matthewdeanmartin/isopod_go), advanced [Bash](https://github.com/matthewdeanmartin/isopod_shell), [Ruby](https://github.com/matthewdeanmartin/isopod_ruby), [Rust](https://github.com/matthewdeanmartin/isopod_rust), PHP, [COBOL](https://github.com/matthewdeanmartin/isopod_cob), Lua, C, C++
-- Ssh! Don't tell anyone I know TSQL, VBA, VB6, VB.NET
+- Ssh! Don't tell anyone I know TSQL, VBA, VB6, VB.NET. SQL is good. TSQL as a programming language is bad DX.
 
 📬 My social media
 
