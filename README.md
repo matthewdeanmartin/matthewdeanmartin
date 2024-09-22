@@ -1,6 +1,6 @@
 ### 👋
 
-I am a tech lead in greater Washington, DC. My most recent position was tech lead for a search engine website at a government agency.
+I am a tech lead in greater Washington, DC. My most recent position was tech lead for a [search engine website at a government agency](https://publicrecords.copyright.gov/).
 
 I'm looking for a role as a tech lead or invidividual contributor, either Remote in the US or Hybrid in Herndon or Reston, VA.
 
