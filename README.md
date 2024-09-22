@@ -48,8 +48,8 @@ Significant LLM code use to make ai_shell and ai_fish_tank.
 - [markpickle](https://github.com/matthewdeanmartin/markpickle) Serialize python types to analogous types in Markdown. Not quite a DOM, not quite a usable serialization format either.
 
 **Other People's Code I try to maintain**
-- openmock
-- terminaltables3
+- [openmock](https://github.com/matthewdeanmartin/openmock) Fork of elasticmock updated to work with Opensearch
+- [terminaltables3](https://github.com/matthewdeanmartin/terminaltables3/) Fork of terminaltables, updated to have wheels, type hinting, tested against current python versions.
 
 **Languages**
 
