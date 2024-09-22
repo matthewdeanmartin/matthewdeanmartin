@@ -4,13 +4,12 @@ I am a tech lead in greater Washington, DC. My most recent position was tech lea
 
 I'm looking for a role as a tech lead or invidividual contributor, either Remote in the US or Hybrid in Herndon or Reston, VA.
 
-[One Page Resume](https://matthewdeanmartin.github.io/Matthew_Martin_Sept_2024_One_Page.pdf)
-
-[Long Resume](https://matthewdeanmartin.github.io/Matthew_Martin_Sept_2024_Long_Format.pdf)
+- [One Page Resume](https://matthewdeanmartin.github.io/Matthew_Martin_Sept_2024_One_Page.pdf)
+- [Long Resume](https://matthewdeanmartin.github.io/Matthew_Martin_Sept_2024_Long_Format.pdf)
 
 ### Specialized Resumes
-[Open Page RPA/UIPath](https://matthewdeanmartin.github.io/Matthew_Martin_Sept_2024_One_Page_Python_RPA_ML.pdf)
-[Example RPA/UIPath Code](https://github.com/matthewdeanmartin/uipath)
+- [Open Page RPA/UIPath](https://matthewdeanmartin.github.io/Matthew_Martin_Sept_2024_One_Page_Python_RPA_ML.pdf)
+- [Example RPA/UIPath Code](https://github.com/matthewdeanmartin/uipath)
 
 Here is *side project* work, some hand written, some AI Assisted Development.
 
