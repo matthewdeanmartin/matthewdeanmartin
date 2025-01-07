@@ -4,14 +4,23 @@ I am a software developer in greater Washington, DC. My most recent position was
 
 I'm looking for a role as a tech lead or invidividual contributor, either Remote in the US or Hybrid in Herndon, Reston, VA- anything along the Metro silver line.
 
+# Generic Resumes
+
 - [One Page Resume](https://matthewdeanmartin.github.io/Matthew_Martin_Sept_2024_One_Page.pdf)
 - [Long Resume](https://matthewdeanmartin.github.io/Matthew_Martin_Sept_2024_Long_Format.pdf)
 
+### Individual Contributor resumes
+- Python
+- JavaScript/TypeScript/Node.js
+- Dotnet/C#
+- AWS Cloud Engineer
+- Data Developer, DBA
+
 ### Specialized Resumes
 - [AWS Cloud Engineer](https://matthewdeanmartin.github.io/Matthew_Martin_Cloud_Engineer_Sept_2024_One_Page.pdf)
-    -  [PoC build package tool for Ray/Glue/Lambda](https://github.com/matthewdeanmartin/raypack) (AI assisted code, not used in prod)
 - [RPA/UIPath](https://matthewdeanmartin.github.io/Matthew_Martin_Sept_2024_One_Page_Python_RPA_ML.pdf)
-    - [Example RPA/UIPath Code](https://github.com/matthewdeanmartin/uipath)
+
+# Side Projects
 
 Here is *side project* work, some hand written, some AI Assisted Development.
 
