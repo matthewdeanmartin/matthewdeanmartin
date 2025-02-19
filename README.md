@@ -1,25 +1,3 @@
-### Available for Hire👋
-
-I am a software developer in greater Washington, DC. My most recent position was tech lead for a [search engine website at a government agency](https://publicrecords.copyright.gov/).
-
-I'm looking for a role as a tech lead or invidividual contributor, either Remote in the US or Hybrid in Herndon, Reston, VA- anything along the Metro silver line.
-
-# Generic Resumes
-
-- [One Page Resume](https://matthewdeanmartin.github.io/Matthew_Martin_Sept_2024_One_Page.pdf)
-- [Long Resume](https://matthewdeanmartin.github.io/Matthew_Martin_Sept_2024_Long_Format.pdf)
-
-### Individual Contributor resumes
-- Python
-- JavaScript/TypeScript/Node.js
-- Dotnet/C#
-- AWS Cloud Engineer
-- Data Developer, DBA
-
-### Specialized Resumes
-- [AWS Cloud Engineer](https://matthewdeanmartin.github.io/Matthew_Martin_Cloud_Engineer_Sept_2024_One_Page.pdf)
-- [RPA/UIPath](https://matthewdeanmartin.github.io/Matthew_Martin_Sept_2024_One_Page_Python_RPA_ML.pdf)
-
 # Side Projects
 
 Here is *side project* work, some hand written, some AI Assisted Development.
