@@ -55,3 +55,5 @@ Significant LLM code use to make ai_shell and ai_fish_tank.
 - [twitter.com/mistersql](http://twitter.com/mistersql) 🐦 (somewhat inactive now)
 - [linktree./matthewmartin](https://linktr.ee/matthewmartin) 🌳
 - [Resume from a few years ago](https://matthewdeanmartin.github.io/) 📄
+
+  Update 2025
