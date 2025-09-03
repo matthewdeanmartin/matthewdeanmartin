@@ -30,8 +30,6 @@ Significant LLM code in cli_tool_audit, git_mirror, metametameta.
 - llm_build ... not yet published. Generate unit tests with LLMs.
 - [ai_fish_tank](https://github.com/matthewdeanmartin/ai_fish_tank) Proof of concept of a terminal fish tank with AI agents for each fish.
 
-Significant LLM code use to make ai_shell and ai_fish_tank.
-
 **Libraries**
 
 - [random_names](https://github.com/matthewdeanmartin/random_names) Phrase to number and number to phrase. 🔢-🔤
