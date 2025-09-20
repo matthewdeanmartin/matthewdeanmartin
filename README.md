@@ -5,6 +5,7 @@ Here is *side project* work. Commits before 2021 are hand written. Commits after
 **Python Build and Package Tools**
 
 - [pycodetags](https://github.com/matthewdeanmartin/pycodetags) Data-in-comments tool, for TODO tracking, based on PEP350
+- [troml-dev-status](https://github.com/matthewdeanmartin/troml_dev_status) Get a trove development status based on objective criteria.
 - [cli_tool_audit](https://github.com/matthewdeanmartin/cli_tool_audit/) Check for existence and version of tools not managed by your main package manager.
 - [metametameta](https://github.com/matthewdeanmartin/metametameta) Generate metadata in source in an `__about__.py`, with version number, etc 🔢
 - [pydoc_fork](https://github.com/matthewdeanmartin/pydoc_fork) Pydoc style HTML report tool suitable for CI
