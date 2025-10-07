@@ -15,9 +15,9 @@ Here is *side project* work. Commits before 2021 are hand written. Commits after
 - [bug_trail](https://github.com/matthewdeanmartin/bug_trail) Local error log/logging website for python. Somewhat inspired by .NET's Elmah. Intended to help with logging LLM/Agentic apps.
 
 Novelties/Incomplete
+
 - [so_pip](https://github.com/matthewdeanmartin/so_pip) Vendorization tool. Made obsolete by ChatGPT. 📦
 - [git_mirror](https://github.com/matthewdeanmartin/git_mirror) Polyrepo tool. Not complete.
-
 
 Significant LLM code in cli_tool_audit, git_mirror, metametameta.
 
@@ -27,6 +27,7 @@ Significant LLM code in cli_tool_audit, git_mirror, metametameta.
 - psyledger ... not yet published. Self administer daily psychology type tests.
 
 **AI Projects build around LLMs**
+
 - [examexam](https://github.com/matthewdeanmartin/examexam) Generate and take practice exams, such as the AWS certification exams.
 - [ai_shell](https://github.com/matthewdeanmartin/ai_shell) Autonomous sofware development with CLI tools optimized for use as LLM tool/function calls
 - llm_build ... not yet published. Generate unit tests with LLMs.
@@ -37,14 +38,16 @@ Significant LLM code in cli_tool_audit, git_mirror, metametameta.
 - [random_names](https://github.com/matthewdeanmartin/random_names) Phrase to number and number to phrase. 🔢-🔤
 - [whats_that_code](https://github.com/matthewdeanmartin/whats_that_code) Democratic source code identifier
 - [untruncate_json](https://github.com/matthewdeanmartin/untruncate_json) Turn truncated json into valid json. Translation of someone elses javascript to python. Fast.
- 
+
 **Python Coding Novelties**
+
 - [hissbytenotation](https://github.com/matthewdeanmartin/hissbytenotation) Use python dict source code as a data format.
 - [markmodule](https://github.com/matthewdeanmartin/markmodule) Import python in a markdown file as if it was a python file.
 - [markpickle](https://github.com/matthewdeanmartin/markpickle) Serialize python types to analogous types in Markdown. Not quite a DOM, not quite a usable serialization format either.
 - [disemoji](https://github.com/matthewdeanmartin/disemoji) Disassemble to emoji symbols. Maps bytecode to emojis.
-  
+
 **Other People's Code I try to maintain**
+
 - [openmock](https://github.com/matthewdeanmartin/openmock) Fork of elasticmock updated to work with Opensearch
 - [terminaltables3](https://github.com/matthewdeanmartin/terminaltables3/) Fork of terminaltables, updated to have wheels, type hinting, tested against current python versions.
 
