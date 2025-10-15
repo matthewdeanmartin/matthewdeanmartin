@@ -73,5 +73,7 @@ Significant LLM code in cli_tool_audit, git_mirror, metametameta.
 
 - [dev.to](https://dev.to/matthewdeanmartin) - with backlink!
 - [bsky.app](https://bsky.app/profile/mistersql.bsky.social) - with backlink!
+- [Gravitar(https://gravatar.com/matthewdmartin) - with backlink and proof of email!
+- [Stackoverflow](https://stackoverflow.com/users/33264/matthewmartin) - with backlink!
 
 Last Updated 9/1/2025
