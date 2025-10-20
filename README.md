@@ -69,7 +69,7 @@ Significant LLM code in cli_tool_audit, git_mirror, metametameta.
 - [Resume from a few years ago](https://matthewdeanmartin.github.io/) 📄
 - [Novelty Resume. Hire and fire buttons!](https://matthewdeanmartin.github.io/resume/browser/)
 
-** More Links to Myself on the Web **
+\*\* More Links to Myself on the Web \*\*
 
 - [dev.to](https://dev.to/matthewdeanmartin) - with backlink!
 - [bsky.app](https://bsky.app/profile/mistersql.bsky.social) - with backlink!
