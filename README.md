@@ -17,23 +17,26 @@ Here is *side project* work. Commits before 2021 are hand written. Commits after
 
 - [naive_backlink](https://github.com/matthewdeanmartin/naive_backlink) Collect backlink info so you can evaluate if bidirectional links might be a sign of identity.
 - [skip_trace](https://github.com/matthewdeanmartin/skip_trace) Find all possible info about who owns/controls a pypi package.
-
-## CLI Apps and Utilities
-
-- [dedlin](https://github.com/matthewdeanmartin/dedlin) Text editor, similar to edlin. ✏️
-- [totalhelp](https://github.com/matthewdeanmartin/totalhelp) Print all the argparse help all at once.
-
-## AI Projects build around LLMs
-
-- [examexam](https://github.com/matthewdeanmartin/examexam) Generate and take practice exams, such as the AWS certification exams.
+- [caniuseonlywheels](https://github.com/matthewdeanmartin/caniuseonlywheels) Wheel availability checker. Used to work! 🎡
 - [paipi](https://github.com/matthewdeanmartin/paipi) RAG for pypi, but also hallucinate useful packages and generate the contents of such a package.
 - [safe_run](https://github.com/matthewdeanmartin/safe_run) Generate Dockerfile for safely running a less trusted pypi app.
+  
+## TUI/CLI Apps
+
+- [dedlin](https://github.com/matthewdeanmartin/dedlin) Text editor, similar to edlin. ✏️
+- [examexam](https://github.com/matthewdeanmartin/examexam) Generate and take practice exams, such as the AWS certification exams.
+
+## TUI/CLI Libraries/Utilities
+
+- [totalhelp](https://github.com/matthewdeanmartin/totalhelp) Print all the argparse help all at once.
+  
+## AI Projects build around LLMs
+
 - [ai_shell](https://github.com/matthewdeanmartin/ai_shell) ARCHIVED. Autonomous sofware development with CLI tools optimized for use as LLM tool/function calls
 - [ai_fish_tank](https://github.com/matthewdeanmartin/ai_fish_tank) Proof of concept of a terminal fish tank with AI agents for each fish.
 
 ## AWS Things
 - [whats_up](https://github.com/matthewdeanmartin/whats_up) Check if your AWS resources are up and service workloads, for example, after a deployment. (not public yet)
-
 
 ## Libraries
 
@@ -63,7 +66,6 @@ Here is *side project* work. Commits before 2021 are hand written. Commits after
 
 - [so_pip](https://github.com/matthewdeanmartin/so_pip) Vendorization tool. Made obsolete by ChatGPT. 📦
 - [git_mirror](https://github.com/matthewdeanmartin/git_mirror) Polyrepo tool. Not complete.
-- [caniuseonlywheels](https://github.com/matthewdeanmartin/caniuseonlywheels) Wheel availability checker. Used to work! 🎡
 
 
 ## Games I wrote with my kids input
