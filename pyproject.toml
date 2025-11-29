@@ -1,0 +1,104 @@
+[project]
+name = "matthewdeanmartin-readme"
+version = "0.1.0"
+description = "My readme page on github"
+requires-python = ">=3.14"
+dependencies = [
+    "pre-commit",
+    "proselint",
+    "mdformat",
+    "linkcheckmd",
+    "typing_extensions"
+]
+
+[dependency-groups]
+dev = [
+    "troml-dev-status",
+    "jiggle_version",
+    "cffi",
+    "pytest-asyncio",
+    "httpie",
+    "pytest>=6.0.1",
+    "pytest-cov>=2.10.1",
+    "pytest-timeout>=2.4.0",
+    "pylint",
+
+    "git2md; python_version >= '3.10'",
+    "pyclean; python_version >= '3.12'",
+    "strip-docs>=1.0; python_version >= '3.12'",
+
+    "gha-update; python_version >= '3.12'",
+    "mkdocstrings[python]",
+    "mkdocs; python_version >= '3.12'",
+    "mdformat",
+
+
+    # plugin finder
+    "packaging; python_version >= '3.8'",
+
+    # mpy
+    "mypy; python_version >= '3.8'",
+    "types-toml; python_version >= '3.8'",
+    "types-requests",
+
+    # reports
+
+    # build
+    "vermin; python_version >= '3.8'",
+    "metametameta>=0.1.3; python_version >= '3.9'",
+    "hatchling; python_version >= '3.8'",
+    "ruff>=0.12.0; python_version >= '3.8'",
+    "pylint; python_version >= '3.8'",
+
+    # testing tools
+    "pytest; python_version >= '3.8'",
+    "pytest-cov; python_version >= '3.8'",
+    "pytest-xdist>=3.5.0; python_version >= '3.8'",
+    "pytest-randomly>=3.15.0; python_version >= '3.8'",
+    "pytest-sugar>=0.9.7; python_version >= '3.8'",
+    "pytest-mock; python_version >= '3.8'",
+    "pytest-unused-fixtures; python_version >= '3.10'",
+    "hypothesis[cli]; python_version >= '3.8'",
+    "detect-test-pollution",
+
+    # docs
+    "interrogate>=1.5.0; python_version >= '3.8'",
+    "pydoctest==0.2.1; python_version >= '3.8'",
+    "pdoc3>=0.5.0; python_version >= '3.8'",
+    "mdformat>=0.5.0; python_version >= '3.8'",
+    "linkcheckmd>=1.4.0; python_version >= '3.8'",
+    "codespell>=2.2.6; python_version >= '3.8'",
+    "pyenchant>=3.2.2; python_version >= '3.8'",
+]
+
+
+[tool.ruff]
+line-length = 100
+
+[tool.mypy]
+ignore_missing_imports = true
+strict = true
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "make_it/**/*.py",
+    "make_it/py.typed",
+    "/README.md", "LICENSE",
+]
+
+exclude = [
+    "*.json",
+    "pkg/_compat.py",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["make_it"]
+include = [
+    "make_it/**/*.py",
+    "make_it/py.typed",
+    "/README.md", "LICENSE",
+]
