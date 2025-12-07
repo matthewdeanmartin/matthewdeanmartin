@@ -3,8 +3,8 @@
 | Devops                                    | Backend Development                          | Build Master                         |
 |-------------------------------------------|----------------------------------------------|--------------------------------------|
 | 🌐 Typescript for AWS CDK (Expert)<br>    | 🐍 Python (Expert) for Serverless in AWS<br> | 🦊 Gitlab Pipelines (Expert) <br>    | 
-| 🪐 Terraform for AWS / HCL  (Expert) <br> |                                              | `>_` Bash for Gitlab (Very Good)<br> |
-| 🐹 Go for Terratest (Good enough)         |                                              |                                      |
+| 🪐 Terraform for AWS / HCL  (Expert) <br> | 🐘 Postgres                                  | `>_` Bash for Gitlab (Very Good)<br> |
+| 🐹 Go for Terratest (Good enough)         | 🗄️ DynamoDB                                 |                                      |
 
 ## Resumes
 
