@@ -1,5 +1,8 @@
 ## Skills
 
+I used to be a full stack developer, I evolved into tech lead and most recently devops work. I write code and know how
+to ship in a govtech environment.
+
 | Devops                                   | Backend Development                           | Build Master                         |
 |------------------------------------------|-----------------------------------------------|--------------------------------------|
 | 🌐 Typescript for AWS CDK - Expert<br>   | 🐍 Python for Serverless in AWS - Expert <br> | 🦊 Gitlab Pipelines - Expert <br>    | 
@@ -16,8 +19,8 @@
 Bidirectional backlinks on profile pages are evidence that I control both pages. This is not generally true for all
 backlinks. Read up on `rel="me"` and oauth to learn more.
 
-| Social Media with Backlinks                                                                                                                                                                               | Verified Profile Pages                                                                                                                                                       |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Social Media with Backlinks                                                                                                                                                                               | Verified Profile Pages                                                                                                                                                          |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 🐘 [mastodon.social/@mistersql](https://mastodon.social/@mistersql)  <br>🦋 [bsky.app](https://bsky.app/profile/mistersql.bsky.social) <br> 🔗 [LinkedIn](https://linkedin.com/in/matthewdeanmartin) <br> | 💻 [dev.to](https://dev.to/matthewdeanmartin) <br>🌀 [Gravatar](https://gravatar.com/matthewdmartin)<br>🔥 [StackOverflow](https://stackoverflow.com/users/33264/matthewmartin) |
 
 ## My Public Talks
