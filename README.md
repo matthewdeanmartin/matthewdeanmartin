@@ -1,10 +1,9 @@
 ## Skills
 
-- Javascript/Typescript for CDK 🌐
-- Terraform / CDK /Terraform / HCL 
-- Python (current main language) 🐍
-[//]: # (- C# #️⃣)
-- Gitlab Pipelines / Bash
+- Typescript for AWS CDK (Expert) 🌐
+- Terraform / HCL  (Expert)
+- Python (Expert) 🐍
+- Gitlab Pipelines / Bash (Expert)
 
 [//]: # (- Dabble in [Go]&#40;https://github.com/matthewdeanmartin/isopod_go&#41;, advanced [Bash]&#40;https://github.com/matthewdeanmartin/isopod_shell&#41;, [Ruby]&#40;https://github.com/matthewdeanmartin/isopod_ruby&#41;, [Rust]&#40;https://github.com/matthewdeanmartin/isopod_rust&#41;, PHP, [COBOL]&#40;https://github.com/matthewdeanmartin/isopod_cob&#41;, Lua, C, C++)
 
