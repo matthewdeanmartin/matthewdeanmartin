@@ -1,11 +1,11 @@
 ## Skills
 
-- Typescript for AWS CDK (Expert) 🌐
-- Terraform for AWS / HCL  (Expert) 🪐
-- Python (Expert) for Serverless in AWS 🐍
-- Gitlab Pipelines (Expert) 🦊
-- Bash for Gitlab (Very Good) `>_`
-- Go for Terratest (Good enough) 🐹
+🌐 Typescript for AWS CDK (Expert)
+🪐 Terraform for AWS / HCL  (Expert) 
+🐍 Python (Expert) for Serverless in AWS 
+🦊 Gitlab Pipelines (Expert) 
+`>_` Bash for Gitlab (Very Good) 
+🐹 Go for Terratest (Good enough) 
 
 ## Resumes
 
