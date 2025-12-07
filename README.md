@@ -13,8 +13,8 @@
 
 ## Identity Backlinks
 
-Bidirectional backlinks on profile pages are evidence that I control both pages. (This is not generally true for all
-backlinks! Read up on `rel="me"` and oauth to learn more!)
+Bidirectional backlinks on profile pages are evidence that I control both pages. This is not generally true for all
+backlinks! Read up on `rel="me"` and oauth to learn more.
 
 | Social Media with Backlinks                                                                                                                                                                                | Verified Profile Pages                                                                                                                                                       |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
