@@ -14,7 +14,7 @@
 ## Identity Backlinks
 
 Bidirectional backlinks on profile pages are evidence that I control both pages. This is not generally true for all
-backlinks! Read up on `rel="me"` and oauth to learn more.
+backlinks. Read up on `rel="me"` and oauth to learn more.
 
 | Social Media with Backlinks                                                                                                                                                                               | Verified Profile Pages                                                                                                                                                       |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -27,7 +27,7 @@ backlinks! Read up on `rel="me"` and oauth to learn more.
 ## Side Projects
 
 Over the
-years [I have worked on a lot of side projects, check them out](https://github.com/matthewdeanmartin/matthewdeanmartin/blob/master/README.sideprojects.md)!
+years [I have worked on a lot of side projects, check them out](https://github.com/matthewdeanmartin/matthewdeanmartin/blob/master/README.sideprojects.md)
 
 ---
 Last Updated 12/7/2025
