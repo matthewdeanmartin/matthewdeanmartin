@@ -1,0 +1,9 @@
+### Connect
+
+{% for profile in identity.profiles %}
+* **{{ profile.service|title }}**: [{{ profile.handle }}]({{ profile.url }})
+{%- endfor %}
+
+{% if config.modes.current == "job_hunting" and config.modes.job_hunting.resume_url %}
+* **Resume**: [Download PDF]({{ config.modes.job_hunting.resume_url }})
+{% endif %}

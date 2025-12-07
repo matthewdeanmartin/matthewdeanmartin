@@ -1,0 +1,101 @@
+{% extends "layouts/master.html.j2" %}
+
+{% block body %}
+    <header>
+        <hgroup>
+            <h1>{{ identity.name }}</h1>
+            <h2>{{ identity.tagline }}</h2>
+        </hgroup>
+    </header>
+
+    <nav aria-label="breadcrumb">
+        <ul>
+            <li>Languages:</li>
+            <li><a href="index.html" aria-current="page">English</a></li>
+            <li><a href="#">Español</a></li> <li><a href="#">Français</a></li>
+        </ul>
+    </nav>
+
+    <hr>
+
+    <section id="connect">
+        <h3>Connect</h3>
+        <div class="grid">
+            <div>
+                <ul>
+                {% for profile in identity.profiles %}
+                    <li>
+                        <strong>{{ profile.service|title }}:</strong>
+                        <a href="{{ profile.url }}" target="_blank">{{ profile.handle }}</a>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+
+            {% if config.modes.current == "job_hunting" and config.modes.job_hunting.resume_url %}
+            <div>
+                <a href="{{ config.modes.job_hunting.resume_url }}" role="button">Download Resume (PDF)</a>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+
+    {% if config.modes.current == "job_hunting" %}
+        <section id="job-hunting">
+            <h2>Open to Roles</h2>
+            <article>
+                <p>I am currently looking for new opportunities. My focus is on production-quality backend systems.</p>
+                <footer>
+                    <strong>Core Skills:</strong> Python, Rust, Go, AWS, Kubernetes
+                </footer>
+            </article>
+        </section>
+
+    {% elif config.modes.current == "project_promotion" %}
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <p>Check out my latest open source work.</p>
+
+            <div class="project-grid">
+            {% for project in projects %}
+                {% if project.featured %}
+                <article>
+                    <header>
+                        <strong><a href="{{ project.url }}">{{ project.name }}</a></strong>
+                    </header>
+                    <p>{{ project.description }}</p>
+                    <footer>
+                        <small>Status: {{ project.status }}</small>
+                        {% if project.repository_url %}
+                        <a href="{{ project.repository_url }}" style="float: right;">GitHub &rarr;</a>
+                        {% endif %}
+                    </footer>
+                </article>
+                {% endif %}
+            {% endfor %}
+            </div>
+
+            <p style="text-align: center; margin-top: 2rem;">
+                <a href="projects.html" role="button" class="secondary">View All Projects</a>
+            </p>
+        </section>
+
+    {% elif config.modes.current == "self_promotion" %}
+        <section id="self-promotion">
+            <h2>Recent Talks & Writings</h2>
+            <p>I write about software architecture and team dynamics.</p>
+
+            <article>
+                {{ include_content('pages/talks.md') }}
+            </article>
+        </section>
+    {% endif %}
+
+    <section id="about">
+        <h2>About Me</h2>
+        <article>
+            {{ include_content('pages/about.md') }}
+        </article>
+    </section>
+
+{% endblock %}

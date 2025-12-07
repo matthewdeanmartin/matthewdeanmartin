@@ -1,0 +1,19 @@
+{
+  "current": "project_promotion",
+  "job_hunting": {
+    "enable_projects": true,
+    "project_visibility": "curated",
+    "highlight_skills": true,
+    "resume_url": null
+  },
+  "project_promotion": {
+    "enable_projects": true,
+    "project_visibility": "full",
+    "highlight_pypi": true
+  },
+  "self_promotion": {
+    "enable_talks": true,
+    "enable_posts": true,
+    "highlight_blog": true
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Matthew Dean Martin",
+  "tagline": "Pythonist, C# Dev, and Open Source Maintainer",
+  "location": "United States",
+  "email": "matthew.dean.martin@gmail.com",
+  "profiles": [
+    {
+      "service": "mastodon",
+      "handle": "@mistersql",
+      "url": "https://mastodon.social/@mistersql",
+      "same_as": []
+    },
+    {
+      "service": "linkedin",
+      "handle": "matthewdeanmartin",
+      "url": "https://linkedin.com/in/matthewdeanmartin",
+      "same_as": []
+    },
+    {
+      "service": "linktree",
+      "handle": "matthewmartin",
+      "url": "https://linktr.ee/matthewmartin",
+      "same_as": []
+    },
+    {
+      "service": "dev_to",
+      "handle": "matthewdeanmartin",
+      "url": "https://dev.to/matthewdeanmartin",
+      "same_as": []
+    },
+    {
+      "service": "bluesky",
+      "handle": "mistersql.bsky.social",
+      "url": "https://bsky.app/profile/mistersql.bsky.social",
+      "same_as": []
+    },
+    {
+      "service": "stackoverflow",
+      "handle": "matthewmartin",
+      "url": "https://stackoverflow.com/users/33264/matthewmartin",
+      "same_as": []
+    },
+    {
+      "service": "website",
+      "handle": "blog",
+      "url": "https://github.com/matthewdeanmartin/blog",
+      "same_as": []
+    }
+  ]
+}

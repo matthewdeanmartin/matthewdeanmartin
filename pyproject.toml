@@ -1,19 +1,52 @@
 [project]
-name = "matthewdeanmartin-readme"
+name = "github-is-my-cms"
 version = "0.1.0"
-description = "My readme page on github"
+description = "A Multi-Page GitHub README CMS"
+readme = "README.md"
 requires-python = ">=3.14"
+license = { text = "MIT" }
+authors = [
+    { name = "Matthew Dean Martin", email = "matthew.dean.martin@gmail.com" }
+]
+keywords = ["github", "readme", "cms", "documentation", "generator", "static-site"]
+
+# Trove Classifiers
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Documentation",
+    "Topic :: Software Development :: Documentation",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Text Processing :: Markup :: Markdown",
+    "Typing :: Typed",
+]
+
 dependencies = [
+    "pydantic>=2.0",
+    "jinja2>=3.1.0",
+    # speed
+    "orjson"
+]
+
+[project.scripts]
+readme-make = "readme_maker.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/readme_maker"]
+
+[dependency-groups]
+dev = [
     "pre-commit",
     "proselint",
     "mdformat",
     "linkcheckmd",
-    "typing_extensions"
-]
-
-[dependency-groups]
-dev = [
-    "troml-dev-status",
+    "typing_extensions",
+    "troml-dev-status>0.5.0",
     "jiggle_version",
     "cffi",
     "pytest-asyncio",
@@ -71,9 +104,8 @@ dev = [
     "pyenchant>=3.2.2; python_version >= '3.8'",
 ]
 
-
 [tool.ruff]
-line-length = 100
+line-length = 200
 
 [tool.mypy]
 ignore_missing_imports = true
@@ -83,22 +115,22 @@ strict = true
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-[tool.hatch.build.targets.sdist]
-include = [
-    "make_it/**/*.py",
-    "make_it/py.typed",
-    "/README.md", "LICENSE",
-]
-
-exclude = [
-    "*.json",
-    "pkg/_compat.py",
-]
-
-[tool.hatch.build.targets.wheel]
-packages = ["make_it"]
-include = [
-    "make_it/**/*.py",
-    "make_it/py.typed",
-    "/README.md", "LICENSE",
-]
+#[tool.hatch.build.targets.sdist]
+#include = [
+#    "make_it/**/*.py",
+#    "make_it/py.typed",
+#    "/README.md", "LICENSE",
+#]
+#
+#exclude = [
+#    "*.json",
+#    "pkg/_compat.py",
+#]
+#
+#[tool.hatch.build.targets.wheel]
+#packages = ["make_it"]
+#include = [
+#    "make_it/**/*.py",
+#    "make_it/py.typed",
+#    "/README.md", "LICENSE",
+#]

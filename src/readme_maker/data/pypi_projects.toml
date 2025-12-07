@@ -1,0 +1,18 @@
+# src/readme_maker/data/pypi_projects.toml
+
+[[packages]]
+package_name = "dedlin"
+github_repo = "matthewdeanmartin/dedlin"
+version = "1.0.0"
+summary = "A modern python port of the classic edlin line editor."
+downloads_monthly = 543
+docs_url = "https://dedlin.readthedocs.io"
+last_updated = "2024-11-20"
+
+[[packages]]
+package_name = "cli_tool_audit"
+github_repo = "matthewdeanmartin/cli_tool_audit"
+version = "0.4.2"
+summary = "Audit your CLI tools for version and existence."
+downloads_monthly = 1200
+last_updated = "2024-10-15"
