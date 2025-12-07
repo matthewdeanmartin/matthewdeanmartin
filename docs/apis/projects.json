@@ -1,1 +1,122 @@
-{"projects":[{"slug":"pycodetags","name":"pycodetags","description":"Data-in-comments tool, for TODO tracking, based on PEP350","url":"https://github.com/matthewdeanmartin/pycodetags","repository_url":"https://github.com/matthewdeanmartin/pycodetags","tags":["python","tooling","pep350"],"featured":false,"status":"active"},{"slug":"bitrab","name":"bitrab","description":"Run a .gitlab-ci.yml pipeline file locally without docker.","url":"https://github.com/matthewdeanmartin/bitrab","repository_url":null,"tags":["python","ci","gitlab"],"featured":false,"status":"active"},{"slug":"cli_tool_audit","name":"cli_tool_audit","description":"Check for existence and version of tools not managed by your main package manager.","url":"https://github.com/matthewdeanmartin/cli_tool_audit/","repository_url":null,"tags":["python","cli","audit"],"featured":true,"status":"active"},{"slug":"dedlin","name":"dedlin","description":"Text editor, similar to edlin. ✏️","url":"https://github.com/matthewdeanmartin/dedlin","repository_url":null,"tags":["python","tui","editor"],"featured":true,"status":"active"},{"slug":"ai_shell","name":"ai_shell","description":"Autonomous sofware development with CLI tools optimized for use as LLM tool/function calls.","url":"https://github.com/matthewdeanmartin/ai_shell","repository_url":null,"tags":["ai","llm","agent"],"featured":false,"status":"archived"},{"slug":"ai_fish_tank","name":"ai_fish_tank","description":"Proof of concept of a terminal fish tank with AI agents for each fish.","url":"https://github.com/matthewdeanmartin/ai_fish_tank","repository_url":null,"tags":["ai","fun","simulation"],"featured":false,"status":"active"},{"slug":"disemoji","name":"disemoji","description":"Disassemble to emoji symbols. Maps bytecode to emojis.","url":"https://github.com/matthewdeanmartin/disemoji","repository_url":null,"tags":["python","novelty","bytecode"],"featured":false,"status":"active"}],"pypi":[{"package_name":"dedlin","github_repo":"matthewdeanmartin/dedlin","version":"1.0.0","summary":"A modern python port of the classic edlin line editor.","downloads_monthly":543,"docs_url":"https://dedlin.readthedocs.io/","last_updated":"2024-11-20"},{"package_name":"cli_tool_audit","github_repo":"matthewdeanmartin/cli_tool_audit","version":"0.4.2","summary":"Audit your CLI tools for version and existence.","downloads_monthly":1200,"docs_url":null,"last_updated":"2024-10-15"}]}
+{
+  "projects": [
+    {
+      "slug": "pycodetags",
+      "name": "pycodetags",
+      "description": "Data-in-comments tool, for TODO tracking, based on PEP350",
+      "url": "https://github.com/matthewdeanmartin/pycodetags",
+      "repository_url": "https://github.com/matthewdeanmartin/pycodetags",
+      "tags": [
+        "python",
+        "tooling",
+        "pep350"
+      ],
+      "featured": false,
+      "status": "active"
+    },
+    {
+      "slug": "bitrab",
+      "name": "bitrab",
+      "description": "Run a .gitlab-ci.yml pipeline file locally without docker.",
+      "url": "https://github.com/matthewdeanmartin/bitrab",
+      "repository_url": null,
+      "tags": [
+        "python",
+        "ci",
+        "gitlab"
+      ],
+      "featured": false,
+      "status": "active"
+    },
+    {
+      "slug": "cli_tool_audit",
+      "name": "cli_tool_audit",
+      "description": "Check for existence and version of tools not managed by your main package manager.",
+      "url": "https://github.com/matthewdeanmartin/cli_tool_audit/",
+      "repository_url": null,
+      "tags": [
+        "python",
+        "cli",
+        "audit"
+      ],
+      "featured": true,
+      "status": "active"
+    },
+    {
+      "slug": "dedlin",
+      "name": "dedlin",
+      "description": "Text editor, similar to edlin. ✏️",
+      "url": "https://github.com/matthewdeanmartin/dedlin",
+      "repository_url": null,
+      "tags": [
+        "python",
+        "tui",
+        "editor"
+      ],
+      "featured": true,
+      "status": "active"
+    },
+    {
+      "slug": "ai_shell",
+      "name": "ai_shell",
+      "description": "Autonomous sofware development with CLI tools optimized for use as LLM tool/function calls.",
+      "url": "https://github.com/matthewdeanmartin/ai_shell",
+      "repository_url": null,
+      "tags": [
+        "ai",
+        "llm",
+        "agent"
+      ],
+      "featured": false,
+      "status": "archived"
+    },
+    {
+      "slug": "ai_fish_tank",
+      "name": "ai_fish_tank",
+      "description": "Proof of concept of a terminal fish tank with AI agents for each fish.",
+      "url": "https://github.com/matthewdeanmartin/ai_fish_tank",
+      "repository_url": null,
+      "tags": [
+        "ai",
+        "fun",
+        "simulation"
+      ],
+      "featured": false,
+      "status": "active"
+    },
+    {
+      "slug": "disemoji",
+      "name": "disemoji",
+      "description": "Disassemble to emoji symbols. Maps bytecode to emojis.",
+      "url": "https://github.com/matthewdeanmartin/disemoji",
+      "repository_url": null,
+      "tags": [
+        "python",
+        "novelty",
+        "bytecode"
+      ],
+      "featured": false,
+      "status": "active"
+    }
+  ],
+  "pypi": [
+    {
+      "package_name": "dedlin",
+      "github_repo": "matthewdeanmartin/dedlin",
+      "version": "1.0.0",
+      "summary": "A modern python port of the classic edlin line editor.",
+      "downloads_monthly": 543,
+      "docs_url": "https://dedlin.readthedocs.io/",
+      "last_updated": "2024-11-20"
+    },
+    {
+      "package_name": "cli_tool_audit",
+      "github_repo": "matthewdeanmartin/cli_tool_audit",
+      "version": "0.4.2",
+      "summary": "Audit your CLI tools for version and existence.",
+      "downloads_monthly": 1200,
+      "docs_url": null,
+      "last_updated": "2024-10-15"
+    }
+  ]
+}
