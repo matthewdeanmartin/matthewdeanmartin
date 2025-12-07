@@ -14,11 +14,11 @@
 ## Identity Backlinks
 
 Bidirectional backlinks on profile pages are evidence that I control both pages. (This is not generally true for all
-backlinks!)
+backlinks! Read up on `rel="me"` and oauth to learn more!)
 
-| Social Media                                                                                                                                                                                                         | Verified Profile Pages                                                                                                                                                                 |
-|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| - [mastodon.social/@mistersql](https://mastodon.social/@mistersql) 🐘 <br>- [bsky.app](https://bsky.app/profile/mistersql.bsky.social) (backlink)<br> - [LinkedIn](https://linkedin.com/in/matthewdeanmartin) 🔗<br> | - [dev.to](https://dev.to/matthewdeanmartin) (backlink)<br>- [Gravatar](https://gravatar.com/matthewdmartin)<br>- [StackOverflow](https://stackoverflow.com/users/33264/matthewmartin) |
+| Social Media with Backlinks                                                                                                                                                                                | Verified Profile Pages                                                                                                                                                       |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| - [mastodon.social/@mistersql](https://mastodon.social/@mistersql) 🐘 <br>- [bsky.app](https://bsky.app/profile/mistersql.bsky.social) <br> - [LinkedIn](https://linkedin.com/in/matthewdeanmartin) 🔗<br> | - [dev.to](https://dev.to/matthewdeanmartin) <br>- [Gravatar](https://gravatar.com/matthewdmartin)<br>- [StackOverflow](https://stackoverflow.com/users/33264/matthewmartin) |
 
 ## My Public Talks
 
