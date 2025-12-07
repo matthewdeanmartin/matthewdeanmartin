@@ -1,20 +1,19 @@
 ## Skills
 
-🌐 Typescript for AWS CDK (Expert)<br>
-🪐 Terraform for AWS / HCL  (Expert) <br>
-🐍 Python (Expert) for Serverless in AWS<br> 
-🦊 Gitlab Pipelines (Expert) <br>
-`>_` Bash for Gitlab (Very Good)<br> 
-🐹 Go for Terratest (Good enough) 
+| Devops                                    | Backend Development                          | Build Master                         |
+|-------------------------------------------|----------------------------------------------|--------------------------------------|
+| 🌐 Typescript for AWS CDK (Expert)<br>    | 🐍 Python (Expert) for Serverless in AWS<br> | 🦊 Gitlab Pipelines (Expert) <br>    | 
+| 🪐 Terraform for AWS / HCL  (Expert) <br> |                                              | `>_` Bash for Gitlab (Very Good)<br> |
+| 🐹 Go for Terratest (Good enough)         |                                              |                                      |
 
 ## Resumes
 
 - [Resume from 2015](https://matthewdeanmartin.github.io/) 📄
 - [Novelty Resume](https://matthewdeanmartin.github.io/resume/browser/) Hire button and a fire button!
 
-| Social Media                                                                                                                                     | Identity Links                                                                                                                                                                                                                                                                                         |
-|--------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| - [mastodon.social/@mistersql](https://mastodon.social/@mistersql) 🐘 (active)<br>- [LinkedIn](https://linkedin.com/in/matthewdeanmartin) 🔗<br> | - [dev.to](https://dev.to/matthewdeanmartin) (backlink)<br>- [bsky.app](https://bsky.app/profile/mistersql.bsky.social) (backlink)<br>- [Gravatar](https://gravatar.com/matthewdmartin) (backlink + email proof)<br>- [StackOverflow](https://stackoverflow.com/users/33264/matthewmartin)  (backlink) |
+| Social Media                                                                                                                             | Identity Links                                                                                                                                                                                                                                                                                         |
+|------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| - [mastodon.social/@mistersql](https://mastodon.social/@mistersql) 🐘 <br>- [LinkedIn](https://linkedin.com/in/matthewdeanmartin) 🔗<br> | - [dev.to](https://dev.to/matthewdeanmartin) (backlink)<br>- [bsky.app](https://bsky.app/profile/mistersql.bsky.social) (backlink)<br>- [Gravatar](https://gravatar.com/matthewdmartin) (backlink + email proof)<br>- [StackOverflow](https://stackoverflow.com/users/33264/matthewmartin)  (backlink) |
 
 Bidirectional backlinks on profile pages are evidence that I control both pages. (This is not generally true for all
 backlinks!)
