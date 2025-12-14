@@ -1,0 +1,73 @@
+{% extends "layouts/master.html.j2" %}
+
+{% block body %}
+    <section id="curated-projects">
+        <hgroup>
+            <h2>Curated Projects</h2>
+            <h3>Selected works and repositories</h3>
+        </hgroup>
+
+        <div class="project-grid">
+        {% for project in projects %}
+            {% if not (project.cms and project.cms.suppress) %}
+            <article>
+                <header>
+                    <strong><a href="{{ project.url or project.repository_url }}">{{ project.name }}</a></strong>
+                    {% if project.featured %}
+                    <span role="button" class="outline" style="font-size: 0.7em; padding: 2px 6px; float:right;">Featured</span>
+                    {% endif %}
+                </header>
+                <p>{{ project.description }}</p>
+                <footer>
+                    <small>
+                        {% for tag in project.tags %}
+                            <code>#{{ tag }}</code>
+                        {% endfor %}
+                    </small>
+                    {% if project.repository_url %}
+                        <a href="{{ project.repository_url }}" role="button" class="secondary outline" style="width: 100%; margin-top: 1rem;">View Code</a>
+                    {% endif %}
+                </footer>
+            </article>
+            {% endif %}
+        {% endfor %}
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="pypi-packages">
+        <hgroup>
+            <h2>PyPI Packages</h2>
+            <h3>Published Python libraries</h3>
+        </hgroup>
+
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Package</th>
+                    <th scope="col">Version</th>
+                    <th scope="col">Summary</th>
+                    <th scope="col">Monthly DLs</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for pkg in pypi %}
+                <tr>
+                    <th scope="row">
+                        <a href="{{ pkg.docs_url or 'https://pypi.org/project/' ~ pkg.package_name }}" target="_blank">
+                            {{ pkg.package_name }}
+                        </a>
+                        {% if pkg.github_repo %}
+                        <br><small><a href="https://github.com/{{ pkg.github_repo }}">GitHub</a></small>
+                        {% endif %}
+                    </th>
+                    <td>{{ pkg.version }}</td>
+                    <td>{{ pkg.summary }}</td>
+                    <td>{{ pkg.downloads_monthly }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock %}

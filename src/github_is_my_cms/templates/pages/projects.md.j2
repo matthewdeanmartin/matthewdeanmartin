@@ -1,0 +1,24 @@
+{% extends "layouts/master.md.j2" %}
+
+{% block body %}
+# Projects
+
+Here is a collection of my manual projects and published PyPI packages.
+
+## Curated Projects
+
+| Name | Description | Status | Tags |
+|------|-------------|--------|------|
+{% for project in projects %}
+| [{{ project.name }}]({{ project.url or project.repository_url }}) | {{ project.description }} | {{ project.status }} | {{ project.tags|join(", ") }} |
+{% endfor %}
+
+## PyPI Packages
+
+| Package | Version | Summary | Downloads/mo |
+|---------|---------|---------|--------------|
+{% for pkg in pypi %}
+| [{{ pkg.package_name }}]({{ pkg.docs_url or "https://pypi.org/project/" ~ pkg.package_name }}) | {{ pkg.version }} | {{ pkg.summary }} | {{ pkg.downloads_monthly }} |
+{% endfor %}
+
+{% endblock %}
