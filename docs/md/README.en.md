@@ -1,7 +1,3 @@
-[Home](../../README.md) | [Projects](projects.md) | [About](about.md) | [API](../apis/openapi.yaml)
-
-______________________________________________________________________
-
 # Matthew Dean Martin
 
 Pythonist, C# Dev, and Open Source Maintainer
