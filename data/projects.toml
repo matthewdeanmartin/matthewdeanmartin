@@ -4,7 +4,14 @@ name = "Hicmah"
 description = "Hicmah - Hit Counter Module and Handler"
 url = "https://github.com/matthewdeanmartin/Hicmah"
 repository_url = "https://github.com/matthewdeanmartin/Hicmah"
-tags = []
+tags = [
+    "analytics",
+    "handler",
+    "hit-counter",
+    "javascript",
+    "module",
+    "web-development",
+]
 status = "active"
 
 [projects.cms]
@@ -16,7 +23,15 @@ slug = "ai_fish_tank"
 name = "ai_fish_tank"
 description = "Fish tank that has a story going on"
 url = "https://github.com/matthewdeanmartin/ai_fish_tank"
-tags = []
+tags = [
+    "aquarium",
+    "artificial-intelligence",
+    "game",
+    "interactive-fiction",
+    "python",
+    "simulation",
+    "storytelling",
+]
 status = "active"
 repository_url = "https://github.com/matthewdeanmartin/ai_fish_tank"
 
@@ -68,7 +83,15 @@ name = "bash_logging_with_timer"
 description = "Logger with timer that will attempt to use pre-existing"
 url = "https://github.com/matthewdeanmartin/bash_logging_with_timer"
 repository_url = "https://github.com/matthewdeanmartin/bash_logging_with_timer"
-tags = []
+tags = [
+    "automation",
+    "bash",
+    "command-line",
+    "logging",
+    "scripting",
+    "timer",
+    "utilities",
+]
 status = "active"
 
 [projects.cms]
@@ -93,7 +116,15 @@ slug = "bitrab"
 name = "bitrab"
 description = "A pipeline runner that runs Gitlab syntax pipelines without docker or admin rights. Minimal feature set."
 url = "https://github.com/matthewdeanmartin/bitrab"
-tags = []
+tags = [
+    "automation",
+    "ci",
+    "devops",
+    "gitlab",
+    "minimalism",
+    "no-docker",
+    "pipeline",
+]
 status = "active"
 repository_url = "https://github.com/matthewdeanmartin/bitrab"
 
@@ -103,7 +134,15 @@ name = "blog"
 description = "Matthew Martin's Life Blog. Let's see how many days I can do this."
 url = "https://blog.wakayos.com/"
 repository_url = "https://github.com/matthewdeanmartin/blog"
-tags = []
+tags = [
+    "blog",
+    "daily-updates",
+    "documentation",
+    "journaling",
+    "lifestyle",
+    "personal",
+    "writing",
+]
 status = "active"
 
 [projects.cms]
@@ -116,7 +155,12 @@ name = "blog_comments"
 description = "trying out utterance comments"
 url = "https://github.com/matthewdeanmartin/blog_comments"
 repository_url = "https://github.com/matthewdeanmartin/blog_comments"
-tags = []
+tags = [
+    "blog",
+    "comments",
+    "utterances",
+    "web-development",
+]
 status = "active"
 
 [projects.cms]
@@ -142,7 +186,15 @@ name = "bug_trail"
 description = "local static html error logger to use while developing python code"
 url = "https://github.com/matthewdeanmartin/bug_trail"
 repository_url = "https://github.com/matthewdeanmartin/bug_trail"
-tags = []
+tags = [
+    "development",
+    "error-logging",
+    "html",
+    "local-development",
+    "logging",
+    "python",
+    "static-site",
+]
 status = "active"
 
 [projects.cms]
@@ -155,7 +207,15 @@ name = "bug_trail_core"
 description = "The error/log collecting part of bug_trail a sqlite-back logging tool for python apps"
 url = "https://github.com/matthewdeanmartin/bug_trail_core"
 repository_url = "https://github.com/matthewdeanmartin/bug_trail_core"
-tags = []
+tags = [
+    "bug-tracking",
+    "error-handling",
+    "logging",
+    "python",
+    "software-development",
+    "sqlite",
+    "utility",
+]
 status = "active"
 
 [projects.cms]
@@ -168,7 +228,15 @@ name = "c7n_make"
 description = "An opinionated Cloud Custodian build script with examples"
 url = "https://github.com/matthewdeanmartin/c7n_make"
 repository_url = "https://github.com/matthewdeanmartin/c7n_make"
-tags = []
+tags = [
+    "automation",
+    "aws",
+    "cloud-custodian",
+    "devops",
+    "example-projects",
+    "infrastructure-as-code",
+    "scripts",
+]
 status = "active"
 
 [projects.cms]
@@ -251,7 +319,15 @@ name = "dashc"
 description = "Compile your code into a `python -c \"...\"` string executable in shell without filesystem access."
 url = "https://github.com/matthewdeanmartin/dashc"
 repository_url = "https://github.com/matthewdeanmartin/dashc"
-tags = []
+tags = [
+    "cli-tools",
+    "code-compiler",
+    "executable",
+    "programming",
+    "python",
+    "shell",
+    "no-filesystem-access",
+]
 status = "active"
 
 [projects.cms]
@@ -277,7 +353,15 @@ slug = "disemoji"
 name = "disemoji"
 description = "Make pretty disassembly visualizations. Not especially practical."
 url = "https://github.com/matthewdeanmartin/disemoji"
-tags = []
+tags = [
+    "artistic",
+    "assembly-language",
+    "disassembly",
+    "educational",
+    "graphics",
+    "programming",
+    "visualization",
+]
 status = "active"
 repository_url = "https://github.com/matthewdeanmartin/disemoji"
 
@@ -287,7 +371,15 @@ name = "examexam"
 description = "Exam practice with LLM (AI) integrations"
 url = "https://github.com/matthewdeanmartin/examexam"
 repository_url = "https://github.com/matthewdeanmartin/examexam"
-tags = []
+tags = [
+    "ai",
+    "chatbot",
+    "education",
+    "exam",
+    "llm",
+    "machine-learning",
+    "practice",
+]
 status = "active"
 
 [projects.cms]
@@ -300,7 +392,15 @@ name = "examexam_exams"
 description = "Model repo showing how to share exams you generate with examexam."
 url = "https://github.com/matthewdeanmartin/examexam_exams"
 repository_url = "https://github.com/matthewdeanmartin/examexam_exams"
-tags = []
+tags = [
+    "assessment",
+    "education",
+    "exams",
+    "model-repository",
+    "sharing",
+    "examexam",
+    "online-tests",
+]
 status = "active"
 
 [projects.cms]
@@ -310,10 +410,13 @@ package_links = []
 [[projects]]
 slug = "falling_food"
 name = "falling_food"
-description = ""
+description = "Food falls and you catch it! Pygame game"
 url = "https://github.com/matthewdeanmartin/falling_food"
 repository_url = "https://github.com/matthewdeanmartin/falling_food"
-tags = []
+tags = [
+    "pygame",
+    "pygame-games",
+]
 status = "active"
 
 [projects.cms]
@@ -339,7 +442,15 @@ name = "fermi_problems"
 description = "A game to see how good you are at solving order of magnitude estimation problems"
 url = "https://github.com/matthewdeanmartin/fermi_problems"
 repository_url = "https://github.com/matthewdeanmartin/fermi_problems"
-tags = []
+tags = [
+    "estimation",
+    "fermi-problems",
+    "game",
+    "interactive",
+    "learning",
+    "math",
+    "python",
+]
 status = "active"
 
 [projects.cms]
@@ -352,7 +463,15 @@ name = "find_known_secrets"
 description = "Scan for known secrets in your source code before you check in"
 url = "https://github.com/matthewdeanmartin/find_known_secrets"
 repository_url = "https://github.com/matthewdeanmartin/find_known_secrets"
-tags = []
+tags = [
+    "data-protection",
+    "devops",
+    "git",
+    "scanning",
+    "secrets",
+    "security",
+    "source-code",
+]
 status = "active"
 
 [projects.cms]
@@ -378,7 +497,15 @@ name = "gh_status"
 description = "summarize gihub activity for an llm"
 url = "https://github.com/matthewdeanmartin/gh_status"
 repository_url = "https://github.com/matthewdeanmartin/gh_status"
-tags = []
+tags = [
+    "activity",
+    "automation",
+    "data-analysis",
+    "github",
+    "llm",
+    "machine-learning",
+    "summarization",
+]
 status = "active"
 
 [projects.cms]
@@ -391,7 +518,15 @@ name = "git_help"
 description = "attempting to do common git things with python as a learning exercise"
 url = "https://github.com/matthewdeanmartin/git_help"
 repository_url = "https://github.com/matthewdeanmartin/git_help"
-tags = []
+tags = [
+    "automation",
+    "development",
+    "git",
+    "learning",
+    "programming",
+    "python",
+    "version-control",
+]
 status = "active"
 
 [projects.cms]
@@ -404,7 +539,15 @@ name = "git_mirror"
 description = "Clone all your github repos and call pull on them."
 url = "https://github.com/matthewdeanmartin/git_mirror"
 repository_url = "https://github.com/matthewdeanmartin/git_mirror"
-tags = []
+tags = [
+    "automation",
+    "clone",
+    "git",
+    "github",
+    "repository",
+    "scripting",
+    "version-control",
+]
 status = "active"
 
 [projects.cms]
@@ -430,7 +573,13 @@ name = "hermetic"
 description = "run a python tool with certain APIs disabled"
 url = "https://github.com/matthewdeanmartin/hermetic"
 repository_url = "https://github.com/matthewdeanmartin/hermetic"
-tags = []
+tags = [
+    "cli-tool",
+    "configuration",
+    "development-tools",
+    "python",
+    "security",
+]
 status = "active"
 
 [projects.cms]
@@ -443,7 +592,15 @@ name = "hissbytenotation"
 description = "Library to make it easy to use python literal syntax as a data format"
 url = "https://github.com/matthewdeanmartin/hissbytenotation"
 repository_url = "https://github.com/matthewdeanmartin/hissbytenotation"
-tags = []
+tags = [
+    "data-format",
+    "data-representation",
+    "library",
+    "programming",
+    "python",
+    "serialization",
+    "literal-syntax",
+]
 status = "active"
 
 [projects.cms]
@@ -456,7 +613,15 @@ name = "interview_challenges"
 description = "All my leet code and interview challenges. This will become private after my job search is over."
 url = "https://github.com/matthewdeanmartin/interview_challenges"
 repository_url = "https://github.com/matthewdeanmartin/interview_challenges"
-tags = []
+tags = [
+    "algorithm",
+    "coding-challenges",
+    "data-structures",
+    "interview-preparation",
+    "job-search",
+    "leetcode",
+    "software-engineering",
+]
 status = "active"
 
 [projects.cms]
@@ -612,7 +777,15 @@ name = "jiggle_version"
 description = "Opinionated, no config build version incrementer. No regex. Drop in and go."
 url = "https://github.com/matthewdeanmartin/jiggle_version"
 repository_url = "https://github.com/matthewdeanmartin/jiggle_version"
-tags = []
+tags = [
+    "automation",
+    "build-tools",
+    "deployment",
+    "incrementer",
+    "no-config",
+    "software-development",
+    "versioning",
+]
 status = "active"
 
 [projects.cms]
@@ -625,7 +798,14 @@ name = "json_kata"
 description = "polyglot kata for http requests and json processing"
 url = "https://github.com/matthewdeanmartin/json_kata"
 repository_url = "https://github.com/matthewdeanmartin/json_kata"
-tags = []
+tags = [
+    "http",
+    "json",
+    "kata",
+    "polyglot",
+    "programming",
+    "web-development",
+]
 status = "active"
 
 [projects.cms]
@@ -638,7 +818,15 @@ name = "kata-python"
 description = "Short python exercises you could do over and over"
 url = "https://github.com/matthewdeanmartin/kata-python"
 repository_url = "https://github.com/matthewdeanmartin/kata-python"
-tags = []
+tags = [
+    "algorithm",
+    "coding",
+    "development",
+    "exercises",
+    "kata",
+    "practice",
+    "python",
+]
 status = "active"
 
 [projects.cms]
@@ -651,7 +839,14 @@ name = "keepanauthorsfile"
 description = "Keep an Author's file - parsing and generating AUTHORS files"
 url = "https://github.com/matthewdeanmartin/keepanauthorsfile"
 repository_url = "https://github.com/matthewdeanmartin/keepanauthorsfile"
-tags = []
+tags = [
+    "authors",
+    "code-management",
+    "documentation",
+    "file-parsing",
+    "git",
+    "python",
+]
 status = "active"
 
 [projects.cms]
@@ -677,7 +872,15 @@ name = "kids_kata"
 description = "Some coding exercises for teach very young kids to write code"
 url = "https://github.com/matthewdeanmartin/kids_kata"
 repository_url = "https://github.com/matthewdeanmartin/kids_kata"
-tags = []
+tags = [
+    "beginners",
+    "children",
+    "coding-exercises",
+    "education",
+    "kids",
+    "learning",
+    "programming",
+]
 status = "active"
 
 [projects.cms]
@@ -729,7 +932,14 @@ name = "mainframer"
 description = "Suite of tools in python for gnucobol, gcobol development"
 url = "https://github.com/matthewdeanmartin/mainframer"
 repository_url = "https://github.com/matthewdeanmartin/mainframer"
-tags = []
+tags = [
+    "development-tools",
+    "gnucobol",
+    "programming",
+    "python",
+    "software-development",
+    "gcobol",
+]
 status = "active"
 
 [projects.cms]
@@ -742,7 +952,15 @@ name = "makemake"
 description = "quality gates for Makefile"
 url = "https://github.com/matthewdeanmartin/makemake"
 repository_url = "https://github.com/matthewdeanmartin/makemake"
-tags = []
+tags = [
+    "automation",
+    "build-tools",
+    "ci-cd",
+    "devops",
+    "makefile",
+    "programming",
+    "quality-gates",
+]
 status = "active"
 
 [projects.cms]
@@ -752,10 +970,12 @@ package_links = []
 [[projects]]
 slug = "markdown_build"
 name = "markdown_build"
-description = ""
+description = "Experiment with using markdown and markdown tools for building apps"
 url = "https://github.com/matthewdeanmartin/markdown_build"
 repository_url = "https://github.com/matthewdeanmartin/markdown_build"
-tags = []
+tags = [
+    "markdown",
+]
 status = "active"
 
 [projects.cms]
@@ -781,7 +1001,14 @@ name = "markpickle"
 description = "Lossy serialization of markdown to python and back"
 url = "https://github.com/matthewdeanmartin/markpickle"
 repository_url = "https://github.com/matthewdeanmartin/markpickle"
-tags = []
+tags = [
+    "data-conversion",
+    "markdown",
+    "python",
+    "serialization",
+    "text-processing",
+    "markpickle",
+]
 status = "active"
 
 [projects.cms]
@@ -807,7 +1034,9 @@ name = "matthewdeanmartin"
 description = "README. NOW."
 url = "https://github.com/matthewdeanmartin/matthewdeanmartin"
 repository_url = "https://github.com/matthewdeanmartin/matthewdeanmartin"
-tags = []
+tags = [
+    "matthewdeanmartin",
+]
 status = "active"
 
 [projects.cms]
@@ -820,7 +1049,15 @@ name = "matthewdeanmartin.github.io"
 description = "my resume site for pub"
 url = "https://github.com/matthewdeanmartin/matthewdeanmartin.github.io"
 repository_url = "https://github.com/matthewdeanmartin/matthewdeanmartin.github.io"
-tags = []
+tags = [
+    "css",
+    "github-pages",
+    "html",
+    "personal-website",
+    "portfolio",
+    "resume",
+    "web-development",
+]
 status = "active"
 
 [projects.cms]
@@ -875,7 +1112,14 @@ name = "openmock"
 description = "Python Opensearch Mock for test purposes (fork of elasticmock)"
 url = "https://pypi.python.org/pypi/openmock"
 repository_url = "https://github.com/matthewdeanmartin/openmock"
-tags = []
+tags = [
+    "development",
+    "mocking",
+    "opensearch",
+    "python",
+    "testing",
+    "elasticmock",
+]
 status = "active"
 
 [projects.cms]
@@ -906,7 +1150,15 @@ name = "parse_quick_parameters.sh"
 description = "Provide a documentation string to get named function parameters. Fork of msknapp's. Similar to docopt"
 url = "https://github.com/matthewdeanmartin/parse_quick_parameters.sh"
 repository_url = "https://github.com/matthewdeanmartin/parse_quick_parameters.sh"
-tags = []
+tags = [
+    "bash",
+    "command-line",
+    "documentation",
+    "fork",
+    "parameter-parsing",
+    "scripting",
+    "utilities",
+]
 status = "active"
 
 [projects.cms]
@@ -958,7 +1210,15 @@ name = "pyanide"
 description = "tools for killing threads and making sure they stay that way"
 url = "https://github.com/matthewdeanmartin/pyanide"
 repository_url = "https://github.com/matthewdeanmartin/pyanide"
-tags = []
+tags = [
+    "concurrency",
+    "multithreading",
+    "python",
+    "software-development",
+    "thread-safety",
+    "utils",
+    "kill-threads",
+]
 status = "active"
 
 [projects.cms]
@@ -1002,7 +1262,12 @@ name = "pypi_librarian"
 description = "object oriented API client for pypi's various metadata APIs"
 url = "https://github.com/matthewdeanmartin/pypi_librarian"
 repository_url = "https://github.com/matthewdeanmartin/pypi_librarian"
-tags = []
+tags = [
+    "metadata",
+    "object-oriented",
+    "pypi",
+    "python",
+]
 status = "active"
 
 [projects.cms]
@@ -1015,7 +1280,15 @@ name = "python3"
 description = "Hack to handle a missing alias/symlink, for example when you're on windows or don't want to be bothered"
 url = "https://github.com/matthewdeanmartin/python3"
 repository_url = "https://github.com/matthewdeanmartin/python3"
-tags = []
+tags = [
+    "alias",
+    "cross-platform",
+    "file-management",
+    "python",
+    "symlink",
+    "utilities",
+    "windows",
+]
 status = "active"
 
 [projects.cms]
@@ -1041,7 +1314,15 @@ name = "random_names"
 description = "Convert int to random name, like tree_dance and convert it back to same int."
 url = "https://github.com/matthewdeanmartin/random_names"
 repository_url = "https://github.com/matthewdeanmartin/random_names"
-tags = []
+tags = [
+    "algorithm",
+    "data-encoding",
+    "integer-to-string",
+    "name-generation",
+    "python",
+    "random-names",
+    "string-to-integer",
+]
 status = "active"
 
 [projects.cms]
@@ -1067,7 +1348,15 @@ name = "recython"
 description = "use ai to assist in turning ordinary python into cython python"
 url = "https://github.com/matthewdeanmartin/recython"
 repository_url = "https://github.com/matthewdeanmartin/recython"
-tags = []
+tags = [
+    "ai",
+    "code-assistance",
+    "cython",
+    "machine-learning",
+    "performance",
+    "programming",
+    "python",
+]
 status = "active"
 
 [projects.cms]
@@ -1080,7 +1369,15 @@ name = "resume"
 description = "Resume-themed coding projects"
 url = "https://github.com/matthewdeanmartin/resume"
 repository_url = "https://github.com/matthewdeanmartin/resume"
-tags = []
+tags = [
+    "coding",
+    "design",
+    "personal-branding",
+    "portfolio",
+    "projects",
+    "resume",
+    "web-development",
+]
 status = "active"
 
 [projects.cms]
@@ -1093,7 +1390,15 @@ name = "safe_run"
 description = "Generate docker syntax to run a pypi package safely"
 url = "https://matthewdeanmartin.github.io/safe_run/"
 repository_url = "https://github.com/matthewdeanmartin/safe_run"
-tags = []
+tags = [
+    "containerization",
+    "development-tools",
+    "docker",
+    "package-management",
+    "pypi",
+    "python",
+    "safety",
+]
 status = "active"
 
 [projects.cms]
@@ -1119,7 +1424,14 @@ name = "smbc_scraper"
 description = "Collect raw data from smbc comics for noble causes, such as machine learning."
 url = "https://github.com/matthewdeanmartin/smbc_scraper"
 repository_url = "https://github.com/matthewdeanmartin/smbc_scraper"
-tags = []
+tags = [
+    "comics",
+    "data",
+    "data-collection",
+    "machine-learning",
+    "python",
+    "web-scraping",
+]
 status = "active"
 
 [projects.cms]
@@ -1151,7 +1463,15 @@ name = "sparkle_log"
 description = "Write a spark line graph of CPU, Memory, etc to the python log"
 url = "https://github.com/matthewdeanmartin/sparkle_log"
 repository_url = "https://github.com/matthewdeanmartin/sparkle_log"
-tags = []
+tags = [
+    "cpu",
+    "data-visualization",
+    "logging",
+    "memory",
+    "performance-monitoring",
+    "python",
+    "sparkline",
+]
 status = "active"
 
 [projects.cms]
@@ -1164,7 +1484,15 @@ name = "superinit"
 description = "Bash script to initialize django REST api. Sort of like a cookiecutter template but less reliable."
 url = "https://github.com/matthewdeanmartin/superinit"
 repository_url = "https://github.com/matthewdeanmartin/superinit"
-tags = []
+tags = [
+    "bash",
+    "cookiecutter",
+    "django",
+    "rest-api",
+    "script",
+    "template",
+    "web-development",
+]
 status = "active"
 
 [projects.cms]
@@ -1177,7 +1505,15 @@ name = "swimming_game"
 description = "A two player rythm game."
 url = "https://github.com/matthewdeanmartin/swimming_game"
 repository_url = "https://github.com/matthewdeanmartin/swimming_game"
-tags = []
+tags = [
+    "game",
+    "html5",
+    "javascript",
+    "multiplayer",
+    "music",
+    "rhythm-game",
+    "two-player",
+]
 status = "active"
 
 [projects.cms]
@@ -1190,7 +1526,15 @@ name = "team_policies"
 description = "Generic software development team policies."
 url = "https://github.com/matthewdeanmartin/team_policies"
 repository_url = "https://github.com/matthewdeanmartin/team_policies"
-tags = []
+tags = [
+    "best-practices",
+    "collaboration",
+    "documentation",
+    "git",
+    "project-management",
+    "software-development",
+    "team-policies",
+]
 status = "active"
 
 [projects.cms]
@@ -1242,7 +1586,15 @@ name = "tkstatistics"
 description = "stdlib-only statistical app backed only by what is available in the python stdlib"
 url = "https://github.com/matthewdeanmartin/tkstatistics"
 repository_url = "https://github.com/matthewdeanmartin/tkstatistics"
-tags = []
+tags = [
+    "data-analysis",
+    "data-science",
+    "mathematics",
+    "python",
+    "statistical-models",
+    "statistics",
+    "stdlib",
+]
 status = "active"
 
 [projects.cms]
@@ -1255,7 +1607,15 @@ name = "tokipona.parser"
 description = "A Toki Pona Parser"
 url = "https://github.com/matthewdeanmartin/tokipona.parser"
 repository_url = "https://github.com/matthewdeanmartin/tokipona.parser"
-tags = []
+tags = [
+    "language-processing",
+    "linguistics",
+    "natural-language",
+    "parser",
+    "programming-languages",
+    "text-analysis",
+    "toki-pona",
+]
 status = "active"
 
 [projects.cms]
@@ -1268,7 +1628,15 @@ name = "totalhelp"
 description = "View help for all commands and subcommands for arbitrary commands or augment your app to do so. "
 url = "https://github.com/matthewdeanmartin/totalhelp"
 repository_url = "https://github.com/matthewdeanmartin/totalhelp"
-tags = []
+tags = [
+    "automation",
+    "cli-tools",
+    "command-line",
+    "documentation",
+    "help",
+    "user-guide",
+    "application-augmentation",
+]
 status = "active"
 
 [projects.cms]
@@ -1311,7 +1679,15 @@ name = "untruncate_json"
 description = "Python library to repair truncated json. Translated directly from the typescript original version"
 url = "https://github.com/matthewdeanmartin/untruncate_json"
 repository_url = "https://github.com/matthewdeanmartin/untruncate_json"
-tags = []
+tags = [
+    "data-processing",
+    "data-repair",
+    "json",
+    "library",
+    "python",
+    "typescript",
+    "truncated-json",
+]
 status = "active"
 
 [projects.cms]
@@ -1324,7 +1700,14 @@ name = "us_copyright"
 description = "Web API client for working with US copyright records"
 url = "https://github.com/matthewdeanmartin/us_copyright"
 repository_url = "https://github.com/matthewdeanmartin/us_copyright"
-tags = []
+tags = [
+    "client-library",
+    "copyright",
+    "data-retrieval",
+    "javascript",
+    "us-government",
+    "web-development",
+]
 status = "active"
 
 [projects.cms]
@@ -1337,7 +1720,15 @@ name = "useful_scripts"
 description = "Generic scripts useful for software development in a CLI/TUI context"
 url = "https://github.com/matthewdeanmartin/useful_scripts"
 repository_url = "https://github.com/matthewdeanmartin/useful_scripts"
-tags = []
+tags = [
+    "automation",
+    "cli",
+    "command-line",
+    "scripts",
+    "software-development",
+    "tui",
+    "utilities",
+]
 status = "active"
 
 [projects.cms]
@@ -1350,7 +1741,15 @@ name = "vacay"
 description = "Unknown expected value vacation themed lotto scratcher"
 url = "https://github.com/matthewdeanmartin/vacay"
 repository_url = "https://github.com/matthewdeanmartin/vacay"
-tags = []
+tags = [
+    "fun",
+    "gaming",
+    "lotto",
+    "recreation",
+    "scratcher",
+    "theme",
+    "vacation",
+]
 status = "active"
 
 [projects.cms]
@@ -1363,7 +1762,15 @@ name = "what_is_matt_doing"
 description = "gh action to summarize what I've done for LLM consumption"
 url = "https://github.com/matthewdeanmartin/what_is_matt_doing"
 repository_url = "https://github.com/matthewdeanmartin/what_is_matt_doing"
-tags = []
+tags = [
+    "automation",
+    "data-science",
+    "developer-tools",
+    "github-actions",
+    "llm",
+    "productivity",
+    "summarization",
+]
 status = "active"
 
 [projects.cms]
@@ -1376,7 +1783,15 @@ name = "whats_that_code"
 description = "detect programming language of source in pure python from an ensemble of classifiers"
 url = "https://github.com/matthewdeanmartin/whats_that_code"
 repository_url = "https://github.com/matthewdeanmartin/whats_that_code"
-tags = []
+tags = [
+    "data-science",
+    "ensemble-classifiers",
+    "machine-learning",
+    "natural-language-processing",
+    "python",
+    "source-code-analysis",
+    "programming-language-detection",
+]
 status = "active"
 
 [projects.cms]

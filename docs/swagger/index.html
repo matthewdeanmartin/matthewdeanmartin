@@ -24,11 +24,7 @@
       const ui = SwaggerUIBundle({
         // The 'urls' array allows you to switch between multiple API files
           openapi: "3.1.0",
-        urls: [
-          {url: "../apis/config.json", name: "Config API"},
-          {url: "../apis/identity.json", name: "Identity API"},
-          {url: "../apis/projects.json", name: "Projects API"}
-        ],
+        url: "./openapi.yml",
         dom_id: '#swagger-ui',
         deepLinking: true,
         presets: [

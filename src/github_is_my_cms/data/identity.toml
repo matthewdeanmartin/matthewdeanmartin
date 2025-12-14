@@ -1,7 +1,7 @@
 # src/github_is_my_cms/data/identity.toml
 
 name = "Matthew Dean Martin"
-tagline = "Pythonist, C# Dev, and Open Source Maintainer"
+tagline = "Pythonist, Devops Guy, and Govtech Specialist"
 location = "United States"
 
 # --- Resumes ---
@@ -73,18 +73,22 @@ service = "Mastodon"
 handle = "mastodon.social/@mistersql"
 url = "https://mastodon.social/@mistersql"
 group = "social"
+icon = "🐘"
 
 [[profiles]]
 service = "BlueSky"
 handle = "bsky.app"
 url = "https://bsky.app/profile/mistersql.bsky.social"
 group = "social"
+icon = "🦋"
 
 [[profiles]]
 service = "LinkedIn"
 handle = "LinkedIn"
 url = "https://linkedin.com/in/matthewdeanmartin"
 group = "social"
+icon = "🔗"
+
 
 # Group: Verified Profile Pages
 [[profiles]]
@@ -92,15 +96,18 @@ service = "Dev.to"
 handle = "dev.to"
 url = "https://dev.to/matthewdeanmartin"
 group = "verified"
+icon = "💻"
 
 [[profiles]]
 service = "Gravatar"
 handle = "Gravatar"
 url = "https://gravatar.com/matthewdmartin"
 group = "verified"
+icon = "🌀"
 
 [[profiles]]
 service = "StackOverflow"
 handle = "StackOverflow"
 url = "https://stackoverflow.com/users/33264/matthewmartin"
 group = "verified"
+icon = "🔥"

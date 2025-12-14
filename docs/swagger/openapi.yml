@@ -1,0 +1,72 @@
+openapi: 3.0.0
+info:
+  title: Matthew's Static API
+  description: Static configuration and data files served via GitHub Pages.
+  version: 1.0.0
+servers:
+  - url: ..
+    description: Relative path to root (docs folder)
+
+paths:
+  /apis/identity.json:
+    get:
+      summary: Identity Configuration
+      description: Returns the current persona configuration and promotion toggles.
+      operationId: getIdentity
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  current:
+                    type: string
+                    example: "project_promotion"
+                  job_hunting:
+                    type: object
+                  project_promotion:
+                    type: object
+                  self_promotion:
+                    type: object
+              # This example helps Swagger UI show "Example Value"
+              example:
+                current: "project_promotion"
+                job_hunting:
+                  enable_projects: true
+                  project_visibility: "curated"
+                  highlight_skills: true
+                  resume_url: null
+                project_promotion:
+                  enable_projects: true
+                  project_visibility: "full"
+                  highlight_pypi: true
+                self_promotion:
+                  enable_talks: true
+                  enable_posts: true
+                  highlight_blog: true
+
+  /apis/config.json:
+    get:
+      summary: General Config
+      description: Global configuration settings.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /apis/projects.json:
+    get:
+      summary: Projects List
+      description: List of active projects.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
