@@ -6,7 +6,7 @@ info:
     Static JSON endpoints served from GitHub Pages. All resources are read-only files.
 
 servers:
-  - url: /
+  - url: ..
     description: GitHub Pages site root (relative)
 
 paths:
