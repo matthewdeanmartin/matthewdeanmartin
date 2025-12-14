@@ -1,3 +1,11 @@
+[Home](../../README.md) | [Projects](projects.md) | [About](about.md) | [API](../apis/openapi.yaml)
+
+---
+
+# Matthew Dean Martin
+
+Pythonist, C# Dev, and Open Source Maintainer
+
 ## Skills
 
 I used to be a full stack developer, I evolved into tech lead and most recently devops work. I write code and know how
@@ -31,6 +39,13 @@ backlinks. Read up on `rel="me"` and oauth to learn more.
 
 Over the
 years [I have worked on a lot of side projects, check them out](https://github.com/matthewdeanmartin/matthewdeanmartin/blob/master/README.sideprojects.md)
+
+### Featured Highlights
+
+* **[cli_tool_audit](https://matthewdeanmartin.github.io/cli_tool_audit/cli_tool_audit/index.html)**: Verify that a list
+  of cli tools are available. Like a requirements.txt for cli tools, but without an installer component.
+* **[dedlin](https://github.com/matthewdeanmartin/dedlin)**: Clone of edlin with improvements to make it into more of a
+  DSL
 
 ---
 Last Updated 12/7/2025

@@ -7,7 +7,6 @@ import subprocess
 from pathlib import Path
 from typing import Iterable, List, Set
 
-
 GH_USER: str = "matthewdeanmartin"
 README_PATH: Path = Path("README.md")
 

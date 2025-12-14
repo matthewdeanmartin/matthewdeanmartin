@@ -2,49 +2,133 @@
   "name": "Matthew Dean Martin",
   "tagline": "Pythonist, C# Dev, and Open Source Maintainer",
   "location": "United States",
-  "email": "matthew.dean.martin@gmail.com",
+  "email": null,
   "profiles": [
     {
-      "service": "mastodon",
-      "handle": "@mistersql",
+      "service": "Mastodon",
+      "handle": "mastodon.social/@mistersql",
       "url": "https://mastodon.social/@mistersql",
-      "same_as": []
+      "group": "social",
+      "same_as": [],
+      "icon": "🐘"
     },
     {
-      "service": "linkedin",
-      "handle": "matthewdeanmartin",
-      "url": "https://linkedin.com/in/matthewdeanmartin",
-      "same_as": []
-    },
-    {
-      "service": "linktree",
-      "handle": "matthewmartin",
-      "url": "https://linktr.ee/matthewmartin",
-      "same_as": []
-    },
-    {
-      "service": "dev_to",
-      "handle": "matthewdeanmartin",
-      "url": "https://dev.to/matthewdeanmartin",
-      "same_as": []
-    },
-    {
-      "service": "bluesky",
-      "handle": "mistersql.bsky.social",
+      "service": "BlueSky",
+      "handle": "bsky.app",
       "url": "https://bsky.app/profile/mistersql.bsky.social",
-      "same_as": []
+      "group": "social",
+      "same_as": [],
+      "icon": "🦋"
     },
     {
-      "service": "stackoverflow",
-      "handle": "matthewmartin",
+      "service": "LinkedIn",
+      "handle": "LinkedIn",
+      "url": "https://linkedin.com/in/matthewdeanmartin",
+      "group": "social",
+      "same_as": [],
+      "icon": "🔗"
+    },
+    {
+      "service": "Dev.to",
+      "handle": "dev.to",
+      "url": "https://dev.to/matthewdeanmartin",
+      "group": "verified",
+      "same_as": [],
+      "icon": "💻"
+    },
+    {
+      "service": "Gravatar",
+      "handle": "Gravatar",
+      "url": "https://gravatar.com/matthewdmartin",
+      "group": "verified",
+      "same_as": [],
+      "icon": "🌀"
+    },
+    {
+      "service": "StackOverflow",
+      "handle": "StackOverflow",
       "url": "https://stackoverflow.com/users/33264/matthewmartin",
-      "same_as": []
+      "group": "verified",
+      "same_as": [],
+      "icon": "🔥"
+    }
+  ],
+  "resumes": [
+    {
+      "label": "Resume from 2015",
+      "url": "https://matthewdeanmartin.github.io/",
+      "description": null,
+      "icon": "📄"
     },
     {
-      "service": "website",
-      "handle": "blog",
-      "url": "https://github.com/matthewdeanmartin/blog",
-      "same_as": []
+      "label": "Novelty Resume from 2024",
+      "url": "https://matthewdeanmartin.github.io/resume/browser/",
+      "description": "Hire button and a fire button!",
+      "icon": "📄"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Devops",
+      "skills": [
+        {
+          "name": "Typescript for AWS CDK",
+          "level": "Expert",
+          "icon": "🌐"
+        },
+        {
+          "name": "Terraform for AWS / HCL",
+          "level": "Expert",
+          "icon": "🪐"
+        },
+        {
+          "name": "Go for Terratest",
+          "level": "Good enough",
+          "icon": "🐹"
+        }
+      ]
+    },
+    {
+      "category": "Backend Development",
+      "skills": [
+        {
+          "name": "Python for Serverless in AWS",
+          "level": "Expert",
+          "icon": "🐍"
+        },
+        {
+          "name": "Postgres",
+          "level": null,
+          "icon": "🐘"
+        },
+        {
+          "name": "DynamoDB",
+          "level": null,
+          "icon": "🗄️"
+        }
+      ]
+    },
+    {
+      "category": "Build Master",
+      "skills": [
+        {
+          "name": "Gitlab Pipelines",
+          "level": "Expert",
+          "icon": "🦊"
+        },
+        {
+          "name": "Bash for Gitlab",
+          "level": "Very Good",
+          "icon": "`>_`"
+        }
+      ]
+    }
+  ],
+  "talks": [
+    {
+      "title": "Python Librarian",
+      "url": "https://www.youtube.com/channel/UCw1p2a3LW1VG7DTZQaT8Oaw",
+      "icon": "▶️"
     }
   ]
 }

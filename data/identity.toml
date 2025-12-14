@@ -3,39 +3,111 @@
 name = "Matthew Dean Martin"
 tagline = "Pythonist, C# Dev, and Open Source Maintainer"
 location = "United States"
-email = "matthew.dean.martin@gmail.com" # Inferred from gravatar/commits usually, placeholder here
 
+# --- Resumes ---
+[[resumes]]
+label = "Resume from 2015"
+url = "https://matthewdeanmartin.github.io/"
+icon = "📄"
+
+[[resumes]]
+label = "Novelty Resume from 2024"
+url = "https://matthewdeanmartin.github.io/resume/browser/"
+description = "Hire button and a fire button!"
+icon = "📄"
+
+# --- Talks ---
+[[talks]]
+title = "Python Librarian"
+url = "https://www.youtube.com/channel/UCw1p2a3LW1VG7DTZQaT8Oaw"
+icon = "▶️"
+
+# --- Skills ---
+# Column 1
+[[skills]]
+category = "Devops"
+[[skills.skills]]
+name = "Typescript for AWS CDK"
+level = "Expert"
+icon = "🌐"
+[[skills.skills]]
+name = "Terraform for AWS / HCL"
+level = "Expert"
+icon = "🪐"
+[[skills.skills]]
+name = "Go for Terratest"
+level = "Good enough"
+icon = "🐹"
+
+# Column 2
+[[skills]]
+category = "Backend Development"
+[[skills.skills]]
+name = "Python for Serverless in AWS"
+level = "Expert"
+icon = "🐍"
+[[skills.skills]]
+name = "Postgres"
+icon = "🐘"
+[[skills.skills]]
+name = "DynamoDB"
+icon = "🗄️"
+
+# Column 3
+[[skills]]
+category = "Build Master"
+[[skills.skills]]
+name = "Gitlab Pipelines"
+level = "Expert"
+icon = "🦊"
+[[skills.skills]]
+name = "Bash for Gitlab"
+level = "Very Good"
+icon = "`>_`"
+
+# --- Profiles (Backlinks) ---
+
+# Group: Social Media with Backlinks
 [[profiles]]
-service = "mastodon"
-handle = "@mistersql"
+service = "Mastodon"
+handle = "mastodon.social/@mistersql"
 url = "https://mastodon.social/@mistersql"
+group = "social"
+icon = "🐘"
 
 [[profiles]]
-service = "linkedin"
-handle = "matthewdeanmartin"
-url = "https://linkedin.com/in/matthewdeanmartin"
-
-[[profiles]]
-service = "linktree"
-handle = "matthewmartin"
-url = "https://linktr.ee/matthewmartin"
-
-[[profiles]]
-service = "dev_to"
-handle = "matthewdeanmartin"
-url = "https://dev.to/matthewdeanmartin"
-
-[[profiles]]
-service = "bluesky"
-handle = "mistersql.bsky.social"
+service = "BlueSky"
+handle = "bsky.app"
 url = "https://bsky.app/profile/mistersql.bsky.social"
+group = "social"
+icon = "🦋"
 
 [[profiles]]
-service = "stackoverflow"
-handle = "matthewmartin"
+service = "LinkedIn"
+handle = "LinkedIn"
+url = "https://linkedin.com/in/matthewdeanmartin"
+group = "social"
+icon = "🔗"
+
+
+# Group: Verified Profile Pages
+[[profiles]]
+service = "Dev.to"
+handle = "dev.to"
+url = "https://dev.to/matthewdeanmartin"
+group = "verified"
+icon = "💻"
+
+[[profiles]]
+service = "Gravatar"
+handle = "Gravatar"
+url = "https://gravatar.com/matthewdmartin"
+group = "verified"
+icon = "🌀"
+
+[[profiles]]
+service = "StackOverflow"
+handle = "StackOverflow"
 url = "https://stackoverflow.com/users/33264/matthewmartin"
-
-[[profiles]]
-service = "website"
-handle = "blog"
-url = "https://github.com/matthewdeanmartin/blog"
+group = "verified"
+icon = "🔥"

@@ -1,0 +1,43 @@
+{% extends "layouts/master.md.j2" %}
+
+{% block body %}
+# {{ identity.name }}
+
+> {{ identity.tagline }}
+
+**Languages**: [English](README.en.md) | [Español](README.es.md) | [Français](README.fr.md)
+
+{% include "components/identity_graph.md.j2" %}
+
+{% if config.modes.current == "job_hunting" %}
+## Open to Roles
+I am currently looking for new opportunities. My focus is on production-quality backend systems.
+
+### Skills
+* Python, Rust, Go
+* AWS, Kubernetes, Terraform
+
+{% elif config.modes.current == "project_promotion" %}
+## Featured Projects
+Check out my latest open source work.
+
+{% for project in projects %}
+{% if project.featured %}
+### [{{ project.name }}]({{ project.url }})
+{{ project.description }}
+*Status: {{ project.status }}*
+{% endif %}
+{% endfor %}
+
+{% elif config.modes.current == "self_promotion" %}
+## Recent Talks & Writings
+I write about software architecture and team dynamics.
+
+{{ include_content('pages/talks.md') }}
+
+{% endif %}
+
+## About Me
+{{ include_content('pages/about.md') }}
+
+{% endblock %}

@@ -1,5 +1,5 @@
 GHIP: 001
-Title: Multi-Page, Mode-Aware GitHub README CMS
+Title: "github-is-my-cms", a multipage job search and project promotion site generator
 Author: Matthew Dean Martin
 Status: Draft
 Type: Standards Track

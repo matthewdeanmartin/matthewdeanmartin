@@ -3,10 +3,12 @@ config.py
 Configuration loader for the README CMS.
 Responsible for reading TOML files and instantiating the CMSConfig model.
 """
+
 from __future__ import annotations
+
 import sys
 from pathlib import Path
-from typing import Dict, Any
+from typing import Any, Dict
 
 # Use tomllib for Python 3.11+, fallback to tomli for older versions if needed.
 # Since the GHIP is dated 2025, we assume Python 3.11+ is standard.
@@ -77,7 +79,7 @@ class ConfigLoader:
             "modes": main_config.get("mode", {}),  # GHIP uses [mode] table
             "languages": main_config.get("languages", {}),
             "projects": projects_list,
-            "pypi_packages": pypi_list
+            "pypi_packages": pypi_list,
         }
 
         # 6. Validate and Return

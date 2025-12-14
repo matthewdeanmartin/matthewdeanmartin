@@ -4,17 +4,16 @@ The core build engine for the README CMS.
 Compiles Jinja templates + TOML data + Markdown content into final artifacts.
 """
 
-import json
+import datetime
 import shutil
 from pathlib import Path
-from typing import Any, Dict
 
 import orjson
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from pydantic import HttpUrl
 
-from .models import CMSConfig
 from .config import load_config
+from .models import CMSConfig
 
 
 class SiteBuilder:
@@ -40,12 +39,14 @@ class SiteBuilder:
         # Setup Jinja2 Environment
         self.env = Environment(
             loader=FileSystemLoader(self.templates_dir),
-            autoescape=select_autoescape(['html', 'xml']),
+            autoescape=select_autoescape(["html", "xml"]),
             trim_blocks=True,
             lstrip_blocks=True,
         )
 
         # Inject Globals and Helpers
+        self.env.globals["generation"] = {"generated_at": datetime.datetime.now()}
+
         self.env.globals["config"] = self.config
         self.env.globals["identity"] = self.config.identity
         self.env.globals["mode"] = self.config.current_mode_settings
@@ -62,7 +63,7 @@ class SiteBuilder:
         """
         file_path = self.content_dir / filename
         if not file_path.exists():
-            return f""
+            return ""
         return file_path.read_text(encoding="utf-8")
 
     def clean(self):
@@ -87,14 +88,18 @@ class SiteBuilder:
         # 2. Projects API (Combines Manual + PyPI)
         projects_data = {
             "projects": [p.model_dump() for p in self.config.projects],
-            "pypi": [p.model_dump() for p in self.config.pypi_packages]
+            "pypi": [p.model_dump() for p in self.config.pypi_packages],
         }
+
         # , indent=2
         def default(obj):
             if isinstance(obj, HttpUrl):
                 return str(obj)
             raise TypeError
-        (self.api_out / "projects.json").write_text(orjson.dumps(projects_data, default=default).decode(), encoding="utf-8")
+
+        (self.api_out / "projects.json").write_text(
+            orjson.dumps(projects_data, default=default).decode(), encoding="utf-8"
+        )
 
         # 3. Mode/Config Metadata (optional but useful)
         mode_data = self.config.modes.model_dump_json(indent=2)
@@ -152,7 +157,7 @@ class SiteBuilder:
             rendered = template.render()
 
             (self.html_out / target_name).write_text(rendered, encoding="utf-8")
-            count +=1
+            count += 1
         if not count:
             raise TypeError("No html pages build")
 

@@ -1,6 +1,6 @@
 """
 cli.py
-Command-line interface for the Multi-Page, Mode-Aware GitHub README CMS.
+Command-line interface for the github-is-my-cms.
 Handles argument parsing, logging setup, and command dispatch.
 """
 
@@ -12,7 +12,6 @@ from typing import List, Optional
 
 # Import the builder
 from .builder import SiteBuilder
-
 from .data_sources import DataUpdater
 
 # Versioning
@@ -31,7 +30,7 @@ def setup_logging(level_name: str):
     logging.basicConfig(
         level=numeric_level,
         format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-        datefmt="%H:%M:%S"
+        datefmt="%H:%M:%S",
     )
 
 
@@ -94,60 +93,50 @@ def cmd_update_data(args: argparse.Namespace):
 
 def main(argv: Optional[List[str]] = None):
     parser = argparse.ArgumentParser(
-        description="Multi-Page, Mode-Aware GitHub README CMS",
-        formatter_class=argparse.ArgumentDefaultsHelpFormatter
+        description="github-is-my-cms, a github centric profile and readme generator",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
 
     # --- Global Arguments ---
-    parser.add_argument(
-        "--version",
-        action="version",
-        version=f"%(prog)s {VERSION}"
-    )
+    parser.add_argument("--version", action="version", version=f"%(prog)s {VERSION}")
     parser.add_argument(
         "--log-level",
         default="INFO",
         choices=["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"],
-        help="Set the logging verbosity."
+        help="Set the logging verbosity.",
     )
     parser.add_argument(
         "--root",
         default=".",
-        help="Path to the repository root containing readme_cms.toml."
+        help="Path to the repository root containing readme_cms.toml.",
     )
 
     # --- Subcommands ---
     subparsers = parser.add_subparsers(
-        title="Commands",
-        dest="command",
-        help="Available operations"
+        title="Commands", dest="command", help="Available operations"
     )
 
     # Command: build
     parser_build = subparsers.add_parser(
-        "build",
-        help="Compile TOML and Markdown into final docs/ artefacts."
+        "build", help="Compile TOML and Markdown into final docs/ artefacts."
     )
     parser_build.set_defaults(func=cmd_build)
 
     # Command: lint (Placeholder)
     parser_lint = subparsers.add_parser(
-        "lint",
-        help="Validate links, content structure, and data integrity."
+        "lint", help="Validate links, content structure, and data integrity."
     )
     parser_lint.set_defaults(func=cmd_lint)
 
     # Command: translate (Placeholder)
     parser_translate = subparsers.add_parser(
-        "translate",
-        help="Regenerate translations using configured LLM provider."
+        "translate", help="Regenerate translations using configured LLM provider."
     )
     parser_translate.set_defaults(func=cmd_translate)
 
     # Command: update-data (Placeholder)
     parser_update = subparsers.add_parser(
-        "update-data",
-        help="Refresh cached data from PyPI and GitHub APIs."
+        "update-data", help="Refresh cached data from PyPI and GitHub APIs."
     )
     parser_update.set_defaults(func=cmd_update_data)
 

@@ -1,0 +1,54 @@
+[Home](../../README.md) | [Projects](projects.md) | [About](about.md) | [API](../apis/openapi.yaml)
+
+---
+
+# Matthew Dean Martin
+
+Pythonist, C# Dev, and Open Source Maintainer
+
+## Skills
+
+I used to be a full stack developer, I evolved into tech lead and most recently devops work. I write code and know how
+to ship in a govtech environment.
+
+| Devops                                  | Backend Development                          | Build Master                         | 
+|-----------------------------------------|----------------------------------------------|--------------------------------------| 
+| 🌐 Typescript for AWS CDK - Expert<br>  | 🐍 Python for Serverless in AWS - Expert<br> | 🦊 Gitlab Pipelines - Expert<br>     | 
+| 🪐 Terraform for AWS / HCL - Expert<br> | 🐘 Postgres<br>                              | `>_` Bash for Gitlab - Very Good<br> | 
+| 🐹 Go for Terratest - Good enough<br>   | 🗄️ DynamoDB<br>                             | <br>                                 | 
+
+## Resumes
+
+📄 [Resume from 2015](https://matthewdeanmartin.github.io/)<br>
+📄 [Novelty Resume from 2024](https://matthewdeanmartin.github.io/resume/browser/) Hire button and a fire button!<br>
+
+## Identity Backlinks
+
+Bidirectional backlinks on profile pages are evidence that I control both pages. This is not generally true for all
+backlinks. Read up on `rel="me"` and oauth to learn more.
+
+| Social Media with Backlinks                                                                                                                                                                          | Verified Profile Pages                                                                                                                                                                |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 🐘[mastodon.social/@mistersql](https://mastodon.social/@mistersql) <br>🦋[bsky.app](https://bsky.app/profile/mistersql.bsky.social) <br>🔗[LinkedIn](https://linkedin.com/in/matthewdeanmartin) <br> | 💻 [dev.to](https://dev.to/matthewdeanmartin) <br>🌀 [Gravatar](https://gravatar.com/matthewdmartin) <br>🔥 [StackOverflow](https://stackoverflow.com/users/33264/matthewmartin) <br> |
+
+## My Public Talks
+
+▶️ [Python Librarian](https://www.youtube.com/channel/UCw1p2a3LW1VG7DTZQaT8Oaw)
+
+## Side Projects
+
+Over the
+years [I have worked on a lot of side projects, check them out](https://github.com/matthewdeanmartin/matthewdeanmartin/blob/master/README.sideprojects.md)
+
+### Featured Highlights
+
+* **[cli_tool_audit](https://matthewdeanmartin.github.io/cli_tool_audit/cli_tool_audit/index.html)**: Verify that a list
+  of cli tools are available. Like a requirements.txt for cli tools, but without an installer component.
+* **[dedlin](https://github.com/matthewdeanmartin/dedlin)**: Clone of edlin with improvements to make it into more of a
+  DSL
+
+---
+
+*Generated
+by [github-is-my-cms](https://github.com/matthewdeanmartin/matthewdeanmartin/blob/master/src/README.md)*
+*Mode: SiteMode.PROJECT_PROMOTION | Updated: 2025-12-14 14:02:55.593293*

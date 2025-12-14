@@ -2,22 +2,22 @@
 data_sources.py
 Handles fetching external data from PyPI and GitHub APIs to update local TOML caches.
 """
+
 import json
 import logging
-import urllib.request
-import urllib.error
-import subprocess
 import shutil
+import subprocess
+import tomllib
+import urllib.error
+import urllib.request
 from datetime import date, datetime
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import Any, Dict, List
+
 import tomli_w
-import tomllib
-
-
-
 
 logger = logging.getLogger(__name__)
+
 
 class GitHubFetcher:
     """
@@ -63,11 +63,15 @@ class GitHubFetcher:
 
         # Fields to fetch: name, description, url, isArchived, repositoryTopics
         cmd = [
-            "gh", "repo", "list",
+            "gh",
+            "repo",
+            "list",
             "--public",  # Exclude private repos
             "--source",  # Exclude forks (optional, usually preferred for profiles)
-            "--limit", "1000",  # Ensure we get everything
-            "--json", "name,description,url,isArchived,repositoryTopics,homepageUrl"
+            "--limit",
+            "1000",  # Ensure we get everything
+            "--json",
+            "name,description,url,isArchived,repositoryTopics,homepageUrl",
         ]
 
         try:
@@ -85,10 +89,12 @@ class GitHubFetcher:
             logger.error("GitHub: Failed to parse CLI output.")
             return []
 
+
 class PyPIFetcher:
     """
     Fetches metadata from PyPI JSON API.
     """
+
     BASE_URL = "https://pypi.org/pypi/{package}/json"
 
     def fetch(self, package_name: str) -> Dict[str, Any]:
@@ -96,7 +102,9 @@ class PyPIFetcher:
         try:
             with urllib.request.urlopen(url) as response:
                 if response.status != 200:
-                    logger.warning(f"PyPI: {package_name} returned status {response.status}")
+                    logger.warning(
+                        f"PyPI: {package_name} returned status {response.status}"
+                    )
                     return {}
                 data = json.loads(response.read().decode())
 
@@ -111,7 +119,7 @@ class PyPIFetcher:
                     # Note: PyPI JSON no longer provides download stats directly.
                     # We retain existing counts or set to 0.
                     # Real impl requires pypistats.org API.
-                    "last_updated": date.today().isoformat()
+                    "last_updated": date.today().isoformat(),
                 }
         except urllib.error.URLError as e:
             logger.error(f"Failed to fetch PyPI data for {package_name}: {e}")
@@ -209,10 +217,7 @@ class DataUpdater:
                     "tags": topics,
                     "status": status,
                     # Initialize empty CMS directive container for future use
-                    "cms": {
-                        "suppress": False,
-                        "package_links": []
-                    }
+                    "cms": {"suppress": False, "package_links": []},
                 }
                 project_map[slug] = entry
 
@@ -224,7 +229,9 @@ class DataUpdater:
                 repo_url = str(entry.get("repository_url", ""))
                 if "github.com" in repo_url:
                     # It was a github repo, but now it's gone from the public list
-                    logger.info(f"Project {slug} not found in public GitHub list. Marking as 'gone'.")
+                    logger.info(
+                        f"Project {slug} not found in public GitHub list. Marking as 'gone'."
+                    )
                     entry["status"] = "gone"
                 else:
                     # It's a manual project (not hosted on GH), leave it alone.
@@ -235,12 +242,11 @@ class DataUpdater:
         sorted_projects = sorted(project_map.values(), key=lambda x: x["slug"])
         output_data = {"projects": sorted_projects}
 
-
         with open(self.projects_file, "wb") as f:
             tomli_w.dump(output_data, f)
-        logger.info(f"Successfully synced {len(sorted_projects)} projects to {self.projects_file}")
-
-
+        logger.info(
+            f"Successfully synced {len(sorted_projects)} projects to {self.projects_file}"
+        )
 
     def update_pypi_data(self):
         """
@@ -255,6 +261,7 @@ class DataUpdater:
         # but here we rely on the ConfigLoader logic or just standard toml loading.
         # For the updater, we need the raw dict.
         import sys
+
         if sys.version_info >= (3, 11):
             import tomllib
         else:
