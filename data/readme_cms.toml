@@ -1,4 +1,4 @@
-# src/readme_maker/data/readme_cms.toml
+# src/github_is_my_cms/data/readme_cms.toml
 
 [mode]
 # Options: "job_hunting", "project_promotion", "self_promotion"

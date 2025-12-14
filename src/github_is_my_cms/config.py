@@ -6,21 +6,15 @@ Responsible for reading TOML files and instantiating the CMSConfig model.
 
 from __future__ import annotations
 
+import logging
 import sys
+import tomllib
 from pathlib import Path
 from typing import Any, Dict
 
-# Use tomllib for Python 3.11+, fallback to tomli for older versions if needed.
-# Since the GHIP is dated 2025, we assume Python 3.11+ is standard.
-if sys.version_info >= (3, 11):
-    import tomllib
-else:
-    try:
-        import tomli as tomllib
-    except ImportError:
-        raise ImportError("Python 3.11+ or 'tomli' package is required.")
-
 from .models import CMSConfig
+
+logger = logging.getLogger(__name__)
 
 
 class ConfigLoader:

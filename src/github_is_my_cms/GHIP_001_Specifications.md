@@ -98,7 +98,7 @@ The recommended directory structure:
         readme_cms.yml       # Scheduled GitHub Actions workflow
 
 src/
-    readme_maker/           # Python package (core CMS)
+    github_is_my_cms/           # Python package (core CMS)
         __init__.py
         cli.py
         config.py
@@ -225,7 +225,7 @@ Mode selection affects:
 
 ### Data (TOML)
 
-All structured metadata is stored as TOML under `src/readme_maker/data/` (or similar):
+All structured metadata is stored as TOML under `src/github_is_my_cms/data/` (or similar):
 
 - `identity.toml`
 
@@ -588,7 +588,7 @@ Errors should cause the CI job to fail. Warnings can be reported without failing
 
 ## Reference Implementation Sketch
 
-A reference implementation is expected to be a Python package `readme_maker` with:
+A reference implementation is expected to be a Python package `github_is_my_cms` with:
 
 - CLI using argparse.
 

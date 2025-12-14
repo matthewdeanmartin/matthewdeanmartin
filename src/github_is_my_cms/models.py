@@ -7,11 +7,13 @@ Implements schema validation and JSON serialization for the Static API.
 from __future__ import annotations
 
 import itertools
+import logging
 from enum import Enum
 from typing import Any, List, Optional
 
 from pydantic import BaseModel, Field, HttpUrl, field_validator
 
+logger = logging.getLogger(__name__)
 # --- Enums ---
 
 

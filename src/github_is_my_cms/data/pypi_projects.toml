@@ -1,4 +1,4 @@
-# src/readme_maker/data/pypi_projects.toml
+# src/github_is_my_cms/data/pypi_projects.toml
 
 [[packages]]
 package_name = "dedlin"

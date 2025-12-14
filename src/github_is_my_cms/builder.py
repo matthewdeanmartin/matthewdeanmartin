@@ -5,6 +5,7 @@ Compiles Jinja templates + TOML data + Markdown content into final artifacts.
 """
 
 import datetime
+import logging
 import shutil
 from pathlib import Path
 
@@ -15,6 +16,8 @@ from pydantic import HttpUrl
 from .config import load_config
 from .models import CMSConfig
 
+logger = logging.getLogger(__name__)
+
 
 class SiteBuilder:
     """
@@ -23,9 +26,10 @@ class SiteBuilder:
 
     def __init__(self, root_dir: str = "."):
         self.root = Path(root_dir)
+        # TODO: this is messed up. It should be from editable installation or package.
         self.src = self.root / "src"
         self.content_dir = self.src / "content"
-        self.templates_dir = self.src / "readme_maker" / "templates"
+        self.templates_dir = self.src / "github_is_my_cms" / "templates"
 
         # Output directories
         self.docs_dir = self.root / "docs"
@@ -148,6 +152,7 @@ class SiteBuilder:
         # This aligns with the "Equal Enjoyment" goal of GHIP-001.
 
         pages_dir = self.templates_dir / "pages"
+        logger.info(f"Templates from {pages_dir}")
         count = 0
         for template_path in pages_dir.glob("*.html.j2"):
             template_name = template_path.name

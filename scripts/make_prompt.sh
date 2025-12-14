@@ -2,10 +2,10 @@
 set -euo pipefail
 
 # readonly SCRIPT_NS="bash2gitlab_proc"
-readonly SRC_DIR="./src/readme_maker"
+readonly SRC_DIR="./src/github_is_my_cms"
 readonly TMP_ROOT="/tmp"
-readonly TMP_DIR="${TMP_ROOT}/readme_maker"
-readonly OUTPUT_MD_BASENAME="readme_maker.flat.md"
+readonly TMP_DIR="${TMP_ROOT}/github_is_my_cms"
+readonly OUTPUT_MD_BASENAME="github_is_my_cms.flat.md"
 
 # Copy directory safely
 bash2gitlab_proc::copy_to_tmp() {
@@ -19,7 +19,7 @@ bash2gitlab_proc::copy_to_tmp() {
   cp -a "${SRC_DIR}" "${TMP_DIR}"
 }
 
-# Run strip-docs for each subdirectory of tmp/readme_maker
+# Run strip-docs for each subdirectory of tmp/github_is_my_cms
 bash2gitlab_proc::run_strip_docs() {
   local dir
   echo "Running strip-docs on '${TMP_DIR}' and subdirectories..."

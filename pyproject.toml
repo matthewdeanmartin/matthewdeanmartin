@@ -31,8 +31,7 @@ dependencies = [
     "jinja2>=3.1.0",
     # speed
     "orjson",
-    "tomli-w",
-    "tomllib"
+    "tomli-w"
 ]
 
 [project.scripts]
@@ -40,7 +39,7 @@ gimc = "github_is_my_cms.cli:main"
 github-is-my-cms = "github_is_my_cms.cli:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/readme_maker"]
+packages = ["src/github_is_my_cms"]
 
 [dependency-groups]
 dev = [
