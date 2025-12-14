@@ -429,6 +429,118 @@ wheels = [
 ]
 
 [[package]]
+name = "github-is-my-cms"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "jinja2" },
+    { name = "orjson" },
+    { name = "pydantic" },
+    { name = "tomli-w" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "cffi" },
+    { name = "codespell" },
+    { name = "detect-test-pollution" },
+    { name = "gha-update" },
+    { name = "git2md" },
+    { name = "hatchling" },
+    { name = "httpie" },
+    { name = "hypothesis", extra = ["cli"] },
+    { name = "interrogate" },
+    { name = "jiggle-version" },
+    { name = "linkcheckmd" },
+    { name = "mdformat" },
+    { name = "metametameta" },
+    { name = "mkdocs" },
+    { name = "mkdocstrings", extra = ["python"] },
+    { name = "mypy" },
+    { name = "packaging" },
+    { name = "pdoc3" },
+    { name = "pre-commit" },
+    { name = "proselint" },
+    { name = "pyclean" },
+    { name = "pydoctest" },
+    { name = "pyenchant" },
+    { name = "pylint" },
+    { name = "pytest" },
+    { name = "pytest-asyncio" },
+    { name = "pytest-cov" },
+    { name = "pytest-mock" },
+    { name = "pytest-randomly" },
+    { name = "pytest-sugar" },
+    { name = "pytest-timeout" },
+    { name = "pytest-unused-fixtures" },
+    { name = "pytest-xdist" },
+    { name = "ruff" },
+    { name = "strip-docs" },
+    { name = "troml-dev-status" },
+    { name = "types-requests" },
+    { name = "types-toml" },
+    { name = "typing-extensions" },
+    { name = "vermin" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "jinja2", specifier = ">=3.1.0" },
+    { name = "orjson" },
+    { name = "pydantic", specifier = ">=2.0" },
+    { name = "tomli-w" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "cffi" },
+    { name = "codespell", marker = "python_full_version >= '3.8'", specifier = ">=2.2.6" },
+    { name = "detect-test-pollution" },
+    { name = "gha-update", marker = "python_full_version >= '3.12'" },
+    { name = "git2md", marker = "python_full_version >= '3.10'" },
+    { name = "hatchling", marker = "python_full_version >= '3.8'" },
+    { name = "httpie" },
+    { name = "hypothesis", extras = ["cli"], marker = "python_full_version >= '3.8'" },
+    { name = "interrogate", marker = "python_full_version >= '3.8'", specifier = ">=1.5.0" },
+    { name = "jiggle-version" },
+    { name = "linkcheckmd" },
+    { name = "linkcheckmd", marker = "python_full_version >= '3.8'", specifier = ">=1.4.0" },
+    { name = "mdformat" },
+    { name = "mdformat", marker = "python_full_version >= '3.8'", specifier = ">=0.5.0" },
+    { name = "metametameta", marker = "python_full_version >= '3.9'", specifier = ">=0.1.3" },
+    { name = "mkdocs", marker = "python_full_version >= '3.12'" },
+    { name = "mkdocstrings", extras = ["python"] },
+    { name = "mypy", marker = "python_full_version >= '3.8'" },
+    { name = "packaging", marker = "python_full_version >= '3.8'" },
+    { name = "pdoc3", marker = "python_full_version >= '3.8'", specifier = ">=0.5.0" },
+    { name = "pre-commit" },
+    { name = "proselint" },
+    { name = "pyclean", marker = "python_full_version >= '3.12'" },
+    { name = "pydoctest", marker = "python_full_version >= '3.8'", specifier = "==0.2.1" },
+    { name = "pyenchant", marker = "python_full_version >= '3.8'", specifier = ">=3.2.2" },
+    { name = "pylint" },
+    { name = "pylint", marker = "python_full_version >= '3.8'" },
+    { name = "pytest", specifier = ">=6.0.1" },
+    { name = "pytest", marker = "python_full_version >= '3.8'" },
+    { name = "pytest-asyncio" },
+    { name = "pytest-cov", specifier = ">=2.10.1" },
+    { name = "pytest-cov", marker = "python_full_version >= '3.8'" },
+    { name = "pytest-mock", marker = "python_full_version >= '3.8'" },
+    { name = "pytest-randomly", marker = "python_full_version >= '3.8'", specifier = ">=3.15.0" },
+    { name = "pytest-sugar", marker = "python_full_version >= '3.8'", specifier = ">=0.9.7" },
+    { name = "pytest-timeout", specifier = ">=2.4.0" },
+    { name = "pytest-unused-fixtures", marker = "python_full_version >= '3.10'" },
+    { name = "pytest-xdist", marker = "python_full_version >= '3.8'", specifier = ">=3.5.0" },
+    { name = "ruff", marker = "python_full_version >= '3.8'", specifier = ">=0.12.0" },
+    { name = "strip-docs", marker = "python_full_version >= '3.12'", specifier = ">=1.0" },
+    { name = "troml-dev-status", specifier = ">0.5.0" },
+    { name = "types-requests" },
+    { name = "types-toml", marker = "python_full_version >= '3.8'" },
+    { name = "typing-extensions" },
+    { name = "vermin", marker = "python_full_version >= '3.8'" },
+]
+
+[[package]]
 name = "google-re2"
 version = "1.1.20251105"
 source = { registry = "https://pypi.org/simple" }
@@ -1602,116 +1714,6 @@ wheels = [
 ]
 
 [[package]]
-name = "readme-maker"
-version = "0.1.0"
-source = { editable = "." }
-dependencies = [
-    { name = "jinja2" },
-    { name = "orjson" },
-    { name = "pydantic" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "cffi" },
-    { name = "codespell" },
-    { name = "detect-test-pollution" },
-    { name = "gha-update" },
-    { name = "git2md" },
-    { name = "hatchling" },
-    { name = "httpie" },
-    { name = "hypothesis", extra = ["cli"] },
-    { name = "interrogate" },
-    { name = "jiggle-version" },
-    { name = "linkcheckmd" },
-    { name = "mdformat" },
-    { name = "metametameta" },
-    { name = "mkdocs" },
-    { name = "mkdocstrings", extra = ["python"] },
-    { name = "mypy" },
-    { name = "packaging" },
-    { name = "pdoc3" },
-    { name = "pre-commit" },
-    { name = "proselint" },
-    { name = "pyclean" },
-    { name = "pydoctest" },
-    { name = "pyenchant" },
-    { name = "pylint" },
-    { name = "pytest" },
-    { name = "pytest-asyncio" },
-    { name = "pytest-cov" },
-    { name = "pytest-mock" },
-    { name = "pytest-randomly" },
-    { name = "pytest-sugar" },
-    { name = "pytest-timeout" },
-    { name = "pytest-unused-fixtures" },
-    { name = "pytest-xdist" },
-    { name = "ruff" },
-    { name = "strip-docs" },
-    { name = "troml-dev-status" },
-    { name = "types-requests" },
-    { name = "types-toml" },
-    { name = "typing-extensions" },
-    { name = "vermin" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "jinja2", specifier = ">=3.1.0" },
-    { name = "orjson" },
-    { name = "pydantic", specifier = ">=2.0" },
-]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "cffi" },
-    { name = "codespell", marker = "python_full_version >= '3.8'", specifier = ">=2.2.6" },
-    { name = "detect-test-pollution" },
-    { name = "gha-update", marker = "python_full_version >= '3.12'" },
-    { name = "git2md", marker = "python_full_version >= '3.10'" },
-    { name = "hatchling", marker = "python_full_version >= '3.8'" },
-    { name = "httpie" },
-    { name = "hypothesis", extras = ["cli"], marker = "python_full_version >= '3.8'" },
-    { name = "interrogate", marker = "python_full_version >= '3.8'", specifier = ">=1.5.0" },
-    { name = "jiggle-version" },
-    { name = "linkcheckmd" },
-    { name = "linkcheckmd", marker = "python_full_version >= '3.8'", specifier = ">=1.4.0" },
-    { name = "mdformat" },
-    { name = "mdformat", marker = "python_full_version >= '3.8'", specifier = ">=0.5.0" },
-    { name = "metametameta", marker = "python_full_version >= '3.9'", specifier = ">=0.1.3" },
-    { name = "mkdocs", marker = "python_full_version >= '3.12'" },
-    { name = "mkdocstrings", extras = ["python"] },
-    { name = "mypy", marker = "python_full_version >= '3.8'" },
-    { name = "packaging", marker = "python_full_version >= '3.8'" },
-    { name = "pdoc3", marker = "python_full_version >= '3.8'", specifier = ">=0.5.0" },
-    { name = "pre-commit" },
-    { name = "proselint" },
-    { name = "pyclean", marker = "python_full_version >= '3.12'" },
-    { name = "pydoctest", marker = "python_full_version >= '3.8'", specifier = "==0.2.1" },
-    { name = "pyenchant", marker = "python_full_version >= '3.8'", specifier = ">=3.2.2" },
-    { name = "pylint" },
-    { name = "pylint", marker = "python_full_version >= '3.8'" },
-    { name = "pytest", specifier = ">=6.0.1" },
-    { name = "pytest", marker = "python_full_version >= '3.8'" },
-    { name = "pytest-asyncio" },
-    { name = "pytest-cov", specifier = ">=2.10.1" },
-    { name = "pytest-cov", marker = "python_full_version >= '3.8'" },
-    { name = "pytest-mock", marker = "python_full_version >= '3.8'" },
-    { name = "pytest-randomly", marker = "python_full_version >= '3.8'", specifier = ">=3.15.0" },
-    { name = "pytest-sugar", marker = "python_full_version >= '3.8'", specifier = ">=0.9.7" },
-    { name = "pytest-timeout", specifier = ">=2.4.0" },
-    { name = "pytest-unused-fixtures", marker = "python_full_version >= '3.10'" },
-    { name = "pytest-xdist", marker = "python_full_version >= '3.8'", specifier = ">=3.5.0" },
-    { name = "ruff", marker = "python_full_version >= '3.8'", specifier = ">=0.12.0" },
-    { name = "strip-docs", marker = "python_full_version >= '3.12'", specifier = ">=1.0" },
-    { name = "troml-dev-status", specifier = ">0.5.0" },
-    { name = "types-requests" },
-    { name = "types-toml", marker = "python_full_version >= '3.8'" },
-    { name = "typing-extensions" },
-    { name = "vermin", marker = "python_full_version >= '3.8'" },
-]
-
-[[package]]
 name = "regex"
 version = "2025.11.3"
 source = { registry = "https://pypi.org/simple" }
@@ -1922,6 +1924,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz", hash = "sha256:b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f", size = 22253, upload-time = "2020-11-01T01:40:22.204Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/44/6f/7120676b6d73228c96e17f1f794d8ab046fc910d781c8d151120c3f1569e/toml-0.10.2-py2.py3-none-any.whl", hash = "sha256:806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b", size = 16588, upload-time = "2020-11-01T01:40:20.672Z" },
+]
+
+[[package]]
+name = "tomli-w"
+version = "1.2.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/19/75/241269d1da26b624c0d5e110e8149093c759b7a286138f4efd61a60e75fe/tomli_w-1.2.0.tar.gz", hash = "sha256:2dd14fac5a47c27be9cd4c976af5a12d87fb1f0b4512f81d69cce3b35ae25021", size = 7184, upload-time = "2025-01-15T12:07:24.262Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c7/18/c86eb8e0202e32dd3df50d43d7ff9854f8e0603945ff398974c1d91ac1ef/tomli_w-1.2.0-py3-none-any.whl", hash = "sha256:188306098d013b691fcadc011abd66727d3c414c571bb01b1a174ba8c983cf90", size = 6675, upload-time = "2025-01-15T12:07:22.074Z" },
 ]
 
 [[package]]

@@ -57,6 +57,10 @@ class Identity(BaseModel):
 
 # --- Project Models ---
 
+class CMSDirective(BaseModel):
+    suppress: bool = False
+    package_links: List[HttpUrl] = []
+
 class Project(BaseModel):
     """
     A manually curated project entry (from projects.toml).
@@ -69,6 +73,8 @@ class Project(BaseModel):
     tags: List[str] = Field(default_factory=list)
     featured: bool = False
     status: str = Field("active", description="active, archived, or maintenance")
+
+    cms: Optional[CMSDirective] = None
 
 class PyPIPackage(BaseModel):
     """

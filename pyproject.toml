@@ -30,11 +30,18 @@ dependencies = [
     "pydantic>=2.0",
     "jinja2>=3.1.0",
     # speed
-    "orjson"
+    "orjson",
+    "tomli-w",
+    "tomllib"
 ]
 
 [project.scripts]
 readme-make = "readme_maker.cli:main"
+readme_make = "readme_maker.cli:main"
+
+readme-maker = "readme_maker.cli:main"
+readme_maker = "readme_maker.cli:main"
+
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/readme_maker"]

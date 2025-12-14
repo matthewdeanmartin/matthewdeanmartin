@@ -1,0 +1,41 @@
+# src/readme_maker/data/identity.toml
+
+name = "Matthew Dean Martin"
+tagline = "Pythonist, C# Dev, and Open Source Maintainer"
+location = "United States"
+email = "matthew.dean.martin@gmail.com" # Inferred from gravatar/commits usually, placeholder here
+
+[[profiles]]
+service = "mastodon"
+handle = "@mistersql"
+url = "https://mastodon.social/@mistersql"
+
+[[profiles]]
+service = "linkedin"
+handle = "matthewdeanmartin"
+url = "https://linkedin.com/in/matthewdeanmartin"
+
+[[profiles]]
+service = "linktree"
+handle = "matthewmartin"
+url = "https://linktr.ee/matthewmartin"
+
+[[profiles]]
+service = "dev_to"
+handle = "matthewdeanmartin"
+url = "https://dev.to/matthewdeanmartin"
+
+[[profiles]]
+service = "bluesky"
+handle = "mistersql.bsky.social"
+url = "https://bsky.app/profile/mistersql.bsky.social"
+
+[[profiles]]
+service = "stackoverflow"
+handle = "matthewmartin"
+url = "https://stackoverflow.com/users/33264/matthewmartin"
+
+[[profiles]]
+service = "website"
+handle = "blog"
+url = "https://github.com/matthewdeanmartin/blog"

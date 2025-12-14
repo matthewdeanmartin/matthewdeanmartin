@@ -28,7 +28,8 @@ class ConfigLoader:
 
     def __init__(self, root_dir: Path):
         self.root_dir = root_dir
-        self.data_dir = self.root_dir / "src" / "readme_maker" / "data"
+        # CHANGED: Data directory is now expected in the user's project root, not the package source
+        self.data_dir = self.root_dir / "data"
         self.config_file = self.root_dir / "readme_cms.toml"
 
     def _load_toml_file(self, filepath: Path) -> Dict[str, Any]:

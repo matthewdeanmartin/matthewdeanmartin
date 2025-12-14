@@ -39,12 +39,6 @@ tags = ["python", "tui", "editor"]
 featured = true
 status = "active"
 
-# This section is preserved by the updater
-[projects.cms]
-suppress = false
-package_links = ["https://pypi.org/project/dedlin/"]
-notes = "Featured project"
-
 # --- AI Projects ---
 
 [[projects]]

@@ -7,12 +7,16 @@ Handles argument parsing, logging setup, and command dispatch.
 import argparse
 import logging
 import sys
+from pathlib import Path
 from typing import List, Optional
 
-# Import the builder (functionality we've already implemented)
+# Import the builder
 from .builder import SiteBuilder
 
-# Versioning (ideally fetched from package metadata in production)
+from .data_sources import DataUpdater
+
+# Versioning
+# TODO: ideally fetched from package metadata in production
 VERSION = "0.1.0"
 
 
@@ -65,10 +69,27 @@ def cmd_translate(args: argparse.Namespace):
 
 def cmd_update_data(args: argparse.Namespace):
     """
-    Placeholder: Fetches fresh data from PyPI and GitHub APIs.
+    Fetches fresh data from PyPI and updates the local TOML files.
     """
-    logging.warning("Command 'update-data' is not yet implemented.")
-    # TODO: Implement fetchers defined in GHIP-001 "Weekly GitHub Actions Workflow"
+    logging.info("Starting data update...")
+
+    if DataUpdater is None:
+        logging.error("DataUpdater module not found.")
+        sys.exit(1)
+
+    root_path = Path(args.root)
+    updater = DataUpdater(root_dir=root_path)
+
+    try:
+        # 1. Update GitHub Projects (Source of Truth)
+        updater.update_projects_from_github()
+
+        # 2. Update PyPI Metadata (Supplementary)
+        updater.update_pypi_data()
+        logging.info("Data update completed.")
+    except Exception as e:
+        logging.error(f"Update failed: {e}", exc_info=True)
+        sys.exit(1)
 
 
 def main(argv: Optional[List[str]] = None):

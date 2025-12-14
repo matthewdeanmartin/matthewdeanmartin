@@ -1,0 +1,17 @@
+[[packages]]
+package_name = "dedlin"
+github_repo = "matthewdeanmartin/dedlin"
+version = "1.19.4"
+summary = "Line editor, edlin clone with many improvements"
+downloads_monthly = 543
+docs_url = "https://github.com/matthewdeanmartin/dedlin"
+last_updated = "2025-12-14"
+
+[[packages]]
+package_name = "cli_tool_audit"
+github_repo = "matthewdeanmartin/cli_tool_audit"
+version = "3.1.0"
+summary = "Audit for existence and version number of cli tools."
+downloads_monthly = 1200
+last_updated = "2025-12-14"
+docs_url = "https://github.com/matthewdeanmartin/cli_tool_audit"
