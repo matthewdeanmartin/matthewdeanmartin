@@ -36,12 +36,8 @@ dependencies = [
 ]
 
 [project.scripts]
-readme-make = "readme_maker.cli:main"
-readme_make = "readme_maker.cli:main"
-
-readme-maker = "readme_maker.cli:main"
-readme_maker = "readme_maker.cli:main"
-
+gimc = "github_is_my_cms.cli:main"
+github-is-my-cms = "github_is_my_cms.cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/readme_maker"]
