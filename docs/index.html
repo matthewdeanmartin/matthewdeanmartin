@@ -3,129 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matthew Dean Martin - Pythonist, Devops Guy, and Govtech Specialist</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <title>Matthew Dean Martin - Resume</title>
     <style>
-        /* Minimal overrides for the profile layout */
-        header.container { padding-bottom: 0; }
-        footer { margin-top: 3rem; text-align: center; opacity: 0.7; }
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --link-color: #0056b3;
+            --border-color: #dddddd;
+        }
+        body {
+            font-family: "Georgia", "Times New Roman", Times, serif;
+            line-height: 1.4;
+            color: var(--text-color);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--bg-color);
+        }
+        a { color: var(--link-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Typography */
+        h1 { margin: 0; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 1px; }
+        h2 { margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.1rem; text-transform: uppercase; border-bottom: 2px solid #333; padding-bottom: 2px; }
+        h3 { margin-top: 1rem; margin-bottom: 0.25rem; font-size: 1rem; font-weight: bold; }
+        p { margin: 0.5rem 0; }
+
+        /* Header / Nav */
+        header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 1.5rem; }
+        .header-info { text-align: right; font-size: 0.9rem; }
+        .nav-links a { margin-left: 10px; font-family: sans-serif; font-size: 0.85rem; color: #666; }
+
+        /* Tables */
+        table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; font-size: 0.95rem; }
+        th, td { text-align: left; padding: 6px 4px; border-bottom: 1px solid #eee; vertical-align: top;}
+        th { font-weight: bold; border-bottom: 2px solid #aaa; }
+
+        /* Lists */
+        ul { margin: 0.5rem 0; padding-left: 1.2rem; }
+        li { margin-bottom: 0.2rem; }
+
+        /* Utility */
+        .meta { color: #666; font-size: 0.85rem; font-style: italic; }
+        .tags { font-family: sans-serif; font-size: 0.75rem; color: #555; }
+        .right { float: right; }
+
+        @media print {
+            body { padding: 0; }
+            .nav-links { display: none; }
+            a[href]:after { content: none !important; }
+        }
     </style>
 </head>
 <body>
-    <nav class="container">
-        <ul>
-            <li><strong>Matthew Dean Martin</strong></li>
-        </ul>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="swagger/index.html">API</a></li>
-            <li><a href="https://mastodon.social/@mistersql" role="button" class="outline">Connect</a></li>
-        </ul>
-    </nav>
-
-    <main class="container">
     <header>
-        <hgroup>
+        <div>
             <h1>Matthew Dean Martin</h1>
-            <h2>Pythonist, Devops Guy, and Govtech Specialist</h2>
-        </hgroup>
+            <div class="meta">Pythonist, Devops Guy, and Govtech Specialist</div>
+        </div>
+        <div class="header-info">
+            <div>United States</div>
+            <div>
+                <a href="https://mastodon.social/@mistersql">Mastodon</a> |                 <a href="https://bsky.app/profile/mistersql.bsky.social">BlueSky</a> |                 <a href="https://linkedin.com/in/matthewdeanmartin">LinkedIn</a>            </div>
+            <div class="nav-links">
+                <a href="index.html">Resume</a>
+                <a href="projects.html">Projects List</a>
+                <a href="swagger/index.html">API</a>
+            </div>
+        </div>
     </header>
 
-    <nav aria-label="breadcrumb">
-        <ul>
-            <li>Languages:</li>
-            <li><a href="index.html" aria-current="page">English</a></li>
-            <li><a href="#">Español</a></li> <li><a href="#">Français</a></li>
-        </ul>
-    </nav>
+    <main>
 
-    <hr>
+    <section>
+        <h2>Professional Summary</h2>
+        <article>
+            
+        </article>
+    </section>
 
-    <section id="connect">
-        <h3>Connect</h3>
-        <div class="grid">
-            <div>
+    <section>
+        <h2>Skills</h2>
+        <table>
+            <tr>
+                <td style="width: 25%; font-weight: bold;">Devops</td>
+                <td>
+                        Typescript for AWS CDK <span class="meta">(Expert)</span>,                         Terraform for AWS / HCL <span class="meta">(Expert)</span>,                         Go for Terratest <span class="meta">(Good enough)</span>                </td>
+            </tr>
+            <tr>
+                <td style="width: 25%; font-weight: bold;">Backend Development</td>
+                <td>
+                        Python for Serverless in AWS <span class="meta">(Expert)</span>,                         Postgres,                         DynamoDB                </td>
+            </tr>
+            <tr>
+                <td style="width: 25%; font-weight: bold;">Build Master</td>
+                <td>
+                        Gitlab Pipelines <span class="meta">(Expert)</span>,                         Bash for Gitlab <span class="meta">(Very Good)</span>                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Selected Projects</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 25%">Project</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <strong><a href="https://matthewdeanmartin.github.io/cli_tool_audit/cli_tool_audit/index.html">cli_tool_audit</a></strong>
+                        <div class="tags">
+                            package-management, tools
+                        </div>
+                    </td>
+                    <td>
+                        Verify that a list of cli tools are available. Like a requirements.txt for cli tools, but without an installer component.
+                        <div class="meta" style="margin-top:4px;">
+                            <a href="https://github.com/matthewdeanmartin/cli_tool_audit">Source Code &rarr;</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong><a href="https://github.com/matthewdeanmartin/dedlin">dedlin</a></strong>
+                        <div class="tags">
+                            editor, edlin, line-editor
+                        </div>
+                    </td>
+                    <td>
+                        Clone of edlin with improvements to make it into more of a DSL
+                        <div class="meta" style="margin-top:4px;">
+                            <a href="https://github.com/matthewdeanmartin/dedlin">Source Code &rarr;</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="text-align: right; margin-top: 0.5rem; font-size: 0.9rem;">
+            <a href="projects.html">View Full Project List &rarr;</a>
+        </div>
+    </section>
+
+    <section>
+        <h2>Public Activity</h2>
+        <div style="display: flex; gap: 2rem;">
+            <div style="flex: 1;">
+                <h3>Talks</h3>
                 <ul>
-                    <li>
-                        <strong>Mastodon:</strong>
-                        <a href="https://mastodon.social/@mistersql" target="_blank">mastodon.social/@mistersql</a>
-                    </li>
-                    <li>
-                        <strong>Bluesky:</strong>
-                        <a href="https://bsky.app/profile/mistersql.bsky.social" target="_blank">bsky.app</a>
-                    </li>
-                    <li>
-                        <strong>Linkedin:</strong>
-                        <a href="https://linkedin.com/in/matthewdeanmartin" target="_blank">LinkedIn</a>
-                    </li>
-                    <li>
-                        <strong>Dev.to:</strong>
-                        <a href="https://dev.to/matthewdeanmartin" target="_blank">dev.to</a>
-                    </li>
-                    <li>
-                        <strong>Gravatar:</strong>
-                        <a href="https://gravatar.com/matthewdmartin" target="_blank">Gravatar</a>
-                    </li>
-                    <li>
-                        <strong>Stackoverflow:</strong>
-                        <a href="https://stackoverflow.com/users/33264/matthewmartin" target="_blank">StackOverflow</a>
-                    </li>
+                    <li><a href="https://www.youtube.com/channel/UCw1p2a3LW1VG7DTZQaT8Oaw">Python Librarian</a></li>
                 </ul>
             </div>
 
         </div>
     </section>
 
-        <section id="projects">
-            <h2>Featured Projects</h2>
-            <p>Check out my latest open source work.</p>
-
-            <div class="project-grid">
-                <article>
-                    <header>
-                        <strong><a href="https://matthewdeanmartin.github.io/cli_tool_audit/cli_tool_audit/index.html">cli_tool_audit</a></strong>
-                    </header>
-                    <p>Verify that a list of cli tools are available. Like a requirements.txt for cli tools, but without an installer component.</p>
-                    <footer>
-                        <small>Status: active</small>
-                        <a href="https://github.com/matthewdeanmartin/cli_tool_audit" style="float: right;">GitHub &rarr;</a>
-                    </footer>
-                </article>
-                <article>
-                    <header>
-                        <strong><a href="https://github.com/matthewdeanmartin/dedlin">dedlin</a></strong>
-                    </header>
-                    <p>Clone of edlin with improvements to make it into more of a DSL</p>
-                    <footer>
-                        <small>Status: active</small>
-                        <a href="https://github.com/matthewdeanmartin/dedlin" style="float: right;">GitHub &rarr;</a>
-                    </footer>
-                </article>
-            </div>
-
-            <p style="text-align: center; margin-top: 2rem;">
-                <a href="projects.html" role="button" class="secondary">View All Projects</a>
-            </p>
-        </section>
-
-
-    <section id="about">
-        <h2>About Me</h2>
-        <article>
-            
-        </article>
-    </section>
-
     </main>
 
-    <footer class="container">
-        <hr>
-        <small>
-            Generated by <a href="https://github.com/matthewdeanmartin/matthewdeanmartin/blob/master/src/README.md">README CMS</a><br>
-            Mode:  | Updated: 
-        </small>
+    <footer>
+        <div style="text-align: center; font-size: 0.7rem; margin-top: 3rem; color: #999;">
+            Last Updated:  &mdash; Mode: 
+        </div>
     </footer>
 </body>
 </html>

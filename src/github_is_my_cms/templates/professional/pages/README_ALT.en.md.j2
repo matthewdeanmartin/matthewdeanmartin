@@ -1,0 +1,33 @@
+{% extends "layouts/master.md.j2" %}
+
+{% block body %}
+## Profile
+{{ include_content('pages/about.md') }}
+
+## Skills
+{% for group in identity.skills %}
+**{{ group.category }}**: {{ group.skills | map(attribute='name') | join(', ') }}
+{% endfor %}
+
+## Featured Projects
+{% for project in projects %}
+{% if project.featured %}
+* **[{{ project.name }}]({{ project.url }})**: {{ project.description }} _({{ project.tags|join(", ") }})_
+{% endif %}
+{% endfor %}
+[View all projects](projects.md)
+
+## PyPI Packages
+{% for pkg in pypi %}
+* **{{ pkg.package_name }}** ({{ pkg.version }}): {{ pkg.summary }}
+{% endfor %}
+
+## Contact & Social
+{% for profile in identity.profiles %}
+* {{ profile.service }}: [{{ profile.handle }}]({{ profile.url }})
+{% endfor %}
+{% if config.modes.current == "job_hunting" and config.modes.job_hunting.resume_url %}
+* **Resume**: [Download PDF]({{ config.modes.job_hunting.resume_url }})
+{% endif %}
+
+{% endblock %}

@@ -1,5 +1,5 @@
+# src/github_is_my_cms/config.py
 """
-config.py
 Configuration loader for the README CMS.
 Responsible for reading TOML files and instantiating the CMSConfig model.
 """
@@ -11,6 +11,8 @@ import sys
 import tomllib
 from pathlib import Path
 from typing import Any, Dict
+
+from httpie.output.ui.rich_help import to_help_message
 
 from .models import CMSConfig
 
@@ -31,8 +33,10 @@ class ConfigLoader:
     def _load_toml_file(self, filepath: Path) -> Dict[str, Any]:
         """Helper to safely load a TOML file if it exists."""
         if not filepath.exists():
+            logger.warning(f"Config file at {filepath} not found")
             return {}
         with open(filepath, "rb") as f:
+            logger.debug(f"Loading config from {filepath}")
             return tomllib.load(f)
 
     def load(self) -> CMSConfig:
@@ -74,6 +78,7 @@ class ConfigLoader:
             "languages": main_config.get("languages", {}),
             "projects": projects_list,
             "pypi_packages": pypi_list,
+            "theme": main_config.get("theme", "default")
         }
 
         # 6. Validate and Return

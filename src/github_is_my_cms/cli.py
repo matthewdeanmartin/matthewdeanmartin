@@ -1,5 +1,5 @@
+# src/github_is_my_cms/cli.py
 """
-cli.py
 Command-line interface for the github-is-my-cms.
 Handles argument parsing, logging setup, and command dispatch.
 """
@@ -13,10 +13,11 @@ from typing import List, Optional
 # Import the builder
 from .builder import SiteBuilder
 from .data_sources import DataUpdater
+import github_is_my_cms.__about__ as __about__
 
 # Versioning
 # TODO: ideally fetched from package metadata in production
-VERSION = "0.1.0"
+VERSION = __about__.__version__
 
 
 def setup_logging(level_name: str):

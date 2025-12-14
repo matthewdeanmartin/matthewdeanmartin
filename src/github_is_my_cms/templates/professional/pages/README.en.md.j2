@@ -1,0 +1,54 @@
+{% extends "layouts/master.md.j2" %}
+
+{% block body %}
+# {{ identity.name }}
+
+{{ identity.tagline }}
+
+## Skills
+
+I used to be a full stack developer, I evolved into tech lead and most recently devops work. I write code and know how to ship in a govtech environment.
+
+{# Render Headers #}
+| {% for cat in identity.skills %}{{ cat.category }} | {% endfor +%}
+| {% for cat in identity.skills %}-{{ "-" * cat.category|length }}- | {% endfor +%}
+{# Render Transposed Rows #}
+{% for row in identity.skill_rows -%}
+| {% for cell in row %}{{ cell }}<br> | {% endfor +%}
+{% endfor +%}
+
+## Resumes
+
+{% for resume in identity.resumes %}
+{{ resume.icon }} [{{ resume.label }}]({{ resume.url }}){% if resume.description %} {{ resume.description }}{% endif %}<br>
+{% endfor %}
+
+## Identity Backlinks
+
+Bidirectional backlinks on profile pages are evidence that I control both pages. This is not generally true for all backlinks. Read up on `rel="me"` and oauth to learn more.
+
+| Social Media with Backlinks | Verified Profile Pages |
+|-----------------------------|------------------------|
+| {% for p in identity.profiles if p.group == 'social' %}{{ p.icon or '' }}[{{ p.handle }}]({{ p.url }}) <br>{% endfor %} | {% for p in identity.profiles if p.group == 'verified' %}{{ p.icon or '' }} [{{ p.handle }}]({{ p.url }}) <br>{% endfor %} |
+
+## My Public Talks
+
+{% for talk in identity.talks %}
+{{ talk.icon }} [{{ talk.title }}]({{ talk.url }})
+{% endfor %}
+
+## Side Projects
+
+Over the years [I have worked on a lot of side projects, check them out](https://github.com/matthewdeanmartin/matthewdeanmartin/blob/master/README.sideprojects.md)
+
+{# Optional: Keep dynamic project listing for API/Promotion modes if desired #}
+{% if config.modes.current == "project_promotion" %}
+### Featured Highlights
+{% for project in projects %}
+{% if project.featured %}
+* **[{{ project.name }}]({{ project.url }})**: {{ project.description }}
+{% endif %}
+{% endfor %}
+{% endif %}
+
+{% endblock %}

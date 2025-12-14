@@ -1,0 +1,90 @@
+{% extends "layouts/master.html.j2" %}
+
+{% block body %}
+
+    <section>
+        <h2>Professional Summary</h2>
+        <article>
+            {{ include_content('pages/about.md') }}
+        </article>
+    </section>
+
+    <section>
+        <h2>Skills</h2>
+        <table>
+            {% for group in identity.skills %}
+            <tr>
+                <td style="width: 25%; font-weight: bold;">{{ group.category }}</td>
+                <td>
+                    {% for skill in group.skills %}
+                        {{ skill.name }}{% if skill.level %} <span class="meta">({{ skill.level }})</span>{% endif %}{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
+
+    {% if config.modes.current == "job_hunting" or config.modes.current == "project_promotion" %}
+    <section>
+        <h2>Selected Projects</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 25%">Project</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for project in projects %}
+                {% if project.featured %}
+                <tr>
+                    <td>
+                        <strong><a href="{{ project.url }}">{{ project.name }}</a></strong>
+                        <div class="tags">
+                            {{ project.tags|join(", ") }}
+                        </div>
+                    </td>
+                    <td>
+                        {{ project.description }}
+                        {% if project.repository_url %}
+                        <div class="meta" style="margin-top:4px;">
+                            <a href="{{ project.repository_url }}">Source Code &rarr;</a>
+                        </div>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+            </tbody>
+        </table>
+        <div style="text-align: right; margin-top: 0.5rem; font-size: 0.9rem;">
+            <a href="projects.html">View Full Project List &rarr;</a>
+        </div>
+    </section>
+    {% endif %}
+
+    <section>
+        <h2>Public Activity</h2>
+        <div style="display: flex; gap: 2rem;">
+            <div style="flex: 1;">
+                <h3>Talks</h3>
+                <ul>
+                {% for talk in identity.talks %}
+                    <li><a href="{{ talk.url }}">{{ talk.title }}</a></li>
+                {% endfor %}
+                </ul>
+            </div>
+
+            {% if config.modes.current == "job_hunting" and config.modes.job_hunting.resume_url %}
+            <div style="flex: 1;">
+                <h3>Downloads</h3>
+                <ul>
+                    <li><a href="{{ config.modes.job_hunting.resume_url }}"><strong>Download Full Resume (PDF)</strong></a></li>
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+
+{% endblock %}

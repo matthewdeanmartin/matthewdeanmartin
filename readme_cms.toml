@@ -1,4 +1,5 @@
 # src/github_is_my_cms/data/readme_cms.toml
+theme = "professional"
 
 [mode]
 # Options: "job_hunting", "project_promotion", "self_promotion"
@@ -7,7 +8,7 @@ current = "project_promotion"
 [mode.job_hunting]
 enable_projects = true
 project_visibility = "curated"
-resume_url = "https://matthewdeanmartin.github.io/"
+resume_url = "https://matthewdeanmartin.github.io/matthewdeanmartin"
 
 [mode.project_promotion]
 enable_projects = true

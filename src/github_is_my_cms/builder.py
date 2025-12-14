@@ -1,5 +1,5 @@
+# src/github_is_my_cms/builder.py
 """
-builder.py
 The core build engine for the README CMS.
 Compiles Jinja templates + TOML data + Markdown content into final artifacts.
 """
@@ -27,10 +27,14 @@ class SiteBuilder:
 
     def __init__(self, root_dir: str = "."):
         self.root = Path(root_dir)
+
+        # Load Configuration (Data Layer)
+        self.config: CMSConfig = load_config(str(self.root))
+
         # TODO: this is messed up. It should be from editable installation or package.
         self.src = self.root / "src"
         self.content_dir = self.src / "content"
-        self.templates_dir = self.src / "github_is_my_cms" / "templates"
+        self.templates_dir = self.src / "github_is_my_cms" / "templates" / self.config.theme
 
         # Output directories
         self.docs_dir = self.root / "docs"
@@ -38,8 +42,7 @@ class SiteBuilder:
         self.api_out = self.docs_dir / "apis"
         self.html_out = self.docs_dir  # HTML sits in root of docs/ for GitHub Pages
 
-        # Load Configuration (Data Layer)
-        self.config: CMSConfig = load_config(str(self.root))
+
 
         # Setup Jinja2 Environment
         self.env = Environment(

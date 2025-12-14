@@ -239,6 +239,7 @@ class CMSConfig(BaseModel):
     languages: LanguageConfig = Field(default_factory=LanguageConfig)
     projects: List[Project] = Field(default_factory=list)
     pypi_packages: List[PyPIPackage] = Field(default_factory=list)
+    theme: Optional[str] = "default"
 
     @property
     def current_mode_settings(self):

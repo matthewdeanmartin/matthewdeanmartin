@@ -1,0 +1,68 @@
+{% extends "layouts/master.html.j2" %}
+
+{% block body %}
+    <section>
+        <h2>Project Portfolio</h2>
+        <p>A complete list of active projects, tools, and libraries.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%;">Name</th>
+                    <th style="width: 15%;">Status</th>
+                    <th>Description</th>
+                    <th style="width: 20%;">Tags</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for project in projects %}
+                {% if not (project.cms and project.cms.suppress) %}
+                <tr>
+                    <td>
+                        <a href="{{ project.url or project.repository_url }}"><strong>{{ project.name }}</strong></a>
+                    </td>
+                    <td>
+                        <span style="font-size: 0.85rem; text-transform: capitalize;">{{ project.status }}</span>
+                    </td>
+                    <td>
+                        {{ project.description }}
+                        {% if project.repository_url %}
+                         <a href="{{ project.repository_url }}" class="meta">[Repo]</a>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <span class="tags">{{ project.tags|join(", ") }}</span>
+                    </td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>PyPI Packages</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%;">Package</th>
+                    <th style="width: 15%;">Version</th>
+                    <th>Summary</th>
+                    <th style="width: 15%; text-align: right;">Downloads/Mo</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for pkg in pypi %}
+                <tr>
+                    <td>
+                        <a href="{{ pkg.docs_url or 'https://pypi.org/project/' ~ pkg.package_name }}">{{ pkg.package_name }}</a>
+                    </td>
+                    <td>{{ pkg.version }}</td>
+                    <td>{{ pkg.summary }}</td>
+                    <td style="text-align: right;">{{ pkg.downloads_monthly }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+{% endblock %}

@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# readonly SCRIPT_NS="bash2gitlab_proc"
+# readonly SCRIPT_NS="ns"
 readonly SRC_DIR="./src/github_is_my_cms"
 readonly TMP_ROOT="/tmp"
 readonly TMP_DIR="${TMP_ROOT}/github_is_my_cms"
 readonly OUTPUT_MD_BASENAME="github_is_my_cms.flat.md"
 
 # Copy directory safely
-bash2gitlab_proc::copy_to_tmp() {
+ns::copy_to_tmp() {
   if [[ ! -d "${SRC_DIR}" ]]; then
     echo "Error: Source directory '${SRC_DIR}' not found." >&2
     exit 1
@@ -20,7 +20,7 @@ bash2gitlab_proc::copy_to_tmp() {
 }
 
 # Run strip-docs for each subdirectory of tmp/github_is_my_cms
-bash2gitlab_proc::run_strip_docs() {
+ns::run_strip_docs() {
   local dir
   echo "Running strip-docs on '${TMP_DIR}' and subdirectories..."
 
@@ -31,7 +31,7 @@ bash2gitlab_proc::run_strip_docs() {
 }
 
 # Ask for confirmation before proceeding
-bash2gitlab_proc::confirm() {
+ns::confirm() {
   local prompt="$1"
 
   if [[ -z "${CAUTION:-}" ]]; then
@@ -49,7 +49,7 @@ bash2gitlab_proc::confirm() {
 }
 
 # Remove temporary strip markers and flatten the repo to a single Markdown file
-bash2gitlab_proc::flatten_repo() {
+ns::flatten_repo() {
   echo "Removing marker lines from .py files in '${TMP_DIR}'..."
 
   find "${TMP_DIR}" -type f -name '*.py' -print0 | while IFS= read -r -d '' file; do
@@ -68,7 +68,7 @@ bash2gitlab_proc::flatten_repo() {
 
 # Clean trailing '##' that appear at the END of lines inside ```python code fences
 # in the generated Markdown (mastodon_finder.flat.md). Other code fences remain untouched.
-bash2gitlab_proc::clean_flat_md_trailing_double_hash() {
+ns::clean_flat_md_trailing_double_hash() {
   local output_md
   # Prefer TMP_DIR if the file is written there; fallback to CWD; else try to find it
   if [[ -f "${TMP_DIR}/${OUTPUT_MD_BASENAME}" ]]; then
@@ -110,20 +110,20 @@ bash2gitlab_proc::clean_flat_md_trailing_double_hash() {
 }
 
 # Cleanup tmp directory
-bash2gitlab_proc::cleanup_tmp() {
+ns::cleanup_tmp() {
   echo "Cleaning up '${TMP_DIR}'..."
   rm -rf "${TMP_DIR}"
 }
 
 main() {
-  bash2gitlab_proc::copy_to_tmp
-  bash2gitlab_proc::run_strip_docs
-  bash2gitlab_proc::confirm "Run coderoller-flatten-repo?"
-  bash2gitlab_proc::flatten_repo
+  ns::copy_to_tmp
+  ns::run_strip_docs
+  ns::confirm "Run coderoller-flatten-repo?"
+  ns::flatten_repo
   # Post-process the flattened Markdown to remove trailing '##' in Python code blocks only
-  bash2gitlab_proc::clean_flat_md_trailing_double_hash
-  bash2gitlab_proc::confirm "Delete temporary files in '${TMP_DIR}'?"
-  bash2gitlab_proc::cleanup_tmp
+  ns::clean_flat_md_trailing_double_hash
+  ns::confirm "Delete temporary files in '${TMP_DIR}'?"
+  ns::cleanup_tmp
 }
 
 [[ "${BASH_SOURCE[0]}" == "$0" ]] && main "$@"
