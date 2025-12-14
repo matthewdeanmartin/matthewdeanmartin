@@ -171,7 +171,7 @@ class DataUpdater:
             description = repo.get("description") or ""
             url = repo.get("url")
             homepage = repo.get("homepageUrl")
-            topics = [t["name"] for t in repo.get("repositoryTopics", [])]
+            topics = [t["name"] for t in (repo.get("repositoryTopics", []) or [])]
             is_archived = repo.get("isArchived", False)
 
             status = "archived" if is_archived else "active"
@@ -235,12 +235,11 @@ class DataUpdater:
         sorted_projects = sorted(project_map.values(), key=lambda x: x["slug"])
         output_data = {"projects": sorted_projects}
 
-        if HAS_TOML_WRITER:
-            with open(self.projects_file, "wb") as f:
-                tomli_w.dump(output_data, f)
-            logger.info(f"Successfully synced {len(sorted_projects)} projects to {self.projects_file}")
-        else:
-            logger.error("Cannot write TOML: 'tomli-w' missing.")
+
+        with open(self.projects_file, "wb") as f:
+            tomli_w.dump(output_data, f)
+        logger.info(f"Successfully synced {len(sorted_projects)} projects to {self.projects_file}")
+
 
 
     def update_pypi_data(self):
@@ -290,11 +289,6 @@ class DataUpdater:
         # 2. Write back to TOML
         output_data = {"packages": updated_packages}
 
-        if HAS_TOML_WRITER:
-            with open(self.pypi_file, "wb") as f:
-                tomli_w.dump(output_data, f)
-            logger.info(f"Successfully updated {self.pypi_file}")
-        else:
-            logger.error("Cannot write TOML: 'tomli-w' package is missing. Install it via pip.")
-            # Fallback: Print what we would have written
-            logger.debug(json.dumps(output_data, indent=2))
+        with open(self.pypi_file, "wb") as f:
+            tomli_w.dump(output_data, f)
+        logger.info(f"Successfully updated {self.pypi_file}")
