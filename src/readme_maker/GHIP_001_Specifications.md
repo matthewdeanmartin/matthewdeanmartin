@@ -1,25 +1,18 @@
-GHIP: 001
-Title: "github-is-my-cms", a multipage job search and project promotion site generator
-Author: Matthew Dean Martin
-Status: Draft
-Type: Standards Track
-Created: 2025-12-07
-Requires: None
----
+## GHIP: 001 Title: "github-is-my-cms", a multipage job search and project promotion site generator Author: Matthew Dean Martin Status: Draft Type: Standards Track Created: 2025-12-07 Requires: None
 
 ## Abstract
 
 This GHIP defines a Python-based content management system (CMS) for GitHub profile repositories that:
 
-* Generates a **mode-aware**, **multi-page** documentation set.
-* Keeps the repository root minimal while storing content and build artefacts under `src/` and `docs/`.
-* Uses **TOML** for structured data and Markdown (`.md`) for prose content.
-* Renders Markdown via **Jinja** templates with a **master page** (header/footer) and reusable **components**.
-* Supports **identity graph** correlation, resume links, side project groups, and multiple “persona modes”.
-* Provides **multi-language support** with LLM-based translations and language switchers.
-* Exposes a **static API** described by an OpenAPI/Swagger document, backed by static files so that a hypothetical javascript app could call all the endpoints get data formats and then create a dynamic javascript front end as a SPA.
-* Generates both Markdown and HTML, suitable for GitHub’s Markdown view and GitHub Pages.
-* Is refreshed weekly by GitHub Actions: updating TOML metadata from PyPI/GitHub, recompiling content, regenerating translations, and publishing GitHub Pages.
+- Generates a **mode-aware**, **multi-page** documentation set.
+- Keeps the repository root minimal while storing content and build artefacts under `src/` and `docs/`.
+- Uses **TOML** for structured data and Markdown (`.md`) for prose content.
+- Renders Markdown via **Jinja** templates with a **master page** (header/footer) and reusable **components**.
+- Supports **identity graph** correlation, resume links, side project groups, and multiple “persona modes”.
+- Provides **multi-language support** with LLM-based translations and language switchers.
+- Exposes a **static API** described by an OpenAPI/Swagger document, backed by static files so that a hypothetical javascript app could call all the endpoints get data formats and then create a dynamic javascript front end as a SPA.
+- Generates both Markdown and HTML, suitable for GitHub’s Markdown view and GitHub Pages.
+- Is refreshed weekly by GitHub Actions: updating TOML metadata from PyPI/GitHub, recompiling content, regenerating translations, and publishing GitHub Pages.
 
 The goal is a system where the GitHub profile is equally usable as Markdown or HTML and can be kept fresh via automated jobs.
 
@@ -27,12 +20,12 @@ The goal is a system where the GitHub profile is equally usable as Markdown or H
 
 GitHub profile READMEs are typically one-off, hand-edited single pages. This leads to:
 
-* Overloaded READMEs trying to be **CV**, **project catalog**, and **personal site** simultaneously.
-* No clear separation between **data** (identities, projects, links) and **content** (descriptions, long form text).
-* Weak **internationalization**, limited to manually maintained translated READMEs.
-* Redundant and error-prone manual updates to links, projects, and metadata.
-* No systematic way to present different **modes** (job hunting vs project promotion vs self promotion) without rewriting content.
-* No structured way to surface content via **machine-readable APIs** (e.g. static JSON + OpenAPI).
+- Overloaded READMEs trying to be **CV**, **project catalog**, and **personal site** simultaneously.
+- No clear separation between **data** (identities, projects, links) and **content** (descriptions, long form text).
+- Weak **internationalization**, limited to manually maintained translated READMEs.
+- Redundant and error-prone manual updates to links, projects, and metadata.
+- No systematic way to present different **modes** (job hunting vs project promotion vs self promotion) without rewriting content.
+- No structured way to surface content via **machine-readable APIs** (e.g. static JSON + OpenAPI).
 
 A minimal but opinionated CMS that compiles multiple Markdown and HTML pages from structured TOML and Markdown content solves these problems while staying within GitHub’s normal workflows.
 
@@ -41,15 +34,18 @@ A minimal but opinionated CMS that compiles multiple Markdown and HTML pages fro
 ### Goals
 
 1. **Multi-page design**: Support multiple Markdown documents with navigational links from the root `README.md`.
-2. **Minimal root layout**: Keep the repository root uncluttered: only `.github/`, `src/`, `docs/`, and `README.md`.
-3. **Mode awareness**:
 
-   * Job Hunting Mode
-   * Project Promotion Mode
-   * Self Promotion Mode
-4. **Language switching**:
+1. **Minimal root layout**: Keep the repository root uncluttered: only `.github/`, `src/`, `docs/`, and `README.md`.
 
-   * Language index like:
+1. **Mode awareness**:
+
+   - Job Hunting Mode
+   - Project Promotion Mode
+   - Self Promotion Mode
+
+1. **Language switching**:
+
+   - Language index like:
 
      ```markdown
      ## Languages
@@ -57,34 +53,40 @@ A minimal but opinionated CMS that compiles multiple Markdown and HTML pages fro
      - [Español](README.es.md)
      - [Français](README.fr.md)
      ```
-   * LLM-based translation using an OpenAI-compatible tool.
-5. **Master page + components**:
 
-   * Shared header/footer.
-   * Reusable components such as `identity_graph.md`.
-6. **Data vs content separation**:
+   - LLM-based translation using an OpenAI-compatible tool.
 
-   * **Data** in TOML: identity graph, PyPI projects, PyPI→GitHub mappings, cached metadata.
-   * **Content** in Markdown: project descriptions, long-form sections, etc.
-7. **Static API + Swagger**:
+1. **Master page + components**:
 
-   * OpenAPI spec describing static endpoints for JSON/Markdown assets.
-   * Generated HTML Swagger UI under `docs/`.
-8. **Weekly automation**:
+   - Shared header/footer.
+   - Reusable components such as `identity_graph.md`.
 
-   * Regenerate TOML from PyPI/GitHub.
-   * Recompile all pages (Markdown and HTML).
-   * Regenerate translations via LLM.
-   * Publish GitHub Pages.
-9. **No Twitter/X**:
+1. **Data vs content separation**:
 
-   * Do not surface Twitter/X links in generated content.
+   - **Data** in TOML: identity graph, PyPI projects, PyPI→GitHub mappings, cached metadata.
+   - **Content** in Markdown: project descriptions, long-form sections, etc.
+
+1. **Static API + Swagger**:
+
+   - OpenAPI spec describing static endpoints for JSON/Markdown assets.
+   - Generated HTML Swagger UI under `docs/`.
+
+1. **Weekly automation**:
+
+   - Regenerate TOML from PyPI/GitHub.
+   - Recompile all pages (Markdown and HTML).
+   - Regenerate translations via LLM.
+   - Publish GitHub Pages.
+
+1. **No Twitter/X**:
+
+   - Do not surface Twitter/X links in generated content.
 
 ### Non-Goals
 
-* Not a generic documentation generator for arbitrary repos.
-* Not a headless CMS for arbitrary backends; scope is a single GitHub profile repo.
-* Not a live server; all artefacts are static files.
+- Not a generic documentation generator for arbitrary repos.
+- Not a headless CMS for arbitrary backends; scope is a single GitHub profile repo.
+- Not a live server; all artefacts are static files.
 
 ## Repository Layout
 
@@ -140,14 +142,15 @@ readme_cms.toml             # CMS configuration
 
 Constraints:
 
-* Root directory should not contain arbitrary extra files beyond:
+- Root directory should not contain arbitrary extra files beyond:
 
-  * `.github/`
-  * `src/`
-  * `docs/`
-  * `README.md`
-  * Standard Python packaging files (`pyproject.toml`, etc.).
-* All long-form content lives under `src/content/` and is compiled into `docs/md/` and HTML.
+  - `.github/`
+  - `src/`
+  - `docs/`
+  - `README.md`
+  - Standard Python packaging files (`pyproject.toml`, etc.).
+
+- All long-form content lives under `src/content/` and is compiled into `docs/md/` and HTML.
 
 ## Modes
 
@@ -155,37 +158,40 @@ The CMS supports three operational modes, which control which sections are rende
 
 1. **Job Hunting Mode**
 
-   * Emphasis:
+   - Emphasis:
 
-     * Resume links and CV-like information.
-     * Skills, experience, notable achievements.
-     * Contact channels suitable for recruiters.
-   * Features:
+     - Resume links and CV-like information.
+     - Skills, experience, notable achievements.
+     - Contact channels suitable for recruiters.
 
-     * Prominent “Hire Me” or “Open to roles” section.
-     * Reduced experimental/archived projects, focus on production-quality work.
+   - Features:
 
-2. **Project Promotion Mode**
+     - Prominent “Hire Me” or “Open to roles” section.
+     - Reduced experimental/archived projects, focus on production-quality work.
 
-   * Emphasis:
+1. **Project Promotion Mode**
 
-     * Active side projects, OSS contributions, libraries.
-   * Features:
+   - Emphasis:
 
-     * Larger “Projects” section with grouped subsections.
-     * Clear links to GitHub repositories and PyPI packages.
-     * Static API exposing project metadata.
+     - Active side projects, OSS contributions, libraries.
 
-3. **Self Promotion Mode**
+   - Features:
 
-   * Emphasis:
+     - Larger “Projects” section with grouped subsections.
+     - Clear links to GitHub repositories and PyPI packages.
+     - Static API exposing project metadata.
 
-     * Personal brand: writing, talks, podcasts, community involvement.
-   * Features:
+1. **Self Promotion Mode**
 
-     * Links to blog posts, talks, and external appearances.
-     * “Identity graph” highlighting cross-platform presence.
-     * Note: still must obey “no Twitter/X” output requirement.
+   - Emphasis:
+
+     - Personal brand: writing, talks, podcasts, community involvement.
+
+   - Features:
+
+     - Links to blog posts, talks, and external appearances.
+     - “Identity graph” highlighting cross-platform presence.
+     - Note: still must obey “no Twitter/X” output requirement.
 
 ### Mode Configuration
 
@@ -211,9 +217,9 @@ enable_posts = true
 
 Mode selection affects:
 
-* Which pages are generated.
-* Which sections appear in `README.*.md`.
-* Ordering and emphasis within pages.
+- Which pages are generated.
+- Which sections appear in `README.*.md`.
+- Ordering and emphasis within pages.
 
 ## Data and Content Sources
 
@@ -221,32 +227,32 @@ Mode selection affects:
 
 All structured metadata is stored as TOML under `src/readme_maker/data/` (or similar):
 
-* `identity.toml`
+- `identity.toml`
 
-  * Name, tagline, location.
-  * Allowed social links (no Twitter/X).
-  * Contact methods.
-  * Identity graph linking multiple sites.
+  - Name, tagline, location.
+  - Allowed social links (no Twitter/X).
+  - Contact methods.
+  - Identity graph linking multiple sites.
 
-* `identity_graph.toml`
+- `identity_graph.toml`
 
-  * Machine-readable identity graph:
+  - Machine-readable identity graph:
 
-    * GitHub, GitLab, LinkedIn, resume URL(s), StackOverflow, blog, etc.
-    * `same_as` lists suitable for JSON-LD export.
+    - GitHub, GitLab, LinkedIn, resume URL(s), StackOverflow, blog, etc.
+    - `same_as` lists suitable for JSON-LD export.
 
-* `projects.toml`
+- `projects.toml`
 
-  * Manually curated projects with grouping and status.
+  - Manually curated projects with grouping and status.
 
-* `pypi_projects.toml`
+- `pypi_projects.toml`
 
-  * List of PyPI packages and mapping to GitHub repositories.
-  * Cached metadata from PyPI (version, summary, downloads if available).
+  - List of PyPI packages and mapping to GitHub repositories.
+  - Cached metadata from PyPI (version, summary, downloads if available).
 
-* `config.toml` / `readme_cms.toml`
+- `config.toml` / `readme_cms.toml`
 
-  * CMS configuration, mode selection, languages, templates.
+  - CMS configuration, mode selection, languages, templates.
 
 These files are **regenerated or updated** by the weekly workflow where appropriate (specifically for PyPI/GitHub-derived metadata).
 
@@ -254,18 +260,21 @@ These files are **regenerated or updated** by the weekly workflow where appropri
 
 Markdown content is stored under `src/content/`:
 
-* `pages/*.md`
+- `pages/*.md`
 
-  * Essays or static pages (“About”, “Now”, etc.).
-* `projects/*.md`
+  - Essays or static pages (“About”, “Now”, etc.).
 
-  * Detailed project descriptions, one file per project or group.
-* `posts/*.md`
+- `projects/*.md`
 
-  * Optional short posts or highlights.
-* `identity_graph.md`
+  - Detailed project descriptions, one file per project or group.
 
-  * A human-readable representation of the identity graph (component).
+- `posts/*.md`
+
+  - Optional short posts or highlights.
+
+- `identity_graph.md`
+
+  - A human-readable representation of the identity graph (component).
 
 These files are **author-edited** and never overwritten by automation.
 
@@ -275,18 +284,21 @@ These files are **author-edited** and never overwritten by automation.
 
 Jinja is used for all templating. Templates are organized as:
 
-* `layouts/master.md.j2`
+- `layouts/master.md.j2`
 
-  * Provides a master Markdown layout with header/footer and named blocks.
-* `layouts/master.html.j2`
+  - Provides a master Markdown layout with header/footer and named blocks.
 
-  * Parallel master for HTML output.
-* `components/*.md.j2`
+- `layouts/master.html.j2`
 
-  * Reusable components such as identity graph, project lists, badges.
-* `pages/*.md.j2`
+  - Parallel master for HTML output.
 
-  * Page-specific layouts (e.g. `README.md.j2`, `projects.md.j2`).
+- `components/*.md.j2`
+
+  - Reusable components such as identity graph, project lists, badges.
+
+- `pages/*.md.j2`
+
+  - Page-specific layouts (e.g. `README.md.j2`, `projects.md.j2`).
 
 Example master Markdown template:
 
@@ -334,10 +346,10 @@ The same data is rendered twice: once into Markdown templates and once into HTML
 
 Components are modular Jinja snippets. Examples:
 
-* `identity_graph.md.j2`
-* `project_card.md.j2`
-* `resume_links.md.j2`
-* `talks_list.md.j2`
+- `identity_graph.md.j2`
+- `project_card.md.j2`
+- `resume_links.md.j2`
+- `talks_list.md.j2`
 
 Components can be reused across pages and modes.
 
@@ -365,32 +377,37 @@ supported = ["en", "es", "fr"]
 
 ### Translation Workflow
 
-* Source language is the default (`en`).
-* Author edits only the canonical Markdown templates and content in the source language.
-* The weekly workflow:
+- Source language is the default (`en`).
+
+- Author edits only the canonical Markdown templates and content in the source language.
+
+- The weekly workflow:
 
   1. Compiles the source-language Markdown pages.
-  2. Runs translations using a configured LLM provider (OpenAI-compatible).
-  3. Writes translated Markdown pages to `docs/md/README.<lang>.md`, etc.
-* Translation metadata (e.g. last translated timestamp, source hash) may be persisted in TOML or JSON to avoid unnecessary re-translation.
+  1. Runs translations using a configured LLM provider (OpenAI-compatible).
+  1. Writes translated Markdown pages to `docs/md/README.<lang>.md`, etc.
+
+- Translation metadata (e.g. last translated timestamp, source hash) may be persisted in TOML or JSON to avoid unnecessary re-translation.
 
 ### Translation Tool
 
 The translation component:
 
-* Accepts:
+- Accepts:
 
-  * Source Markdown.
-  * Target language code.
-  * Optional style guidelines.
-* Returns:
+  - Source Markdown.
+  - Target language code.
+  - Optional style guidelines.
 
-  * Translated Markdown with the same structural headings and links.
-* Enforces:
+- Returns:
 
-  * Preserving code blocks.
-  * Preserving URLs.
-  * Preserving specific tokens (e.g. project names, package names).
+  - Translated Markdown with the same structural headings and links.
+
+- Enforces:
+
+  - Preserving code blocks.
+  - Preserving URLs.
+  - Preserving specific tokens (e.g. project names, package names).
 
 Implementation detail: the tool is a Python wrapper around the LLM client, abstracted so providers can be swapped.
 
@@ -398,19 +415,20 @@ Implementation detail: the tool is a Python wrapper around the LLM client, abstr
 
 The system defines an identity graph that correlates user identities across services:
 
-* Stored in `identity_graph.toml`.
-* Rendered as:
+- Stored in `identity_graph.toml`.
 
-  * Human-readable Markdown component.
-  * Machine-readable JSON (e.g. `docs/apis/identity.json`).
-  * Optional JSON-LD snippet (embedded as fenced code block in README).
+- Rendered as:
+
+  - Human-readable Markdown component.
+  - Machine-readable JSON (e.g. `docs/apis/identity.json`).
+  - Optional JSON-LD snippet (embedded as fenced code block in README).
 
 Constraints:
 
-* No Twitter/X entries. The CMS should:
+- No Twitter/X entries. The CMS should:
 
-  * Ignore any identities with `domain` in `{ "twitter.com", "x.com" }`.
-  * Optionally warn if such entries are present in TOML.
+  - Ignore any identities with `domain` in `{ "twitter.com", "x.com" }`.
+  - Optionally warn if such entries are present in TOML.
 
 Example TOML:
 
@@ -435,28 +453,29 @@ url = "https://example.com"
 
 The system exposes a static API via JSON files under `docs/apis/`, and an OpenAPI/Swagger spec:
 
-* `docs/apis/openapi.yaml`
+- `docs/apis/openapi.yaml`
 
-  * Describes endpoints such as:
+  - Describes endpoints such as:
 
-    * `/apis/identity.json`
-    * `/apis/projects.json`
-    * `/apis/activity.json`
-* These endpoints are static files served by GitHub Pages.
+    - `/apis/identity.json`
+    - `/apis/projects.json`
+    - `/apis/activity.json`
+
+- These endpoints are static files served by GitHub Pages.
 
 Example static API payloads:
 
-* `identity.json`: identity graph and basic profile info.
-* `projects.json`: project metadata, PyPI/GitHub mappings, status.
-* `activity.json`: recent OSS activity snapshot (optional).
+- `identity.json`: identity graph and basic profile info.
+- `projects.json`: project metadata, PyPI/GitHub mappings, status.
+- `activity.json`: recent OSS activity snapshot (optional).
 
 ### Swagger UI
 
 The HTML swagger page:
 
-* Generated (or referenced) at e.g. `docs/swagger.html`.
-* Uses the `openapi.yaml` as its specification.
-* Linked from README and/or docs homepage.
+- Generated (or referenced) at e.g. `docs/swagger.html`.
+- Uses the `openapi.yaml` as its specification.
+- Linked from README and/or docs homepage.
 
 ## Build and Compilation
 
@@ -465,23 +484,26 @@ The HTML swagger page:
 For each configured language and mode, the pipeline:
 
 1. Loads TOML data (identity, projects, PyPI metadata, config).
-2. Loads Markdown content from `src/content/`.
-3. Renders:
 
-   * Source-language templates via Jinja.
-   * Writes resultant Markdown to `docs/md/*.md`.
-4. Generates `README.md` in root, which:
+1. Loads Markdown content from `src/content/`.
 
-   * Points to `docs/md/` for detailed pages.
-   * Contains high-level summary plus language index.
+1. Renders:
+
+   - Source-language templates via Jinja.
+   - Writes resultant Markdown to `docs/md/*.md`.
+
+1. Generates `README.md` in root, which:
+
+   - Points to `docs/md/` for detailed pages.
+   - Contains high-level summary plus language index.
 
 ### HTML Compilation
 
 Separately, HTML templates render:
 
 1. `docs/index.html` as GitHub Pages entrypoint.
-2. HTML equivalents of the Markdown pages (e.g. `docs/README.en.html` or `docs/en/index.html`).
-3. Optional HTML version of components where appropriate.
+1. HTML equivalents of the Markdown pages (e.g. `docs/README.en.html` or `docs/en/index.html`).
+1. Optional HTML version of components where appropriate.
 
 Markdown is treated as the **primary authored format**; HTML is a compiled output, not manually edited.
 
@@ -489,12 +511,13 @@ Markdown is treated as the **primary authored format**; HTML is a compiled outpu
 
 Design constraints:
 
-* Layout and content must be readable in raw `.md` form on GitHub.
-* HTML rendering must preserve:
+- Layout and content must be readable in raw `.md` form on GitHub.
 
-  * Section structure.
-  * Navigation via links.
-  * Language switching.
+- HTML rendering must preserve:
+
+  - Section structure.
+  - Navigation via links.
+  - Language switching.
 
 No HTML-only features that significantly degrade the Markdown experience should be introduced (e.g. heavy JS-dependent layouts that are meaningless in Markdown).
 
@@ -504,30 +527,33 @@ A scheduled GitHub Actions workflow (`.github/workflows/readme_cms.yml`) runs we
 
 1. **Regenerate TOML data from PyPI/GitHub**
 
-   * Fetch metadata for PyPI packages:
+   - Fetch metadata for PyPI packages:
 
-     * Latest version, summary, link to docs, etc.
-   * Resolve PyPI packages to GitHub repositories.
-   * Fetch limited metadata from GitHub repositories (stars, last push, etc.).
-   * Update `pypi_projects.toml` and related TOML caches.
+     - Latest version, summary, link to docs, etc.
 
-2. **Recompile content**
+   - Resolve PyPI packages to GitHub repositories.
 
-   * Run `readme-make build` (CLI name to be defined).
-   * Rebuild Markdown pages into `docs/md/`.
-   * Rebuild HTML pages into `docs/`.
+   - Fetch limited metadata from GitHub repositories (stars, last push, etc.).
 
-3. **Regenerate translations**
+   - Update `pypi_projects.toml` and related TOML caches.
 
-   * For each non-default language, compare source content hash.
-   * Re-translate pages whose source changed.
-   * Write updated translated Markdown.
+1. **Recompile content**
 
-4. **Publish GitHub Pages**
+   - Run `readme-make build` (CLI name to be defined).
+   - Rebuild Markdown pages into `docs/md/`.
+   - Rebuild HTML pages into `docs/`.
 
-   * Commit changes to `docs/` (if any).
-   * Push to main or a designated branch used for Pages.
-   * Rely on GitHub Pages to serve `docs/` as the static site.
+1. **Regenerate translations**
+
+   - For each non-default language, compare source content hash.
+   - Re-translate pages whose source changed.
+   - Write updated translated Markdown.
+
+1. **Publish GitHub Pages**
+
+   - Commit changes to `docs/` (if any).
+   - Push to main or a designated branch used for Pages.
+   - Rely on GitHub Pages to serve `docs/` as the static site.
 
 The workflow must be idempotent and should no-op when no changes are detected.
 
@@ -535,28 +561,28 @@ The workflow must be idempotent and should no-op when no changes are detected.
 
 The build system should include a `lint` step that covers:
 
-* **Content and structure**
+- **Content and structure**
 
-  * Required sections present for each mode.
-  * Heading levels consistent.
-  * No empty sections.
+  - Required sections present for each mode.
+  - Heading levels consistent.
+  - No empty sections.
 
-* **Links**
+- **Links**
 
-  * Validate external links (HTTP 2xx/3xx).
-  * Ensure no Twitter/X links in rendered output.
-  * Ensure internal links to `docs/md/` and `docs/apis/` are valid.
+  - Validate external links (HTTP 2xx/3xx).
+  - Ensure no Twitter/X links in rendered output.
+  - Ensure internal links to `docs/md/` and `docs/apis/` are valid.
 
-* **Data consistency**
+- **Data consistency**
 
-  * TOML schema validation (e.g. via pydantic models).
-  * Identity graph entries must have valid URLs.
-  * PyPI→GitHub mappings must be coherent.
+  - TOML schema validation (e.g. via pydantic models).
+  - Identity graph entries must have valid URLs.
+  - PyPI→GitHub mappings must be coherent.
 
-* **Output integrity**
+- **Output integrity**
 
-  * Generated Markdown parses cleanly.
-  * Generated HTML contains expected sections (spot checks or snapshot tests).
+  - Generated Markdown parses cleanly.
+  - Generated HTML contains expected sections (spot checks or snapshot tests).
 
 Errors should cause the CI job to fail. Warnings can be reported without failing, controlled via config.
 
@@ -564,23 +590,29 @@ Errors should cause the CI job to fail. Warnings can be reported without failing
 
 A reference implementation is expected to be a Python package `readme_maker` with:
 
-* CLI using argparse.
-* Configuration loading from `readme_cms.toml`.
-* Models for:
+- CLI using argparse.
 
-  * Identity, identities, projects, PyPI packages.
-* Template renderer using Jinja.
-* Translation adapter for OpenAI-compatible LLM APIs.
-* Data source modules for:
+- Configuration loading from `readme_cms.toml`.
 
-  * GitHub API.
-  * PyPI JSON API.
-* Build commands:
+- Models for:
 
-  * `build` – compile Markdown and HTML.
-  * `lint` – run quality checks.
-  * `translate` – regenerate translations.
-  * `update-data` – refresh TOML from remote sources.
+  - Identity, identities, projects, PyPI packages.
+
+- Template renderer using Jinja.
+
+- Translation adapter for OpenAI-compatible LLM APIs.
+
+- Data source modules for:
+
+  - GitHub API.
+  - PyPI JSON API.
+
+- Build commands:
+
+  - `build` – compile Markdown and HTML.
+  - `lint` – run quality checks.
+  - `translate` – regenerate translations.
+  - `update-data` – refresh TOML from remote sources.
 
 ## Backwards Compatibility
 
@@ -589,21 +621,21 @@ This GHIP assumes a **new** repository structure for the profile. It does not ne
 Adopters can migrate by:
 
 1. Moving existing README content into `src/content/pages/`.
-2. Creating initial TOML identity and project data.
-3. Generating new `README.md` and `docs/*` via the CMS.
+1. Creating initial TOML identity and project data.
+1. Generating new `README.md` and `docs/*` via the CMS.
 
 ## Security and Privacy Considerations
 
-* API tokens must be stored only in GitHub Actions secrets or environment variables, not in TOML or committed files.
-* Identity graph may expose cross-platform account correlations; users must opt into which identities are public.
-* Translation provider choice must comply with user privacy expectations; some users may require self-hosted or EU-hosted providers.
+- API tokens must be stored only in GitHub Actions secrets or environment variables, not in TOML or committed files.
+- Identity graph may expose cross-platform account correlations; users must opt into which identities are public.
+- Translation provider choice must comply with user privacy expectations; some users may require self-hosted or EU-hosted providers.
 
 ## Rejected Ideas
 
-* Embedding arbitrary JavaScript in Markdown for dynamic behavior (rejected: breaks Markdown-first design and GitHub profile expectations).
-* Using non-Markdown authoring formats (e.g. reStructuredText or AsciiDoc) (rejected: poor GitHub profile integration).
-* Supporting Twitter/X as first-class identity (rejected per explicit requirement).
+- Embedding arbitrary JavaScript in Markdown for dynamic behavior (rejected: breaks Markdown-first design and GitHub profile expectations).
+- Using non-Markdown authoring formats (e.g. reStructuredText or AsciiDoc) (rejected: poor GitHub profile integration).
+- Supporting Twitter/X as first-class identity (rejected per explicit requirement).
 
----
+______________________________________________________________________
 
 End of GHIP #001.

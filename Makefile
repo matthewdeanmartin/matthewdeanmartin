@@ -1,7 +1,7 @@
 format:
 	isort src
 	black src
-	mdformat docs *.md
+	mdformat src docs *.md
 
 
 data:

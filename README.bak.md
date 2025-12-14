@@ -20,7 +20,7 @@ Here is *side project* work. Commits before 2021 are hand written. Commits after
 - [caniuseonlywheels](https://github.com/matthewdeanmartin/caniuseonlywheels) Wheel availability checker. Used to work! 🎡
 - [paipi](https://github.com/matthewdeanmartin/paipi) RAG for pypi, but also hallucinate useful packages and generate the contents of such a package.
 - [safe_run](https://github.com/matthewdeanmartin/safe_run) Generate Dockerfile for safely running a less trusted pypi app.
-  
+
 ## TUI/CLI Apps
 
 - [dedlin](https://github.com/matthewdeanmartin/dedlin) Text editor, similar to edlin. ✏️
@@ -29,13 +29,14 @@ Here is *side project* work. Commits before 2021 are hand written. Commits after
 ## TUI/CLI Libraries/Utilities
 
 - [totalhelp](https://github.com/matthewdeanmartin/totalhelp) Print all the argparse help all at once.
-  
+
 ## AI Projects build around LLMs
 
 - [ai_shell](https://github.com/matthewdeanmartin/ai_shell) ARCHIVED. Autonomous sofware development with CLI tools optimized for use as LLM tool/function calls
 - [ai_fish_tank](https://github.com/matthewdeanmartin/ai_fish_tank) Proof of concept of a terminal fish tank with AI agents for each fish.
 
 ## AWS Things
+
 - [whats_up](https://github.com/matthewdeanmartin/whats_up) Check if your AWS resources are up and service workloads, for example, after a deployment. (not public yet)
 
 ## Libraries
@@ -61,12 +62,10 @@ Here is *side project* work. Commits before 2021 are hand written. Commits after
 
 - [bash2gitlab](https://github.com/matthewdeanmartin/bash2gitlab) Compile .sh and .yml into .yml files to address limitations in gitlab's sharing model.
 
-
 ## Novelties/Incomplete/Unmaintained
 
 - [so_pip](https://github.com/matthewdeanmartin/so_pip) Vendorization tool. Made obsolete by ChatGPT. 📦
 - [git_mirror](https://github.com/matthewdeanmartin/git_mirror) Polyrepo tool. Not complete.
-
 
 ## Games I wrote with my kids input
 
