@@ -1,72 +1,465 @@
-openapi: 3.0.0
+openapi: 3.0.3
 info:
-  title: Matthew's Static API
-  description: Static configuration and data files served via GitHub Pages.
-  version: 1.0.0
+  title: github-is-my-cms Static API
+  version: "1.0.0"
+  description: >
+    Static JSON endpoints served from GitHub Pages. All resources are read-only files.
+
 servers:
-  - url: ..
-    description: Relative path to root (docs folder)
+  - url: /
+    description: GitHub Pages site root (relative)
 
 paths:
   /apis/identity.json:
     get:
-      summary: Identity Configuration
-      description: Returns the current persona configuration and promotion toggles.
       operationId: getIdentity
       responses:
-        '200':
-          description: Successful response
+        "200":
+          description: Identity profile and identity graph
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  current:
-                    type: string
-                    example: "project_promotion"
-                  job_hunting:
-                    type: object
-                  project_promotion:
-                    type: object
-                  self_promotion:
-                    type: object
-              # This example helps Swagger UI show "Example Value"
-              example:
-                current: "project_promotion"
-                job_hunting:
-                  enable_projects: true
-                  project_visibility: "curated"
-                  highlight_skills: true
-                  resume_url: null
-                project_promotion:
-                  enable_projects: true
-                  project_visibility: "full"
-                  highlight_pypi: true
-                self_promotion:
-                  enable_talks: true
-                  enable_posts: true
-                  highlight_blog: true
+                $ref: "#/components/schemas/Identity"
 
   /apis/config.json:
     get:
-      summary: General Config
-      description: Global configuration settings.
+      operationId: getConfig
       responses:
-        '200':
-          description: OK
+        "200":
+          description: Mode configuration and feature flags
           content:
             application/json:
               schema:
-                type: object
+                $ref: "#/components/schemas/ModeConfig"
 
-  /apis/projects.json:
+  /apis/projects/index.json:
     get:
-      summary: Projects List
-      description: List of active projects.
+      operationId: listProjectsIndex
       responses:
-        '200':
-          description: OK
+        "200":
+          description: Project index (full list + meta)
           content:
             application/json:
               schema:
-                type: object
+                $ref: "#/components/schemas/IndexResponseProject"
+
+  /apis/projects/pages/{page}.json:
+    get:
+      operationId: listProjectsPage
+      parameters:
+        - name: page
+          in: path
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+      responses:
+        "200":
+          description: Paged projects (50 per page)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PagedResponseProject"
+
+  /apis/projects/by-slug/{slug}.json:
+    get:
+      operationId: getProjectBySlug
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Single project by slug
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Project"
+
+  /apis/pypi/index.json:
+    get:
+      operationId: listPyPIIndex
+      responses:
+        "200":
+          description: PyPI package index (full list + meta)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/IndexResponsePyPIPackage"
+
+  /apis/pypi/pages/{page}.json:
+    get:
+      operationId: listPyPIPage
+      parameters:
+        - name: page
+          in: path
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+      responses:
+        "200":
+          description: Paged PyPI packages (50 per page)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PagedResponsePyPIPackage"
+
+  /apis/pypi/by-name/{package}.json:
+    get:
+      operationId: getPyPIByName
+      parameters:
+        - name: package
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Single PyPI package by name
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PyPIPackage"
+
+components:
+  schemas:
+    HttpUrl:
+      type: string
+      format: uri
+
+    Identity:
+      type: object
+      required: [name, tagline, profiles]
+      properties:
+        name:
+          type: string
+        tagline:
+          type: string
+        location:
+          type: string
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        profiles:
+          type: array
+          items:
+            $ref: "#/components/schemas/SocialProfile"
+        resumes:
+          type: array
+          items:
+            $ref: "#/components/schemas/ResumeEntry"
+        skills:
+          type: array
+          items:
+            $ref: "#/components/schemas/SkillGroup"
+        talks:
+          type: array
+          items:
+            $ref: "#/components/schemas/TalkEntry"
+
+    SocialProfile:
+      type: object
+      required: [service, handle, url, group]
+      properties:
+        service:
+          type: string
+        handle:
+          type: string
+        url:
+          $ref: "#/components/schemas/HttpUrl"
+        group:
+          type: string
+        same_as:
+          type: array
+          items:
+            $ref: "#/components/schemas/HttpUrl"
+        icon:
+          type: string
+          nullable: true
+
+    ResumeEntry:
+      type: object
+      required: [label, url]
+      properties:
+        label:
+          type: string
+        url:
+          $ref: "#/components/schemas/HttpUrl"
+        description:
+          type: string
+          nullable: true
+        icon:
+          type: string
+          nullable: true
+
+    TalkEntry:
+      type: object
+      required: [title, url]
+      properties:
+        title:
+          type: string
+        url:
+          $ref: "#/components/schemas/HttpUrl"
+        icon:
+          type: string
+          nullable: true
+
+    Skill:
+      type: object
+      required: [name]
+      properties:
+        name:
+          type: string
+        level:
+          type: string
+          nullable: true
+        icon:
+          type: string
+          nullable: true
+
+    SkillGroup:
+      type: object
+      required: [category, skills]
+      properties:
+        category:
+          type: string
+        skills:
+          type: array
+          items:
+            $ref: "#/components/schemas/Skill"
+
+    Project:
+      type: object
+      required: [slug, name, description, tags, status]
+      properties:
+        slug:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        url:
+          $ref: "#/components/schemas/HttpUrl"
+          nullable: true
+        repository_url:
+          $ref: "#/components/schemas/HttpUrl"
+          nullable: true
+        tags:
+          type: array
+          items:
+            type: string
+        featured:
+          type: boolean
+          default: false
+        status:
+          type: string
+        cms:
+          type: object
+          nullable: true
+          properties:
+            suppress:
+              type: boolean
+              default: false
+            package_links:
+              type: array
+              items:
+                $ref: "#/components/schemas/HttpUrl"
+
+    PyPIPackage:
+      type: object
+      required: [package_name]
+      properties:
+        package_name:
+          type: string
+        github_repo:
+          type: string
+          nullable: true
+          description: owner/repo
+        version:
+          type: string
+          nullable: true
+        summary:
+          type: string
+          nullable: true
+        downloads_monthly:
+          type: integer
+          nullable: true
+        docs_url:
+          $ref: "#/components/schemas/HttpUrl"
+          nullable: true
+        last_updated:
+          type: string
+          nullable: true
+
+    ModeConfig:
+      type: object
+      properties:
+        current:
+          type: string
+        job_hunting:
+          type: object
+        project_promotion:
+          type: object
+        self_promotion:
+          type: object
+
+    MetaIndex:
+      type: object
+      required: [type, count, page_size, pages]
+      properties:
+        type:
+          type: string
+        count:
+          type: integer
+        page_size:
+          type: integer
+        pages:
+          type: integer
+
+    MetaPage:
+      type: object
+      required: [type, page, page_size, pages, total]
+      properties:
+        type:
+          type: string
+        page:
+          type: integer
+        page_size:
+          type: integer
+        pages:
+          type: integer
+        total:
+          type: integer
+
+    IndexResponseProject:
+      type: object
+      required: [data, meta]
+      properties:
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/Project"
+        meta:
+          $ref: "#/components/schemas/MetaIndex"
+
+    PagedResponseProject:
+      type: object
+      required: [data, meta]
+      properties:
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/Project"
+        meta:
+          $ref: "#/components/schemas/MetaPage"
+
+    IndexResponsePyPIPackage:
+      type: object
+      required: [data, meta]
+      properties:
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/PyPIPackage"
+        meta:
+          $ref: "#/components/schemas/MetaIndex"
+
+    PagedResponsePyPIPackage:
+      type: object
+      required: [data, meta]
+      properties:
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/PyPIPackage"
+        meta:
+          $ref: "#/components/schemas/MetaPage"
+
+
+
+    Link:
+      type: object
+      required: [rel, href]
+      properties:
+        rel: { type: string }
+        href: { type: string }
+        type: { type: string, nullable: true }
+
+    RefItem:
+      type: object
+      required: [ref]
+      properties:
+        ref: { type: string }
+        rel: { type: string, nullable: true }
+        name: { type: string, nullable: true }          # optional hint
+        status: { type: string, nullable: true }        # optional hint
+        package_name: { type: string, nullable: true }  # optional hint
+        version: { type: string, nullable: true }       # optional hint
+
+    HateoasEnvelope:
+      type: object
+      properties:
+        _links:
+          type: array
+          items: { $ref: "#/components/schemas/Link" }
+        _rels:
+          type: object
+          additionalProperties: true
+
+    ProjectsList:
+      allOf:
+        - $ref: "#/components/schemas/HateoasEnvelope"
+        - type: object
+          required: [refs, meta]
+          properties:
+            refs:
+              type: array
+              items: { $ref: "#/components/schemas/RefItem" }
+            meta: { $ref: "#/components/schemas/MetaIndex" }
+
+    ProjectsPage:
+      allOf:
+        - $ref: "#/components/schemas/HateoasEnvelope"
+        - type: object
+          required: [refs, meta]
+          properties:
+            refs:
+              type: array
+              items: { $ref: "#/components/schemas/RefItem" }
+            meta: { $ref: "#/components/schemas/MetaPage" }
+
+    ProjectItem:
+      allOf:
+        - $ref: "#/components/schemas/Project"
+        - $ref: "#/components/schemas/HateoasEnvelope"
+
+    PyPIList:
+      allOf:
+        - $ref: "#/components/schemas/HateoasEnvelope"
+        - type: object
+          required: [refs, meta]
+          properties:
+            refs:
+              type: array
+              items: { $ref: "#/components/schemas/RefItem" }
+            meta: { $ref: "#/components/schemas/MetaIndex" }
+
+    PyPIPage:
+      allOf:
+        - $ref: "#/components/schemas/HateoasEnvelope"
+        - type: object
+          required: [refs, meta]
+          properties:
+            refs:
+              type: array
+              items: { $ref: "#/components/schemas/RefItem" }
+            meta: { $ref: "#/components/schemas/MetaPage" }
+
+    PyPIItem:
+      allOf:
+        - $ref: "#/components/schemas/PyPIPackage"
+        - $ref: "#/components/schemas/HateoasEnvelope"

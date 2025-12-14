@@ -1,0 +1,84 @@
+components:
+  schemas:
+    Link:
+      type: object
+      required: [rel, href]
+      properties:
+        rel: { type: string }
+        href: { type: string }
+        type: { type: string, nullable: true }
+
+    RefItem:
+      type: object
+      required: [ref]
+      properties:
+        ref: { type: string }
+        rel: { type: string, nullable: true }
+        name: { type: string, nullable: true }          # optional hint
+        status: { type: string, nullable: true }        # optional hint
+        package_name: { type: string, nullable: true }  # optional hint
+        version: { type: string, nullable: true }       # optional hint
+
+    HateoasEnvelope:
+      type: object
+      properties:
+        _links:
+          type: array
+          items: { $ref: "#/components/schemas/Link" }
+        _rels:
+          type: object
+          additionalProperties: true
+
+    ProjectsList:
+      allOf:
+        - $ref: "#/components/schemas/HateoasEnvelope"
+        - type: object
+          required: [refs, meta]
+          properties:
+            refs:
+              type: array
+              items: { $ref: "#/components/schemas/RefItem" }
+            meta: { $ref: "#/components/schemas/MetaIndex" }
+
+    ProjectsPage:
+      allOf:
+        - $ref: "#/components/schemas/HateoasEnvelope"
+        - type: object
+          required: [refs, meta]
+          properties:
+            refs:
+              type: array
+              items: { $ref: "#/components/schemas/RefItem" }
+            meta: { $ref: "#/components/schemas/MetaPage" }
+
+    ProjectItem:
+      allOf:
+        - $ref: "#/components/schemas/Project"
+        - $ref: "#/components/schemas/HateoasEnvelope"
+
+    PyPIList:
+      allOf:
+        - $ref: "#/components/schemas/HateoasEnvelope"
+        - type: object
+          required: [refs, meta]
+          properties:
+            refs:
+              type: array
+              items: { $ref: "#/components/schemas/RefItem" }
+            meta: { $ref: "#/components/schemas/MetaIndex" }
+
+    PyPIPage:
+      allOf:
+        - $ref: "#/components/schemas/HateoasEnvelope"
+        - type: object
+          required: [refs, meta]
+          properties:
+            refs:
+              type: array
+              items: { $ref: "#/components/schemas/RefItem" }
+            meta: { $ref: "#/components/schemas/MetaPage" }
+
+    PyPIItem:
+      allOf:
+        - $ref: "#/components/schemas/PyPIPackage"
+        - $ref: "#/components/schemas/HateoasEnvelope"
