@@ -25,6 +25,45 @@
         </table>
     </section>
 
+    {% if config.modes.current == "job_hunting" %}
+<section>
+  <h2>Work Experience</h2>
+
+  {% for role in work_experience %}
+    <h3>{{ role.title }} — {{ role.organization }}</h3>
+    <div class="meta">
+      {{ role.start_date }} – {{ role.end_date }}{% if role.location %} • {{ role.location }}{% endif %}
+    </div>
+
+    {% if role.summary %}<p>{{ role.summary }}</p>{% endif %}
+
+    {% if role.responsibilities %}
+    <ul>
+      {% for item in role.responsibilities %}
+        <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if role.technologies %}
+      <div class="tags">Tech: {{ role.technologies | join(", ") }}</div>
+    {% endif %}
+  {% endfor %}
+</section>
+
+<section>
+  <h2>Resumes</h2>
+  <ul>
+    {% for r in resumes %}
+      {% if r.status == "active" %}
+        <li><strong><a href="{{ r.url }}">{{ r.label }}</a></strong>{% if r.description %} — {{ r.description }}{% endif %}</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+
     {% if config.modes.current == "job_hunting" or config.modes.current == "project_promotion" %}
     <section>
         <h2>Selected Projects</h2>

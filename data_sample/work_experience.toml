@@ -1,0 +1,21 @@
+# data/work_experience.toml
+
+[[experience]]
+id = "acme-2021-2024"
+organization = "Acme Corp"
+title = "Senior Platform Engineer"
+employment_type = "full_time" # full_time | contract | freelance | volunteer
+start_date = "2021-06"
+end_date = "2024-11"         # or "present"
+location = "Remote"
+summary = "Owned CI/CD, platform observability, and infra automation for regulated workloads."
+
+responsibilities = [
+  "Built multi-account AWS landing zone with policy-as-code.",
+  "Reduced deploy time from 40m to 10m via pipeline refactors.",
+]
+
+technologies = ["AWS", "Terraform", "Python", "Postgres"]
+links = [
+  { label = "Company", url = "https://example.com" }
+]

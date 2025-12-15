@@ -19,8 +19,10 @@ I used to be a full stack developer, I evolved into tech lead and most recently 
 
 ## Resumes
 
-{% for resume in identity.resumes %}
-{{ resume.icon }} [{{ resume.label }}]({{ resume.url }}){% if resume.description %} {{ resume.description }}{% endif %}<br>
+{% for r in resumes %}
+{% if r.status == "active" %}
+{{ r.icon or "📄" }} [{{ r.label }}]({{ r.url }}){% if r.description %} {{ r.description }}{% endif %}<br>
+{% endif %}
 {% endfor %}
 
 ## Identity Backlinks

@@ -1,0 +1,395 @@
+# data/work_experience.toml
+
+[[experience]]
+id = "artemis-aretum-2019-present"
+organization = "Artemis Consulting (renamed Aretum)"
+title = "Technical Lead and Python Developer"
+employment_type = "full_time"
+start_date = "2019-09"
+end_date = "present"
+summary = "Technical lead for a Python-based search engine for legal documents at the Library of Congress (USCO)."
+
+responsibilities = [
+  "Application development: built three Python microservices, two ETL processes, and several AWS Lambdas for search, emailing, and bookmarking.",
+  "Architecture and infrastructure-as-code: selected AWS services and wrote Terraform to integrate them with the application.",
+  "Technical leadership: supported a specialist team on a cloud-native application; helped teammates with IDE/tooling and build scripts; set up Dev Containers; used LocalStack and Python moto for AWS simulation.",
+  "Process: participated in SAFe-style Agile (PI planning, sprint planning, ticket writing, sprint demos) continuously for ~5 years; gathered metrics and helped client interpret them for continuous improvement.",
+  "Release management: participated in Federal SDLC (A&A, ATO, POA&M responses, change requests for production releases).",
+  "Supervision: participated in technical interviewing, developer onboarding, mentoring, and PIPs.",
+]
+
+technologies = [
+  "Python",
+  "pytest",
+  "Connexion",
+  "Gunicorn",
+  "OpenAPI/Swagger",
+  "JSON",
+  "Nginx",
+  "AWS ECS",
+  "AWS ECR",
+  "AWS S3",
+  "AWS Glue",
+  "AWS RDS",
+  "AWS EC2",
+  "AWS ALB",
+  "AWS API Gateway",
+  "AWS ElastiCache",
+  "OpenSearch/Elasticsearch",
+  "Terraform",
+  "Docker",
+  "Podman",
+  "GitLab CI",
+  "SonarQube",
+  "pylint",
+  "Locust",
+  "mypy",
+  "Makefile",
+  "Justfile",
+  "Git",
+  "bash",
+  "Java TestNG",
+  "Selenium",
+  "Angular",
+  "Trivy",
+  "OWASP ZAP",
+  "Tenable",
+  "Keycloak",
+  "JWT",
+  "VSCode",
+  "WebStorm",
+  "IntelliJ",
+  "PyCharm",
+]
+
+links = []
+
+
+[[experience]]
+id = "asrc-federal-2019"
+organization = "ASRC Federal"
+title = "Systems Architect"
+employment_type = "full_time"
+start_date = "2019-03"
+end_date = "2019-09"
+summary = "USPTO support contract: worked with the Architecture Division to introduce new technologies across the organization."
+
+responsibilities = [
+  "Built proofs of concept using Docker, Kubernetes, and Jenkins.",
+  "Performed brief work with Azure (LUIS chatbot, pre-LLM).",
+  "Built a proof of concept using UIPath RPA for Ops teams.",
+  "Deployed Xibo signage/kiosk application to AWS EC2 using a lift-and-shift architecture.",
+]
+
+technologies = [
+  "Docker",
+  "Kubernetes",
+  "Jenkins",
+  "Azure",
+  "LUIS",
+  "UIPath",
+  "Xibo",
+  "AWS EC2",
+]
+
+links = []
+
+
+[[experience]]
+id = "burson-marsteller-bcw-2016-2019"
+organization = "Burson Marsteller (renamed Burson Cohn & Wolfe)"
+title = "Senior Development Engineer"
+employment_type = "full_time"
+start_date = "2016-06"
+end_date = "2019-03"
+summary = "Supervised a team, wrote code, and handled build/server administration for AWS infrastructure."
+
+responsibilities = [
+  "Machine learning: maintained existing models and developed new models (scikit-learn, including random forest); used pandas for data processing and reporting.",
+  "Architecture: evaluated options and delivered proofs of concept for developers to implement; researched and migrated components (e.g., SQS to Redis, Celery to AWS Step Functions).",
+  "Infrastructure as code: replaced manual server rebuilds with Ansible-based builds.",
+  "Build engineering: wrote a comprehensive bash build script, later rewrote it in Python to overcome bash limitations.",
+  "Maintenance development: split a monolith into five components, including two Swagger REST API microservices running on Docker.",
+  "Cloud administration: administered ~30–60 AWS servers (mostly Ubuntu, sometimes CentOS/RHEL); cost optimization, network hardening, VPC migrations, user and API key management.",
+  "Supervision: managed 1–5 developers; supported three codebases; shipped two major versions; cut AWS bills and handled operational requests; supervised a DevOps engineer and temporary dev team.",
+]
+
+technologies = [
+  "Python",
+  "pytest",
+  "Django",
+  "OpenAPI/Swagger",
+  "JSON",
+  "Connexion",
+  "Celery",
+  "Angular",
+  "Jinja",
+  "scikit-learn",
+  "pandas",
+  "AWS EC2",
+  "AWS ECR",
+  "AWS Redshift",
+  "PostgreSQL",
+  "AWS S3",
+  "AWS EMR",
+  "Spark",
+  "AWS Step Functions",
+  "AWS IAM",
+  "AWS RDS",
+  "AWS SQS",
+  "Packer",
+  "Vagrant",
+  "Docker",
+  "Ansible",
+  "Git",
+  "GitHub",
+  "bash",
+  "TeamCity",
+]
+
+links = []
+
+
+[[experience]]
+id = "fors-marsh-group-2015-2016"
+organization = "Fors Marsh Group"
+title = "Senior Software Engineer I"
+employment_type = "full_time"
+start_date = "2015-01"
+end_date = "2016-06"
+summary = "Python application development for a NIST contract; additional application development for Veterans Administration (VA)."
+
+responsibilities = [
+  "Python application development: maintained and released a Python 3 GUI application for a password-creation research study; refactored legacy code, added automated unit tests, and stabilized the application.",
+  "Created an internal library over TKInter to simplify building new screens.",
+  "Instrumented the application for diagnostics/trace via logging to support issue investigation.",
+  "Release management: created build script, generated API documentation, and packaged the app to run without a pre-existing Python runtime.",
+  ".NET backend development (VA): created an Entity Framework data tier for an authentication store.",
+  ".NET application development (VA): enhanced a WIF single sign-on solution for self-configuration; built an HTTP/REST ASP.NET WebAPI interface and corresponding C#, JavaScript, and PHP clients.",
+  "Maintained WebForms/MS-Ajax and MVC 4 applications; created a WCF service layer and performed WCF performance tuning (serialization improvements and async via .NET 4.0 Task library).",
+  "Built a data import tool using ASP.NET, jQuery, and jQuery-UI with additional QA checks.",
+  "Front-end work: implemented HTML5 and TypeScript; requirejs module loading; converted existing JavaScript to TypeScript; implemented client-side error logging and testing data generation; contributed to Knockout.js databinding and underscore-based templates.",
+  "Created a workflow to periodically import a complex Drupal-based HTML template for reuse across ASP.NET WebForms and MVC apps.",
+  "Established an end-to-end automated TFS build customized for nUnit tests; wrote PowerShell scripts to automate build/deploy tasks.",
+]
+
+technologies = [
+  "Python",
+  "TKInter",
+  "PyCharm",
+  "Eclipse",
+  "IronPython",
+  "unittest",
+  "nose",
+  "sphinx",
+  "pywin",
+  "virtualenv",
+  "C#",
+  "ASP.NET",
+  "ASP.NET Web API",
+  "WIF",
+  "ASP.NET MVC",
+  "WCF",
+  "JavaScript",
+  "TypeScript",
+  "HTML5",
+  "Microsoft SQL Server",
+  "NUnit",
+  "jQuery",
+  "jQuery UI",
+  "requirejs",
+  "Knockout.js",
+  "underscore",
+  "Drupal",
+  "TFS",
+  "PowerShell",
+  ".NET Framework 4.0",
+]
+
+links = []
+
+
+[[experience]]
+id = "benten-technologies-2014"
+organization = "Benten Technologies"
+title = "Senior .NET Developer"
+employment_type = "contract"
+start_date = "2014-07"
+end_date = "2014-12"
+summary = "Hiring agency role supporting work at Fors Marsh until contract converted to full-time at Fors Marsh (location and contract stayed the same)."
+
+responsibilities = [
+  "Worked under Benten Technologies as the hiring agency while performing the same role and work that later converted to full-time employment at Fors Marsh Group.",
+]
+
+technologies = []
+
+links = []
+
+
+[[experience]]
+id = "caci-2013-2014"
+organization = "CACI"
+title = "JavaScript and C# Software Developer III"
+employment_type = "full_time"
+start_date = "2013-02"
+end_date = "2014-07"
+summary = "Application development and maintenance for a Pentagon budgeting application (required Secret clearance)."
+
+responsibilities = [
+  "Migrated UI from Oracle Forms to a hybrid ASP.NET WebForms/MVC + JavaScript single-page approach; integrated with Oracle backend via PL/SQL; improved performance from ~10–15s responses to near-instant for most actions.",
+  "Performance tuning: optimized a Word document generation system (addressed multi-threading issues, races, deadlocks); implemented Parallel Task Library and WCF patterns to reduce runtimes to ~3–5 minutes despite ~50× workload.",
+  "DevOps/build: refactored legacy code and implemented automated unit/integration tests; participated in releases via TFS; supported multiple maintenance releases to production and iterative releases to test as part of CI.",
+]
+
+technologies = [
+  "C#",
+  ".NET Framework 4.0",
+  "ASP.NET",
+  "WebForms",
+  "MVC",
+  "WCF",
+  "Task Parallel Library",
+  "JavaScript",
+  "jQuery",
+  "jQuery UI",
+  "PL/SQL",
+  "TFS",
+]
+
+links = []
+
+
+[[experience]]
+id = "aboutweb-2012-2013"
+organization = "AboutWeb"
+title = "JavaScript and C# Software Developer III"
+employment_type = "contract"
+start_date = "2012-08"
+end_date = "2013-02"
+summary = "Hiring agency role supporting work at CACI until contract converted to full-time at CACI (location and contract stayed the same)."
+
+responsibilities = [
+  "Worked under AboutWeb as the hiring agency while performing the same CACI project work that later converted to full-time employment at CACI.",
+]
+
+technologies = []
+
+links = []
+
+
+[[experience]]
+id = "procentrix-2008-2012"
+organization = "Procentrix, Inc."
+title = "Senior Consultant"
+employment_type = "full_time"
+start_date = "2008-05"
+end_date = "2012-08"
+summary = "Application and maintenance development for TSA; lead developer and CI/DevOps owner for developer network systems."
+
+responsibilities = [
+  "Full-stack .NET maintenance development (C#, T-SQL, JavaScript, Telerik); upgraded application from .NET 1.1 to 3.5; created integration + unit test suites reducing logged errors from hundreds/day to several/week.",
+  "Release management: lead developer on a three-person team; moved ~15 releases through TSA SDLC; authored SDLC documents; performed maintenance work required to pass C&A (Certification and Authorization).",
+  "DevOps: built a CI system evolving from VSS/Luntbuild/Flyspray to Subversion/Collabnet/TeamCity; managed servers/workstations on developer network; performed DBA tasks for MySQL and MSSQL (upgrades, schema comparison, security hardening).",
+  ".NET modernization: refactored a .NET/C#/LLBGen travel scheduler app for reuse by a new department; upgraded ASP.NET scheduling/travel app to 2.0 and identified XSS/SQL injection vulnerabilities.",
+  "Data warehouse: extracted data from a schema lacking foreign keys into a star schema for loading into SQL Server Analysis Services cubes.",
+  "SharePoint: built a proof-of-concept web part for a management statistics dashboard.",
+]
+
+technologies = [
+  "C#",
+  "nunit",
+  "ASP.NET",
+  "WebForms",
+  "Telerik",
+  "Microsoft SQL Server",
+  "SSRS",
+  "SharePoint",
+  "T-SQL",
+  "JavaScript",
+  "VSS",
+  "Subversion",
+  "Flyspray",
+  "Luntbuild",
+  "Visual Studio",
+  "TeamCity",
+  "MySQL",
+  "MSSQL",
+  "LLBGen",
+]
+
+links = []
+
+
+[[experience]]
+id = "dynamics-research-corp-2005-2008"
+organization = "Dynamics Research Corporation (acquired by Engility Corporation)"
+title = "Software Developer III"
+employment_type = "full_time"
+start_date = "2005-05"
+end_date = "2008-05"
+summary = "DBA and application maintenance for USAF; modernization work, data interfaces, and SQL Server administration."
+
+responsibilities = [
+  "Migrated an ASP Classic application to ASP.NET; also completed a rewrite using ASP.NET 2.0 features (including custom/user controls) and built a 508 accessibility interface using ASP.NET 2.0 profile features.",
+  "Built an ASP.NET + T-SQL web-based data interface between Oracle scheduling and the SQL Server database feeding a simulation model; included tools/reports for exceptions and interface scenarios.",
+  "Modernized ASP Classic UI using CSS and web standards to reduce HTML size/complexity and improve maintainability (using CMMI repeatable processes).",
+  "Provided ongoing DTS troubleshooting support for monthly data warehouse updates; upgraded import packages from DTS to SSIS.",
+  "Implemented new metrics/levels of detail in MERLIN; refactored T-SQL queries to reduce lines of code ~5× for Weapon System Availability tasking.",
+  "Automated SQL Server backups/admin scripts; implemented monitoring/notification for data warehouse health.",
+  "Installed/configured a SharePoint issue tracker for a geographically distributed dev team; used in live production.",
+  "Built prototype Analysis Services cubes and MDX proof-of-concept for high-performance BI querying.",
+  "Collaborated to repair/stabilize VSS repositories and prevent loss of historical source code; set up Subversion for migration.",
+  "Created developer documentation: data dictionary, API documentation, and comprehensive web-based user documentation for a data interface tool.",
+]
+
+technologies = [
+  "Microsoft SQL Server",
+  "SSIS",
+  "DTS",
+  "SSRS",
+  "SSMS",
+  "C#",
+  "VB.NET",
+  "ASP Classic",
+  "VB6",
+  "Visual Source Safe",
+  "Subversion",
+  "Visual Studio",
+  "SharePoint",
+  "MDX",
+]
+
+links = []
+
+
+[[experience]]
+id = "prince-william-county-1998-2005"
+organization = "Prince William County"
+title = "Systems Developer I"
+employment_type = "full_time"
+start_date = "1998-10"
+end_date = "2005-05"
+summary = "Application support and development for a county tax office; reporting, interfaces, and data quality work."
+
+responsibilities = [
+  "Maintained a closed-source client-server tax-office application (VB6 WinForms, T-SQL, MS-Access reports), including report generation for tens of thousands of heterogeneous tax bills.",
+  "Built integrations with the existing system via SQL Server triggers, scheduled tasks, and stored procedures.",
+  "Developed a large integrated tax billing application to supplement the county COTS system using MS Access, XML, SQL Server, and custom unit tests; covered full SDLC from requirements through deployment and training.",
+  "Created numerous import/export interfaces using T-SQL procedures, DTS, MS-Access, and other custom packages to integrate with external organizations (banks and government agencies).",
+  "Improved data quality by building MS-Access cross-tabs to identify errors in a Visual FoxPro system.",
+]
+
+technologies = [
+  "Microsoft Access",
+  "Microsoft SQL Server",
+  "Visual FoxPro",
+  "T-SQL",
+  "DTS",
+  "VBA",
+  "VB6",
+  "Visual Studio",
+  "XML",
+]
+
+links = []

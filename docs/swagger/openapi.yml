@@ -124,6 +124,93 @@ paths:
               schema:
                 $ref: "#/components/schemas/PyPIPackage"
 
+  /apis/experience/index.json:
+    get:
+      operationId: listExperienceIndex
+      responses:
+        "200":
+          description: Work experience index (refs + meta)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExperienceList"
+
+  /apis/experience/pages/{page}.json:
+    get:
+      operationId: listExperiencePage
+      parameters:
+        - name: page
+          in: path
+          required: true
+          schema: { type: integer, minimum: 1 }
+      responses:
+        "200":
+          description: Paged work experience
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExperiencePage"
+
+  /apis/experience/by-id/{id}.json:
+    get:
+      operationId: getExperienceById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Single work experience entry
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExperienceItem"
+
+  /apis/resumes/index.json:
+    get:
+      operationId: listResumesIndex
+      responses:
+        "200":
+          description: Resumes index (refs + meta)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResumesList"
+
+  /apis/resumes/pages/{page}.json:
+    get:
+      operationId: listResumesPage
+      parameters:
+        - name: page
+          in: path
+          required: true
+          schema: { type: integer, minimum: 1 }
+      responses:
+        "200":
+          description: Paged resumes
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResumesPage"
+
+  /apis/resumes/by-id/{id}.json:
+    get:
+      operationId: getResumeById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Single resume artifact
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResumeItem"
+
+
 components:
   schemas:
     HttpUrl:
@@ -462,4 +549,102 @@ components:
     PyPIItem:
       allOf:
         - $ref: "#/components/schemas/PyPIPackage"
+        - $ref: "#/components/schemas/HateoasEnvelope"
+
+    LabeledLink:
+      type: object
+      required: [label, url]
+      properties:
+        label: { type: string }
+        url: { $ref: "#/components/schemas/HttpUrl" }
+
+    WorkExperienceEntry:
+      type: object
+      required: [id, organization, title, employment_type, start_date, end_date]
+      properties:
+        id: { type: string }
+        organization: { type: string }
+        title: { type: string }
+        employment_type: { type: string }
+        start_date: { type: string }
+        end_date: { type: string }
+        location: { type: string, nullable: true }
+        summary: { type: string, nullable: true }
+        responsibilities:
+          type: array
+          items: { type: string }
+        technologies:
+          type: array
+          items: { type: string }
+        links:
+          type: array
+          items: { $ref: "#/components/schemas/LabeledLink" }
+
+    ResumeArtifact:
+      type: object
+      required: [id, label, url, format, status]
+      properties:
+        id: { type: string }
+        label: { type: string }
+        url: { $ref: "#/components/schemas/HttpUrl" }
+        format: { type: string }
+        audience: { type: string, nullable: true }
+        status: { type: string }
+        valid_from: { type: string, nullable: true }
+        valid_until: { type: string, nullable: true }
+        description: { type: string, nullable: true }
+        icon: { type: string, nullable: true }
+
+    ExperienceList:
+      allOf:
+        - $ref: "#/components/schemas/HateoasEnvelope"
+        - type: object
+          required: [refs, meta]
+          properties:
+            refs:
+              type: array
+              items: { $ref: "#/components/schemas/RefItem" }
+            meta: { $ref: "#/components/schemas/MetaIndex" }
+
+    ExperiencePage:
+      allOf:
+        - $ref: "#/components/schemas/HateoasEnvelope"
+        - type: object
+          required: [refs, meta]
+          properties:
+            refs:
+              type: array
+              items: { $ref: "#/components/schemas/RefItem" }
+            meta: { $ref: "#/components/schemas/MetaPage" }
+
+    ExperienceItem:
+      allOf:
+        - $ref: "#/components/schemas/WorkExperienceEntry"
+        - $ref: "#/components/schemas/HateoasEnvelope"
+
+    ResumesList:
+      allOf:
+        - $ref: "#/components/schemas/HateoasEnvelope"
+        - type: object
+          required: [refs, meta]
+          properties:
+            refs:
+              type: array
+              items: { $ref: "#/components/schemas/RefItem" }
+            meta: { $ref: "#/components/schemas/MetaIndex" }
+
+    ResumesPage:
+      allOf:
+        - $ref: "#/components/schemas/HateoasEnvelope"
+        - type: object
+          required: [refs, meta]
+          properties:
+            refs:
+              type: array
+              items: { $ref: "#/components/schemas/RefItem" }
+            meta: { $ref: "#/components/schemas/MetaPage" }
+
+    ResumeItem:
+      allOf:
+        - $ref: "#/components/schemas/ResumeArtifact"
         - $ref: "#/components/schemas/HateoasEnvelope"

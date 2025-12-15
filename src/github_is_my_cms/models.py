@@ -241,6 +241,16 @@ class CMSConfig(BaseModel):
     pypi_packages: List[PyPIPackage] = Field(default_factory=list)
     theme: Optional[str] = "default"
 
+    work_experience: List[WorkExperienceEntry] = Field(default_factory=list)
+    resumes: List[ResumeArtifact] = Field(default_factory=list)
+
+    @property
+    def featured_resume_url(self) -> Optional[str]:
+        for r in self.resumes:
+            if r.status == ResumeStatus.ACTIVE:
+                return str(r.url)
+        return None
+
     @property
     def current_mode_settings(self):
         """Helper to retrieve settings for the currently active mode."""
@@ -251,3 +261,59 @@ class CMSConfig(BaseModel):
         elif self.modes.current == SiteMode.SELF_PROMOTION:
             return self.modes.self_promotion
         return self.modes.project_promotion
+
+
+
+# --- add near other enums ---
+
+class EmploymentType(str, Enum):
+    FULL_TIME = "full_time"
+    CONTRACT = "contract"
+    FREELANCE = "freelance"
+    VOLUNTEER = "volunteer"
+
+
+class ResumeStatus(str, Enum):
+    ACTIVE = "active"
+    EXPIRED = "expired"
+    DRAFT = "draft"
+
+
+class ResumeFormat(str, Enum):
+    PDF = "pdf"
+    DOCX = "docx"
+    HTML = "html"
+    MD = "md"
+    OTHER = "other"
+
+
+class LabeledLink(BaseModel):
+    label: str
+    url: HttpUrl
+
+
+class WorkExperienceEntry(BaseModel):
+    id: str
+    organization: str
+    title: str
+    employment_type: EmploymentType = EmploymentType.FULL_TIME
+    start_date: str  # "YYYY-MM" or "YYYY"
+    end_date: str  # "YYYY-MM" or "present"
+    location: Optional[str] = None
+    summary: Optional[str] = None
+    responsibilities: List[str] = Field(default_factory=list)
+    technologies: List[str] = Field(default_factory=list)
+    links: List[LabeledLink] = Field(default_factory=list)
+
+
+class ResumeArtifact(BaseModel):
+    id: str
+    label: str
+    url: HttpUrl
+    format: ResumeFormat = ResumeFormat.PDF
+    audience: Optional[str] = None
+    status: ResumeStatus = ResumeStatus.ACTIVE
+    valid_from: Optional[str] = None   # "YYYY-MM" or "YYYY"
+    valid_until: Optional[str] = None  # optional
+    description: Optional[str] = None
+    icon: Optional[str] = "📄"

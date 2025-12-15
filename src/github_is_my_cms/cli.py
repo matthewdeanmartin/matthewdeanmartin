@@ -10,10 +10,11 @@ import sys
 from pathlib import Path
 from typing import List, Optional
 
+import github_is_my_cms.__about__ as __about__
+
 # Import the builder
 from .builder import SiteBuilder
 from .data_sources import DataUpdater
-import github_is_my_cms.__about__ as __about__
 
 # Versioning
 # TODO: ideally fetched from package metadata in production

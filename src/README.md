@@ -1,4 +1,4 @@
-# Readme Maker
+# Github is My CMS
 
 A CMS targeting markdown, markdown-to-html, and the GH source browser.
 

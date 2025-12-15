@@ -1,0 +1,22 @@
+# data/resumes.toml
+
+[[resumes]]
+id = "resume-2015"
+label = "Resume from 2015"
+url = "https://matthewdeanmartin.github.io/"
+format = "html"          # pdf | docx | html | md | other
+audience = "general"
+status = "expired"       # active | expired | draft
+valid_from = "2015-01"
+icon = "📄"
+
+[[resumes]]
+id = "resume-2024-novelty"
+label = "Novelty Resume from 2024"
+url = "https://matthewdeanmartin.github.io/resume/browser/"
+format = "html"
+audience = "general"
+status = "active"
+valid_from = "2024-01"
+description = "Hire button and a fire button!"
+icon = "📄"

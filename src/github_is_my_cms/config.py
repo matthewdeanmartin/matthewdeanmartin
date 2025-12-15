@@ -70,6 +70,32 @@ class ConfigLoader:
         pypi_data = self._load_toml_file(self.data_dir / "pypi_projects.toml")
         pypi_list = pypi_data.get("packages", [])
 
+        # 4b. Load Work Experience
+        experience_data = self._load_toml_file(self.data_dir / "work_experience.toml")
+        experience_list = experience_data.get("experience", [])
+
+        # 4c. Load Resume Artifacts
+        resumes_data = self._load_toml_file(self.data_dir / "resumes.toml")
+        resumes_list = resumes_data.get("resumes", [])
+
+        # Optional compatibility: if resumes.toml missing, fall back to identity.resumes
+        # (Identity.resumes is legacy; ResumeArtifact is the v2 path.)
+        if not resumes_list and identity_data.get("resumes"):
+            legacy = identity_data.get("resumes", [])
+            resumes_list = [
+                {
+                    "id": f"legacy-{i}",
+                    "label": r.get("label"),
+                    "url": r.get("url"),
+                    "description": r.get("description"),
+                    "icon": r.get("icon", "📄"),
+                    "format": "other",
+                    "status": "active",
+                }
+                for i, r in enumerate(legacy)
+                if r.get("label") and r.get("url")
+            ]
+
         # 5. Assemble the final dictionary for Pydantic validation
         # We merge all top-level keys.
         config_dict = {
@@ -78,7 +104,10 @@ class ConfigLoader:
             "languages": main_config.get("languages", {}),
             "projects": projects_list,
             "pypi_packages": pypi_list,
-            "theme": main_config.get("theme", "default")
+            "theme": main_config.get("theme", "default"),
+
+            "work_experience": experience_list,
+            "resumes": resumes_list,
         }
 
         # 6. Validate and Return

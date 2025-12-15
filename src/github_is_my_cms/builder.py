@@ -34,15 +34,15 @@ class SiteBuilder:
         # TODO: this is messed up. It should be from editable installation or package.
         self.src = self.root / "src"
         self.content_dir = self.src / "content"
-        self.templates_dir = self.src / "github_is_my_cms" / "templates" / self.config.theme
+        self.templates_dir = (
+            self.src / "github_is_my_cms" / "templates" / self.config.theme
+        )
 
         # Output directories
         self.docs_dir = self.root / "docs"
         self.md_out = self.docs_dir / "md"
         self.api_out = self.docs_dir / "apis"
         self.html_out = self.docs_dir  # HTML sits in root of docs/ for GitHub Pages
-
-
 
         # Setup Jinja2 Environment
         self.env = Environment(
@@ -60,6 +60,9 @@ class SiteBuilder:
         self.env.globals["mode"] = self.config.current_mode_settings
         self.env.globals["projects"] = self.config.projects
         self.env.globals["pypi"] = self.config.pypi_packages
+
+        self.env.globals["work_experience"] = self.config.work_experience
+        self.env.globals["resumes"] = self.config.resumes
 
         # Helper to include raw markdown content from src/content/
         self.env.globals["include_content"] = self._read_content_file
@@ -195,7 +198,7 @@ class SiteBuilder:
                 "_links": links(
                     link(self_href, "self"),
                     link(projects_index_href, "collection"),
-                    link(f"/apis/projects/pages/1.json", "first"),
+                    link("/apis/projects/pages/1.json", "first"),
                     link("/apis/openapi.yaml", "describedby", "text/yaml"),
                 ),
                 "_rels": {
@@ -285,7 +288,9 @@ class SiteBuilder:
             name = pkg["package_name"]
             self_href = f"/apis/pypi/by-name/{name}.json"
             repo_key = (pkg.get("github_repo") or "").strip().lower() or None
-            related_project_slug = repo_to_project_slug.get(repo_key) if repo_key else None
+            related_project_slug = (
+                repo_to_project_slug.get(repo_key) if repo_key else None
+            )
 
             payload = {
                 **pkg,
@@ -297,7 +302,12 @@ class SiteBuilder:
                 ),
                 "_rels": {
                     "github_project": (
-                        [ref_item(f"/apis/projects/by-slug/{related_project_slug}.json", "related")]
+                        [
+                            ref_item(
+                                f"/apis/projects/by-slug/{related_project_slug}.json",
+                                "related",
+                            )
+                        ]
                         if related_project_slug
                         else []
                     )
@@ -365,41 +375,153 @@ class SiteBuilder:
                     ),
                 },
             )
-    # def build_static_api(self):
-    #     """
-    #     Generates the Static API (JSON) described in GHIP-001.
-    #     """
-    #     print("-> Building Static API...")
-    #
-    #     # 1. Identity API
-    #     identity_json = self.config.identity.model_dump_json(indent=2)
-    #     (self.api_out / "identity.json").write_text(identity_json, encoding="utf-8")
-    #
-    #     # 2. Projects API (Combines Manual + PyPI)
-    #     projects_data = {
-    #         "projects": [p.model_dump() for p in self.config.projects],
-    #         "pypi": [p.model_dump() for p in self.config.pypi_packages],
-    #     }
-    #
-    #     # , indent=2
-    #     def default(obj):
-    #         if isinstance(obj, HttpUrl):
-    #             return str(obj)
-    #         raise TypeError
-    #
-    #     (self.api_out / "projects.json").write_text(
-    #         orjson.dumps(projects_data, default=default).decode(), encoding="utf-8"
-    #     )
-    #
-    #     # 3. Mode/Config Metadata (optional but useful)
-    #     mode_data = self.config.modes.model_dump_json(indent=2)
-    #     (self.api_out / "config.json").write_text(mode_data, encoding="utf-8")
+
+            # -------- Work Experience endpoints --------
+            exp_index_href = "/apis/experience/index.json"
+            exp_items = [e.model_dump() for e in self.config.work_experience]
+            exp_sorted = sorted(exp_items, key=lambda e: (e.get("start_date") or "", e.get("id") or ""), reverse=True)
+
+            for e in exp_sorted:
+                eid = e["id"]
+                self_href = f"/apis/experience/by-id/{eid}.json"
+                payload = {
+                    **e,
+                    "_links": links(
+                        link(self_href, "self"),
+                        link(exp_index_href, "collection"),
+                        link("/apis/experience/pages/1.json", "first"),
+                        link("/apis/openapi.yaml", "describedby", "text/yaml"),
+                    ),
+                    "_rels": {},
+                }
+                write_json(self.api_out / "experience" / "by-id" / f"{eid}.json", payload)
+
+            exp_refs = [
+                {
+                    "ref": f"/apis/experience/by-id/{e['id']}.json",
+                    "rel": "item",
+                    "organization": e.get("organization"),
+                    "title": e.get("title"),
+                    "end_date": e.get("end_date"),
+                }
+                for e in exp_sorted
+            ]
+
+            total_exp = len(exp_refs)
+            total_exp_pages = max(1, math.ceil(total_exp / PAGE_SIZE))
+
+            write_json(
+                self.api_out / "experience" / "index.json",
+                {
+                    "refs": exp_refs,
+                    "meta": {"type": "experience", "count": total_exp, "page_size": PAGE_SIZE,
+                             "pages": total_exp_pages},
+                    "_links": links(
+                        link(exp_index_href, "self"),
+                        link("/apis/experience/pages/1.json", "first"),
+                        link(f"/apis/experience/pages/{total_exp_pages}.json", "last"),
+                        link("/apis/openapi.yaml", "describedby", "text/yaml"),
+                    ),
+                },
+            )
+
+            for page, pages, total, chunk in paginate(exp_refs, PAGE_SIZE):
+                page_href = f"/apis/experience/pages/{page}.json"
+                prev_href = f"/apis/experience/pages/{page - 1}.json" if page > 1 else None
+                next_href = f"/apis/experience/pages/{page + 1}.json" if page < pages else None
+
+                write_json(
+                    self.api_out / "experience" / "pages" / f"{page}.json",
+                    {
+                        "refs": chunk,
+                        "meta": {"type": "experience", "page": page, "page_size": PAGE_SIZE, "pages": pages,
+                                 "total": total},
+                        "_links": links(
+                            link(page_href, "self"),
+                            link(exp_index_href, "collection"),
+                            link("/apis/experience/pages/1.json", "first"),
+                            link(f"/apis/experience/pages/{pages}.json", "last"),
+                            link(prev_href, "prev") if prev_href else None,
+                            link(next_href, "next") if next_href else None,
+                            link("/apis/openapi.yaml", "describedby", "text/yaml"),
+                        ),
+                    },
+                )
+
+            # -------- Resumes endpoints --------
+            res_index_href = "/apis/resumes/index.json"
+            res_items = [r.model_dump() for r in self.config.resumes]
+            res_sorted = sorted(res_items, key=lambda r: (r.get("status") != "active", r.get("valid_from") or "",
+                                                          r.get("id") or ""), reverse=True)
+
+            for r in res_sorted:
+                rid = r["id"]
+                self_href = f"/apis/resumes/by-id/{rid}.json"
+                payload = {
+                    **r,
+                    "_links": links(
+                        link(self_href, "self"),
+                        link(res_index_href, "collection"),
+                        link("/apis/resumes/pages/1.json", "first"),
+                        link("/apis/openapi.yaml", "describedby", "text/yaml"),
+                    ),
+                    "_rels": {},
+                }
+                write_json(self.api_out / "resumes" / "by-id" / f"{rid}.json", payload)
+
+            res_refs = [
+                {"ref": f"/apis/resumes/by-id/{r['id']}.json", "rel": "item", "label": r.get("label"),
+                 "status": r.get("status"), "format": r.get("format")}
+                for r in res_sorted
+            ]
+
+            total_res = len(res_refs)
+            total_res_pages = max(1, math.ceil(total_res / PAGE_SIZE))
+
+            write_json(
+                self.api_out / "resumes" / "index.json",
+                {
+                    "refs": res_refs,
+                    "meta": {"type": "resumes", "count": total_res, "page_size": PAGE_SIZE, "pages": total_res_pages},
+                    "_links": links(
+                        link(res_index_href, "self"),
+                        link("/apis/resumes/pages/1.json", "first"),
+                        link(f"/apis/resumes/pages/{total_res_pages}.json", "last"),
+                        link("/apis/openapi.yaml", "describedby", "text/yaml"),
+                    ),
+                },
+            )
+
+            for page, pages, total, chunk in paginate(res_refs, PAGE_SIZE):
+                page_href = f"/apis/resumes/pages/{page}.json"
+                prev_href = f"/apis/resumes/pages/{page - 1}.json" if page > 1 else None
+                next_href = f"/apis/resumes/pages/{page + 1}.json" if page < pages else None
+
+                write_json(
+                    self.api_out / "resumes" / "pages" / f"{page}.json",
+                    {
+                        "refs": chunk,
+                        "meta": {"type": "resumes", "page": page, "page_size": PAGE_SIZE, "pages": pages,
+                                 "total": total},
+                        "_links": links(
+                            link(page_href, "self"),
+                            link(res_index_href, "collection"),
+                            link("/apis/resumes/pages/1.json", "first"),
+                            link(f"/apis/resumes/pages/{pages}.json", "last"),
+                            link(prev_href, "prev") if prev_href else None,
+                            link(next_href, "next") if next_href else None,
+                            link("/apis/openapi.yaml", "describedby", "text/yaml"),
+                        ),
+                    },
+                )
 
     def build_markdown_pages(self):
         """
         Compiles templates/pages/*.md.j2 into docs/md/*.md
         """
-        logger.info(f"-> Building Markdown Pages (Mode: {self.config.modes.current})...")
+        logger.info(
+            f"-> Building Markdown Pages (Mode: {self.config.modes.current})..."
+        )
 
         pages_dir = self.templates_dir / "pages"
         if not pages_dir.exists():

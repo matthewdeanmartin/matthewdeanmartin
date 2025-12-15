@@ -1,0 +1,21 @@
+# src/github_is_my_cms/data/projects.toml
+
+[[projects]]
+slug = "Hicmah"
+name = "Hicmah"
+description = "Hicmah - Hit Counter Module and Handler"
+url = "https://github.com/matthewdeanmartin/Hicmah"
+repository_url = "https://github.com/matthewdeanmartin/Hicmah"
+tags = [
+    "analytics",
+    "handler",
+    "hit-counter",
+    "javascript",
+    "module",
+    "web-development",
+]
+status = "active"
+
+[projects.cms]
+suppress = false
+package_links = []
