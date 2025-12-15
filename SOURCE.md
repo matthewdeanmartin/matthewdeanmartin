@@ -1,4 +1,5 @@
-## Tree for 
+## Tree for
+
 ```
 ├── .github/
 │   └── workflows/
@@ -26,6 +27,7 @@
 ```
 
 ## File: .markdownlintrc
+
 ```
 {
   // Enable all markdownlint rules
@@ -60,13 +62,17 @@
 
 }
 ```
+
 ## File: AGENT.md
+
 ```markdown
 All libraries will be installed. DO NOT ADD if-blocks around imports to provide fallbacks if a library fails to import.
 
 Always type annotate your python code.
 ```
+
 ## File: Makefile
+
 ```
 format:
 	isort src
@@ -83,7 +89,9 @@ everything: data build format
 	echo "everything"
 	cp docs/md/README.en.md README.en.md
 ```
+
 ## File: pyproject.toml
+
 ```
 [project]
 name = "github-is-my-cms"
@@ -216,7 +224,9 @@ include = [
     "/README.md", "LICENSE",
 ]
 ```
+
 ## File: readme_cms.toml
+
 ```
 # src/github_is_my_cms/data/readme_cms.toml
 theme = "professional"
@@ -246,7 +256,9 @@ highlight_blog = true
 default = "en"
 supported = ["en"]
 ```
-## File: data_sample\identity.toml
+
+## File: data_sample\\identity.toml
+
 ```
 # src/github_is_my_cms/data/identity.toml
 
@@ -362,7 +374,9 @@ url = "https://stackoverflow.com/users/33264/matthewmartin"
 group = "verified"
 icon = "🔥"
 ```
-## File: data_sample\projects.toml
+
+## File: data_sample\\projects.toml
+
 ```
 # src/github_is_my_cms/data/projects.toml
 
@@ -386,7 +400,9 @@ status = "active"
 suppress = false
 package_links = []
 ```
-## File: data_sample\pypi_projects.toml
+
+## File: data_sample\\pypi_projects.toml
+
 ```
 # src/github_is_my_cms/data/pypi_projects.toml
 
@@ -407,7 +423,9 @@ summary = "Audit your CLI tools for version and existence."
 downloads_monthly = 1200
 last_updated = "2024-10-15"
 ```
-## File: data_sample\readme_cms.toml
+
+## File: data_sample\\readme_cms.toml
+
 ```
 # src/github_is_my_cms/data/readme_cms.toml
 theme = "professional"
@@ -435,7 +453,9 @@ highlight_blog = true
 default = "en"
 supported = ["en"]
 ```
-## File: data_sample\resumes.toml
+
+## File: data_sample\\resumes.toml
+
 ```
 # data/resumes.toml
 
@@ -460,7 +480,9 @@ valid_from = "2024-01"
 description = "Hire button and a fire button!"
 icon = "📄"
 ```
-## File: data_sample\work_experience.toml
+
+## File: data_sample\\work_experience.toml
+
 ```
 # data/work_experience.toml
 
@@ -484,8 +506,10 @@ links = [
   { label = "Company", url = "https://example.com" }
 ]
 ```
-## File: src\GHIP_001_Specification.md
-```markdown
+
+## File: src\\GHIP_001_Specification.md
+
+````markdown
 # GHIP-000 — github-is-my-cms (v2)
 
 Title: github-is-my-cms, a GitHub-centric personal site and profile CMS
@@ -601,7 +625,7 @@ docs/
 
 README.md                     # Root profile README
 readme_cms.toml               # CMS configuration
-```
+````
 
 ______________________________________________________________________
 
@@ -848,7 +872,8 @@ ______________________________________________________________________
 ______________________________________________________________________
 
 End of GHIP-000 (v2)
-```
+
+````
 ## File: src\github_is_my_cms\builder.py
 ```python
 # src/github_is_my_cms/builder.py
@@ -1441,8 +1466,10 @@ class SiteBuilder:
 if __name__ == "__main__":
     builder = SiteBuilder()
     builder.build()
-```
-## File: src\github_is_my_cms\cli.py
+````
+
+## File: src\\github_is_my_cms\\cli.py
+
 ```python
 # src/github_is_my_cms/cli.py
 """
@@ -1612,7 +1639,9 @@ def main(argv: Optional[List[str]] = None):
 if __name__ == "__main__":
     main()
 ```
-## File: src\github_is_my_cms\config.py
+
+## File: src\\github_is_my_cms\\config.py
+
 ```python
 # src/github_is_my_cms/config.py
 """
@@ -1721,7 +1750,6 @@ class ConfigLoader:
             "projects": projects_list,
             "pypi_packages": pypi_list,
             "theme": main_config.get("theme", "default"),
-
             "work_experience": experience_list,
             "resumes": resumes_list,
         }
@@ -1735,7 +1763,9 @@ def load_config(root_path: str = ".") -> CMSConfig:
     """Convenience entry point."""
     return ConfigLoader(Path(root_path)).load()
 ```
-## File: src\github_is_my_cms\data_sources.py
+
+## File: src\\github_is_my_cms\\data_sources.py
+
 ```python
 """
 data_sources.py
@@ -2039,7 +2069,9 @@ class DataUpdater:
             tomli_w.dump(output_data, f)
         logger.info(f"Successfully updated {self.pypi_file}")
 ```
-## File: src\github_is_my_cms\models.py
+
+## File: src\\github_is_my_cms\\models.py
+
 ```python
 """
 models.py
@@ -2306,8 +2338,8 @@ class CMSConfig(BaseModel):
         return self.modes.project_promotion
 
 
-
 # --- add near other enums ---
+
 
 class EmploymentType(str, Enum):
     FULL_TIME = "full_time"
@@ -2356,12 +2388,14 @@ class ResumeArtifact(BaseModel):
     format: ResumeFormat = ResumeFormat.PDF
     audience: Optional[str] = None
     status: ResumeStatus = ResumeStatus.ACTIVE
-    valid_from: Optional[str] = None   # "YYYY-MM" or "YYYY"
+    valid_from: Optional[str] = None  # "YYYY-MM" or "YYYY"
     valid_until: Optional[str] = None  # optional
     description: Optional[str] = None
     icon: Optional[str] = "📄"
 ```
-## File: .github\workflows\deploy.yml
+
+## File: .github\\workflows\\deploy.yml
+
 ```yaml
 name: Deploy Static Content to Pages
 

@@ -12,4 +12,3 @@ build:
 everything: data build format
 	echo "everything"
 	cp docs/md/README.en.md README.en.md
-
