@@ -14,4 +14,5 @@ git2md . \
   LICENSE SOURCE.md \
   .cache \
   uv.lock \
+  templates swagger \
   --output SOURCE.md

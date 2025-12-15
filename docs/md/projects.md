@@ -121,8 +121,50 @@ Pythonist, Devops Guy, and Govtech Specialist | United States
 
 | Package | Version | Downloads | Summary |
 |:--------|:--------|:----------|:--------|
-| [dedlin](https://github.com/matthewdeanmartin/dedlin) | 1.19.4 | 543 | Line editor, edlin clone with many improvements |
+| [ai-shell](https://github.com/matthewdeanmartin/ai_shell) | 1.0.4 | 0 | Filesystem Shell interface that an OpenAI Assitant can use as a tool. |
+| [awscli-local-win](https://pypi.org/project/awscli-local-win/) | 0.26.0 | 0 | Thin wrapper around the 'aws' command line interface for use with LocalStack *for Windows*. |
+| [bash2gitlab](https://pypi.org/project/bash2gitlab/) | 0.9.9 | 0 | Compile bash to gitlab pipeline yaml |
+| [bitrab](https://pypi.org/project/bitrab/) | 0.1.0 | 0 | Compile bash to gitlab pipeline yaml |
+| [bug-trail](https://pypi.org/project/bug-trail/) | 3.0.0 | 0 | Local static html error logger to use while developing python code. |
+| [bug-trail-core](https://pypi.org/project/bug-trail-core/) | 3.1.0 | 0 | Local static html error logger to use while developing python code. |
+| [caniuseonlywheels](https://github.com/matthewdeanmartin/caniuseonlywheels) | 1.0.11 | 0 | Can I switch to installing only using wheels and never sdist? |
+| [cli-tool-audit](https://github.com/matthewdeanmartin/cli_tool_audit) | 3.1.0 | 0 | Audit for existence and version number of cli tools. |
 | [cli_tool_audit](https://github.com/matthewdeanmartin/cli_tool_audit) | 3.1.0 | 1200 | Audit for existence and version number of cli tools. |
+| [dashc](https://pypi.org/project/dashc/) | 0.1.1 | 0 | Tool to generate python -c bash as if it were a package format. |
+| [dedlin](https://github.com/matthewdeanmartin/dedlin) | 1.19.4 | 543 | Line editor, edlin clone with many improvements |
+| [examexam](https://pypi.org/project/examexam/) | 0.1.8 | 0 | Let LLM generate tests, validate test, and then you take them. Useful for certs. |
+| [find-known-secrets](https://github.com/matthewdeanmartin/find_known_secrets) | 1.3.0 | 0 | Lossy python to markdown serializer |
+| [git-mirror](https://github.com/matthewdeanmartin/git_mirror) | 0.3.8 | 0 | Make your local git repos look like github or gitlab. See readme for how this differs from the many other multi-repo tools. |
+| [hermetic-seal](https://pypi.org/project/hermetic-seal/) | 0.1.0 | 0 | User-space sandbox runner for Python console scripts |
+| [hissbytenotation](https://github.com/matthewdeanmartin/hissbytenotation) | 0.2.0 | 0 | Serialize and deserialize data to python source notation (hbn) |
+| [jiggle-version](https://pypi.org/project/jiggle-version/) | 2.1.0 | 0 | Increment version number found in source code without regex |
+| [mainframer](https://github.com/matthewdeanmartin/mainframer) | 0.2.0 | 0 | GnuCOBOL environment and package manager. |
+| [markdown-to-json](https://github.com/njvack/markdown-to-json) | 2.1.2 | 0 | Markdown to dict and json deserializer |
+| [markmodule](https://github.com/matthewdeanmartin/markmodule) | 0.3.0 | 0 | Import python code in markdown as module |
+| [markpickle](https://github.com/matthewdeanmartin/markpickle) | 1.6.1 | 0 | Lossy python to markdown serializer |
+| [mastodon-finder](https://pypi.org/project/mastodon-finder/) | 0.2.0 | 0 | Search for mastodon profiles, use mechanical and LLM filtering. |
+| [metametameta](https://pypi.org/project/metametameta/) | 0.1.5 | 0 | Generate __about__.py with dunder meta. |
+| [navio-builder-win](https://github.com/matthewdeanmartin/navio-builder/tree/pypi_branch) | 1.1.0 | 0 | navio-builder, without sh dependency, works on windows. |
+| [openmock](https://pypi.org/project/openmock/) | 3.1.5 | 0 | Python OpenSearch Mock for test purposes |
+| [pyanide](https://github.com/matthewdeanmartin/pyanide) | 1.1.0 | 0 | Tools for killing processes and keeping them dead. |
+| [pycodetags](https://pypi.org/project/pycodetags/) | 0.6.0 | 0 | TODOs in source code as a first class construct, follows PEP350 |
+| [pycodetags-issue-tracker](https://pypi.org/project/pycodetags-issue-tracker/) | 0.3.0 | 0 | Plugin for pycodetags to track issues, e.g. bugs, TODO, etc in your code |
+| [pydoc-fork](https://github.com/matthewdeanmartin/pydoc_fork) | 3.3.0 | 0 | Fork of cpython's pydoc module to do just html document generation |
+| [pypi-librarian](https://github.com/matthewdeanmartin/pypi_librarian) | 0.1.9 | 0 | Pypi metadata client. Client for metadata related API endpoints for Pypi. |
+| [python3-alias](https://github.com/matthewdeanmartin/python3) | 1.0.3 | 0 | Hack to deal with a missing python3 alias on Windows |
+| [random-names](https://github.com/matthewdeanmartin/random_names) | 0.2.0 | 0 | Convert int to random name, like tree_dance and convert it back to same int. |
+| [raypack](https://github.com/matthewdeanmartin/raypack) | 0.4.0 | 0 | Unofficial AWS Glue Ray.io packaging tool. Pure python or cross platform. |
+| [skip-trace](https://pypi.org/project/skip-trace/) | 0.1.1 | 0 | Ownership Attribution for Python Packages |
+| [so-pip](https://github.com/matthewdeanmartin/so_pip) | 0.3.0 | 0 | Generate packages from Stackoverflow answers |
+| [sparkle-log](https://github.com/matthewdeanmartin/sparkle_log) | 0.4.0 | 0 | Write sparkline graphs of CPU and memory usage to your logs. |
+| [termcolor-whl](https://github.com/matthewdeanmartin/termcolor) | 1.1.3 | 0 | ANSI Color formatting for output in terminal, fork of termcolor, maintained as of 2023 by Matthew Martin |
+| [terminaltables-whl](https://github.com/matthewdeanmartin/terminaltables) | 3.1.2 | 0 | Generate simple tables in terminals from a nested list of strings. (has wheels!) |
+| [terminaltables3](https://github.com/matthewdeanmartin/terminaltables3) | 4.0.0 | 0 | Generate simple tables in terminals from a nested list of strings. Fork of terminaltables. |
+| [totalhelp](https://pypi.org/project/totalhelp/) | 0.1.1 | 0 | Print help for all commands and subcommands for argparse applications |
+| [troml-dev-status](https://pypi.org/project/troml-dev-status/) | 0.6.0 | 0 | Objectively infer PyPI Development Status classifiers from code and release artifacts. |
+| [untruncate-json](https://github.com/matthewdeanmartin/untruncate_json/) | 1.1.0 | 0 | Cleans up truncated json files. |
+| [whats-that-code](https://github.com/matthewdeanmartin/whats_that_code) | 0.2.0 | 0 | Guess programming language from a string or file. |
+| [xkcd-random-four](https://pypi.org/project/xkcd-random-four/) | 0.1.1 | 0 | Drop in replacment for random that always returns 4 or 4/6 |
 
 ---
-*Generated by github-is-my-cms | 2025-12-14 19:09:36.432993*
+*Generated by github-is-my-cms | 2025-12-14 20:49:35.581402*

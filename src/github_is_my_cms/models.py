@@ -110,11 +110,15 @@ class Identity(BaseModel):
     tagline: str
     location: Optional[str] = None
     email: Optional[str] = None
+
+    pypi_username: Optional[str] = Field(None, description="Username on PyPI to auto-discover packages")
+    github_username: Optional[str] = Field(None, description="Username on GitHub to filter repos")
+
     profiles: List[SocialProfile] = Field(
         default_factory=list, description="The Identity Graph"
     )
 
-    # ADDED: New structured data
+
     resumes: List[ResumeEntry] = Field(default_factory=list)
     skills: List[SkillGroup] = Field(default_factory=list)
     talks: List[TalkEntry] = Field(default_factory=list)

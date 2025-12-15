@@ -3,6 +3,8 @@
 name = "Matthew Dean Martin"
 tagline = "Pythonist, Devops Guy, and Govtech Specialist"
 location = "United States"
+pypi_username = "matthewdeanmartin"
+github_username =  "matthewdeanmartin"
 
 # --- Resumes ---
 [[resumes]]

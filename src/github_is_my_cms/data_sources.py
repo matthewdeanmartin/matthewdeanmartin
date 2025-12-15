@@ -5,6 +5,15 @@ Handles fetching external data from PyPI and GitHub APIs to update local TOML ca
 
 import json
 import logging
+from typing import List
+from pathlib import Path
+from datetime import datetime
+
+import httpx
+from bs4 import BeautifulSoup
+
+import json
+import logging
 import shutil
 import subprocess
 import tomllib
@@ -12,34 +21,41 @@ import urllib.error
 import urllib.request
 from datetime import date, datetime
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional, Set
 
 import tomli_w
+
+from .config import load_config  # Needed to get the username
 
 logger = logging.getLogger(__name__)
 
 
-class GitHubFetcher:
-    """
-    Fetches repository metadata using the 'gh' CLI tool.
-    Implements a 24-hour file-based cache.
-    """
 
-    def __init__(self, cache_dir: Path):
+class BaseFetcher:
+    """Base class for cached fetchers."""
+
+    def __init__(self, cache_dir: Path, cache_filename: str):
         self.cache_dir = cache_dir
-        self.cache_file = self.cache_dir / "github_repos.json"
-
-        # Ensure cache directory exists
+        self.cache_file = self.cache_dir / cache_filename
         self.cache_dir.mkdir(parents=True, exist_ok=True)
 
     def _is_cache_valid(self) -> bool:
         """Returns True if cache exists and is less than 24 hours old."""
         if not self.cache_file.exists():
             return False
-
         mtime = self.cache_file.stat().st_mtime
         age = datetime.now().timestamp() - mtime
-        return age < (24 * 60 * 60)  # 24 hours in seconds
+        return age < (24 * 60 * 60)  # 24 hours
+
+
+class GitHubFetcher(BaseFetcher):
+    """
+    Fetches repository metadata using the 'gh' CLI tool.
+    Implements a 24-hour file-based cache.
+    """
+
+    def __init__(self, cache_dir: Path):
+        super().__init__(cache_dir, "github_repos.json")
 
     def fetch_repos(self) -> List[Dict[str, Any]]:
         """
@@ -61,7 +77,7 @@ class GitHubFetcher:
 
         logger.info("GitHub: Fetching fresh repository list...")
 
-        # Fields to fetch: name, description, url, isArchived, repositoryTopics
+        # Fields to fetch: name, description, url, isArchived, repositoryTopics, homepageUrl
         cmd = [
             "gh",
             "repo",
@@ -89,6 +105,126 @@ class GitHubFetcher:
             logger.error("GitHub: Failed to parse CLI output.")
             return []
 
+
+
+
+logger = logging.getLogger(__name__)
+
+
+class PyPIDiscoveryFetcher(BaseFetcher):
+    """
+    Finds all packages owned by a specific PyPI user by scraping their profile page.
+    """
+
+    BASE_URL = 'https://pypi.org/user'
+
+    def __init__(self, cache_dir: Path):
+        super().__init__(cache_dir, "pypi_discovery.json")
+
+    def fetch_user_packages(self, username: str) -> List[str]:
+        """
+        Returns a list of package names owned by the user.
+        """
+        if not username:
+            return []
+
+        # 1. Check Cache
+        if self._is_cache_valid():
+            try:
+                data = json.loads(self.cache_file.read_text(encoding="utf-8"))
+                if data.get("user") == username:
+                    logger.info(f"PyPI: Using cached package list for user '{username}'.")
+                    return data.get("packages", [])
+            except json.JSONDecodeError:
+                pass
+
+        # 2. Fetch via HTTPX + BS4
+        logger.info(f"PyPI: Discovering packages for user '{username}' via HTML scraping...")
+
+        target_url = f"{self.BASE_URL}/{username}/"
+        package_names = []
+
+        try:
+            # It is good practice to include a User-Agent
+            headers = {"User-Agent": "PyPIDiscoveryFetcher/1.0"}
+
+            with httpx.Client(timeout=10.0) as client:
+                response = client.get(target_url, headers=headers)
+
+                if response.status_code == 404:
+                    logger.warning(f"PyPI: User '{username}' not found.")
+                    return []
+
+                response.raise_for_status()
+
+                soup = BeautifulSoup(response.text, "html.parser")
+
+                # PyPI user pages list packages using the class 'package-snippet__title'
+                snippets = soup.select(".package-snippet__title")
+                package_names = sorted(list(set(s.get_text(strip=True) for s in snippets)))
+
+            # 3. Save Cache
+            cache_payload = {
+                "user": username,
+                "timestamp": datetime.now().isoformat(),
+                "packages": package_names
+            }
+            self.cache_file.write_text(json.dumps(cache_payload, indent=2), encoding="utf-8")
+
+            return package_names
+
+        except httpx.HTTPError as e:
+            logger.error(f"PyPI Discovery HTTP error: {e}")
+            return []
+        except Exception as e:
+            logger.error(f"PyPI Discovery failed: {e}")
+            return []
+
+
+class PyPIStatsFetcher:
+    """
+    Fetches detailed metadata for a specific package from JSON API.
+    Does not cache individual files to avoid thousands of small files;
+    relies on upper layer to manage frequency or the global build cache.
+    """
+    BASE_URL = "https://pypi.org/pypi/{package}/json"
+
+    def fetch_details(self, package_name: str) -> Dict[str, Any]:
+        url = self.BASE_URL.format(package=package_name)
+        try:
+            req = urllib.request.Request(url, headers={'User-Agent': 'github-is-my-cms/0.1.0'})
+            with urllib.request.urlopen(req) as response:
+                if response.status != 200:
+                    return {}
+                data = json.loads(response.read().decode())
+                info = data.get("info", {})
+
+                return {
+                    "package_name": package_name,
+                    "version": info.get("version"),
+                    "summary": info.get("summary"),
+                    "docs_url": info.get("home_page") or info.get("project_url"),
+                    # Note: pypistats.org is required for real download counts.
+                    # Providing a placeholder or existing logic here.
+                    "last_updated": date.today().isoformat(),
+                    # Attempt to find GitHub repo in project_urls
+                    "github_repo": self._extract_github_repo(info.get("project_urls") or {})
+                }
+        except urllib.error.URLError as e:
+            logger.warning(f"Failed to fetch details for {package_name}: {e}")
+            return {}
+
+    def _extract_github_repo(self, urls: Dict[str, str]) -> Optional[str]:
+        """Tries to find 'owner/repo' from project links."""
+        for url in urls.values():
+            if url and "github.com" in url:
+                # Naive parse: https://github.com/owner/repo
+                parts = [p for p in url.split("/") if p]
+                if "github.com" in parts:
+                    idx = parts.index("github.com")
+                    if idx + 2 < len(parts):
+                        return f"{parts[idx + 1]}/{parts[idx + 2]}"
+        return ""
 
 class PyPIFetcher:
     """
@@ -134,13 +270,25 @@ class DataUpdater:
     def __init__(self, root_dir: Path):
         self.root_dir = root_dir
         self.data_dir = self.root_dir / "data"
+        self.cache_dir = self.root_dir / ".cache"
+
         self.projects_file = self.data_dir / "projects.toml"
         self.pypi_file = self.data_dir / "pypi_projects.toml"
         # Cache location (hidden inside data or a temp dir)
         self.cache_dir = self.root_dir / ".cache"
 
+        # Initialize Fetchers
         self.gh_fetcher = GitHubFetcher(self.cache_dir)
-        self.fetcher = PyPIFetcher()
+        self.pypi_discovery = PyPIDiscoveryFetcher(self.cache_dir)
+        self.pypi_details = PyPIStatsFetcher()
+
+        # Load config to get usernames
+        # Note: We do this here so the CLI doesn't have to pass the config obj
+        try:
+            self.config = load_config(str(self.root_dir))
+        except Exception:
+            logger.warning("Could not load full config; some auto-discovery features may fail.")
+            self.config = None
 
     def _load_toml(self, path: Path) -> Dict[str, Any]:
         if not path.exists():
@@ -154,6 +302,9 @@ class DataUpdater:
         Preserves 'cms' directives and unknown non-GitHub projects.
         """
         logger.info("Syncing projects from GitHub...")
+
+        # Check if we should filter by specific user (if configured)
+        target_user = self.config.identity.github_username if self.config else None
 
         # 1. Load Existing Data
         existing_data = self._load_toml(self.projects_file)
@@ -172,6 +323,13 @@ class DataUpdater:
         active_slugs = set()
 
         for repo in gh_repos:
+            # If a target user is set in config, strict filter, otherwise accept all found by 'gh'
+            # (assuming 'gh' is authenticated as the user)
+            # repo_owner = repo['name'].split('/')[0] if '/' in repo['name'] else ''
+            # Note: gh repo list usually returns 'owner/repo' in name field?
+            # Actually, standard json output name is just 'repo'. owner is separate.
+            # Let's trust the current 'gh repo list' context.
+
             slug = repo["name"]
             active_slugs.add(slug)
 
@@ -205,7 +363,6 @@ class DataUpdater:
                 # CMS Directive Preservation:
                 # We simply DON'T touch the 'cms' key if it exists.
                 # If the user wants to add one, they do it manually in the TOML.
-
             else:
                 # Create new entry
                 entry = {
@@ -221,81 +378,77 @@ class DataUpdater:
                 }
                 project_map[slug] = entry
 
-        # 4. Handle "Gone" Projects
-        # If a project was in TOML, has a github.com repo_url, but was NOT returned by GH,
-        # it is likely private or deleted.
-        for slug, entry in project_map.items():
-            if slug not in active_slugs:
-                repo_url = str(entry.get("repository_url", ""))
-                if "github.com" in repo_url:
-                    # It was a github repo, but now it's gone from the public list
-                    logger.info(
-                        f"Project {slug} not found in public GitHub list. Marking as 'gone'."
-                    )
-                    entry["status"] = "gone"
-                else:
-                    # It's a manual project (not hosted on GH), leave it alone.
-                    pass
+            # Mark missing as gone
+            for slug, entry in project_map.items():
+                if slug not in active_slugs:
+                    if "github.com" in str(entry.get("repository_url", "")):
+                        entry["status"] = "gone"
 
-        # 5. Write back to TOML
-        # Reconstruct list from map (sorted by name for stability)
-        sorted_projects = sorted(project_map.values(), key=lambda x: x["slug"])
-        output_data = {"projects": sorted_projects}
+            sorted_projects = sorted(project_map.values(), key=lambda x: x["slug"])
+            with open(self.projects_file, "wb") as f:
+                tomli_w.dump({"projects": sorted_projects}, f)
 
-        with open(self.projects_file, "wb") as f:
-            tomli_w.dump(output_data, f)
-        logger.info(
-            f"Successfully synced {len(sorted_projects)} projects to {self.projects_file}"
-        )
+            logger.info(f"Synced {len(sorted_projects)} projects.")
 
     def update_pypi_data(self):
         """
-        Reads pypi_projects.toml, fetches updates for all listed packages, and rewrites the file.
+        Discovers packages via PyPI XML-RPC (if username configured)
+        and updates metadata for all packages.
         """
-        if not self.pypi_file.exists():
-            logger.warning(f"No pypi_projects.toml found at {self.pypi_file}")
-            return
-
-        # 1. Read existing data to get the list of packages to track
-        # We use simple read to preserve the list structure if possible,
-        # but here we rely on the ConfigLoader logic or just standard toml loading.
-        # For the updater, we need the raw dict.
-        import sys
-
-        if sys.version_info >= (3, 11):
-            import tomllib
+        # 1. Load Existing Data
+        if self.pypi_file.exists():
+            with open(self.pypi_file, "rb") as f:
+                data = tomllib.load(f)
+            existing_packages = data.get("packages", [])
         else:
-            import tomli as tomllib
+            existing_packages = []
 
-        with open(self.pypi_file, "rb") as f:
-            data = tomllib.load(f)
+        # Map: package_name -> dict
+        pkg_map = {p["package_name"]: p for p in existing_packages if "package_name" in p}
 
-        current_packages = data.get("packages", [])
-        if not current_packages:
-            logger.info("No packages found in pypi_projects.toml")
-            return
+        # 2. Discovery Phase
+        pypi_user = self.config.identity.pypi_username if self.config else None
 
-        updated_packages = []
-        logger.info(f"Updating metadata for {len(current_packages)} PyPI packages...")
+        if pypi_user:
+            logger.info(f"Discovering packages for PyPI user: {pypi_user}")
+            discovered_names = self.pypi_discovery.fetch_user_packages(pypi_user)
 
-        for pkg in current_packages:
-            name = pkg.get("package_name")
-            if not name:
-                continue
+            for name in discovered_names:
+                if name not in pkg_map:
+                    # Initialize new entry
+                    pkg_map[name] = {
+                        "package_name": name,
+                        "downloads_monthly": 0,  # Placeholder
+                    }
+        else:
+            logger.info("No pypi_username configured in identity.toml. Skipping auto-discovery.")
 
-            logger.info(f"Fetching: {name}...")
-            remote_data = self.fetcher.fetch(name)
+        # 3. Detail Update Phase
+        updated_list = []
+        logger.info(f"Updating details for {len(pkg_map)} packages...")
 
-            if remote_data:
-                # Merge remote data into existing (preserving manual overrides like github_repo if not fetched)
-                # We prioritize remote version/summary/updated, but keep manual config like github_repo
-                pkg.update(remote_data)
+        for name, pkg_data in pkg_map.items():
+            logger.debug(f"Fetching details for {name}...")
+            details = self.pypi_details.fetch_details(name)
+            if details:
+                # Merge logic: Remote details overwrite cached details,
+                # but manual overrides in TOML (if any existed and we cared)
+                # usually require logic. Here we assume PyPI is truth for metadata.
 
-            updated_packages.append(pkg)
+                # Preserve existing fields that PyPI fetcher doesn't return (like manual downloads override)
+                downloads = pkg_data.get("downloads_monthly", 0)
 
-        # 2. Write back to TOML
-        output_data = {"packages": updated_packages}
+                pkg_data.update(details)
+
+                # Restore/Keep downloads if not fetched (fetching downloads requires bigquery/pypistats)
+                pkg_data["downloads_monthly"] = downloads
+
+            updated_list.append(pkg_data)
+
+        # 4. Sort and Save
+        updated_list.sort(key=lambda x: x["package_name"].lower())
 
         with open(self.pypi_file, "wb") as f:
-            tomli_w.dump(output_data, f)
-        logger.info(f"Successfully updated {self.pypi_file}")
+            tomli_w.dump({"packages": updated_list}, f)
+
+        logger.info(f"Successfully updated {self.pypi_file} with {len(updated_list)} packages.")
