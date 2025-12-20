@@ -101,6 +101,12 @@ class SocialProfile(BaseModel):
         return v
 
 
+class IdentityContent(BaseModel):
+    skills_intro: Optional[str] = None
+    projects_intro: Optional[str] = None
+    job_hunting_intro: Optional[str] = None
+
+
 class Identity(BaseModel):
     """
     Core personal information and aggregation of the identity graph.
@@ -111,17 +117,22 @@ class Identity(BaseModel):
     location: Optional[str] = None
     email: Optional[str] = None
 
-    pypi_username: Optional[str] = Field(None, description="Username on PyPI to auto-discover packages")
-    github_username: Optional[str] = Field(None, description="Username on GitHub to filter repos")
+    pypi_username: Optional[str] = Field(
+        None, description="Username on PyPI to auto-discover packages"
+    )
+    github_username: Optional[str] = Field(
+        None, description="Username on GitHub to filter repos"
+    )
 
     profiles: List[SocialProfile] = Field(
         default_factory=list, description="The Identity Graph"
     )
 
-
     resumes: List[ResumeEntry] = Field(default_factory=list)
     skills: List[SkillGroup] = Field(default_factory=list)
     talks: List[TalkEntry] = Field(default_factory=list)
+
+    content: IdentityContent = Field(default_factory=IdentityContent)
 
     @property
     def skill_rows(self) -> List[List[str]]:
@@ -173,6 +184,14 @@ class Project(BaseModel):
     status: str = Field("active", description="active, archived, or maintenance")
 
     cms: Optional[CMSDirective] = None
+
+    related_skills: List[str] = Field(default_factory=list)
+
+
+class SkillPageContext(BaseModel):
+    skill: Skill
+    projects: List[Project]
+    slug: str
 
 
 class PyPIPackage(BaseModel):
@@ -267,8 +286,8 @@ class CMSConfig(BaseModel):
         return self.modes.project_promotion
 
 
-
 # --- add near other enums ---
+
 
 class EmploymentType(str, Enum):
     FULL_TIME = "full_time"
@@ -309,6 +328,10 @@ class WorkExperienceEntry(BaseModel):
     technologies: List[str] = Field(default_factory=list)
     links: List[LabeledLink] = Field(default_factory=list)
 
+    related_project_slugs: List[str] = Field(default_factory=list)
+    # We will inject the actual Project objects here during the build step
+    linked_projects: List[Project] = Field(default_factory=list, exclude=True)
+
 
 class ResumeArtifact(BaseModel):
     id: str
@@ -317,7 +340,7 @@ class ResumeArtifact(BaseModel):
     format: ResumeFormat = ResumeFormat.PDF
     audience: Optional[str] = None
     status: ResumeStatus = ResumeStatus.ACTIVE
-    valid_from: Optional[str] = None   # "YYYY-MM" or "YYYY"
+    valid_from: Optional[str] = None  # "YYYY-MM" or "YYYY"
     valid_until: Optional[str] = None  # optional
     description: Optional[str] = None
     icon: Optional[str] = "📄"

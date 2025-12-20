@@ -15,6 +15,7 @@ tags = [
     "web-development",
 ]
 status = "active"
+related_skills = ["AWS", "Serverless"]
 
 [projects.cms]
 suppress = false

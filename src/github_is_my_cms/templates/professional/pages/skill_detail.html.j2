@@ -1,0 +1,39 @@
+{% extends "layouts/master.html.j2" %}
+
+{% block body %}
+<nav aria-label="breadcrumb">
+  <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li>Skills</li>
+      <li>{{ skill_name }}</li>
+  </ul>
+</nav>
+
+<h1>Projects using {{ skill_name }}</h1>
+
+<div class="project-grid">
+    {% for project in skill_projects %}
+    <article>
+        <header>
+            <strong><a href="{{ project.url or project.repository_url }}">{{ project.name }}</a></strong>
+        </header>
+        <p>{{ project.description }}</p>
+        <footer>
+            <small>
+                {% for tag in project.tags %}
+                    {% if tag|lower == skill_name|lower %}
+                        <strong>#{{ tag }}</strong>
+                    {% else %}
+                        #{{ tag }}
+                    {% endif %}
+                {% endfor %}
+            </small>
+        </footer>
+    </article>
+    {% endfor %}
+</div>
+
+<p style="margin-top: 2rem;">
+    <a href="../index.html">&larr; Back to Resume</a>
+</p>
+{% endblock %}

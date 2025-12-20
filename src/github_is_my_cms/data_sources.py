@@ -5,15 +5,6 @@ Handles fetching external data from PyPI and GitHub APIs to update local TOML ca
 
 import json
 import logging
-from typing import List
-from pathlib import Path
-from datetime import datetime
-
-import httpx
-from bs4 import BeautifulSoup
-
-import json
-import logging
 import shutil
 import subprocess
 import tomllib
@@ -23,12 +14,13 @@ from datetime import date, datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Set
 
+import httpx
 import tomli_w
+from bs4 import BeautifulSoup
 
 from .config import load_config  # Needed to get the username
 
 logger = logging.getLogger(__name__)
-
 
 
 class BaseFetcher:
@@ -106,8 +98,6 @@ class GitHubFetcher(BaseFetcher):
             return []
 
 
-
-
 logger = logging.getLogger(__name__)
 
 
@@ -116,7 +106,7 @@ class PyPIDiscoveryFetcher(BaseFetcher):
     Finds all packages owned by a specific PyPI user by scraping their profile page.
     """
 
-    BASE_URL = 'https://pypi.org/user'
+    BASE_URL = "https://pypi.org/user"
 
     def __init__(self, cache_dir: Path):
         super().__init__(cache_dir, "pypi_discovery.json")
@@ -133,13 +123,17 @@ class PyPIDiscoveryFetcher(BaseFetcher):
             try:
                 data = json.loads(self.cache_file.read_text(encoding="utf-8"))
                 if data.get("user") == username:
-                    logger.info(f"PyPI: Using cached package list for user '{username}'.")
+                    logger.info(
+                        f"PyPI: Using cached package list for user '{username}'."
+                    )
                     return data.get("packages", [])
             except json.JSONDecodeError:
                 pass
 
         # 2. Fetch via HTTPX + BS4
-        logger.info(f"PyPI: Discovering packages for user '{username}' via HTML scraping...")
+        logger.info(
+            f"PyPI: Discovering packages for user '{username}' via HTML scraping..."
+        )
 
         target_url = f"{self.BASE_URL}/{username}/"
         package_names = []
@@ -161,15 +155,19 @@ class PyPIDiscoveryFetcher(BaseFetcher):
 
                 # PyPI user pages list packages using the class 'package-snippet__title'
                 snippets = soup.select(".package-snippet__title")
-                package_names = sorted(list(set(s.get_text(strip=True) for s in snippets)))
+                package_names = sorted(
+                    list(set(s.get_text(strip=True) for s in snippets))
+                )
 
             # 3. Save Cache
             cache_payload = {
                 "user": username,
                 "timestamp": datetime.now().isoformat(),
-                "packages": package_names
+                "packages": package_names,
             }
-            self.cache_file.write_text(json.dumps(cache_payload, indent=2), encoding="utf-8")
+            self.cache_file.write_text(
+                json.dumps(cache_payload, indent=2), encoding="utf-8"
+            )
 
             return package_names
 
@@ -187,12 +185,15 @@ class PyPIStatsFetcher:
     Does not cache individual files to avoid thousands of small files;
     relies on upper layer to manage frequency or the global build cache.
     """
+
     BASE_URL = "https://pypi.org/pypi/{package}/json"
 
     def fetch_details(self, package_name: str) -> Dict[str, Any]:
         url = self.BASE_URL.format(package=package_name)
         try:
-            req = urllib.request.Request(url, headers={'User-Agent': 'github-is-my-cms/0.1.0'})
+            req = urllib.request.Request(
+                url, headers={"User-Agent": "github-is-my-cms/0.1.0"}
+            )
             with urllib.request.urlopen(req) as response:
                 if response.status != 200:
                     return {}
@@ -208,7 +209,9 @@ class PyPIStatsFetcher:
                     # Providing a placeholder or existing logic here.
                     "last_updated": date.today().isoformat(),
                     # Attempt to find GitHub repo in project_urls
-                    "github_repo": self._extract_github_repo(info.get("project_urls") or {})
+                    "github_repo": self._extract_github_repo(
+                        info.get("project_urls") or {}
+                    ),
                 }
         except urllib.error.URLError as e:
             logger.warning(f"Failed to fetch details for {package_name}: {e}")
@@ -225,6 +228,7 @@ class PyPIStatsFetcher:
                     if idx + 2 < len(parts):
                         return f"{parts[idx + 1]}/{parts[idx + 2]}"
         return ""
+
 
 class PyPIFetcher:
     """
@@ -287,7 +291,9 @@ class DataUpdater:
         try:
             self.config = load_config(str(self.root_dir))
         except Exception:
-            logger.warning("Could not load full config; some auto-discovery features may fail.")
+            logger.warning(
+                "Could not load full config; some auto-discovery features may fail."
+            )
             self.config = None
 
     def _load_toml(self, path: Path) -> Dict[str, Any]:
@@ -404,7 +410,9 @@ class DataUpdater:
             existing_packages = []
 
         # Map: package_name -> dict
-        pkg_map = {p["package_name"]: p for p in existing_packages if "package_name" in p}
+        pkg_map = {
+            p["package_name"]: p for p in existing_packages if "package_name" in p
+        }
 
         # 2. Discovery Phase
         pypi_user = self.config.identity.pypi_username if self.config else None
@@ -421,7 +429,9 @@ class DataUpdater:
                         "downloads_monthly": 0,  # Placeholder
                     }
         else:
-            logger.info("No pypi_username configured in identity.toml. Skipping auto-discovery.")
+            logger.info(
+                "No pypi_username configured in identity.toml. Skipping auto-discovery."
+            )
 
         # 3. Detail Update Phase
         updated_list = []
@@ -451,4 +461,6 @@ class DataUpdater:
         with open(self.pypi_file, "wb") as f:
             tomli_w.dump({"packages": updated_list}, f)
 
-        logger.info(f"Successfully updated {self.pypi_file} with {len(updated_list)} packages.")
+        logger.info(
+            f"Successfully updated {self.pypi_file} with {len(updated_list)} packages."
+        )

@@ -26,13 +26,19 @@ classifiers = [
 ]
 
 dependencies = [
+    # models
     "pydantic>=2.0",
+    # templating engine
     "jinja2>=3.1.0",
     # speed
     "orjson",
+    # config
     "tomli-w",
+    # ready pypi
     "httpx",
-    "beautifulsoup4"
+    "beautifulsoup4",
+    # pretty build output
+    "colorlog", # could be optional
 ]
 
 [project.scripts]

@@ -105,7 +105,6 @@ class ConfigLoader:
             "projects": projects_list,
             "pypi_packages": pypi_list,
             "theme": main_config.get("theme", "default"),
-
             "work_experience": experience_list,
             "resumes": resumes_list,
         }

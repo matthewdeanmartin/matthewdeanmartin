@@ -448,6 +448,7 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "beautifulsoup4" },
+    { name = "colorlog" },
     { name = "httpx" },
     { name = "jinja2" },
     { name = "orjson" },
@@ -502,6 +503,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "beautifulsoup4" },
+    { name = "colorlog" },
     { name = "httpx" },
     { name = "jinja2", specifier = ">=3.1.0" },
     { name = "orjson" },

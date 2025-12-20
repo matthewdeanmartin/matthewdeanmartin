@@ -11,8 +11,11 @@ git2md . \
   dead_code data docs scripts \
   __about__.py logging_config.py py.typed utils \
   .gitignore  .pre-commit-config.yaml .ruff_cache README* \
-  LICENSE SOURCE.md \
+  LICENSE SOURCE.md SOURCE_UI.md SOURCE_DATA.md \
   .cache \
   uv.lock \
-  templates swagger \
-  --output SOURCE.md
+  swagger builder_api builder_api.py \
+  .github Makefile  pyproject.toml \
+  GHIP_001_Specification.md \
+  default \
+  --output SOURCE_DATA.md

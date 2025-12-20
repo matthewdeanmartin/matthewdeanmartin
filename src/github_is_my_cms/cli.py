@@ -6,11 +6,14 @@ Handles argument parsing, logging setup, and command dispatch.
 
 import argparse
 import logging
+import logging.config
 import sys
 from pathlib import Path
 from typing import List, Optional
 
 import github_is_my_cms.__about__ as __about__
+from github_is_my_cms.builder_api import SiteBuilderAPI
+from github_is_my_cms.logging_config import generate_config
 
 # Import the builder
 from .builder import SiteBuilder
@@ -20,6 +23,8 @@ from .data_sources import DataUpdater
 # TODO: ideally fetched from package metadata in production
 VERSION = __about__.__version__
 
+logger = logging.getLogger(__name__)
+
 
 def setup_logging(level_name: str):
     """
@@ -28,12 +33,14 @@ def setup_logging(level_name: str):
     numeric_level = getattr(logging, level_name.upper(), None)
     if not isinstance(numeric_level, int):
         raise ValueError(f"Invalid log level: {level_name}")
-
-    logging.basicConfig(
-        level=numeric_level,
-        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-        datefmt="%H:%M:%S",
-    )
+    print(level_name)
+    logging.config.dictConfig(generate_config(level=level_name))
+    logger.debug("Testing 1123")
+    # logging.basicConfig(
+    #     level=numeric_level,
+    #     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    #     datefmt="%H:%M:%S",
+    # )
 
 
 def cmd_build(args: argparse.Namespace):
@@ -44,7 +51,11 @@ def cmd_build(args: argparse.Namespace):
     logging.info("Starting build process...")
     try:
         builder = SiteBuilder(root_dir=args.root)
-        builder.build()
+        api_builder = SiteBuilderAPI(root_dir=args.root)
+        builder.clean()
+        api_builder.build_static_api()
+        builder.build_markdown_pages()
+        builder.build_html_pages()
         logging.info("Build completed successfully.")
     except Exception as e:
         logging.error(f"Build failed: {e}", exc_info=True)
@@ -103,7 +114,7 @@ def main(argv: Optional[List[str]] = None):
     parser.add_argument("--version", action="version", version=f"%(prog)s {VERSION}")
     parser.add_argument(
         "--log-level",
-        default="INFO",
+        default="DEBUG",
         choices=["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"],
         help="Set the logging verbosity.",
     )

@@ -13,94 +13,111 @@
         <h2>Skills</h2>
         <table>
             {% for group in identity.skills %}
-            <tr>
-                <td style="width: 25%; font-weight: bold;">{{ group.category }}</td>
-                <td>
-                    {% for skill in group.skills %}
-                        {{ skill.name }}{% if skill.level %} <span class="meta">({{ skill.level }})</span>{% endif %}{% if not loop.last %}, {% endif %}
-                    {% endfor %}
-                </td>
-            </tr>
+                <tr>
+                    <td style="width: 25%; font-weight: bold;">{{ group.category }}</td>
+                    <td>
+                        {% for skill in group.skills %}
+                            {% if skill.page_slug %}
+                                {# Link to the generated skill page #}
+                                <a href="skills/{{ skill.page_slug }}.html">{{ skill.name }}</a>
+                            {% else %}
+                                {{ skill.name }}
+                            {% endif %}
+
+                            {% if skill.level %} <span class="meta">({{ skill.level }})</span>{% endif %}
+                            {% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    </td>
+                </tr>
             {% endfor %}
         </table>
     </section>
 
     {% if config.modes.current == "job_hunting" %}
-<section>
-  <h2>Work Experience</h2>
+        <section>
+            <h2>Work Experience</h2>
 
-  {% for role in work_experience %}
-    <h3>{{ role.title }} — {{ role.organization }}</h3>
-    <div class="meta">
-      {{ role.start_date }} – {{ role.end_date }}{% if role.location %} • {{ role.location }}{% endif %}
-    </div>
+            {% for role in work_experience %}
+                <h3>{{ role.title }} — {{ role.organization }}</h3>
+                <div class="meta">
+                    {{ role.start_date }} – {{ role.end_date }}{% if role.location %} • {{ role.location }}{% endif %}
+                </div>
 
-    {% if role.summary %}<p>{{ role.summary }}</p>{% endif %}
+                {% if role.summary %}<p>{{ role.summary }}</p>{% endif %}
 
-    {% if role.responsibilities %}
-    <ul>
-      {% for item in role.responsibilities %}
-        <li>{{ item }}</li>
-      {% endfor %}
-    </ul>
+                {% if role.responsibilities %}
+                    <ul>
+                        {% for item in role.responsibilities %}
+                            <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+                {% if role.technologies %}
+                    <div class="tags">Tech: {{ role.technologies | join(", ") }}</div>
+                {% endif %}
+                {% if role.linked_projects %}
+                    <div style="background: #f9f9f9; padding: 0.5rem; border-left: 3px solid #0056b3; margin: 0.5rem 0;">
+                        <strong>Relevant Projects:</strong>
+                        {% for p in role.linked_projects %}
+                            <a href="{{ p.url }}">{{ p.name }}</a>{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </section>
+
+        <section>
+            <h2>Resumes</h2>
+            <ul>
+                {% for r in resumes %}
+                    {% if r.status == "active" %}
+                        <li><strong><a href="{{ r.url }}">{{ r.label }}</a></strong>{% if r.description %} —
+                            {{ r.description }}{% endif %}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </section>
     {% endif %}
-
-    {% if role.technologies %}
-      <div class="tags">Tech: {{ role.technologies | join(", ") }}</div>
-    {% endif %}
-  {% endfor %}
-</section>
-
-<section>
-  <h2>Resumes</h2>
-  <ul>
-    {% for r in resumes %}
-      {% if r.status == "active" %}
-        <li><strong><a href="{{ r.url }}">{{ r.label }}</a></strong>{% if r.description %} — {{ r.description }}{% endif %}</li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-</section>
-{% endif %}
 
 
     {% if config.modes.current == "job_hunting" or config.modes.current == "project_promotion" %}
-    <section>
-        <h2>Selected Projects</h2>
-        <table>
-            <thead>
+        <section>
+            <h2>Selected Projects</h2>
+            <table>
+                <thead>
                 <tr>
                     <th style="width: 25%">Project</th>
                     <th>Description</th>
                 </tr>
-            </thead>
-            <tbody>
-            {% for project in projects %}
-                {% if project.featured %}
-                <tr>
-                    <td>
-                        <strong><a href="{{ project.url }}">{{ project.name }}</a></strong>
-                        <div class="tags">
-                            {{ project.tags|join(", ") }}
-                        </div>
-                    </td>
-                    <td>
-                        {{ project.description }}
-                        {% if project.repository_url %}
-                        <div class="meta" style="margin-top:4px;">
-                            <a href="{{ project.repository_url }}">Source Code &rarr;</a>
-                        </div>
-                        {% endif %}
-                    </td>
-                </tr>
-                {% endif %}
-            {% endfor %}
-            </tbody>
-        </table>
-        <div style="text-align: right; margin-top: 0.5rem; font-size: 0.9rem;">
-            <a href="projects.html">View Full Project List &rarr;</a>
-        </div>
-    </section>
+                </thead>
+                <tbody>
+                {% for project in projects %}
+                    {% if project.featured %}
+                        <tr>
+                            <td>
+                                <strong><a href="{{ project.url }}">{{ project.name }}</a></strong>
+                                <div class="tags">
+                                    {{ project.tags|join(", ") }}
+                                </div>
+                            </td>
+                            <td>
+                                {{ project.description }}
+                                {% if project.repository_url %}
+                                    <div class="meta" style="margin-top:4px;">
+                                        <a href="{{ project.repository_url }}">Source Code &rarr;</a>
+                                    </div>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                </tbody>
+            </table>
+            <div style="text-align: right; margin-top: 0.5rem; font-size: 0.9rem;">
+                <a href="projects.html">View Full Project List &rarr;</a>
+            </div>
+        </section>
     {% endif %}
 
     <section>
@@ -109,19 +126,20 @@
             <div style="flex: 1;">
                 <h3>Talks</h3>
                 <ul>
-                {% for talk in identity.talks %}
-                    <li><a href="{{ talk.url }}">{{ talk.title }}</a></li>
-                {% endfor %}
+                    {% for talk in identity.talks %}
+                        <li><a href="{{ talk.url }}">{{ talk.title }}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
 
             {% if config.modes.current == "job_hunting" and config.modes.job_hunting.resume_url %}
-            <div style="flex: 1;">
-                <h3>Downloads</h3>
-                <ul>
-                    <li><a href="{{ config.modes.job_hunting.resume_url }}"><strong>Download Full Resume (PDF)</strong></a></li>
-                </ul>
-            </div>
+                <div style="flex: 1;">
+                    <h3>Downloads</h3>
+                    <ul>
+                        <li><a href="{{ config.modes.job_hunting.resume_url }}"><strong>Download Full Resume
+                            (PDF)</strong></a></li>
+                    </ul>
+                </div>
             {% endif %}
         </div>
     </section>

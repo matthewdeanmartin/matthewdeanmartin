@@ -19,3 +19,5 @@ technologies = ["AWS", "Terraform", "Python", "Postgres"]
 links = [
   { label = "Company", url = "https://example.com" }
 ]
+
+related_project_slugs = ["Hicmah", "dedlin"]

@@ -7,11 +7,13 @@ set -euo pipefail
 
 git2md . \
   --ignore __init__.py __pycache__ \
-  .venv \
+  .venv .markdownlintrc \
   dead_code data docs scripts \
   __about__.py logging_config.py py.typed utils \
   .gitignore  .pre-commit-config.yaml .ruff_cache README* \
-  LICENSE SOURCE.md \
+  LICENSE SOURCE.md SOURCE_UI.md \
   .cache \
   uv.lock \
-  --output SOURCE.md
+  swagger builder_api builder_api.py \
+  .github Makefile  pyproject.toml \
+  --output SOURCE_UI.md

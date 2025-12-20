@@ -3,6 +3,13 @@
 name = "Matthew Dean Martin"
 tagline = "Pythonist, Devops Guy, and Govtech Specialist"
 location = "United States"
+pypi_username = "matthewdeanmartin"
+github_username =  "matthewdeanmartin"
+
+[content]
+skills_intro = "I used to be a full stack developer, I evolved into tech lead and most recently devops work. I write code and know how to ship in a govtech environment."
+projects_intro = "Here is a collection of my manual projects and published PyPI packages."
+job_hunting_intro = "I am currently looking for new opportunities. My focus is on production-quality backend systems."
 
 # --- Resumes ---
 [[resumes]]

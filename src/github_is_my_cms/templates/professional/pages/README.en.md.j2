@@ -1,13 +1,8 @@
 {% extends "layouts/master.md.j2" %}
-
-{% block body %}
-# {{ identity.name }}
-
-{{ identity.tagline }}
-
+{# --- MACRO DEFINITIONS --- #}
+{% macro section_skills() %}
 ## Skills
-
-I used to be a full stack developer, I evolved into tech lead and most recently devops work. I write code and know how to ship in a govtech environment.
+{{ identity.content.skills_intro }}
 
 {# Render Headers #}
 | {% for cat in identity.skills %}{{ cat.category }} | {% endfor +%}
@@ -16,41 +11,73 @@ I used to be a full stack developer, I evolved into tech lead and most recently 
 {% for row in identity.skill_rows -%}
 | {% for cell in row %}{{ cell }}<br> | {% endfor +%}
 {% endfor +%}
+{% endmacro %}
 
+{% macro section_resumes() %}
 ## Resumes
-
-{% for r in resumes %}
-{% if r.status == "active" %}
+{% for r in resumes if r.status == "active" %}
 {{ r.icon or "📄" }} [{{ r.label }}]({{ r.url }}){% if r.description %} {{ r.description }}{% endif %}<br>
-{% endif %}
 {% endfor %}
+{% endmacro %}
 
-## Identity Backlinks
+{% macro section_projects() %}
+## Projects
 
-Bidirectional backlinks on profile pages are evidence that I control both pages. This is not generally true for all backlinks. Read up on `rel="me"` and oauth to learn more.
+{% if config.modes.current == "job_hunting" %}
+{# --- MODE: JOB HUNTING (Simplified List) --- #}
+*Selected highlights. For a complete portfolio, [view the full project list](projects.md).*
 
-| Social Media with Backlinks | Verified Profile Pages |
-|-----------------------------|------------------------|
-| {% for p in identity.profiles if p.group == 'social' %}{{ p.icon or '' }}[{{ p.handle }}]({{ p.url }}) <br>{% endfor %} | {% for p in identity.profiles if p.group == 'verified' %}{{ p.icon or '' }} [{{ p.handle }}]({{ p.url }}) <br>{% endfor %} |
-
-## My Public Talks
-
-{% for talk in identity.talks %}
-{{ talk.icon }} [{{ talk.title }}]({{ talk.url }})
-{% endfor %}
-
-## Side Projects
-
-Over the years [I have worked on a lot of side projects, check them out](https://github.com/matthewdeanmartin/matthewdeanmartin/blob/master/README.sideprojects.md)
-
-{# Optional: Keep dynamic project listing for API/Promotion modes if desired #}
-{% if config.modes.current == "project_promotion" %}
-### Featured Highlights
 {% for project in projects %}
-{% if project.featured %}
-* **[{{ project.name }}]({{ project.url }})**: {{ project.description }}
+    {% if project.featured %}
+* **[{{ project.name }}]({{ project.url or project.repository_url }})**
+  <br>{{ project.description }}
+  <br>_{{ project.tags | join(", ") }}_
+    {% endif %}
+{% endfor %}
+
+{% else %}
+{# --- MODE: PROJECT PROMOTION (Full Table) --- #}
+| Project | Status | Description |
+|:--------|:-------|:------------|
+{% for project in projects %}
+| [{{ project.name }}]({{ project.url or project.repository_url }}) | {{ project.status }} | {{ project.description }} <br> <sub>Tags: {{ project.tags|join(", ") }}</sub> |
+{% endfor %}
+
+{% endif %}
+{% endmacro %}
+
+{% macro section_experience() %}
+## Work Experience
+{% for role in work_experience %}
+### {{ role.title }} @ {{ role.organization }}
+{{ role.summary }}
+{% if role.linked_projects %}
+*Related Projects:* {% for p in role.linked_projects %}[{{ p.name }}]({{ p.url }}){% if not loop.last %}, {% endif %}{% endfor %}
 {% endif %}
 {% endfor %}
-{% endif %}
+{% endmacro %}
 
+
+
+
+{% block body %}
+# {{ identity.name }}
+{{ identity.tagline }}
+
+{# --- LAYOUT LOGIC --- #}
+
+{% if config.modes.current == "job_hunting" %}
+    {{ section_skills() }}
+    {{ section_resumes() }}
+    {{ section_experience() }}
+    {{ section_projects() }}
+{% elif config.modes.current == "self_promotion" %}
+    {{ section_skills() }}
+    {{ section_talks() }}
+    {{ section_projects() }}
+{% else %}
+    {# Default: Project Promotion #}
+    {{ section_projects() }}
+    {{ section_skills() }}
+{% endif %}
 {% endblock %}
