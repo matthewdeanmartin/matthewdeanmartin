@@ -32,22 +32,25 @@
 ## Projects
 
 {% if config.modes.current == "job_hunting" %}
-{# --- MODE: JOB HUNTING (Simplified List) --- #}
+{# --- MODE: JOB HUNTING --- #}
 *Selected highlights. For a complete portfolio, [view the full project list](projects.md).*
 
-{% for project in projects %}
-    {% if project.featured %}
+{# CHANGE: Loop over featured_projects only #}
+{% for project in featured_projects %}
 * **[{{ project.name }}]({{ project.url or project.repository_url }})**
   <br>{{ project.description }}
   <br>_{{ project.tags | join(", ") }}_
-    {% endif %}
 {% endfor %}
 
 {% else %}
-{# --- MODE: PROJECT PROMOTION (Full Table) --- #}
+{# --- MODE: PROJECT PROMOTION --- #}
+{# Use featured highlights here as well, or full list? User requested "main README should only show featured" #}
+
+*Below are my featured projects. For a complete archive, see [Projects](projects.md).*
+
 | Project | Status | Description |
 |:--------|:-------|:------------|
-{% for project in projects %}
+{% for project in featured_projects %}
 | [{{ project.name }}]({{ project.url or project.repository_url }}) | {{ project.status }} | {{ project.description }} <br> <sub>Tags: {{ project.tags|join(", ") }}</sub> |
 {% endfor %}
 

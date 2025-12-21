@@ -238,6 +238,9 @@ class Project(BaseModel):
     featured: bool = False
     status: str = Field("active", description="active, archived, or maintenance")
 
+    # Allow explicit grouping
+    group: str = Field("Other", description="Category grouping for project pages")
+
     cms: Optional[CMSDirective] = None
 
     related_skills: List[str] = Field(default_factory=list)
@@ -272,18 +275,21 @@ class JobHuntingSettings(BaseModel):
     project_visibility: ProjectVisibility = ProjectVisibility.CURATED
     highlight_skills: bool = True
     resume_url: Optional[HttpUrl] = None
+    hide_archived: bool = True
 
 
 class ProjectPromotionSettings(BaseModel):
     enable_projects: bool = True
     project_visibility: ProjectVisibility = ProjectVisibility.FULL
     highlight_pypi: bool = True
+    hide_archived: bool = True
 
 
 class SelfPromotionSettings(BaseModel):
     enable_talks: bool = True
     enable_posts: bool = True
     highlight_blog: bool = True
+    hide_archived: bool = True
 
 
 class ModeConfig(BaseModel):

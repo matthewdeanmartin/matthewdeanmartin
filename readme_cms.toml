@@ -11,16 +11,19 @@ current = "self_promotion"
 enable_projects = true
 project_visibility = "curated"
 resume_url = "https://matthewdeanmartin.github.io/matthewdeanmartin"
+hide_archived = true
 
 [mode.project_promotion]
 enable_projects = true
 project_visibility = "full"
 highlight_pypi = true
+hide_archived = true
 
 [mode.self_promotion]
 enable_talks = true
 enable_posts = true
 highlight_blog = true
+hide_archived = true
 
 [languages]
 default = "en"

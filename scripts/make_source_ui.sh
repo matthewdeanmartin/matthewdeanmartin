@@ -16,4 +16,5 @@ git2md . \
   uv.lock \
   swagger builder_api builder_api.py \
   .github Makefile  pyproject.toml \
+  er.mermaid \
   --output SOURCE_UI.md

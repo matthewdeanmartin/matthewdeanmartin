@@ -18,6 +18,65 @@ from .models import CMSConfig
 
 logger = logging.getLogger(__name__)
 
+from collections import Counter
+
+
+def assign_groups(
+    projects_data: dict, top_n: int = 10, default_group: str = "other"
+) -> dict:
+    projects = projects_data
+
+    languages = [
+        project.get("primary_langauge").lower()
+        for project in projects
+        if project.get("primary_langauge")
+    ]
+    print(languages)
+    # 1) Global tag frequency
+    tag_counts = Counter()
+    for p in projects:
+        for t in p.get("tags") or []:
+            if isinstance(t, str) and t.strip() and t.lower() not in languages:
+                tag_counts[t.strip()] += 1
+
+    # 2) Top-N tags with deterministic tie-break
+    top_tags_sorted = sorted(tag_counts.items(), key=lambda kv: (-kv[1], kv[0]))
+    top_tags = [t for t, _ in top_tags_sorted[:top_n]]
+    top_tag_set = set(top_tags)
+
+    # Precompute ranking for fast "best tag" selection per project
+    # Lower rank value = better
+    top_tag_rank = {
+        t: i for i, t in enumerate(top_tags)
+    }  # already sorted by (-count, tag)
+
+    # 3) Assign groups
+    for p in projects:
+        if p.get("group"):
+            continue
+
+        tags = [
+            t.strip() for t in (p.get("tags") or []) if isinstance(t, str) and t.strip()
+        ]
+        candidate_tags = [
+            t for t in tags if t in top_tag_set and t.lower() not in languages
+        ]
+
+        if candidate_tags:
+            # Pick the best candidate by global rank (freq desc, then lex)
+            best = min(candidate_tags, key=lambda t: top_tag_rank[t])
+            p["group"] = best.title()
+        elif p.get("primary_language"):
+            p["group"] = p["primary_language"].title()
+        else:
+            p["group"] = default_group.title()
+
+    # Optional: stash top tags for debugging/visibility
+    # projects_data["_top_tags"] = top_tags
+    # projects_data["_tag_counts"] = dict(tag_counts)
+
+    return projects_data
+
 
 class ConfigLoader:
     """
@@ -78,6 +137,7 @@ class ConfigLoader:
         # Manually curated projects
         projects_data = self._load_toml_file(self.data_dir / "projects.toml")
         projects_list = projects_data.get("projects", [])
+        assign_groups(projects_list)
 
         # 4. Load PyPI Metadata (pypi_projects.toml)
         # Automated data from weekly workflow

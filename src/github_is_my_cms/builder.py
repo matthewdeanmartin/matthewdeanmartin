@@ -9,6 +9,7 @@ import logging
 import math
 import re
 import shutil
+from collections import defaultdict
 from pathlib import Path
 
 import orjson
@@ -55,13 +56,49 @@ class SiteBuilder:
             lstrip_blocks=True,
         )
 
+        # --- PRE-PROCESSING LOGIC ---
+
+        # 1. Filter based on "Hide Archived" config
+        raw_projects = self.config.projects
+        should_hide_archived = getattr(
+            self.config.current_mode_settings, "hide_archived", False
+        )
+
+        if should_hide_archived:
+            logger.info("Mode setting 'hide_archived' is ON. Filtering list.")
+            visible_projects = [p for p in raw_projects if p.status != "archived"]
+        else:
+            visible_projects = raw_projects
+
+        # 2. Sort projects (Featured first, then Alphabetical)
+        visible_projects.sort(key=lambda x: (not x.featured, x.name.lower()))
+
+        # 3. Extract Featured Projects
+        featured_projects = [p for p in visible_projects if p.featured]
+
+        # 4. Create Groups
+        # Structure: { "Group Name": [Project, Project], ... }
+        projects_by_group = defaultdict(list)
+        for p in visible_projects:
+            # Fallback if group is missing in data (though model defaults to 'Other')
+            g = p.group if p.group else "Other"
+            projects_by_group[g].append(p)
+
         # Inject Globals and Helpers
+        # Overwrite the raw list with the filtered list
+        self.env.globals["projects"] = visible_projects
+
+        # Add new convenience lists
+        self.env.globals["featured_projects"] = featured_projects
+        self.env.globals["projects_by_group"] = dict(
+            projects_by_group
+        )  # convert to standard dict
+
         self.env.globals["generation"] = {"generated_at": datetime.datetime.now()}
 
         self.env.globals["config"] = self.config
         self.env.globals["identity"] = self.config.identity
         self.env.globals["mode"] = self.config.current_mode_settings
-        self.env.globals["projects"] = self.config.projects
         self.env.globals["pypi"] = self.config.pypi_packages
 
         self.env.globals["work_experience"] = self.config.work_experience

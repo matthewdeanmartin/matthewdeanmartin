@@ -105,3 +105,6 @@ venv.bak/
 .mypy_cache/
 .build_state
 .idea/
+SOURCE.md
+SOURCE_UI.md
+SOURCE_DATA.md
