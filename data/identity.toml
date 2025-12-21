@@ -1,10 +1,51 @@
 # src/github_is_my_cms/data/identity.toml
 
 name = "Matthew Dean Martin"
-tagline = "Pythonist, Devops Guy, and Govtech Specialist"
-location = "United States"
+tagline = "Pythonist, Devops Engineer, and Govtech Specialist"
+location = "Herndon, Virginia, USA"
+time_zone = "EST"
 pypi_username = "matthewdeanmartin"
 github_username =  "matthewdeanmartin"
+
+job_hunting_projects =[
+    # skills focused
+    "bash2gitlab",
+    "bitrab",
+    "c7n_make"
+]
+
+identity_projects =[
+    # blog etc.
+    "blog",
+    "resume"
+]
+
+project_promotion = [
+    # awesome
+
+    # gitlab
+    "bash2gitlab",
+    "bitrab",
+    # python or pypi centric
+    "hermetic",
+    "hermetic-seal",
+    "skip_trace",
+    "naive_linkbacks",
+    "hermetic-seal",
+    "skip-trace",
+    "naive-linkbacks",
+    "pycodetags",
+    "troml_dev_status",
+    "paipi",
+    # Small but cool
+    "dashc",
+    "total_help",
+    # LLM and AI projects
+    "examexam"
+
+]
+
+
 
 [content]
 skills_intro = "I used to be a full stack developer, I evolved into tech lead and most recently devops work. I write code and know how to ship in a govtech environment."
@@ -57,6 +98,12 @@ url = "https://linkedin.com/in/matthewdeanmartin"
 group = "social"
 icon = "🔗"
 
+[[profiles]]
+service = "Github"
+handle = "Github Profile"
+url = "https://github.com/matthewdeanmartin"
+group = "social"
+icon = "🐙"
 
 # Group: Verified Profile Pages
 [[profiles]]
@@ -79,3 +126,5 @@ handle = "StackOverflow"
 url = "https://stackoverflow.com/users/33264/matthewmartin"
 group = "verified"
 icon = "🔥"
+
+

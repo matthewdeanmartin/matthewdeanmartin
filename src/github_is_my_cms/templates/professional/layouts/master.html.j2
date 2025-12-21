@@ -82,7 +82,7 @@
 
     <footer>
         <div style="text-align: center; font-size: 0.7rem; margin-top: 3rem; color: #999;">
-            Last Updated: {{ generation.generated_at }} &mdash; Mode: {{ mode.current }}
+            Last Updated: {{ generation.generated_at }} &mdash; Mode: {{ config.modes.current.replace("_", " ").title()  }}
         </div>
     </footer>
 </body>

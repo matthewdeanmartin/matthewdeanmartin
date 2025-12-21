@@ -1,29 +1,35 @@
 # Matthew Dean Martin
 
-Pythonist, Devops Guy, and Govtech Specialist | United States
+Pythonist, Devops Engineer, and Govtech Specialist | Herndon, Virginia, USA
 [Home](../../README.md) • [Projects](projects.md) • [API](../apis/openapi.yaml)
 
 ______________________________________________________________________
 
-## Curated Projects
+## Projects
 
 | Project | Status | Description |
 |:--------|:-------|:------------|
-| [cli_tool_audit](https://matthewdeanmartin.github.io/cli_tool_audit/cli_tool_audit/index.html) | active | Verify that a list of cli tools are available. Like a requirements.txt for cli tools, but without an installer component. <br> <sub>Tags: package-management, tools</sub> |
-| [dedlin](https://github.com/matthewdeanmartin/dedlin) | active | Clone of edlin with improvements to make it into more of a DSL <br> <sub>Tags: editor, edlin, line-editor</sub> |
+| [★ bash2gitlab](https://bash2gitlab.readthedocs.io/en/latest/) | active | Compile bash to yaml pipelines to get IDE support for bash and import bash from template repos <br> <sub>Tags: gitlab, gitlab-ci</sub> |
+| [★ bitrab](https://github.com/matthewdeanmartin/bitrab) | active | A pipeline runner that runs Gitlab syntax pipelines without docker or admin rights. Minimal feature set. <br> <sub>Tags: automation, ci, devops, gitlab, minimalism, no-docker, pipeline</sub> |
+| [★ dashc](https://github.com/matthewdeanmartin/dashc) | active | Compile your code into a `python -c "..."` string executable in shell without filesystem access. <br> <sub>Tags: cli-tools, code-compiler, executable, programming, python, shell, no-filesystem-access</sub> |
+| [★ examexam](https://github.com/matthewdeanmartin/examexam) | active | Exam practice with LLM (AI) integrations <br> <sub>Tags: ai, education, exam, llm, practice</sub> |
+| [★ hermetic](https://github.com/matthewdeanmartin/hermetic) | active | run a python tool with certain APIs disabled <br> <sub>Tags: cli-tool, configuration, development-tools, python, security</sub> |
+| [★ paipi](https://github.com/matthewdeanmartin/paipi) | active | Pypi search, except the backend is an LLM's pixelated memory of Pypi. <br> <sub>Tags: code-generation, llm-search, pypi, python-packaging</sub> |
+| [★ pycodetags](https://pycodetags.readthedocs.io/en/latest/) | active | PEP350 Code Tags. Data in your comments. <br> <sub>Tags: codetags, pep-350, pep350, pycodetags</sub> |
+| [★ skip_trace](https://github.com/matthewdeanmartin/skip_trace) | active | Who owns your dependencies <br> <sub>Tags: pypi, supply-chain-security</sub> |
+| [★ totalhelp](https://github.com/matthewdeanmartin/totalhelp) | active | View help for all commands and subcommands for arbitrary commands or augment your app to do so. <br> <sub>Tags: automation, cli-tools, command-line, documentation, help, user-guide, application-augmentation</sub> |
+| [★ troml_dev_status](https://troml-dev-status.readthedocs.io/en/latest/) | active | Project inspired by troml to suggest a Development Status based solely on objective criteria. <br> <sub>Tags: development-status, python-packaging, trove-classifiers</sub> |
 | [ai_fish_tank](https://github.com/matthewdeanmartin/ai_fish_tank) | active | Fish tank that has a story going on <br> <sub>Tags: aquarium, artificial-intelligence, game, interactive-fiction, simulation, storytelling</sub> |
-| [bash2gitlab](https://bash2gitlab.readthedocs.io/en/latest/) | active | Compile bash to yaml pipelines to get IDE support for bash and import bash from template repos <br> <sub>Tags: gitlab, gitlab-ci</sub> |
 | [bash_logging_with_timer](https://github.com/matthewdeanmartin/bash_logging_with_timer) | active | Logger with timer that will attempt to use pre-existing <br> <sub>Tags: automation, bash, command-line, logging, scripting, timer, utilities</sub> |
 | [basic_python](https://github.com/matthewdeanmartin/basic_python) | active | BASIC interpreter written in python <br> <sub>Tags: basic, basic-programming</sub> |
-| [bitrab](https://github.com/matthewdeanmartin/bitrab) | active | A pipeline runner that runs Gitlab syntax pipelines without docker or admin rights. Minimal feature set. <br> <sub>Tags: automation, ci, devops, gitlab, minimalism, no-docker, pipeline</sub> |
 | [blog](https://blog.wakayos.com/) | active | Matthew Martin's Life Blog. Let's see how many days I can do this. <br> <sub>Tags: blog, daily-updates, documentation, journaling, lifestyle, personal, writing</sub> |
 | [blog_comments](https://github.com/matthewdeanmartin/blog_comments) | active | trying out utterance comments <br> <sub>Tags: blog, comments, utterances</sub> |
 | [bug_trail](https://github.com/matthewdeanmartin/bug_trail) | active | local static html error logger to use while developing python code <br> <sub>Tags: development, error-logging, html, local-development, logging, python, static-site</sub> |
 | [bug_trail_core](https://github.com/matthewdeanmartin/bug_trail_core) | active | The error/log collecting part of bug_trail a sqlite-back logging tool for python apps <br> <sub>Tags: bug-tracking, error-handling, logging, python, software-development, sqlite, utility</sub> |
 | [c7n_make](https://github.com/matthewdeanmartin/c7n_make) | active | An opinionated Cloud Custodian build script with examples <br> <sub>Tags: automation, aws, cloud-custodian, devops, infrastructure-as-code, scripts</sub> |
-| [dashc](https://github.com/matthewdeanmartin/dashc) | active | Compile your code into a `python -c "..."` string executable in shell without filesystem access. <br> <sub>Tags: cli-tools, code-compiler, executable, programming, python, shell, no-filesystem-access</sub> |
+| [cli_tool_audit](https://matthewdeanmartin.github.io/cli_tool_audit/cli_tool_audit/index.html) | active | Verify that a list of cli tools are available. Like a requirements.txt for cli tools, but without an installer component. <br> <sub>Tags: package-management, tools</sub> |
+| [dedlin](https://github.com/matthewdeanmartin/dedlin) | active | Clone of edlin with improvements to make it into more of a DSL <br> <sub>Tags: editor, edlin, line-editor</sub> |
 | [disemoji](https://github.com/matthewdeanmartin/disemoji) | active | Make pretty disassembly visualizations. Not especially practical. <br> <sub>Tags: artistic, assembly-language, disassembly, educational, graphics, programming, visualization</sub> |
-| [examexam](https://github.com/matthewdeanmartin/examexam) | active | Exam practice with LLM (AI) integrations <br> <sub>Tags: ai, education, exam, llm, practice</sub> |
 | [examexam_exams](https://github.com/matthewdeanmartin/examexam_exams) | active | Model repo showing how to share exams you generate with examexam. <br> <sub>Tags: assessment, education, exams, model-repository, sharing, examexam, online-tests</sub> |
 | [falling_food](https://github.com/matthewdeanmartin/falling_food) | active | Food falls and you catch it! Pygame game <br> <sub>Tags: pygame, pygame-games, game</sub> |
 | [fermi_problems](https://github.com/matthewdeanmartin/fermi_problems) | active | A game to see how good you are at solving order of magnitude estimation problems <br> <sub>Tags: estimation, fermi-problems, game, interactive, learning, math, python</sub> |
@@ -31,7 +37,6 @@ ______________________________________________________________________
 | [gh_status](https://github.com/matthewdeanmartin/gh_status) | active | summarize gihub activity for an llm <br> <sub>Tags: activity, automation, data-analysis, github, llm, machine-learning, summarization</sub> |
 | [git_help](https://github.com/matthewdeanmartin/git_help) | active | attempting to do common git things with python as a learning exercise <br> <sub>Tags: git, version-control</sub> |
 | [git_mirror](https://github.com/matthewdeanmartin/git_mirror) | active | Clone all your github repos and call pull on them. <br> <sub>Tags: automation, clone, git, github, repository, version-control</sub> |
-| [hermetic](https://github.com/matthewdeanmartin/hermetic) | active | run a python tool with certain APIs disabled <br> <sub>Tags: cli-tool, configuration, development-tools, python, security</sub> |
 | [Hicmah](https://github.com/matthewdeanmartin/Hicmah) | active | Hicmah - Hit Counter Module and Handler <br> <sub>Tags: analytics, handler, hit-counter, module, web-development</sub> |
 | [hissbytenotation](https://github.com/matthewdeanmartin/hissbytenotation) | active | Library to make it easy to use python literal syntax as a data format <br> <sub>Tags: data-format, data-representation, library, programming, python, serialization, literal-syntax</sub> |
 | [interview_challenges](https://github.com/matthewdeanmartin/interview_challenges) | active | All my leet code and interview challenges. This will become private after my job search is over. <br> <sub>Tags: algorithm, coding-challenges, data-structures, interview-preparation, job-search, leetcode, software-engineering</sub> |
@@ -51,10 +56,8 @@ ______________________________________________________________________
 | [metametameta](https://matthewdeanmartin.github.io/metametameta/metametameta/index.html) | active | Generate dunder metadata file with __title__, __author__, etc. Also tools to discover these in other packages. <br> <sub>Tags: python, python-metadata</sub> |
 | [naive_backlink](https://github.com/matthewdeanmartin/naive_backlink) | active | Uncoordinated, accidental identity and trust. Because Alice and Bob are foreign state actors and this is better than nothing.. <br> <sub>Tags: identity, backlinks, web-crawling</sub> |
 | [openmock](https://pypi.python.org/pypi/openmock) | active | Python Opensearch Mock for test purposes (fork of elasticmock) <br> <sub>Tags: development, mocking, opensearch, testing, elasticmock</sub> |
-| [paipi](https://github.com/matthewdeanmartin/paipi) | active | Pypi search, except the backend is an LLM's pixelated memory of Pypi. <br> <sub>Tags: code-generation, llm-search, pypi, python-packaging</sub> |
 | [parse_quick_parameters.sh](https://github.com/matthewdeanmartin/parse_quick_parameters.sh) | active | Provide a documentation string to get named function parameters. Fork of msknapp's. Similar to docopt <br> <sub>Tags: bash, parameter-parsing, scripting, utilities</sub> |
 | [pyanide](https://github.com/matthewdeanmartin/pyanide) | active | tools for killing threads and making sure they stay that way <br> <sub>Tags: concurrency, multithreading, python, software-development, thread-safety, utils, kill-threads</sub> |
-| [pycodetags](https://pycodetags.readthedocs.io/en/latest/) | active | PEP350 Code Tags. Data in your comments. <br> <sub>Tags: codetags, pep-350, pep350, pycodetags</sub> |
 | [pydoc_fork](https://matthewdeanmartin.github.io/pydoc_fork/docs_pydoc_fork/pydoc_fork.html) | active | Run pydoc on a build server to generate API docs <br> <sub>Tags: docstrings, pydoc, python</sub> |
 | [pypi_librarian](https://github.com/matthewdeanmartin/pypi_librarian) | active | object oriented API client for pypi's various metadata APIs <br> <sub>Tags: metadata, object-oriented, pypi, python</sub> |
 | [python3](https://github.com/matthewdeanmartin/python3) | active | Hack to handle a missing alias/symlink, for example when you're on windows or don't want to be bothered <br> <sub>Tags: alias, cross-platform, file-management, python, symlink, utilities, windows</sub> |
@@ -62,7 +65,6 @@ ______________________________________________________________________
 | [recython](https://github.com/matthewdeanmartin/recython) | active | use ai to assist in turning ordinary python into cython python <br> <sub>Tags: ai, code-assistance, cython, performance, programming, python</sub> |
 | [resume](https://github.com/matthewdeanmartin/resume) | active | Resume-themed coding projects <br> <sub>Tags: coding, design, personal-branding, portfolio, projects, resume, novelty</sub> |
 | [safe_run](https://matthewdeanmartin.github.io/safe_run/) | active | Generate docker syntax to run a pypi package safely <br> <sub>Tags: containerization, development-tools, docker, package-management, pypi, python, safety</sub> |
-| [skip_trace](https://github.com/matthewdeanmartin/skip_trace) | active | Who owns your dependencies <br> <sub>Tags: pypi, supply-chain-security</sub> |
 | [smbc_scraper](https://github.com/matthewdeanmartin/smbc_scraper) | active | Collect raw data from smbc comics for noble causes, such as machine learning. <br> <sub>Tags: comics, data, data-collection, machine-learning, python, web-scraping</sub> |
 | [sparkle_log](https://github.com/matthewdeanmartin/sparkle_log) | active | Write a spark line graph of CPU, Memory, etc to the python log <br> <sub>Tags: cpu, data-visualization, logging, memory, performance-monitoring, python, sparkline</sub> |
 | [superinit](https://github.com/matthewdeanmartin/superinit) | active | Bash script to initialize django REST api. Sort of like a cookiecutter template but less reliable. <br> <sub>Tags: django, template, web-development</sub> |
@@ -70,8 +72,6 @@ ______________________________________________________________________
 | [team_policies](https://github.com/matthewdeanmartin/team_policies) | active | Generic software development team policies. <br> <sub>Tags: best-practices, collaboration, documentation, git, project-management, software-development, team-policies</sub> |
 | [tkstatistics](https://github.com/matthewdeanmartin/tkstatistics) | active | stdlib-only statistical app backed only by what is available in the python stdlib <br> <sub>Tags: data-analysis, statistical-models, statistics</sub> |
 | [tokipona.parser](https://github.com/matthewdeanmartin/tokipona.parser) | active | A Toki Pona Parser <br> <sub>Tags: language-processing, linguistics, natural-language, parser, programming-languages, text-analysis, toki-pona</sub> |
-| [totalhelp](https://github.com/matthewdeanmartin/totalhelp) | active | View help for all commands and subcommands for arbitrary commands or augment your app to do so. <br> <sub>Tags: automation, cli-tools, command-line, documentation, help, user-guide, application-augmentation</sub> |
-| [troml_dev_status](https://troml-dev-status.readthedocs.io/en/latest/) | active | Project inspired by troml to suggest a Development Status based solely on objective criteria. <br> <sub>Tags: development-status, python-packaging, trove-classifiers</sub> |
 | [untruncate_json](https://github.com/matthewdeanmartin/untruncate_json) | active | Python library to repair truncated json. Translated directly from the typescript original version <br> <sub>Tags: data-processing, data-repair, json, library, python, typescript, truncated-json</sub> |
 | [us_copyright](https://github.com/matthewdeanmartin/us_copyright) | active | Web API client for working with US copyright records <br> <sub>Tags: client-library, copyright, data-retrieval, javascript, us-government, web-development</sub> |
 | [useful_scripts](https://github.com/matthewdeanmartin/useful_scripts) | active | Generic scripts useful for software development in a CLI/TUI context <br> <sub>Tags: automation, cli, command-line, scripts, software-development, tui, utilities</sub> |
@@ -131,4 +131,4 @@ ______________________________________________________________________
 
 ______________________________________________________________________
 
-*Generated by github-is-my-cms | 2025-12-20 21:38:53.431433*
+*Generated by github-is-my-cms | 2025-12-21 16:49:53.822370*

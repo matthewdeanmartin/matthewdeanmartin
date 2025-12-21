@@ -25,8 +25,9 @@
                     <tr>
                         <td>
                             <a href="{{ project.url or project.repository_url }}"><strong>{{ project.name }}</strong></a>
+                            {# Use the boolean flag set by the builder #}
                             {% if project.featured %}
-                                <span style="font-size:0.7em; color:red;">★</span>
+                                <span style="font-size:0.8em; color: #d35400; margin-left: 5px;" title="Featured Project">★</span>
                             {% endif %}
                         </td>
                         <td>
@@ -65,6 +66,10 @@
                 <tr>
                     <td>
                         <a href="{{ pkg.docs_url or 'https://pypi.org/project/' ~ pkg.package_name }}">{{ pkg.package_name }}</a>
+                        {# Use the boolean flag dynamically added to PyPI objects #}
+                        {% if pkg.featured %}
+                            <span style="font-size:0.8em; color: #d35400; margin-left: 5px;" title="Featured Package">★</span>
+                        {% endif %}
                     </td>
                     <td>{{ pkg.version }}</td>
                     <td>{{ pkg.summary }}</td>

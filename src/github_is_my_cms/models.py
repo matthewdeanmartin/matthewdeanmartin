@@ -140,6 +140,10 @@ class Identity(BaseModel):
 
     content: IdentityContent = Field(default_factory=IdentityContent)
 
+    job_hunting_projects: List[str] = Field(default_factory=list)
+    identity_projects: List[str] = Field(default_factory=list)
+    project_promotion: List[str] = Field(default_factory=list)
+
     @property
     def skill_rows(self) -> List[List[str]]:
         """
@@ -389,6 +393,7 @@ class WorkExperienceEntry(BaseModel):
     responsibilities: List[str] = Field(default_factory=list)
     technologies: List[str] = Field(default_factory=list)
     links: List[LabeledLink] = Field(default_factory=list)
+    featured: bool = False
 
     related_project_slugs: List[str] = Field(default_factory=list)
     # We will inject the actual Project objects here during the build step

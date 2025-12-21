@@ -8,6 +8,7 @@ employment_type = "full_time"
 start_date = "2025-02"
 end_date = "present"
 summary = "Devops engineer for team at a large govenment bank."
+featured = true
 
 responsibilities = [
     "Devops: Wrote infrastructure as code for a federal financial institution using Typescript CDK, Gitlab, Bash, including unit, integration and snapshot tests",
@@ -41,6 +42,7 @@ employment_type = "full_time"
 start_date = "2019-09"
 end_date = "2014-09"
 summary = "Technical lead for a Python-based search engine for legal documents at the Library of Congress (USCO)."
+featured = true
 
 responsibilities = [
     "Application development: built three Python microservices, two ETL processes, and several AWS Lambdas for search, emailing, and bookmarking.",
@@ -106,6 +108,7 @@ employment_type = "full_time"
 start_date = "2019-03"
 end_date = "2019-09"
 summary = "USPTO support contract: worked with the Architecture Division to introduce new technologies across the organization."
+featured = false
 
 responsibilities = [
     "Built proofs of concept using Docker, Kubernetes, and Jenkins.",
@@ -136,6 +139,7 @@ employment_type = "full_time"
 start_date = "2016-06"
 end_date = "2019-03"
 summary = "Supervised a team, wrote code, and handled build/server administration for AWS infrastructure."
+featured = false
 
 responsibilities = [
     "Machine learning: maintained existing models and developed new models (scikit-learn, including random forest); used pandas for data processing and reporting.",
@@ -191,6 +195,7 @@ employment_type = "full_time"
 start_date = "2015-01"
 end_date = "2016-06"
 summary = "Python application development for a NIST contract; additional application development for Veterans Administration (VA)."
+featured = false
 
 responsibilities = [
     "Python application development: maintained and released a Python 3 GUI application for a password-creation research study; refactored legacy code, added automated unit tests, and stabilized the application.",
@@ -250,6 +255,7 @@ employment_type = "contract"
 start_date = "2014-07"
 end_date = "2014-12"
 summary = "Hiring agency role supporting work at Fors Marsh until contract converted to full-time at Fors Marsh (location and contract stayed the same)."
+featured = false
 
 responsibilities = [
     "Worked under Benten Technologies as the hiring agency while performing the same role and work that later converted to full-time employment at Fors Marsh Group.",
@@ -301,6 +307,7 @@ employment_type = "contract"
 start_date = "2012-08"
 end_date = "2013-02"
 summary = "Hiring agency role supporting work at CACI until contract converted to full-time at CACI (location and contract stayed the same)."
+featured = false
 
 responsibilities = [
     "Worked under AboutWeb as the hiring agency while performing the same CACI project work that later converted to full-time employment at CACI.",
@@ -319,6 +326,7 @@ employment_type = "full_time"
 start_date = "2008-05"
 end_date = "2012-08"
 summary = "Application and maintenance development for TSA; lead developer and CI/DevOps owner for developer network systems."
+featured = false
 
 responsibilities = [
     "Full-stack .NET maintenance development (C#, T-SQL, JavaScript, Telerik); upgraded application from .NET 1.1 to 3.5; created integration + unit test suites reducing logged errors from hundreds/day to several/week.",
@@ -362,6 +370,7 @@ employment_type = "full_time"
 start_date = "2005-05"
 end_date = "2008-05"
 summary = "DBA and application maintenance for USAF; modernization work, data interfaces, and SQL Server administration."
+featured = false
 
 responsibilities = [
     "Migrated an ASP Classic application to ASP.NET; also completed a rewrite using ASP.NET 2.0 features (including custom/user controls) and built a 508 accessibility interface using ASP.NET 2.0 profile features.",
@@ -404,6 +413,8 @@ employment_type = "full_time"
 start_date = "1998-10"
 end_date = "2005-05"
 summary = "Application support and development for a county tax office; reporting, interfaces, and data quality work."
+featured = false
+
 
 responsibilities = [
     "Maintained a closed-source client-server tax-office application (VB6 WinForms, T-SQL, MS-Access reports), including report generation for tens of thousands of heterogeneous tax bills.",

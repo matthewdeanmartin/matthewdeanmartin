@@ -17,3 +17,12 @@ everything: data build format
 	echo "everything"
 	cp docs/md/README.en.md README.en.md
 
+.PHONY: run
+run: everything
+	python -m scripts.open_site
+
+.PHONY: source
+source:
+	./scripts/make_source_data.sh
+	./scripts/make_source_ui.sh
+	./scripts/make_source.sh

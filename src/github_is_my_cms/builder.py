@@ -58,7 +58,10 @@ class SiteBuilder:
 
         # --- PRE-PROCESSING LOGIC ---
 
-        # 1. Filter based on "Hide Archived" config
+        # APPLY FEATURED LOGIC (NEW)
+        self._apply_featured_status()
+
+        # Filter based on "Hide Archived" config
         raw_projects = self.config.projects
         should_hide_archived = getattr(
             self.config.current_mode_settings, "hide_archived", False
@@ -70,13 +73,13 @@ class SiteBuilder:
         else:
             visible_projects = raw_projects
 
-        # 2. Sort projects (Featured first, then Alphabetical)
+        # Sort projects (Featured first, then Alphabetical)
         visible_projects.sort(key=lambda x: (not x.featured, x.name.lower()))
 
-        # 3. Extract Featured Projects
+        # Extract Featured Projects
         featured_projects = [p for p in visible_projects if p.featured]
 
-        # 4. Create Groups
+        # Create Groups
         # Structure: { "Group Name": [Project, Project], ... }
         projects_by_group = defaultdict(list)
         for p in visible_projects:
@@ -292,6 +295,61 @@ class SiteBuilder:
             count += 1
         if not count:
             raise TypeError("No html pages build")
+
+    def _normalize_name_match(self, name: str) -> str:
+        """
+        Normalizes a project name for comparison.
+        Case insensitive, treats '-' and '_' as identical.
+        Example: "Bash2Gitlab" -> "bash2gitlab", "naive_linkbacks" -> "naivelinkbacks"
+        """
+        if not name:
+            return ""
+        # Remove both - and _ to make them strictly equivalent
+        return re.sub(r"[-_]", "", name.lower())
+
+    def _apply_featured_status(self):
+        """
+        Updates the .featured boolean on all Projects and PyPI packages
+        based on the list defined in identity.toml for the CURRENT mode.
+        """
+        mode = self.config.modes.current
+        identity = self.config.identity
+
+        # Determine which list of strings to use
+        target_list = []
+        if mode == "job_hunting":
+            target_list = identity.job_hunting_projects
+        elif mode == "project_promotion":
+            target_list = identity.project_promotion
+        elif mode == "self_promotion":
+            # If self_promotion logic isn't strictly defined, fallback or use identity_projects
+            target_list = identity.identity_projects
+        else:
+            # Fallback
+            target_list = identity.project_promotion
+
+        # Create a set of normalized names for O(1) lookup
+        featured_slugs = {self._normalize_name_match(name) for name in target_list}
+
+        logger.info(
+            f"Applying featured status for mode '{mode}'. {len(featured_slugs)} targets found."
+        )
+
+        # Apply to GitHub Projects
+        for proj in self.config.projects:
+            norm_name = self._normalize_name_match(proj.name)
+            if norm_name in featured_slugs:
+                proj.featured = True
+            else:
+                # IMPORTANT: Reset to False if not in the list, so mode switches work cleanly
+                proj.featured = False
+
+        # Apply to PyPI Packages (if you want stars there too)
+        # Note: PyPIPackage model doesn't explicitly have 'featured',
+        # but Python allows setting dynamic attributes or you can add it to the model.
+        for pkg in self.config.pypi_packages:
+            norm_name = self._normalize_name_match(pkg.package_name)
+            # Dynamically set attribute for template usage
 
     def build(self):
         """

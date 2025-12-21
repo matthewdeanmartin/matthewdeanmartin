@@ -1,84 +1,38 @@
 {% extends "layouts/master.html.j2" %}
 
-{% block body %}
-
+{# --- MACRO DEFINITIONS --- #}
+{% macro section_skills() %}
     <section>
-        <h2>Professional Summary</h2>
-        <article>
-            {{ include_content('pages/about.md') }}
-        </article>
-    </section>
+        <h2>Skills</h2>
+        <table>
+            {# CHANGE: Use the filtered property instead of the raw list #}
+            {% for group in identity.featured_skill_groups %}
+                <tr>
+                    <td style="width: 25%; font-weight: bold;">{{ group.category }}</td>
+                    <td>
+                        {% for skill in group.skills %}
 
-<section>
-    <h2>Skills</h2>
-    <table>
-        {# CHANGE: Use the filtered property instead of the raw list #}
-        {% for group in identity.featured_skill_groups %}
-            <tr>
-                <td style="width: 25%; font-weight: bold;">{{ group.category }}</td>
-                <td>
-                    {% for skill in group.skills %}
-
-                        {% if skill.page_slug %}
-                            <a href="skills/{{ skill.page_slug }}.html" style="text-decoration: none; border-bottom: 1px dotted #666; color: #000;">
-                                {{ skill.name }}
-                            </a>
-                        {% else %}
-                            {{ skill.name }}
-                        {% endif %}
-
-                        {% if skill.level %} <span class="meta">({{ skill.level }})</span>{% endif %}
-                        {% if not loop.last %}, {% endif %}
-                    {% endfor %}
-                </td>
-            </tr>
-        {% endfor %}
-    </table>
-</section>
-
-    {% if config.modes.current == "job_hunting" %}
-        <section>
-            <h2>Work Experience</h2>
-
-            {% for role in work_experience %}
-                <h3>{{ role.title }} — {{ role.organization }}</h3>
-                <div class="meta">
-                    {{ role.start_date }} – {{ role.end_date }}{% if role.location %} • {{ role.location }}{% endif %}
-                </div>
-
-                {% if role.summary %}<p>{{ role.summary }}</p>{% endif %}
-
-                {% if role.responsibilities %}
-                    <ul>
-                        {% for item in role.responsibilities %}
-                            <li>{{ item }}</li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-
-                {% if role.technologies %}
-                    <div class="tags">
-                        <strong>Technologies:</strong>
-                        {% for tech in role.technologies %}
-                            {% set tech_lower = tech|lower %}
-
-                            {# --- FIX: Link Resume Tech to Skill Page --- #}
-                            {% if skill_lookup_map and tech_lower in skill_lookup_map %}
-                                <a href="skills/{{ skill_lookup_map[tech_lower] }}.html" style="color: #444;">
-                                    {{ tech }}
+                            {% if skill.page_slug %}
+                                <a href="skills/{{ skill.page_slug }}.html"
+                                   style="text-decoration: none; border-bottom: 1px dotted #666; color: #000;">
+                                    {{ skill.name }}
                                 </a>
                             {% else %}
-                                {{ tech }}
+                                {{ skill.name }}
                             {% endif %}
-                            {# ------------------------------------------- #}
 
+                            {% if skill.level %} <span class="meta">({{ skill.level }})</span>{% endif %}
                             {% if not loop.last %}, {% endif %}
                         {% endfor %}
-                    </div>
-                {% endif %}
+                    </td>
+                </tr>
             {% endfor %}
-        </section>
+        </table>
+    </section>
+{% endmacro %}
 
+{% block body %}
+    {% if config.modes.current == "job_hunting" %}
         <section>
             <h2>Resumes</h2>
             <ul>
@@ -90,22 +44,73 @@
                 {% endfor %}
             </ul>
         </section>
+        <section>
+            <h2>Work Experience</h2>
+
+            {% for role in work_experience %}
+                {% if role.featured %}
+                    <h3>{{ role.title }} — {{ role.organization }}</h3>
+                    <div class="meta">
+                        {{ role.start_date }} –
+                        {{ role.end_date }}{% if role.location %} • {{ role.location }}{% endif %}
+                    </div>
+
+                    {% if role.summary %}<p>{{ role.summary }}</p>{% endif %}
+
+                    {% if role.responsibilities %}
+                        <ul>
+                            {% for item in role.responsibilities %}
+                                <li>{{ item }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                    {% if role.technologies %}
+                        <div class="tags">
+                            <strong>Technologies:</strong>
+                            {% for tech in role.technologies %}
+                                {% set tech_lower = tech|lower %}
+
+                                {# --- FIX: Link Resume Tech to Skill Page --- #}
+                                {% if skill_lookup_map and tech_lower in skill_lookup_map %}
+                                    <a href="skills/{{ skill_lookup_map[tech_lower] }}.html" style="color: #444;">
+                                        {{ tech }}
+                                    </a>
+                                {% else %}
+                                    {{ tech }}
+                                {% endif %}
+                                {# ------------------------------------------- #}
+
+                                {% if not loop.last %}, {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+
+        </section>
     {% endif %}
 
 
+    {% if config.modes.current == "job_hunting" %}
+        {{ section_skills() }}
+    {% endif %}
+
+    {# --- PROJECT SECTION --- #}
     {% if config.modes.current == "job_hunting" or config.modes.current == "project_promotion" %}
         <section>
             <h2>Selected Projects</h2>
-            <table>
-                <thead>
-                <tr>
-                    <th style="width: 25%">Project</th>
-                    <th>Description</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for project in projects %}
-                    {% if project.featured %}
+            {% if featured_projects %}
+                <table>
+                    <thead>
+                    <tr>
+                        <th style="width: 25%">Project</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {# Loop over the pre-calculated featured list #}
+                    {% for project in featured_projects %}
                         <tr>
                             <td>
                                 <strong><a href="{{ project.url }}">{{ project.name }}</a></strong>
@@ -122,15 +127,18 @@
                                 {% endif %}
                             </td>
                         </tr>
-                    {% endif %}
-                {% endfor %}
-                </tbody>
-            </table>
-            <div style="text-align: right; margin-top: 0.5rem; font-size: 0.9rem;">
-                <a href="projects.html">View Full Project List &rarr;</a>
-            </div>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <div style="text-align: right; margin-top: 0.5rem; font-size: 0.9rem;">
+                    <a href="projects.html">View Full Project List &rarr;</a>
+                </div>
+            {% else %}
+                <p>No featured projects selected for this mode.</p>
+            {% endif %}
         </section>
     {% endif %}
+    {# --------------------------- #}
 
     <section>
         <h2>Public Activity</h2>
@@ -145,15 +153,20 @@
             </div>
 
             {% if config.modes.current == "job_hunting" and config.modes.job_hunting.resume_url %}
-                <div style="flex: 1;">
-                    <h3>Downloads</h3>
-                    <ul>
-                        <li><a href="{{ config.modes.job_hunting.resume_url }}"><strong>Download Full Resume
-                            (PDF)</strong></a></li>
-                    </ul>
-                </div>
+                {#                Why was this here?#}
+                {#                <div style="flex: 1;">#}
+                {#                    <h3>Downloads</h3>#}
+                {#                    <ul>#}
+                {#                        <li><a href="{{ config.modes.job_hunting.resume_url }}"><strong>Download Full Resume#}
+                {#                            (PDF)</strong></a></li>#}
+                {#                    </ul>#}
+                {#                </div>#}
             {% endif %}
         </div>
     </section>
+
+    {% if config.modes.current != "job_hunting" %}
+        {{ section_skills() }}
+    {% endif %}
 
 {% endblock %}

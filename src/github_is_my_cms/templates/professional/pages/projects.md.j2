@@ -1,12 +1,12 @@
 {% extends "layouts/master.md.j2" %}
 
 {% block body %}
-## Curated Projects
+## Projects
 
 | Project | Status | Description |
 |:--------|:-------|:------------|
 {% for project in projects %}
-| [{{ project.name }}]({{ project.url }}) | {{ project.status }} | {{ project.description }} <br> <sub>Tags: {{ project.tags|join(", ") }}</sub> |
+| [{% if project.featured %}★ {% endif %}{{ project.name }}]({{ project.url or project.repository_url }}) | {{ project.status }} | {{ project.description }} <br> <sub>Tags: {{ project.tags|join(", ") }}</sub> |
 {% endfor %}
 
 ## PyPI Packages
@@ -14,6 +14,6 @@
 | Package | Version | Downloads | Summary |
 |:--------|:--------|:----------|:--------|
 {% for pkg in pypi %}
-| [{{ pkg.package_name }}]({{ pkg.docs_url or "https://pypi.org/project/" ~ pkg.package_name }}) | {{ pkg.version }} | {{ pkg.downloads_monthly }} | {{ pkg.summary }} |
+| [{% if pkg.featured %}★ {% endif %}{{ pkg.package_name }}]({{ pkg.docs_url or "https://pypi.org/project/" ~ pkg.package_name }}) | {{ pkg.version }} | {{ pkg.downloads_monthly }} | {{ pkg.summary }} |
 {% endfor %}
 {% endblock %}

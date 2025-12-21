@@ -1,18 +1,49 @@
 # data/resumes.toml
 
 [[resumes]]
-id = "resume-2015"
-label = "Resume from 2015"
-url = "https://matthewdeanmartin.github.io/"
-format = "html"          # pdf | docx | html | md | other
+id = "cloud-engineer"
+label = "Cloud Engineer"
+url = "https://matthewdeanmartin.github.io/matthewdeanmartin/resumes/Matthew_Martin_Cloud_Engineer_One_Page.pdf"
+format = "pdf"          # pdf | docx | html | md | other
 audience = "general"
-status = "expired"       # active | expired | draft
-valid_from = "2015-01"
+status = "active"       # active | expired | draft
+valid_from = "2024-12"
 icon = "📄"
 
 [[resumes]]
-id = "resume-2024-novelty"
-label = "Novelty Resume from 2024"
+id = "one-page"
+label = "One Page"
+url = "https://matthewdeanmartin.github.io/matthewdeanmartin/resumes/Matthew_Martin_Resume_One_Page.pdf"
+format = "pdf"          # pdf | docx | html | md | other
+audience = "general"
+status = "active"       # active | expired | draft
+valid_from = "2024-12"
+icon = "📄"
+
+[[resumes]]
+id = "long-format"
+label = "Long Format"
+url = "https://matthewdeanmartin.github.io/matthewdeanmartin/resumes/Matthew_Martin_Long_Format.pdf"
+format = "pdf"          # pdf | docx | html | md | other
+audience = "general"
+status = "active"       # active | expired | draft
+valid_from = "2024-12"
+icon = "📄"
+
+[[resumes]]
+id = "architect"
+label = "Architect"
+url = "https://matthewdeanmartin.github.io/matthewdeanmartin/resumes/Matthew_Martin_Architect.pdf"
+format = "pdf"          # pdf | docx | html | md | other
+audience = "general"
+status = "active"       # active | expired | draft
+valid_from = "2024-12"
+icon = "📄"
+
+
+[[resumes]]
+id = "novelty-resume"
+label = "Novelty Resume for a Sensible Chuckle"
 url = "https://matthewdeanmartin.github.io/resume/browser/"
 format = "html"
 audience = "general"

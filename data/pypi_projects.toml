@@ -4,7 +4,7 @@ downloads_monthly = 0
 version = "1.0.4"
 summary = "Filesystem Shell interface that an OpenAI Assitant can use as a tool."
 docs_url = "https://github.com/matthewdeanmartin/ai_shell"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/ai_shell"
 tags = [
     "openai",
@@ -17,7 +17,7 @@ downloads_monthly = 0
 version = "0.26.0"
 summary = "Thin wrapper around the 'aws' command line interface for use with LocalStack *for Windows*."
 docs_url = "https://pypi.org/project/awscli-local-win/"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/awscli-local"
 tags = [
     "aws",
@@ -32,7 +32,7 @@ downloads_monthly = 0
 version = "0.9.9"
 summary = "Compile bash to gitlab pipeline yaml"
 docs_url = "https://pypi.org/project/bash2gitlab/"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/bash2gitlab"
 tags = [
     "bash",
@@ -45,7 +45,7 @@ downloads_monthly = 0
 version = "0.1.0"
 summary = "Compile bash to gitlab pipeline yaml"
 docs_url = "https://pypi.org/project/bitrab/"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/bitrab"
 tags = [
     "bash",
@@ -58,7 +58,7 @@ downloads_monthly = 0
 version = "3.0.0"
 summary = "Local static html error logger to use while developing python code."
 docs_url = "https://pypi.org/project/bug-trail/"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/bug_trail"
 tags = [
     "error",
@@ -74,7 +74,7 @@ downloads_monthly = 0
 version = "3.1.0"
 summary = "Local static html error logger to use while developing python code."
 docs_url = "https://pypi.org/project/bug-trail-core/"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/bug_trail_core"
 tags = [
     "error",
@@ -90,7 +90,7 @@ downloads_monthly = 0
 version = "1.0.11"
 summary = "Can I switch to installing only using wheels and never sdist?"
 docs_url = "https://github.com/matthewdeanmartin/caniuseonlywheels"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/caniuseonlywheels"
 tags = [
     "supply-chain",
@@ -103,7 +103,7 @@ downloads_monthly = 0
 version = "3.1.0"
 summary = "Audit for existence and version number of cli tools."
 docs_url = "https://github.com/matthewdeanmartin/cli_tool_audit"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/cli_tool_audit"
 tags = [
     "cli",
@@ -118,7 +118,7 @@ github_repo = "matthewdeanmartin/cli_tool_audit"
 version = "3.1.0"
 summary = "Audit for existence and version number of cli tools."
 downloads_monthly = 1200
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 docs_url = "https://github.com/matthewdeanmartin/cli_tool_audit"
 tags = [
     "cli",
@@ -133,7 +133,7 @@ downloads_monthly = 0
 version = "0.1.1"
 summary = "Tool to generate python -c bash as if it were a package format."
 docs_url = "https://pypi.org/project/dashc/"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/dashc"
 tags = [
     "bash",
@@ -147,7 +147,7 @@ version = "1.19.4"
 summary = "Line editor, edlin clone with many improvements"
 downloads_monthly = 543
 docs_url = "https://github.com/matthewdeanmartin/dedlin"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 tags = [
     "editor",
     "edlin",
@@ -161,7 +161,7 @@ downloads_monthly = 0
 version = "0.1.8"
 summary = "Let LLM generate tests, validate test, and then you take them. Useful for certs."
 docs_url = "https://pypi.org/project/examexam/"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = ""
 tags = []
 
@@ -171,7 +171,7 @@ downloads_monthly = 0
 version = "1.3.0"
 summary = "Lossy python to markdown serializer"
 docs_url = "https://github.com/matthewdeanmartin/find_known_secrets"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/find_known_secrets"
 tags = [
     "secrets",
@@ -183,7 +183,7 @@ downloads_monthly = 0
 version = "0.3.8"
 summary = "Make your local git repos look like github or gitlab. See readme for how this differs from the many other multi-repo tools."
 docs_url = "https://github.com/matthewdeanmartin/git_mirror"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/git_mirror"
 tags = [
     "git",
@@ -198,7 +198,7 @@ downloads_monthly = 0
 version = "0.1.0"
 summary = "User-space sandbox runner for Python console scripts"
 docs_url = "https://pypi.org/project/hermetic-seal/"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = ""
 tags = []
 
@@ -208,7 +208,7 @@ downloads_monthly = 0
 version = "0.2.0"
 summary = "Serialize and deserialize data to python source notation (hbn)"
 docs_url = "https://github.com/matthewdeanmartin/hissbytenotation"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/hissbytenotation"
 tags = [
     "serializer",
@@ -222,7 +222,7 @@ downloads_monthly = 0
 version = "2.1.0"
 summary = "Increment version number found in source code without regex"
 docs_url = "https://pypi.org/project/jiggle-version/"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = ""
 tags = [
     "version",
@@ -235,7 +235,7 @@ downloads_monthly = 0
 version = "0.2.0"
 summary = "GnuCOBOL environment and package manager."
 docs_url = "https://github.com/matthewdeanmartin/mainframer"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/mainframer"
 tags = [
     "cobol",
@@ -248,7 +248,7 @@ downloads_monthly = 0
 version = "2.1.2"
 summary = "Markdown to dict and json deserializer"
 docs_url = "https://github.com/njvack/markdown-to-json"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "njvack/markdown-to-json"
 tags = [
     "serializer",
@@ -262,7 +262,7 @@ downloads_monthly = 0
 version = "0.3.0"
 summary = "Import python code in markdown as module"
 docs_url = "https://github.com/matthewdeanmartin/markmodule"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/markmodule"
 tags = [
     "markdown",
@@ -274,7 +274,7 @@ downloads_monthly = 0
 version = "1.6.1"
 summary = "Lossy python to markdown serializer"
 docs_url = "https://github.com/matthewdeanmartin/markpickle"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/markpickle"
 tags = [
     "serializer",
@@ -288,7 +288,7 @@ downloads_monthly = 0
 version = "0.2.0"
 summary = "Search for mastodon profiles, use mechanical and LLM filtering."
 docs_url = "https://pypi.org/project/mastodon-finder/"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/mastodon-finder"
 tags = [
     "mastodon",
@@ -300,7 +300,7 @@ downloads_monthly = 0
 version = "0.1.5"
 summary = "Generate __about__.py with dunder meta."
 docs_url = "https://pypi.org/project/metametameta/"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/metametameta"
 tags = [
     "metadata",
@@ -313,7 +313,7 @@ downloads_monthly = 0
 version = "1.1.0"
 summary = "navio-builder, without sh dependency, works on windows."
 docs_url = "https://github.com/matthewdeanmartin/navio-builder/tree/pypi_branch"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/navio-builder"
 tags = [
     "devops",
@@ -327,7 +327,7 @@ downloads_monthly = 0
 version = "3.1.5"
 summary = "Python OpenSearch Mock for test purposes"
 docs_url = "https://pypi.org/project/openmock/"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/openmock"
 tags = [
     "mocking",
@@ -341,7 +341,7 @@ downloads_monthly = 0
 version = "1.1.0"
 summary = "Tools for killing processes and keeping them dead."
 docs_url = "https://github.com/matthewdeanmartin/pyanide"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/pyanide"
 tags = [
     "kill",
@@ -354,7 +354,7 @@ downloads_monthly = 0
 version = "0.6.0"
 summary = "TODOs in source code as a first class construct, follows PEP350"
 docs_url = "https://pypi.org/project/pycodetags/"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/pycodetags"
 tags = [
     "FIXME",
@@ -374,7 +374,7 @@ downloads_monthly = 0
 version = "0.3.0"
 summary = "Plugin for pycodetags to track issues, e.g. bugs, TODO, etc in your code"
 docs_url = "https://pypi.org/project/pycodetags-issue-tracker/"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = ""
 tags = [
     "FIXME",
@@ -394,7 +394,7 @@ downloads_monthly = 0
 version = "3.3.0"
 summary = "Fork of cpython's pydoc module to do just html document generation"
 docs_url = "https://github.com/matthewdeanmartin/pydoc_fork"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/pydoc_fork"
 tags = [
     "pydoc",
@@ -408,7 +408,7 @@ downloads_monthly = 0
 version = "0.1.9"
 summary = "Pypi metadata client. Client for metadata related API endpoints for Pypi."
 docs_url = "https://github.com/matthewdeanmartin/pypi_librarian"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/pypi_librarian"
 tags = [
     "pypi",
@@ -422,7 +422,7 @@ downloads_monthly = 0
 version = "1.0.3"
 summary = "Hack to deal with a missing python3 alias on Windows"
 docs_url = "https://github.com/matthewdeanmartin/python3"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/python3"
 tags = [
     "python3",
@@ -435,7 +435,7 @@ downloads_monthly = 0
 version = "0.2.0"
 summary = "Convert int to random name, like tree_dance and convert it back to same int."
 docs_url = "https://github.com/matthewdeanmartin/random_names"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/random_names"
 tags = [
     "mneumonic",
@@ -449,7 +449,7 @@ downloads_monthly = 0
 version = "0.4.0"
 summary = "Unofficial AWS Glue Ray.io packaging tool. Pure python or cross platform."
 docs_url = "https://github.com/matthewdeanmartin/raypack"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/raypack"
 tags = [
     "awsglue",
@@ -464,7 +464,7 @@ downloads_monthly = 0
 version = "0.1.1"
 summary = "Ownership Attribution for Python Packages"
 docs_url = "https://pypi.org/project/skip-trace/"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/skip-trace"
 tags = [
     "PEP",
@@ -486,7 +486,7 @@ downloads_monthly = 0
 version = "0.3.0"
 summary = "Generate packages from Stackoverflow answers"
 docs_url = "https://github.com/matthewdeanmartin/so_pip"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/so_pip"
 tags = [
     "packaging",
@@ -499,7 +499,7 @@ downloads_monthly = 0
 version = "0.4.0"
 summary = "Write sparkline graphs of CPU and memory usage to your logs."
 docs_url = "https://github.com/matthewdeanmartin/sparkle_log"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/sparkle_log"
 tags = [
     "monitoring",
@@ -512,7 +512,7 @@ downloads_monthly = 0
 version = "1.1.3"
 summary = "ANSI Color formatting for output in terminal, fork of termcolor, maintained as of 2023 by Matthew Martin"
 docs_url = "https://github.com/matthewdeanmartin/termcolor"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/termcolor"
 tags = [
     "terminals",
@@ -525,7 +525,7 @@ downloads_monthly = 0
 version = "3.1.2"
 summary = "Generate simple tables in terminals from a nested list of strings. (has wheels!)"
 docs_url = "https://github.com/matthewdeanmartin/terminaltables"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/terminaltables"
 tags = [
     "Shell",
@@ -542,7 +542,7 @@ downloads_monthly = 0
 version = "4.0.0"
 summary = "Generate simple tables in terminals from a nested list of strings. Fork of terminaltables."
 docs_url = "https://github.com/matthewdeanmartin/terminaltables3"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/terminaltables3"
 tags = [
     "Shell",
@@ -559,7 +559,7 @@ downloads_monthly = 0
 version = "0.1.1"
 summary = "Print help for all commands and subcommands for argparse applications"
 docs_url = "https://pypi.org/project/totalhelp/"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/totalhelp"
 tags = []
 
@@ -569,7 +569,7 @@ downloads_monthly = 0
 version = "0.6.0"
 summary = "Objectively infer PyPI Development Status classifiers from code and release artifacts."
 docs_url = "https://pypi.org/project/troml-dev-status/"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/troml_dev_status"
 tags = [
     "development",
@@ -586,7 +586,7 @@ downloads_monthly = 0
 version = "1.1.0"
 summary = "Cleans up truncated json files."
 docs_url = "https://github.com/matthewdeanmartin/untruncate_json/"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/untruncate_json"
 tags = []
 
@@ -596,7 +596,7 @@ downloads_monthly = 0
 version = "0.2.0"
 summary = "Guess programming language from a string or file."
 docs_url = "https://github.com/matthewdeanmartin/whats_that_code"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/whats_that_code"
 tags = [
     "language",
@@ -612,6 +612,6 @@ downloads_monthly = 0
 version = "0.1.1"
 summary = "Drop in replacment for random that always returns 4 or 4/6"
 docs_url = "https://pypi.org/project/xkcd-random-four/"
-last_updated = "2025-12-20"
+last_updated = "2025-12-21"
 github_repo = "matthewdeanmartin/xkcd-random"
 tags = []
