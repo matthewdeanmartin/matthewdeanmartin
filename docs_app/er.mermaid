@@ -1,0 +1,181 @@
+erDiagram
+    SITE_CONFIG ||--|| MODE_SELECTOR : selects
+    SITE_CONFIG ||--|| LANGUAGE_CONFIG : defines
+    MODE_SELECTOR ||--o| MODE_JOB_HUNTING : job_hunting
+    MODE_SELECTOR ||--o| MODE_PROJECT_PROMOTION : project_promotion
+    MODE_SELECTOR ||--o| MODE_SELF_PROMOTION : self_promotion
+
+    IDENTITY ||--|| IDENTITY_CONTENT : has
+    IDENTITY ||--o{ IDENTITY_RESUME_REF : references
+    IDENTITY ||--o{ TALK : has
+    IDENTITY ||--o{ SKILL_CATEGORY : has
+    SKILL_CATEGORY ||--o{ SKILL : contains
+    IDENTITY ||--o{ PROFILE : has
+
+    RESUME ||--o{ IDENTITY_RESUME_REF : used_by
+
+    PROJECT ||--o| PROJECT_CMS : has
+    PROJECT ||--o{ PROJECT_TAG : has
+    TAG ||--o{ PROJECT_TAG : labels
+
+    PYPI_PACKAGE ||--o{ PACKAGE_TAG : has
+    TAG ||--o{ PACKAGE_TAG : labels
+
+    WORK_EXPERIENCE ||--o{ EXPERIENCE_RESPONSIBILITY : includes
+    WORK_EXPERIENCE ||--o{ EXPERIENCE_TECHNOLOGY : uses
+    WORK_EXPERIENCE ||--o{ EXPERIENCE_LINK : links
+
+    SITE_CONFIG {
+      string theme
+    }
+
+    MODE_SELECTOR {
+      string current   "job_hunting|project_promotion|self_promotion"
+    }
+
+    MODE_JOB_HUNTING {
+      boolean enable_projects
+      string project_visibility "curated|full?"
+      string resume_url
+    }
+
+    MODE_PROJECT_PROMOTION {
+      boolean enable_projects
+      string project_visibility "curated|full?"
+      boolean highlight_pypi
+    }
+
+    MODE_SELF_PROMOTION {
+      boolean enable_talks
+      boolean enable_posts
+      boolean highlight_blog
+    }
+
+    LANGUAGE_CONFIG {
+      string default_language
+      string supported_languages "array"
+    }
+
+    IDENTITY {
+      string name
+      string tagline
+      string location
+      string pypi_username
+      string github_username
+    }
+
+    IDENTITY_CONTENT {
+      string skills_intro
+      string projects_intro
+      string job_hunting_intro
+    }
+
+    RESUME {
+      string id
+      string label
+      string url
+      string format       "pdf|docx|html|md|other"
+      string audience
+      string status       "active|expired|draft"
+      string valid_from   "YYYY-MM"
+      string description
+      string icon
+    }
+
+    IDENTITY_RESUME_REF {
+      string label
+      string url
+      string description
+      string icon
+      string resume_id    "optional FK to RESUME.id"
+    }
+
+    TALK {
+      string title
+      string url
+      string icon
+    }
+
+    SKILL_CATEGORY {
+      string category
+      int sort_order "optional"
+    }
+
+    SKILL {
+      string name
+      string level "Expert|Very Good|Good enough|..."
+      string icon
+    }
+
+    PROFILE {
+      string service
+      string handle
+      string url
+      string group  "social|verified|..."
+      string icon
+    }
+
+    PROJECT {
+      string slug  "unique"
+      string name
+      string description
+      string url
+      string repository_url
+      string status
+      string primary_language
+    }
+
+    PROJECT_CMS {
+      boolean suppress
+      string package_links "array"
+    }
+
+    PYPI_PACKAGE {
+      string package_name "unique"
+      int downloads_monthly
+      string version
+      string summary
+      string docs_url
+      date last_updated
+      string github_repo
+    }
+
+    WORK_EXPERIENCE {
+      string id "unique"
+      string organization
+      string title
+      string employment_type
+      string start_date "YYYY-MM"
+      string end_date   "YYYY-MM|present"
+      string summary
+    }
+
+    EXPERIENCE_RESPONSIBILITY {
+      string text
+      int sort_order
+    }
+
+    EXPERIENCE_TECHNOLOGY {
+      string name
+      int sort_order
+    }
+
+    EXPERIENCE_LINK {
+      string label
+      string url
+      int sort_order
+    }
+
+    TAG {
+      string name "unique"
+    }
+
+    PROJECT_TAG {
+      string project_slug "FK"
+      string tag_name     "FK"
+    }
+
+    PACKAGE_TAG {
+      string package_name "FK"
+      string tag_name     "FK"
+    }

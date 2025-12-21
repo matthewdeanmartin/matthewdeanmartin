@@ -4,8 +4,8 @@ theme = "professional"
 [mode]
 # Options: "job_hunting", "project_promotion", "self_promotion"
 # current = "project_promotion"
-# current = "job_hunting"
-current = "self_promotion"
+current = "job_hunting"
+# current = "self_promotion"
 
 [mode.job_hunting]
 enable_projects = true

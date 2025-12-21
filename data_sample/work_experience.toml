@@ -1,23 +1,65 @@
 # data/work_experience.toml
 
 [[experience]]
-id = "acme-2021-2024"
-organization = "Acme Corp"
-title = "Senior Platform Engineer"
-employment_type = "full_time" # full_time | contract | freelance | volunteer
-start_date = "2021-06"
-end_date = "2024-11"         # or "present"
-location = "Remote"
-summary = "Owned CI/CD, platform observability, and infra automation for regulated workloads."
+id = "artemis-aretum-2019-present"
+organization = "Artemis Consulting (renamed Aretum)"
+title = "Technical Lead and Python Developer"
+employment_type = "full_time"
+start_date = "2019-09"
+end_date = "present"
+summary = "Technical lead for a Python-based search engine for legal documents at the Library of Congress (USCO)."
 
 responsibilities = [
-  "Built multi-account AWS landing zone with policy-as-code.",
-  "Reduced deploy time from 40m to 10m via pipeline refactors.",
+  "Application development: built three Python microservices, two ETL processes, and several AWS Lambdas for search, emailing, and bookmarking.",
+  "Architecture and infrastructure-as-code: selected AWS services and wrote Terraform to integrate them with the application.",
+  "Technical leadership: supported a specialist team on a cloud-native application; helped teammates with IDE/tooling and build scripts; set up Dev Containers; used LocalStack and Python moto for AWS simulation.",
+  "Process: participated in SAFe-style Agile (PI planning, sprint planning, ticket writing, sprint demos) continuously for ~5 years; gathered metrics and helped client interpret them for continuous improvement.",
+  "Release management: participated in Federal SDLC (A&A, ATO, POA&M responses, change requests for production releases).",
+  "Supervision: participated in technical interviewing, developer onboarding, mentoring, and PIPs.",
 ]
 
-technologies = ["AWS", "Terraform", "Python", "Postgres"]
-links = [
-  { label = "Company", url = "https://example.com" }
+technologies = [
+  "Python",
+  "pytest",
+  "Connexion",
+  "Gunicorn",
+  "OpenAPI/Swagger",
+  "JSON",
+  "Nginx",
+  "AWS ECS",
+  "AWS ECR",
+  "AWS S3",
+  "AWS Glue",
+  "AWS RDS",
+  "AWS EC2",
+  "AWS ALB",
+  "AWS API Gateway",
+  "AWS ElastiCache",
+  "OpenSearch/Elasticsearch",
+  "Terraform",
+  "Docker",
+  "Podman",
+  "GitLab CI",
+  "SonarQube",
+  "pylint",
+  "Locust",
+  "mypy",
+  "Makefile",
+  "Justfile",
+  "Git",
+  "bash",
+  "Java TestNG",
+  "Selenium",
+  "Angular",
+  "Trivy",
+  "OWASP ZAP",
+  "Tenable",
+  "Keycloak",
+  "JWT",
+  "VSCode",
+  "WebStorm",
+  "IntelliJ",
+  "PyCharm",
 ]
 
-related_project_slugs = ["Hicmah", "dedlin"]
+links = []

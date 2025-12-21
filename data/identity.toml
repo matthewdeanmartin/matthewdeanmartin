@@ -29,48 +29,9 @@ title = "Python Librarian"
 url = "https://www.youtube.com/channel/UCw1p2a3LW1VG7DTZQaT8Oaw"
 icon = "▶️"
 
-# --- Skills ---
-# Column 1
-[[skills]]
-category = "Devops"
-[[skills.skills]]
-name = "Typescript for AWS CDK"
-level = "Expert"
-icon = "🌐"
-[[skills.skills]]
-name = "Terraform for AWS / HCL"
-level = "Expert"
-icon = "🪐"
-[[skills.skills]]
-name = "Go for Terratest"
-level = "Good enough"
-icon = "🐹"
 
-# Column 2
-[[skills]]
-category = "Backend Development"
-[[skills.skills]]
-name = "Python for Serverless in AWS"
-level = "Expert"
-icon = "🐍"
-[[skills.skills]]
-name = "Postgres"
-icon = "🐘"
-[[skills.skills]]
-name = "DynamoDB"
-icon = "🗄️"
 
-# Column 3
-[[skills]]
-category = "Build Master"
-[[skills.skills]]
-name = "Gitlab Pipelines"
-level = "Expert"
-icon = "🦊"
-[[skills.skills]]
-name = "Bash for Gitlab"
-level = "Very Good"
-icon = "`>_`"
+
 
 # --- Profiles (Backlinks) ---
 

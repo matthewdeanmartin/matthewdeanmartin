@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matthew Dean Martin - Resume</title>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --link-color: #0056b3;
+            --border-color: #dddddd;
+        }
+        body {
+            font-family: "Georgia", "Times New Roman", Times, serif;
+            line-height: 1.4;
+            color: var(--text-color);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--bg-color);
+        }
+        a { color: var(--link-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Typography */
+        h1 { margin: 0; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 1px; }
+        h2 { margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.1rem; text-transform: uppercase; border-bottom: 2px solid #333; padding-bottom: 2px; }
+        h3 { margin-top: 1rem; margin-bottom: 0.25rem; font-size: 1rem; font-weight: bold; }
+        p { margin: 0.5rem 0; }
+
+        /* Header / Nav */
+        header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 1.5rem; }
+        .header-info { text-align: right; font-size: 0.9rem; }
+        .nav-links a { margin-left: 10px; font-family: sans-serif; font-size: 0.85rem; color: #666; }
+
+        /* Tables */
+        table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; font-size: 0.95rem; }
+        th, td { text-align: left; padding: 6px 4px; border-bottom: 1px solid #eee; vertical-align: top;}
+        th { font-weight: bold; border-bottom: 2px solid #aaa; }
+
+        /* Lists */
+        ul { margin: 0.5rem 0; padding-left: 1.2rem; }
+        li { margin-bottom: 0.2rem; }
+
+        /* Utility */
+        .meta { color: #666; font-size: 0.85rem; font-style: italic; }
+        .tags { font-family: sans-serif; font-size: 0.75rem; color: #555; }
+        .right { float: right; }
+
+        @media print {
+            body { padding: 0; }
+            .nav-links { display: none; }
+            a[href]:after { content: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Matthew Dean Martin</h1>
+            <div class="meta">Pythonist, Devops Guy, and Govtech Specialist</div>
+        </div>
+        <div class="header-info">
+            <div>United States</div>
+            <div>
+                <a href="https://mastodon.social/@mistersql">Mastodon</a> |                 <a href="https://bsky.app/profile/mistersql.bsky.social">BlueSky</a> |                 <a href="https://linkedin.com/in/matthewdeanmartin">LinkedIn</a>            </div>
+            <div class="nav-links">
+                <a href="index.html">Resume</a>
+                <a href="projects.html">Projects List</a>
+                <a href="swagger/index.html">API</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+<nav aria-label="breadcrumb">
+  <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li>Skills</li>
+      <li>C++</li>
+  </ul>
+</nav>
+
+<h1>Projects using C++</h1>
+
+<div class="project-grid">
+    <article>
+        <header>
+
+            <strong><a href="https://github.com/matthewdeanmartin/isopod_cpp">isopod_cpp</a></strong>
+
+        </header>
+
+        <p>
+            Trivial text adventure game to make a basic cmake build script
+        </p>
+
+        <footer>
+            <small>
+
+                     <strong>#C++</strong>
+            </small>
+        </footer>
+    </article>
+</div>
+
+<p style="margin-top: 2rem;">
+    <a href="../index.html">&larr; Back to Resume</a>
+</p>
+    </main>
+
+    <footer>
+        <div style="text-align: center; font-size: 0.7rem; margin-top: 3rem; color: #999;">
+            Last Updated: 2025-12-20 19:06:54.062929 &mdash; Mode: 
+        </div>
+    </footer>
+</body>
+</html>

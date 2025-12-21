@@ -13,6 +13,7 @@ tags = [
     "web-development",
 ]
 status = "active"
+primary_language = "N/A"
 
 [projects.cms]
 suppress = false
@@ -34,6 +35,7 @@ tags = [
 ]
 status = "active"
 repository_url = "https://github.com/matthewdeanmartin/ai_fish_tank"
+primary_language = "Python"
 
 [[projects]]
 slug = "ai_shell"
@@ -47,6 +49,7 @@ tags = [
 ]
 status = "archived"
 repository_url = "https://github.com/matthewdeanmartin/ai_shell"
+primary_language = "Python"
 
 [[projects]]
 slug = "always_free"
@@ -56,6 +59,7 @@ url = "https://github.com/matthewdeanmartin/always_free"
 repository_url = "https://github.com/matthewdeanmartin/always_free"
 tags = []
 status = "archived"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -72,6 +76,7 @@ tags = [
     "gitlab-ci",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -93,6 +98,21 @@ tags = [
     "utilities",
 ]
 status = "active"
+primary_language = "Shell"
+
+[projects.cms]
+suppress = false
+package_links = []
+
+[[projects]]
+slug = "basic_python"
+name = "basic_python"
+description = "BASIC interpreter written in python"
+url = "https://github.com/matthewdeanmartin/basic_python"
+repository_url = "https://github.com/matthewdeanmartin/basic_python"
+tags = []
+status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -106,6 +126,7 @@ url = "https://github.com/matthewdeanmartin/bills_with_nlp"
 repository_url = "https://github.com/matthewdeanmartin/bills_with_nlp"
 tags = []
 status = "archived"
+primary_language = "Jupyter Notebook"
 
 [projects.cms]
 suppress = false
@@ -127,6 +148,7 @@ tags = [
 ]
 status = "active"
 repository_url = "https://github.com/matthewdeanmartin/bitrab"
+primary_language = "Python"
 
 [[projects]]
 slug = "blog"
@@ -144,6 +166,7 @@ tags = [
     "writing",
 ]
 status = "active"
+primary_language = "CSS"
 
 [projects.cms]
 suppress = false
@@ -162,6 +185,7 @@ tags = [
     "web-development",
 ]
 status = "active"
+primary_language = "N/A"
 
 [projects.cms]
 suppress = false
@@ -175,6 +199,7 @@ url = "https://github.com/matthewdeanmartin/break_in_to_it"
 repository_url = "https://github.com/matthewdeanmartin/break_in_to_it"
 tags = []
 status = "archived"
+primary_language = "N/A"
 
 [projects.cms]
 suppress = false
@@ -196,6 +221,7 @@ tags = [
     "static-site",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -217,6 +243,7 @@ tags = [
     "utility",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -238,6 +265,7 @@ tags = [
     "scripts",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -256,6 +284,7 @@ tags = [
     "wheels",
 ]
 status = "archived"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -269,6 +298,7 @@ url = "https://github.com/matthewdeanmartin/chatgpt_presentation"
 repository_url = "https://github.com/matthewdeanmartin/chatgpt_presentation"
 tags = []
 status = "archived"
+primary_language = "JavaScript"
 
 [projects.cms]
 suppress = false
@@ -282,6 +312,7 @@ url = "https://github.com/matthewdeanmartin/cheese_grader"
 repository_url = "https://github.com/matthewdeanmartin/cheese_grader"
 tags = []
 status = "archived"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -299,6 +330,7 @@ tags = [
 featured = true
 status = "active"
 repository_url = "https://github.com/matthewdeanmartin/cli_tool_audit"
+primary_language = "Python"
 
 [[projects]]
 slug = "convenient_py_devcontainer"
@@ -308,6 +340,7 @@ url = "https://github.com/matthewdeanmartin/convenient_py_devcontainer"
 repository_url = "https://github.com/matthewdeanmartin/convenient_py_devcontainer"
 tags = []
 status = "archived"
+primary_language = "Shell"
 
 [projects.cms]
 suppress = false
@@ -329,6 +362,7 @@ tags = [
     "no-filesystem-access",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -347,6 +381,7 @@ tags = [
 featured = true
 status = "active"
 repository_url = "https://github.com/matthewdeanmartin/dedlin"
+primary_language = "Python"
 
 [[projects]]
 slug = "disemoji"
@@ -364,6 +399,7 @@ tags = [
 ]
 status = "active"
 repository_url = "https://github.com/matthewdeanmartin/disemoji"
+primary_language = "Python"
 
 [[projects]]
 slug = "examexam"
@@ -381,6 +417,7 @@ tags = [
     "practice",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -402,6 +439,7 @@ tags = [
     "online-tests",
 ]
 status = "active"
+primary_language = "Makefile"
 
 [projects.cms]
 suppress = false
@@ -418,6 +456,7 @@ tags = [
     "pygame-games",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -431,6 +470,7 @@ url = "https://github.com/matthewdeanmartin/feed_thing"
 repository_url = "https://github.com/matthewdeanmartin/feed_thing"
 tags = []
 status = "archived"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -452,6 +492,7 @@ tags = [
     "python",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -473,6 +514,7 @@ tags = [
     "source-code",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -486,6 +528,7 @@ url = "https://github.com/matthewdeanmartin/fish_tanks"
 repository_url = "https://github.com/matthewdeanmartin/fish_tanks"
 tags = []
 status = "archived"
+primary_language = "HTML"
 
 [projects.cms]
 suppress = false
@@ -507,6 +550,7 @@ tags = [
     "summarization",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -528,6 +572,7 @@ tags = [
     "version-control",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -549,6 +594,7 @@ tags = [
     "version-control",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -562,6 +608,7 @@ url = "https://github.com/matthewdeanmartin/gizskyon"
 repository_url = "https://github.com/matthewdeanmartin/gizskyon"
 tags = []
 status = "archived"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -581,6 +628,7 @@ tags = [
     "security",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -602,6 +650,7 @@ tags = [
     "literal-syntax",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -623,6 +672,7 @@ tags = [
     "software-engineering",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -636,6 +686,7 @@ url = "https://github.com/matthewdeanmartin/is_it_up"
 repository_url = "https://github.com/matthewdeanmartin/is_it_up"
 tags = []
 status = "archived"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -649,6 +700,7 @@ url = "https://github.com/matthewdeanmartin/isopod_angular"
 repository_url = "https://github.com/matthewdeanmartin/isopod_angular"
 tags = []
 status = "archived"
+primary_language = "TypeScript"
 
 [projects.cms]
 suppress = false
@@ -662,6 +714,7 @@ url = "https://github.com/matthewdeanmartin/isopod_cob"
 repository_url = "https://github.com/matthewdeanmartin/isopod_cob"
 tags = []
 status = "archived"
+primary_language = "COBOL"
 
 [projects.cms]
 suppress = false
@@ -675,6 +728,7 @@ url = "https://github.com/matthewdeanmartin/isopod_cpp"
 repository_url = "https://github.com/matthewdeanmartin/isopod_cpp"
 tags = []
 status = "archived"
+primary_language = "C++"
 
 [projects.cms]
 suppress = false
@@ -688,6 +742,7 @@ url = "https://github.com/matthewdeanmartin/isopod_django"
 repository_url = "https://github.com/matthewdeanmartin/isopod_django"
 tags = []
 status = "archived"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -701,6 +756,7 @@ url = "https://github.com/matthewdeanmartin/isopod_go"
 repository_url = "https://github.com/matthewdeanmartin/isopod_go"
 tags = []
 status = "archived"
+primary_language = "Go"
 
 [projects.cms]
 suppress = false
@@ -714,6 +770,7 @@ url = "https://github.com/matthewdeanmartin/isopod_javasb"
 repository_url = "https://github.com/matthewdeanmartin/isopod_javasb"
 tags = []
 status = "archived"
+primary_language = "Java"
 
 [projects.cms]
 suppress = false
@@ -727,6 +784,7 @@ url = "https://github.com/matthewdeanmartin/isopod_js"
 repository_url = "https://github.com/matthewdeanmartin/isopod_js"
 tags = []
 status = "archived"
+primary_language = "JavaScript"
 
 [projects.cms]
 suppress = false
@@ -740,6 +798,7 @@ url = "https://github.com/matthewdeanmartin/isopod_ruby"
 repository_url = "https://github.com/matthewdeanmartin/isopod_ruby"
 tags = []
 status = "archived"
+primary_language = "Ruby"
 
 [projects.cms]
 suppress = false
@@ -753,6 +812,7 @@ url = "https://github.com/matthewdeanmartin/isopod_rust"
 repository_url = "https://github.com/matthewdeanmartin/isopod_rust"
 tags = []
 status = "archived"
+primary_language = "Rust"
 
 [projects.cms]
 suppress = false
@@ -766,6 +826,7 @@ url = "https://github.com/matthewdeanmartin/isopod_shell"
 repository_url = "https://github.com/matthewdeanmartin/isopod_shell"
 tags = []
 status = "archived"
+primary_language = "Shell"
 
 [projects.cms]
 suppress = false
@@ -787,6 +848,7 @@ tags = [
     "versioning",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -807,6 +869,7 @@ tags = [
     "web-development",
 ]
 status = "active"
+primary_language = "HTML"
 
 [projects.cms]
 suppress = false
@@ -828,6 +891,7 @@ tags = [
     "python",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -848,6 +912,7 @@ tags = [
     "python",
 ]
 status = "active"
+primary_language = "N/A"
 
 [projects.cms]
 suppress = false
@@ -861,6 +926,7 @@ url = "https://github.com/matthewdeanmartin/keno"
 repository_url = "https://github.com/matthewdeanmartin/keno"
 tags = []
 status = "archived"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -882,6 +948,7 @@ tags = [
     "programming",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -895,6 +962,7 @@ url = "https://github.com/matthewdeanmartin/lambda_for_free"
 repository_url = "https://github.com/matthewdeanmartin/lambda_for_free"
 tags = []
 status = "archived"
+primary_language = "HCL"
 
 [projects.cms]
 suppress = false
@@ -908,6 +976,7 @@ url = "https://github.com/matthewdeanmartin/learning_cobol"
 repository_url = "https://github.com/matthewdeanmartin/learning_cobol"
 tags = []
 status = "archived"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -921,6 +990,7 @@ url = "https://github.com/matthewdeanmartin/loc_template"
 repository_url = "https://github.com/matthewdeanmartin/loc_template"
 tags = []
 status = "archived"
+primary_language = "Makefile"
 
 [projects.cms]
 suppress = false
@@ -941,6 +1011,7 @@ tags = [
     "gcobol",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -962,6 +1033,7 @@ tags = [
     "quality-gates",
 ]
 status = "active"
+primary_language = "Makefile"
 
 [projects.cms]
 suppress = false
@@ -977,6 +1049,7 @@ tags = [
     "markdown",
 ]
 status = "active"
+primary_language = "Shell"
 
 [projects.cms]
 suppress = false
@@ -990,6 +1063,7 @@ url = "https://github.com/matthewdeanmartin/markmodule"
 repository_url = "https://github.com/matthewdeanmartin/markmodule"
 tags = []
 status = "archived"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1010,6 +1084,7 @@ tags = [
     "markpickle",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1023,6 +1098,7 @@ url = "https://github.com/matthewdeanmartin/mastodon-finder"
 repository_url = "https://github.com/matthewdeanmartin/mastodon-finder"
 tags = []
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1038,6 +1114,7 @@ tags = [
     "matthewdeanmartin",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1059,6 +1136,7 @@ tags = [
     "web-development",
 ]
 status = "active"
+primary_language = "HTML"
 
 [projects.cms]
 suppress = false
@@ -1072,10 +1150,7 @@ url = "https://github.com/matthewdeanmartin/matthewdeanmartin_pypi"
 repository_url = "https://github.com/matthewdeanmartin/matthewdeanmartin_pypi"
 tags = []
 status = "active"
-
-[projects.cms]
-suppress = false
-package_links = []
+primary_language = "N/A"
 
 [[projects]]
 slug = "metametameta"
@@ -1088,6 +1163,7 @@ tags = [
     "python-metadata",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1101,6 +1177,7 @@ url = "https://github.com/matthewdeanmartin/naive_backlink"
 repository_url = "https://github.com/matthewdeanmartin/naive_backlink"
 tags = []
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1121,6 +1198,7 @@ tags = [
     "elasticmock",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1139,6 +1217,7 @@ tags = [
     "python-packaging",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1160,6 +1239,7 @@ tags = [
     "utilities",
 ]
 status = "active"
+primary_language = "Shell"
 
 [projects.cms]
 suppress = false
@@ -1173,6 +1253,7 @@ url = "https://github.com/matthewdeanmartin/pdb-data-mining"
 repository_url = "https://github.com/matthewdeanmartin/pdb-data-mining"
 tags = []
 status = "archived"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1186,6 +1267,7 @@ url = "https://github.com/matthewdeanmartin/pep541status"
 repository_url = "https://github.com/matthewdeanmartin/pep541status"
 tags = []
 status = "archived"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1199,6 +1281,7 @@ url = "https://github.com/matthewdeanmartin/pick_three"
 repository_url = "https://github.com/matthewdeanmartin/pick_three"
 tags = []
 status = "archived"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1220,6 +1303,7 @@ tags = [
     "kill-threads",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1238,6 +1322,11 @@ tags = [
     "pycodetags",
 ]
 status = "active"
+primary_language = "Python"
+
+[projects.cms]
+suppress = false
+package_links = []
 
 [[projects]]
 slug = "pydoc_fork"
@@ -1251,6 +1340,7 @@ tags = [
     "python",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1269,6 +1359,7 @@ tags = [
     "python",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1290,6 +1381,7 @@ tags = [
     "windows",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1303,6 +1395,7 @@ url = "https://github.com/matthewdeanmartin/racetrax"
 repository_url = "https://github.com/matthewdeanmartin/racetrax"
 tags = []
 status = "archived"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1324,6 +1417,7 @@ tags = [
     "string-to-integer",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1337,6 +1431,7 @@ url = "https://github.com/matthewdeanmartin/raypack"
 repository_url = "https://github.com/matthewdeanmartin/raypack"
 tags = []
 status = "archived"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1358,6 +1453,7 @@ tags = [
     "python",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1379,6 +1475,7 @@ tags = [
     "web-development",
 ]
 status = "active"
+primary_language = "TypeScript"
 
 [projects.cms]
 suppress = false
@@ -1400,6 +1497,7 @@ tags = [
     "safety",
 ]
 status = "active"
+primary_language = "HTML"
 
 [projects.cms]
 suppress = false
@@ -1413,6 +1511,7 @@ url = "https://github.com/matthewdeanmartin/skip_trace"
 repository_url = "https://github.com/matthewdeanmartin/skip_trace"
 tags = []
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1433,6 +1532,7 @@ tags = [
     "web-scraping",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1452,6 +1552,7 @@ tags = [
     "vendoring",
 ]
 status = "archived"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1473,6 +1574,7 @@ tags = [
     "sparkline",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1494,6 +1596,7 @@ tags = [
     "web-development",
 ]
 status = "active"
+primary_language = "Shell"
 
 [projects.cms]
 suppress = false
@@ -1515,6 +1618,7 @@ tags = [
     "two-player",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1536,6 +1640,7 @@ tags = [
     "team-policies",
 ]
 status = "active"
+primary_language = "N/A"
 
 [projects.cms]
 suppress = false
@@ -1549,6 +1654,7 @@ url = "https://github.com/matthewdeanmartin/termcolor"
 repository_url = "https://github.com/matthewdeanmartin/termcolor"
 tags = []
 status = "archived"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1562,6 +1668,7 @@ url = "https://github.com/matthewdeanmartin/the_lockdown_house"
 repository_url = "https://github.com/matthewdeanmartin/the_lockdown_house"
 tags = []
 status = "archived"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1575,6 +1682,7 @@ url = "https://github.com/matthewdeanmartin/thinks"
 repository_url = "https://github.com/matthewdeanmartin/thinks"
 tags = []
 status = "archived"
+primary_language = "HTML"
 
 [projects.cms]
 suppress = false
@@ -1596,6 +1704,7 @@ tags = [
     "stdlib",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1617,6 +1726,7 @@ tags = [
     "toki-pona",
 ]
 status = "active"
+primary_language = "C#"
 
 [projects.cms]
 suppress = false
@@ -1638,6 +1748,7 @@ tags = [
     "application-augmentation",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1655,6 +1766,7 @@ tags = [
     "trove-classifiers",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1668,6 +1780,7 @@ url = "https://github.com/matthewdeanmartin/uipath"
 repository_url = "https://github.com/matthewdeanmartin/uipath"
 tags = []
 status = "archived"
+primary_language = "N/A"
 
 [projects.cms]
 suppress = false
@@ -1689,6 +1802,7 @@ tags = [
     "truncated-json",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1709,6 +1823,7 @@ tags = [
     "web-development",
 ]
 status = "active"
+primary_language = "N/A"
 
 [projects.cms]
 suppress = false
@@ -1730,6 +1845,7 @@ tags = [
     "utilities",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1751,6 +1867,7 @@ tags = [
     "vacation",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1772,6 +1889,7 @@ tags = [
     "summarization",
 ]
 status = "active"
+primary_language = "N/A"
 
 [projects.cms]
 suppress = false
@@ -1793,6 +1911,7 @@ tags = [
     "programming-language-detection",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1806,6 +1925,7 @@ url = "https://github.com/matthewdeanmartin/who_are_you"
 repository_url = "https://github.com/matthewdeanmartin/who_are_you"
 tags = []
 status = "archived"
+primary_language = "HTML"
 
 [projects.cms]
 suppress = false
@@ -1819,6 +1939,7 @@ url = "https://github.com/matthewdeanmartin/whose_module"
 repository_url = "https://github.com/matthewdeanmartin/whose_module"
 tags = []
 status = "archived"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false
@@ -1836,6 +1957,7 @@ tags = [
     "xkcd",
 ]
 status = "active"
+primary_language = "Python"
 
 [projects.cms]
 suppress = false

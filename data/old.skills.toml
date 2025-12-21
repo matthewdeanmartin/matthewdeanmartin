@@ -1,0 +1,68 @@
+# --- Skills ---
+# Column 1
+[[skills]]
+category = "Devops"
+featured = true
+[[skills.skills]]
+name = "Typescript for AWS CDK"
+level = "Expert"
+icon = "🌐"
+featured = true
+aliases = ["typescript", "angular"]
+[[skills.skills]]
+name = "Terraform for AWS / HCL"
+level = "Expert"
+icon = "🪐"
+featured = true
+aliases = ["terraform", "hcl"]
+[[skills.skills]]
+name = "Go for Terratest"
+level = "Good enough"
+icon = "🐹"
+featured = true
+aliases = ["go", "golang"]
+
+# Column 2
+[[skills]]
+category = "Backend Development"
+featured = true
+[[skills.skills]]
+name = "Python for Serverless in AWS"
+level = "Expert"
+icon = "🐍"
+featured = true
+aliases = ["py", "python", "pytest", "pywin", "pylint", "py3"]
+
+[[skills.skills]]
+name = "Postgres"
+icon = "🐘"
+featured = true
+aliases = ["postgres", "postgresql"]
+
+[[skills.skills]]
+name = "DynamoDB"
+icon = "🗄️"
+featured = true
+aliases = ["dynamodb", "aws dynamodb"]
+
+# Column 3
+[[skills]]
+category = "Build Master"
+featured = true
+[[skills.skills]]
+name = "Gitlab Pipelines"
+level = "Expert"
+icon = "🦊"
+featured = true
+aliases = ["gitlab", "gitlab pipelines", ".gitlab-ci.yml"]
+
+[[skills.skills]]
+name = "Bash for Gitlab"
+level = "Very Good"
+icon = "`>_`"
+featured = true
+aliases = ["bash", "git-bash", "git bash"]
+# Column zero
+[[skills]]
+category = "Other/Not featured"
+featured = false

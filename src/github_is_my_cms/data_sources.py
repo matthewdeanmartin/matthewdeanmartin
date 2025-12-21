@@ -79,7 +79,7 @@ class GitHubFetcher(BaseFetcher):
             "--limit",
             "1000",  # Ensure we get everything
             "--json",
-            "name,description,url,isArchived,repositoryTopics,homepageUrl",
+            "name,description,url,isArchived,repositoryTopics,homepageUrl,primaryLanguage",
         ]
 
         try:
@@ -96,9 +96,6 @@ class GitHubFetcher(BaseFetcher):
         except json.JSONDecodeError:
             logger.error("GitHub: Failed to parse CLI output.")
             return []
-
-
-logger = logging.getLogger(__name__)
 
 
 class PyPIDiscoveryFetcher(BaseFetcher):
@@ -200,6 +197,18 @@ class PyPIStatsFetcher:
                 data = json.loads(response.read().decode())
                 info = data.get("info", {})
 
+                # ADDED: Extract keywords. PyPI sends them as a string "tag1, tag2" or list.
+                raw_keywords = info.get("keywords", [])
+                tags = []
+                if isinstance(raw_keywords, str):
+                    # specific cleanup for PyPI keyword strings
+                    if raw_keywords:
+                        tags = [
+                            k.strip() for k in raw_keywords.replace(",", " ").split()
+                        ]
+                elif isinstance(raw_keywords, list):
+                    tags = raw_keywords
+
                 return {
                     "package_name": package_name,
                     "version": info.get("version"),
@@ -212,6 +221,7 @@ class PyPIStatsFetcher:
                     "github_repo": self._extract_github_repo(
                         info.get("project_urls") or {}
                     ),
+                    "tags": tags,
                 }
         except urllib.error.URLError as e:
             logger.warning(f"Failed to fetch details for {package_name}: {e}")
@@ -346,6 +356,10 @@ class DataUpdater:
             topics = [t["name"] for t in (repo.get("repositoryTopics", []) or [])]
             is_archived = repo.get("isArchived", False)
 
+            # Format is usually {"primaryLanguage": {"name": "Python"}} or null
+            prim_lang = repo.get("primaryLanguage", {}) or {}
+            language_name = prim_lang.get("name", "N/A")  # e.g. "Python" or None
+
             status = "archived" if is_archived else "active"
 
             # 3. Merge Strategy
@@ -365,6 +379,7 @@ class DataUpdater:
 
                 entry["tags"] = topics
                 entry["status"] = status
+                entry["primary_language"] = language_name
 
                 # CMS Directive Preservation:
                 # We simply DON'T touch the 'cms' key if it exists.
@@ -380,6 +395,7 @@ class DataUpdater:
                     "tags": topics,
                     "status": status,
                     # Initialize empty CMS directive container for future use
+                    "primary_language": language_name,
                     "cms": {"suppress": False, "package_links": []},
                 }
                 project_map[slug] = entry
@@ -453,6 +469,9 @@ class DataUpdater:
                 # Restore/Keep downloads if not fetched (fetching downloads requires bigquery/pypistats)
                 pkg_data["downloads_monthly"] = downloads
 
+            # Ensure 'tags' exists even if fetch failed
+            if "tags" not in pkg_data:
+                pkg_data["tags"] = []
             updated_list.append(pkg_data)
 
         # 4. Sort and Save

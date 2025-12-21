@@ -41,6 +41,12 @@ class Skill(BaseModel):
     level: Optional[str] = None  # e.g. "Expert", "Very Good"
     icon: Optional[str] = None  # e.g. "🌐", "🐍"
 
+    aliases: List[str] = Field(default_factory=list)
+
+    page_slug: Optional[str] = None
+
+    featured: bool = False
+
     def display(self) -> str:
         parts = []
         if self.icon:
@@ -160,6 +166,53 @@ class Identity(BaseModel):
             rendered_rows.append(rendered_row)
         return rendered_rows
 
+    @property
+    def featured_skill_groups(self) -> List[SkillGroup]:
+        """
+        Returns only categories that have at least one featured skill,
+        and includes ONLY those featured skills within them.
+        """
+        results = []
+        for group in self.skills:
+            # Filter the list of skills inside this category
+            visible_skills = [s for s in group.skills if s.featured]
+
+            # Only include this category if it has visible skills left
+            if visible_skills:
+                # Create a temporary group object for display purposes
+                results.append(
+                    SkillGroup(category=group.category, skills=visible_skills)
+                )
+        return results
+
+    @property
+    def featured_skill_rows(self) -> List[List[str]]:
+        """
+        Transposes the FEATURED groups into Markdown table rows.
+        """
+        # Use the filtered groups we defined above
+        groups = self.featured_skill_groups
+
+        if not groups:
+            return []
+
+        # Get the list of skill lists: [[s1], [s3, s4]]
+        columns = [g.skills for g in groups]
+
+        # Transpose columns to rows
+        rows = itertools.zip_longest(*columns, fillvalue=None)
+
+        rendered_rows = []
+        for row in rows:
+            rendered_row = []
+            for item in row:
+                if item:
+                    rendered_row.append(item.display())
+                else:
+                    rendered_row.append("")  # Empty cell for uneven columns
+            rendered_rows.append(rendered_row)
+        return rendered_rows
+
 
 # --- Project Models ---
 
@@ -180,6 +233,8 @@ class Project(BaseModel):
     url: Optional[HttpUrl] = None
     repository_url: Optional[HttpUrl] = None
     tags: List[str] = Field(default_factory=list)
+
+    primary_language: Optional[str] = None
     featured: bool = False
     status: str = Field("active", description="active, archived, or maintenance")
 
@@ -206,6 +261,7 @@ class PyPIPackage(BaseModel):
     downloads_monthly: Optional[int] = 0
     docs_url: Optional[HttpUrl] = None
     last_updated: Optional[str] = None
+    tags: List[str] = Field(default_factory=list)
 
 
 # --- Configuration & Mode Models ---

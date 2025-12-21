@@ -52,6 +52,20 @@ class ConfigLoader:
         identity_data = self._load_toml_file(self.data_dir / "identity.toml")
         graph_data = self._load_toml_file(self.data_dir / "identity_graph.toml")
 
+        # --- NEW LOGIC START ---
+        # 2a. Load Skills (Try skills.toml, fallback to identity.toml)
+        skills_file = self.data_dir / "skills.toml"
+        if skills_file.exists():
+            logger.info("Loading skills from separated skills.toml")
+            skills_data = self._load_toml_file(skills_file)
+            # The file format is { skills = [ {category=..., skills=[...]} ] }
+            # The Identity Model expects 'skills' to be that list.
+            identity_data["skills"] = skills_data.get("skills", [])
+        else:
+            logger.info("Loading skills from identity.toml (legacy)")
+            # Existing behavior: identity_data already contains 'skills' key
+            pass
+
         # Merge identity graph into the main identity dict under 'profiles'
         # Expectation: identity.toml has basic info (name, tagline),
         # identity_graph.toml has specific social nodes.

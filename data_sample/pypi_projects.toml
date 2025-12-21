@@ -1,18 +1,38 @@
-# src/github_is_my_cms/data/pypi_projects.toml
+[[packages]]
+package_name = "ai-shell"
+downloads_monthly = 0
+version = "1.0.4"
+summary = "Filesystem Shell interface that an OpenAI Assitant can use as a tool."
+docs_url = "https://github.com/matthewdeanmartin/ai_shell"
+last_updated = "2025-12-20"
+github_repo = "matthewdeanmartin/ai_shell"
+tags = [
+    "openai",
+    "chatgpt",
+]
 
 [[packages]]
-package_name = "dedlin"
-github_repo = "matthewdeanmartin/dedlin"
-version = "1.0.0"
-summary = "A modern python port of the classic edlin line editor."
-downloads_monthly = 543
-docs_url = "https://dedlin.readthedocs.io"
-last_updated = "2024-11-20"
+package_name = "bash2gitlab"
+downloads_monthly = 0
+version = "0.9.9"
+summary = "Compile bash to gitlab pipeline yaml"
+docs_url = "https://pypi.org/project/bash2gitlab/"
+last_updated = "2025-12-20"
+github_repo = "matthewdeanmartin/bash2gitlab"
+tags = [
+    "bash",
+    "gitlab",
+]
 
 [[packages]]
-package_name = "cli_tool_audit"
-github_repo = "matthewdeanmartin/cli_tool_audit"
-version = "0.4.2"
-summary = "Audit your CLI tools for version and existence."
-downloads_monthly = 1200
-last_updated = "2024-10-15"
+package_name = "bitrab"
+downloads_monthly = 0
+version = "0.1.0"
+summary = "Compile bash to gitlab pipeline yaml"
+docs_url = "https://pypi.org/project/bitrab/"
+last_updated = "2025-12-20"
+github_repo = "matthewdeanmartin/bitrab"
+tags = [
+    "bash",
+    "gitlab",
+]

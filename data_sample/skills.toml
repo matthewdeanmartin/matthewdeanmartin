@@ -1,0 +1,36 @@
+[[skills]]
+category = "Devops"
+
+[[skills.skills]]
+name = "Typescript for AWS CDK"
+featured = true
+level = "Expert"
+icon = "🌐"
+aliases = [
+    "typescript",
+    "angular",
+]
+
+[[skills.skills]]
+name = "Terraform for AWS / HCL"
+featured = true
+level = "Expert"
+icon = "🪐"
+aliases = [
+    "terraform",
+    "hcl",
+]
+
+
+[[skills]]
+category = "Inbox - From Resume"
+skills = [
+    { name = "VBA", level = "Competent", featured = true, aliases = [] },
+    { name = "XML", level = "Competent", featured = true, aliases = [] },
+]
+
+[[skills]]
+category = "Inbox - From GitHub"
+skills = [
+    { name = "Rust", level = "Competent", featured = true, icon = "💻", aliases = [] },
+]

@@ -1,0 +1,230 @@
+[[skills]]
+category = "Devops"
+
+[[skills.skills]]
+name = "Typescript"
+full_name = "Typescript for AWS CDK"
+featured = true
+level = "Expert"
+icon = "🌐"
+aliases = [
+    "typescript",
+    "angular",
+]
+
+[[skills.skills]]
+name = "Terraform"
+full_name = "Terraform for AWS / HCL"
+featured = true
+level = "Expert"
+icon = "🪐"
+aliases = [
+    "terraform",
+    "hcl",
+]
+
+[[skills.skills]]
+name = "Go"
+full_name = "Go for Terratest"
+featured = true
+level = "Good enough"
+icon = "🐹"
+aliases = [
+    "go",
+    "golang",
+]
+
+[[skills]]
+category = "Backend Development"
+
+[[skills.skills]]
+name = "Python"
+full_name = "Python for Serverless in AWS"
+featured = true
+level = "Expert"
+icon = "🐍"
+aliases = [
+    "py",
+    "python",
+    "pytest",
+    "pywin",
+    "pylint",
+    "py3",
+]
+
+[[skills.skills]]
+name = "Postgres"
+full_name = "Postgres"
+featured = true
+icon = "🐘"
+aliases = [
+    "postgres",
+    "postgresql",
+]
+
+[[skills.skills]]
+name = "DynamoDB"
+full_name = "AWS DynamoDB"
+featured = true
+icon = "🗄️"
+aliases = [
+    "dynamodb",
+    "aws dynamodb",
+]
+
+[[skills]]
+category = "Build Master"
+
+[[skills.skills]]
+name = "Gitlab Pipelines"
+full_name = "Gitlab Pipelines"
+featured = true
+level = "Expert"
+icon = "🦊"
+aliases = [
+    "gitlab",
+    "gitlab pipelines",
+    ".gitlab-ci.yml",
+]
+
+[[skills.skills]]
+name = "Bash"
+full_name = "Bash for Gitlab"
+featured = true
+level = "Very Good"
+icon = "`>_`"
+aliases = [
+    "bash",
+    "git-bash",
+    "git bash",
+]
+
+[[skills]]
+category = "Inbox - From Resume"
+skills = [
+    { name = "Connexion", level = "Competent", featured = false, aliases = [] },
+    { name = "Gunicorn", level = "Competent", featured = false, aliases = [] },
+    { name = "OpenAPI/Swagger", level = "Competent", featured = false, aliases = [] },
+    { name = "JSON", level = "Competent", featured = false, aliases = [] },
+    { name = "Nginx", level = "Competent", featured = false, aliases = [] },
+    { name = "AWS ECS", level = "Competent", featured = false, aliases = [] },
+    { name = "AWS ECR", level = "Competent", featured = false, aliases = [] },
+    { name = "AWS S3", level = "Competent", featured = false, aliases = [] },
+    { name = "AWS Glue", level = "Competent", featured = false, aliases = [] },
+    { name = "AWS RDS", level = "Competent", featured = false, aliases = [] },
+    { name = "AWS EC2", level = "Competent", featured = false, aliases = [] },
+    { name = "AWS ALB", level = "Competent", featured = false, aliases = [] },
+    { name = "AWS API Gateway", level = "Competent", featured = false, aliases = [] },
+    { name = "AWS ElastiCache", level = "Competent", featured = false, aliases = [] },
+    { name = "OpenSearch/Elasticsearch", level = "Competent", featured = false, aliases = [] },
+    { name = "Docker", level = "Competent", featured = false, aliases = [] },
+    { name = "Podman", level = "Competent", featured = false, aliases = [] },
+    { name = "GitLab CI", level = "Competent", featured = false, aliases = [] },
+    { name = "SonarQube", level = "Competent", featured = false, aliases = [] },
+    { name = "Locust", level = "Competent", featured = false, aliases = [] },
+    { name = "mypy", level = "Competent", featured = false, aliases = [] },
+    { name = "Makefile", level = "Competent", featured = false, aliases = [] },
+    { name = "Justfile", level = "Competent", featured = false, aliases = [] },
+    { name = "Git", level = "Competent", featured = false, aliases = [] },
+    { name = "Java TestNG", level = "Competent", featured = false, aliases = [] },
+    { name = "Selenium", level = "Competent", featured = false, aliases = [] },
+    { name = "Trivy", level = "Competent", featured = false, aliases = [] },
+    { name = "OWASP ZAP", level = "Competent", featured = false, aliases = [] },
+    { name = "Tenable", level = "Competent", featured = false, aliases = [] },
+    { name = "Keycloak", level = "Competent", featured = false, aliases = [] },
+    { name = "JWT", level = "Competent", featured = false, aliases = [] },
+    { name = "VSCode", level = "Competent", featured = false, aliases = [] },
+    { name = "WebStorm", level = "Competent", featured = false, aliases = [] },
+    { name = "IntelliJ", level = "Competent", featured = false, aliases = [] },
+    { name = "PyCharm", level = "Competent", featured = false, aliases = [] },
+    { name = "Kubernetes", level = "Competent", featured = false, aliases = [] },
+    { name = "Jenkins", level = "Competent", featured = false, aliases = [] },
+    { name = "Azure", level = "Competent", featured = false, aliases = [] },
+    { name = "LUIS", level = "Competent", featured = false, aliases = [] },
+    { name = "UIPath", level = "Competent", featured = false, aliases = [] },
+    { name = "Xibo", level = "Competent", featured = false, aliases = [] },
+    { name = "Django", level = "Competent", featured = false, aliases = [] },
+    { name = "Celery", level = "Competent", featured = false, aliases = [] },
+    { name = "Jinja", level = "Competent", featured = false, aliases = [] },
+    { name = "scikit-learn", level = "Competent", featured = false, aliases = [] },
+    { name = "pandas", level = "Competent", featured = false, aliases = [] },
+    { name = "AWS Redshift", level = "Competent", featured = false, aliases = [] },
+    { name = "AWS EMR", level = "Competent", featured = false, aliases = [] },
+    { name = "Spark", level = "Competent", featured = false, aliases = [] },
+    { name = "AWS Step Functions", level = "Competent", featured = false, aliases = [] },
+    { name = "AWS IAM", level = "Competent", featured = false, aliases = [] },
+    { name = "AWS SQS", level = "Competent", featured = false, aliases = [] },
+    { name = "Packer", level = "Competent", featured = false, aliases = [] },
+    { name = "Vagrant", level = "Competent", featured = false, aliases = [] },
+    { name = "Ansible", level = "Competent", featured = false, aliases = [] },
+    { name = "GitHub", level = "Competent", featured = false, aliases = [] },
+    { name = "TeamCity", level = "Competent", featured = false, aliases = [] },
+    { name = "TKInter", level = "Competent", featured = false, aliases = [] },
+    { name = "Eclipse", level = "Competent", featured = false, aliases = [] },
+    { name = "IronPython", level = "Competent", featured = false, aliases = [] },
+    { name = "unittest", level = "Competent", featured = false, aliases = [] },
+    { name = "nose", level = "Competent", featured = false, aliases = [] },
+    { name = "sphinx", level = "Competent", featured = false, aliases = [] },
+    { name = "virtualenv", level = "Competent", featured = false, aliases = [] },
+    { name = "C#", level = "Competent", featured = false, aliases = [] },
+    { name = "ASP.NET", level = "Competent", featured = false, aliases = [] },
+    { name = "ASP.NET Web API", level = "Competent", featured = false, aliases = [] },
+    { name = "WIF", level = "Competent", featured = false, aliases = [] },
+    { name = "ASP.NET MVC", level = "Competent", featured = false, aliases = [] },
+    { name = "WCF", level = "Competent", featured = false, aliases = [] },
+    { name = "JavaScript", level = "Competent", featured = false, aliases = [] },
+    { name = "HTML5", level = "Competent", featured = false, aliases = [] },
+    { name = "Microsoft SQL Server", level = "Competent", featured = false, aliases = [] },
+    { name = "NUnit", level = "Competent", featured = false, aliases = [] },
+    { name = "jQuery", level = "Competent", featured = false, aliases = [] },
+    { name = "jQuery UI", level = "Competent", featured = false, aliases = [] },
+    { name = "requirejs", level = "Competent", featured = false, aliases = [] },
+    { name = "Knockout.js", level = "Competent", featured = false, aliases = [] },
+    { name = "underscore", level = "Competent", featured = false, aliases = [] },
+    { name = "Drupal", level = "Competent", featured = false, aliases = [] },
+    { name = "TFS", level = "Competent", featured = false, aliases = [] },
+    { name = "PowerShell", level = "Competent", featured = false, aliases = [] },
+    { name = ".NET Framework 4.0", level = "Competent", featured = false, aliases = [] },
+    { name = "WebForms", level = "Competent", featured = false, aliases = [] },
+    { name = "MVC", level = "Competent", featured = false, aliases = [] },
+    { name = "Task Parallel Library", level = "Competent", featured = false, aliases = [] },
+    { name = "PL/SQL", level = "Competent", featured = false, aliases = [] },
+    { name = "Telerik", level = "Competent", featured = false, aliases = [] },
+    { name = "SSRS", level = "Competent", featured = false, aliases = [] },
+    { name = "SharePoint", level = "Competent", featured = false, aliases = [] },
+    { name = "T-SQL", level = "Competent", featured = false, aliases = [] },
+    { name = "VSS", level = "Competent", featured = false, aliases = [] },
+    { name = "Subversion", level = "Competent", featured = false, aliases = [] },
+    { name = "Flyspray", level = "Competent", featured = false, aliases = [] },
+    { name = "Luntbuild", level = "Competent", featured = false, aliases = [] },
+    { name = "Visual Studio", level = "Competent", featured = false, aliases = [] },
+    { name = "MySQL", level = "Competent", featured = false, aliases = [] },
+    { name = "MSSQL", level = "Competent", featured = false, aliases = [] },
+    { name = "LLBGen", level = "Competent", featured = false, aliases = [] },
+    { name = "SSIS", level = "Competent", featured = false, aliases = [] },
+    { name = "DTS", level = "Competent", featured = false, aliases = [] },
+    { name = "SSMS", level = "Competent", featured = false, aliases = [] },
+    { name = "VB.NET", level = "Competent", featured = false, aliases = [] },
+    { name = "ASP Classic", level = "Competent", featured = false, aliases = [] },
+    { name = "VB6", level = "Competent", featured = false, aliases = [] },
+    { name = "Visual Source Safe", level = "Competent", featured = false, aliases = [] },
+    { name = "MDX", level = "Competent", featured = false, aliases = [] },
+    { name = "Microsoft Access", level = "Competent", featured = false, aliases = [] },
+    { name = "Visual FoxPro", level = "Competent", featured = false, aliases = [] },
+    { name = "VBA", level = "Competent", featured = false, aliases = [] },
+    { name = "XML", level = "Competent", featured = false, aliases = [] },
+]
+
+[[skills]]
+category = "Inbox - From GitHub"
+skills = [
+    { name = "Shell", level = "Competent", featured = false, icon = "💻", aliases = [] },
+    { name = "Jupyter Notebook", level = "Competent", featured = false, icon = "💻", aliases = [] },
+    { name = "CSS", level = "Competent", featured = false, icon = "💻", aliases = [] },
+    { name = "HTML", level = "Competent", featured = false, icon = "💻", aliases = [] },
+    { name = "COBOL", level = "Competent", featured = false, icon = "💻", aliases = [] },
+    { name = "C++", level = "Competent", featured = false, icon = "💻", aliases = [] },
+    { name = "Java", level = "Competent", featured = false, icon = "💻", aliases = [] },
+    { name = "Ruby", level = "Competent", featured = false, icon = "💻", aliases = [] },
+    { name = "Rust", level = "Competent", featured = false, icon = "💻", aliases = [] },
+]

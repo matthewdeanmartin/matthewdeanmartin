@@ -35,12 +35,6 @@ def setup_logging(level_name: str):
         raise ValueError(f"Invalid log level: {level_name}")
     print(level_name)
     logging.config.dictConfig(generate_config(level=level_name))
-    logger.debug("Testing 1123")
-    # logging.basicConfig(
-    #     level=numeric_level,
-    #     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    #     datefmt="%H:%M:%S",
-    # )
 
 
 def cmd_build(args: argparse.Namespace):
@@ -54,8 +48,10 @@ def cmd_build(args: argparse.Namespace):
         api_builder = SiteBuilderAPI(root_dir=args.root)
         builder.clean()
         api_builder.build_static_api()
+        builder._map_relationships()
         builder.build_markdown_pages()
         builder.build_html_pages()
+        builder.build_skill_pages()
         logging.info("Build completed successfully.")
     except Exception as e:
         logging.error(f"Build failed: {e}", exc_info=True)

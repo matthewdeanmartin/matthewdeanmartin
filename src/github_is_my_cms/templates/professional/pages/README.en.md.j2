@@ -1,14 +1,22 @@
 {% extends "layouts/master.md.j2" %}
 {# --- MACRO DEFINITIONS --- #}
+{% macro section_talks() %}
+## Talks & Presentations
+{% for talk in identity.talks %}
+{{ talk.icon or "▶️" }} [{{ talk.title }}]({{ talk.url }})<br>
+{% endfor %}
+{% endmacro %}
+
+
 {% macro section_skills() %}
 ## Skills
 {{ identity.content.skills_intro }}
 
-{# Render Headers #}
-| {% for cat in identity.skills %}{{ cat.category }} | {% endfor +%}
-| {% for cat in identity.skills %}-{{ "-" * cat.category|length }}- | {% endfor +%}
-{# Render Transposed Rows #}
-{% for row in identity.skill_rows -%}
+{# Render Headers using only featured groups #}
+| {% for cat in identity.featured_skill_groups %}{{ cat.category }} | {% endfor +%}
+| {% for cat in identity.featured_skill_groups %}-{{ "-" * cat.category|length }}- | {% endfor +%}
+{# Render Transposed Rows using only featured skills #}
+{% for row in identity.featured_skill_rows -%}
 | {% for cell in row %}{{ cell }}<br> | {% endfor +%}
 {% endfor +%}
 {% endmacro %}
@@ -65,19 +73,19 @@
 {{ identity.tagline }}
 
 {# --- LAYOUT LOGIC --- #}
-
+{# Important! No Leading whitepspace, this messes up the markdown formatter, etc. #}
 {% if config.modes.current == "job_hunting" %}
-    {{ section_skills() }}
-    {{ section_resumes() }}
-    {{ section_experience() }}
-    {{ section_projects() }}
+{{ section_skills() }}
+{{ section_resumes() }}
+{{ section_experience() }}
+{{ section_projects() }}
 {% elif config.modes.current == "self_promotion" %}
-    {{ section_skills() }}
-    {{ section_talks() }}
-    {{ section_projects() }}
+{{ section_skills() }}
+{{ section_talks() }}
+{{ section_projects() }}
 {% else %}
-    {# Default: Project Promotion #}
-    {{ section_projects() }}
-    {{ section_skills() }}
+{# Default: Project Promotion #}
+{{ section_projects() }}
+{{ section_skills() }}
 {% endif %}
 {% endblock %}

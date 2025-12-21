@@ -1,4 +1,5 @@
-## Tree for 
+## Tree for
+
 ```
 ├── .github/
 │   └── workflows/
@@ -27,6 +28,7 @@
 ```
 
 ## File: AGENT.md
+
 ```markdown
 All libraries will be installed. DO NOT ADD if-blocks around imports to provide fallbacks if a library fails to import.
 
@@ -34,7 +36,9 @@ Always type annotate your python code.
 
 Prefer Pathlib over non-pathlib solution, i.e. avoid using str Paths.
 ```
+
 ## File: Makefile
+
 ```
 format:
 	isort src
@@ -51,7 +55,9 @@ everything: data build format
 	echo "everything"
 	cp docs/md/README.en.md README.en.md
 ```
+
 ## File: pyproject.toml
+
 ```
 [project]
 name = "github-is-my-cms"
@@ -192,7 +198,9 @@ include = [
     "/README.md", "LICENSE",
 ]
 ```
+
 ## File: readme_cms.toml
+
 ```
 # src/github_is_my_cms/data/readme_cms.toml
 theme = "professional"
@@ -222,40 +230,44 @@ highlight_blog = true
 default = "en"
 supported = ["en"]
 ```
+
 ## File: SOURCE_DATA.md
+
 ```markdown
 ## Tree for 
 ```
+
 ├── AGENT.md
 ├── data_sample/
-│   ├── identity.toml
-│   ├── projects.toml
-│   ├── pypi_projects.toml
-│   ├── readme_cms.toml
-│   ├── resumes.toml
-│   └── work_experience.toml
+│ ├── identity.toml
+│ ├── projects.toml
+│ ├── pypi_projects.toml
+│ ├── readme_cms.toml
+│ ├── resumes.toml
+│ └── work_experience.toml
 ├── readme_cms.toml
 └── src/
-    └── github_is_my_cms/
-        ├── builder.py
-        ├── cli.py
-        ├── config.py
-        ├── data_sources.py
-        ├── models.py
-        └── templates/
-            └── professional/
-                ├── components/
-                │   └── identity_graph.md.j2
-                ├── layouts/
-                │   ├── master.html.j2
-                │   └── master.md.j2
-                └── pages/
-                    ├── index.html.j2
-                    ├── projects.html.j2
-                    ├── projects.md.j2
-                    ├── README.en.md.j2
-                    └── skill_detail.html.j2
-```
+└── github_is_my_cms/
+├── builder.py
+├── cli.py
+├── config.py
+├── data_sources.py
+├── models.py
+└── templates/
+└── professional/
+├── components/
+│ └── identity_graph.md.j2
+├── layouts/
+│ ├── master.html.j2
+│ └── master.md.j2
+└── pages/
+├── index.html.j2
+├── projects.html.j2
+├── projects.md.j2
+├── README.en.md.j2
+└── skill_detail.html.j2
+
+````
 
 ## File: AGENT.md
 ```markdown
@@ -264,8 +276,10 @@ All libraries will be installed. DO NOT ADD if-blocks around imports to provide 
 Always type annotate your python code.
 
 Prefer Pathlib over non-pathlib solution, i.e. avoid using str Paths.
-```
+````
+
 ## File: readme_cms.toml
+
 ```
 # src/github_is_my_cms/data/readme_cms.toml
 theme = "professional"
@@ -295,7 +309,9 @@ highlight_blog = true
 default = "en"
 supported = ["en"]
 ```
-## File: data_sample\identity.toml
+
+## File: data_sample\\identity.toml
+
 ```
 # src/github_is_my_cms/data/identity.toml
 
@@ -418,7 +434,9 @@ url = "https://stackoverflow.com/users/33264/matthewmartin"
 group = "verified"
 icon = "🔥"
 ```
-## File: data_sample\projects.toml
+
+## File: data_sample\\projects.toml
+
 ```
 # src/github_is_my_cms/data/projects.toml
 
@@ -443,7 +461,9 @@ related_skills = ["AWS", "Serverless"]
 suppress = false
 package_links = []
 ```
-## File: data_sample\pypi_projects.toml
+
+## File: data_sample\\pypi_projects.toml
+
 ```
 # src/github_is_my_cms/data/pypi_projects.toml
 
@@ -464,7 +484,9 @@ summary = "Audit your CLI tools for version and existence."
 downloads_monthly = 1200
 last_updated = "2024-10-15"
 ```
-## File: data_sample\readme_cms.toml
+
+## File: data_sample\\readme_cms.toml
+
 ```
 # src/github_is_my_cms/data/readme_cms.toml
 theme = "professional"
@@ -492,7 +514,9 @@ highlight_blog = true
 default = "en"
 supported = ["en"]
 ```
-## File: data_sample\resumes.toml
+
+## File: data_sample\\resumes.toml
+
 ```
 # data/resumes.toml
 
@@ -517,7 +541,9 @@ valid_from = "2024-01"
 description = "Hire button and a fire button!"
 icon = "📄"
 ```
-## File: data_sample\work_experience.toml
+
+## File: data_sample\\work_experience.toml
+
 ```
 # data/work_experience.toml
 
@@ -543,7 +569,9 @@ links = [
 
 related_project_slugs = ["Hicmah", "dedlin"]
 ```
-## File: src\github_is_my_cms\builder.py
+
+## File: src\\github_is_my_cms\\builder.py
+
 ```python
 # src/github_is_my_cms/builder.py
 """
@@ -783,7 +811,9 @@ if __name__ == "__main__":
     builder = SiteBuilder()
     builder.build()
 ```
-## File: src\github_is_my_cms\cli.py
+
+## File: src\\github_is_my_cms\\cli.py
+
 ```python
 # src/github_is_my_cms/cli.py
 """
@@ -964,7 +994,9 @@ def main(argv: Optional[List[str]] = None):
 if __name__ == "__main__":
     main()
 ```
-## File: src\github_is_my_cms\config.py
+
+## File: src\\github_is_my_cms\\config.py
+
 ```python
 # src/github_is_my_cms/config.py
 """
@@ -1086,7 +1118,9 @@ def load_config(root_path: str = ".") -> CMSConfig:
     """Convenience entry point."""
     return ConfigLoader(Path(root_path)).load()
 ```
-## File: src\github_is_my_cms\data_sources.py
+
+## File: src\\github_is_my_cms\\data_sources.py
+
 ```python
 """
 data_sources.py
@@ -1555,7 +1589,9 @@ class DataUpdater:
             f"Successfully updated {self.pypi_file} with {len(updated_list)} packages."
         )
 ```
-## File: src\github_is_my_cms\models.py
+
+## File: src\\github_is_my_cms\\models.py
+
 ```python
 """
 models.py
@@ -1904,7 +1940,9 @@ class ResumeArtifact(BaseModel):
     description: Optional[str] = None
     icon: Optional[str] = "📄"
 ```
-## File: src\github_is_my_cms\templates\professional\components\identity_graph.md.j2
+
+## File: src\\github_is_my_cms\\templates\\professional\\components\\identity_graph.md.j2
+
 ```
 ### Connect
 
@@ -1916,7 +1954,9 @@ class ResumeArtifact(BaseModel):
 * **Resume**: [Download PDF]({{ config.modes.job_hunting.resume_url }})
 {% endif %}
 ```
-## File: src\github_is_my_cms\templates\professional\layouts\master.html.j2
+
+## File: src\\github_is_my_cms\\templates\\professional\\layouts\\master.html.j2
+
 ```
 <!DOCTYPE html>
 <html lang="{{ config.languages.default }}">
@@ -2008,7 +2048,9 @@ class ResumeArtifact(BaseModel):
 </body>
 </html>
 ```
-## File: src\github_is_my_cms\templates\professional\layouts\master.md.j2
+
+## File: src\\github_is_my_cms\\templates\\professional\\layouts\\master.md.j2
+
 ```
 # {{ identity.name }}
 {{ identity.tagline }} | {{ identity.location }}
@@ -2021,7 +2063,9 @@ class ResumeArtifact(BaseModel):
 ---
 *Generated by github-is-my-cms | {{ generation.generated_at }}*
 ```
-## File: src\github_is_my_cms\templates\professional\pages\index.html.j2
+
+## File: src\\github_is_my_cms\\templates\\professional\\pages\\index.html.j2
+
 ```
 {% extends "layouts/master.html.j2" %}
 
@@ -2171,7 +2215,9 @@ class ResumeArtifact(BaseModel):
 
 {% endblock %}
 ```
-## File: src\github_is_my_cms\templates\professional\pages\projects.html.j2
+
+## File: src\\github_is_my_cms\\templates\\professional\\pages\\projects.html.j2
+
 ```
 {% extends "layouts/master.html.j2" %}
 
@@ -2242,7 +2288,9 @@ class ResumeArtifact(BaseModel):
     </section>
 {% endblock %}
 ```
-## File: src\github_is_my_cms\templates\professional\pages\projects.md.j2
+
+## File: src\\github_is_my_cms\\templates\\professional\\pages\\projects.md.j2
+
 ```
 {% extends "layouts/master.md.j2" %}
 
@@ -2264,7 +2312,9 @@ class ResumeArtifact(BaseModel):
 {% endfor %}
 {% endblock %}
 ```
-## File: src\github_is_my_cms\templates\professional\pages\README.en.md.j2
+
+## File: src\\github_is_my_cms\\templates\\professional\\pages\\README.en.md.j2
+
 ```
 {% extends "layouts/master.md.j2" %}
 {# --- MACRO DEFINITIONS --- #}
@@ -2350,7 +2400,9 @@ class ResumeArtifact(BaseModel):
 {% endif %}
 {% endblock %}
 ```
-## File: src\github_is_my_cms\templates\professional\pages\skill_detail.html.j2
+
+## File: src\\github_is_my_cms\\templates\\professional\\pages\\skill_detail.html.j2
+
 ```
 {% extends "layouts/master.html.j2" %}
 
@@ -2392,16 +2444,18 @@ class ResumeArtifact(BaseModel):
 </p>
 {% endblock %}
 ```
+
 ```
 ## File: data_sample\identity.toml
 ```
+
 # src/github_is_my_cms/data/identity.toml
 
 name = "Matthew Dean Martin"
 tagline = "Pythonist, Devops Guy, and Govtech Specialist"
 location = "United States"
 pypi_username = "matthewdeanmartin"
-github_username =  "matthewdeanmartin"
+github_username = "matthewdeanmartin"
 
 [content]
 skills_intro = "I used to be a full stack developer, I evolved into tech lead and most recently devops work. I write code and know how to ship in a govtech environment."
@@ -2409,62 +2463,68 @@ projects_intro = "Here is a collection of my manual projects and published PyPI 
 job_hunting_intro = "I am currently looking for new opportunities. My focus is on production-quality backend systems."
 
 # --- Resumes ---
-[[resumes]]
+
+\[[resumes]\]
 label = "Resume from 2015"
 url = "https://matthewdeanmartin.github.io/"
 icon = "📄"
 
-[[resumes]]
+\[[resumes]\]
 label = "Novelty Resume from 2024"
 url = "https://matthewdeanmartin.github.io/resume/browser/"
 description = "Hire button and a fire button!"
 icon = "📄"
 
 # --- Talks ---
-[[talks]]
+
+\[[talks]\]
 title = "Python Librarian"
 url = "https://www.youtube.com/channel/UCw1p2a3LW1VG7DTZQaT8Oaw"
 icon = "▶️"
 
 # --- Skills ---
+
 # Column 1
-[[skills]]
+
+\[[skills]\]
 category = "Devops"
-[[skills.skills]]
+\[[skills.skills]\]
 name = "Typescript for AWS CDK"
 level = "Expert"
 icon = "🌐"
-[[skills.skills]]
+\[[skills.skills]\]
 name = "Terraform for AWS / HCL"
 level = "Expert"
 icon = "🪐"
-[[skills.skills]]
+\[[skills.skills]\]
 name = "Go for Terratest"
 level = "Good enough"
 icon = "🐹"
 
 # Column 2
-[[skills]]
+
+\[[skills]\]
 category = "Backend Development"
-[[skills.skills]]
+\[[skills.skills]\]
 name = "Python for Serverless in AWS"
 level = "Expert"
 icon = "🐍"
-[[skills.skills]]
+\[[skills.skills]\]
 name = "Postgres"
 icon = "🐘"
-[[skills.skills]]
+\[[skills.skills]\]
 name = "DynamoDB"
 icon = "🗄️"
 
 # Column 3
-[[skills]]
+
+\[[skills]\]
 category = "Build Master"
-[[skills.skills]]
+\[[skills.skills]\]
 name = "Gitlab Pipelines"
 level = "Expert"
 icon = "🦊"
-[[skills.skills]]
+\[[skills.skills]\]
 name = "Bash for Gitlab"
 level = "Very Good"
 icon = "`>_`"
@@ -2472,80 +2532,85 @@ icon = "`>_`"
 # --- Profiles (Backlinks) ---
 
 # Group: Social Media with Backlinks
-[[profiles]]
+
+\[[profiles]\]
 service = "Mastodon"
 handle = "mastodon.social/@mistersql"
 url = "https://mastodon.social/@mistersql"
 group = "social"
 icon = "🐘"
 
-[[profiles]]
+\[[profiles]\]
 service = "BlueSky"
 handle = "bsky.app"
 url = "https://bsky.app/profile/mistersql.bsky.social"
 group = "social"
 icon = "🦋"
 
-[[profiles]]
+\[[profiles]\]
 service = "LinkedIn"
 handle = "LinkedIn"
 url = "https://linkedin.com/in/matthewdeanmartin"
 group = "social"
 icon = "🔗"
 
-
 # Group: Verified Profile Pages
-[[profiles]]
+
+\[[profiles]\]
 service = "Dev.to"
 handle = "dev.to"
 url = "https://dev.to/matthewdeanmartin"
 group = "verified"
 icon = "💻"
 
-[[profiles]]
+\[[profiles]\]
 service = "Gravatar"
 handle = "Gravatar"
 url = "https://gravatar.com/matthewdmartin"
 group = "verified"
 icon = "🌀"
 
-[[profiles]]
+\[[profiles]\]
 service = "StackOverflow"
 handle = "StackOverflow"
 url = "https://stackoverflow.com/users/33264/matthewmartin"
 group = "verified"
 icon = "🔥"
+
 ```
 ## File: data_sample\projects.toml
 ```
+
 # src/github_is_my_cms/data/projects.toml
 
-[[projects]]
+\[[projects]\]
 slug = "Hicmah"
 name = "Hicmah"
 description = "Hicmah - Hit Counter Module and Handler"
 url = "https://github.com/matthewdeanmartin/Hicmah"
 repository_url = "https://github.com/matthewdeanmartin/Hicmah"
-tags = [
-    "analytics",
-    "handler",
-    "hit-counter",
-    "javascript",
-    "module",
-    "web-development",
-]
+tags = \[
+"analytics",
+"handler",
+"hit-counter",
+"javascript",
+"module",
+"web-development",
+\]
 status = "active"
 related_skills = ["AWS", "Serverless"]
 
 [projects.cms]
 suppress = false
 package_links = []
+
 ```
 ## File: data_sample\pypi_projects.toml
 ```
+
 # src/github_is_my_cms/data/pypi_projects.toml
 
-[[packages]]
+\[[packages]\]
 package_name = "dedlin"
 github_repo = "matthewdeanmartin/dedlin"
 version = "1.0.0"
@@ -2554,21 +2619,26 @@ downloads_monthly = 543
 docs_url = "https://dedlin.readthedocs.io"
 last_updated = "2024-11-20"
 
-[[packages]]
+\[[packages]\]
 package_name = "cli_tool_audit"
 github_repo = "matthewdeanmartin/cli_tool_audit"
 version = "0.4.2"
 summary = "Audit your CLI tools for version and existence."
 downloads_monthly = 1200
 last_updated = "2024-10-15"
+
 ```
 ## File: data_sample\readme_cms.toml
 ```
+
 # src/github_is_my_cms/data/readme_cms.toml
+
 theme = "professional"
 
 [mode]
+
 # Options: "job_hunting", "project_promotion", "self_promotion"
+
 current = "project_promotion"
 
 [mode.job_hunting]
@@ -2589,22 +2659,24 @@ highlight_blog = true
 [languages]
 default = "en"
 supported = ["en"]
+
 ```
 ## File: data_sample\resumes.toml
 ```
+
 # data/resumes.toml
 
-[[resumes]]
+\[[resumes]\]
 id = "resume-2015"
 label = "Resume from 2015"
 url = "https://matthewdeanmartin.github.io/"
-format = "html"          # pdf | docx | html | md | other
+format = "html" # pdf | docx | html | md | other
 audience = "general"
-status = "expired"       # active | expired | draft
+status = "expired" # active | expired | draft
 valid_from = "2015-01"
 icon = "📄"
 
-[[resumes]]
+\[[resumes]\]
 id = "resume-2024-novelty"
 label = "Novelty Resume from 2024"
 url = "https://matthewdeanmartin.github.io/resume/browser/"
@@ -2614,33 +2686,36 @@ status = "active"
 valid_from = "2024-01"
 description = "Hire button and a fire button!"
 icon = "📄"
+
 ```
 ## File: data_sample\work_experience.toml
 ```
+
 # data/work_experience.toml
 
-[[experience]]
+\[[experience]\]
 id = "acme-2021-2024"
 organization = "Acme Corp"
 title = "Senior Platform Engineer"
 employment_type = "full_time" # full_time | contract | freelance | volunteer
 start_date = "2021-06"
-end_date = "2024-11"         # or "present"
+end_date = "2024-11" # or "present"
 location = "Remote"
 summary = "Owned CI/CD, platform observability, and infra automation for regulated workloads."
 
-responsibilities = [
-  "Built multi-account AWS landing zone with policy-as-code.",
-  "Reduced deploy time from 40m to 10m via pipeline refactors.",
-]
+responsibilities = \[
+"Built multi-account AWS landing zone with policy-as-code.",
+"Reduced deploy time from 40m to 10m via pipeline refactors.",
+\]
 
 technologies = ["AWS", "Terraform", "Python", "Postgres"]
-links = [
-  { label = "Company", url = "https://example.com" }
-]
+links = \[
+{ label = "Company", url = "https://example.com" }
+\]
 
 related_project_slugs = ["Hicmah", "dedlin"]
-```
+
+````
 ## File: src\GHIP_001_Specification.md
 ```markdown
 # GHIP-000 — github-is-my-cms (v2)
@@ -2758,7 +2833,7 @@ docs/
 
 README.md                     # Root profile README
 readme_cms.toml               # CMS configuration
-```
+````
 
 ______________________________________________________________________
 
@@ -3005,7 +3080,8 @@ ______________________________________________________________________
 ______________________________________________________________________
 
 End of GHIP-000 (v2)
-```
+
+````
 ## File: src\github_is_my_cms\builder.py
 ```python
 # src/github_is_my_cms/builder.py
@@ -3245,8 +3321,10 @@ class SiteBuilder:
 if __name__ == "__main__":
     builder = SiteBuilder()
     builder.build()
-```
-## File: src\github_is_my_cms\builder_api.py
+````
+
+## File: src\\github_is_my_cms\\builder_api.py
+
 ```python
 import datetime
 import logging
@@ -3741,7 +3819,9 @@ class SiteBuilderAPI(SiteBuilder):
                     },
                 )
 ```
-## File: src\github_is_my_cms\cli.py
+
+## File: src\\github_is_my_cms\\cli.py
+
 ```python
 # src/github_is_my_cms/cli.py
 """
@@ -3922,7 +4002,9 @@ def main(argv: Optional[List[str]] = None):
 if __name__ == "__main__":
     main()
 ```
-## File: src\github_is_my_cms\config.py
+
+## File: src\\github_is_my_cms\\config.py
+
 ```python
 # src/github_is_my_cms/config.py
 """
@@ -4044,7 +4126,9 @@ def load_config(root_path: str = ".") -> CMSConfig:
     """Convenience entry point."""
     return ConfigLoader(Path(root_path)).load()
 ```
-## File: src\github_is_my_cms\data_sources.py
+
+## File: src\\github_is_my_cms\\data_sources.py
+
 ```python
 """
 data_sources.py
@@ -4513,7 +4597,9 @@ class DataUpdater:
             f"Successfully updated {self.pypi_file} with {len(updated_list)} packages."
         )
 ```
-## File: src\github_is_my_cms\models.py
+
+## File: src\\github_is_my_cms\\models.py
+
 ```python
 """
 models.py
@@ -4862,7 +4948,9 @@ class ResumeArtifact(BaseModel):
     description: Optional[str] = None
     icon: Optional[str] = "📄"
 ```
-## File: .github\workflows\deploy.yml
+
+## File: .github\\workflows\\deploy.yml
+
 ```yaml
 name: Deploy Static Content to Pages
 

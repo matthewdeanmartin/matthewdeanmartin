@@ -7,6 +7,7 @@ Compiles Jinja templates + TOML data + Markdown content into final artifacts.
 import datetime
 import logging
 import math
+import re
 import shutil
 from pathlib import Path
 
@@ -27,6 +28,8 @@ class SiteBuilder:
 
     def __init__(self, root_dir: str = "."):
         self.root = Path(root_dir)
+
+        self.projects_by_skill = {}
 
         # Load Configuration (Data Layer)
         self.config: CMSConfig = load_config(str(self.root))
@@ -73,54 +76,79 @@ class SiteBuilder:
 
     def _map_relationships(self):
         """
-        Cross-reference Projects, Skills, and Experience.
+        Matches Skills to Projects using Name + Aliases.
         """
         logger.info("-> Mapping Data Relationships...")
 
-        # 1. Initialize container for skill -> projects mapping
         self.projects_by_skill = {}
-        all_projects = self.config.projects
 
-        # 2. Iterate through every skill defined in identity.toml
+        # 1. Create a "Lookup Map" for resume linking later
+        # Maps "alias" -> "canonical_skill_slug"
+        # e.g. {"psql": "postgres", "postgresql": "postgres"}
+        self.skill_lookup_map = {}
+
+        # Combine all searchable items
+        all_content_items = self.config.projects + self.config.pypi_packages
+
         for group in self.config.identity.skills:
             for skill in group.skills:
-                # Prepare a slug (e.g. "Python" -> "python", "AWS CDK" -> "aws-cdk")
                 skill_slug = self._slugify(skill.name)
+                skill.page_slug = skill_slug
 
-                matching_projects = []
+                # 2. Build the Search Set for this skill
+                # Normalize to lowercase for case-insensitive matching
+                search_terms = {skill.name.lower()}
+                if skill.aliases:
+                    search_terms.update(t.lower() for t in skill.aliases)
 
-                for proj in all_projects:
-                    # Check A: Explicit Link in projects.toml (related_skills = ["Python"])
-                    if (
-                        hasattr(proj, "related_skills")
-                        and skill.name in proj.related_skills
-                    ):
-                        matching_projects.append(proj)
-                        continue
+                # Populate the lookup map for Work Experience linking
+                for term in search_terms:
+                    self.skill_lookup_map[term] = skill_slug
 
-                    # Check B: Implicit Tag Match (tags = ["python"])
-                    # We normalize both to lower case for comparison
-                    norm_tags = [t.lower() for t in proj.tags]
-                    if skill.name.lower() in norm_tags:
-                        matching_projects.append(proj)
+                matching_items = []
 
-                # 3. Only if we found matches, register this skill for a page
-                if matching_projects:
-                    self.projects_by_skill[skill.name] = matching_projects
+                for item in all_content_items:
+                    # 3. Gather all "tags" from the item
+                    item_tags = set()
 
-                    # MONKEY PATCH: We attach the slug to the Pydantic object
-                    # so the templates know where to link.
-                    skill.page_slug = skill_slug
+                    # Add Explicit Tags
+                    if hasattr(item, "tags") and item.tags:
+                        item_tags.update(t.lower() for t in item.tags)
+
+                    # Add Primary Language (for GitHub)
+                    if hasattr(item, "primary_language") and item.primary_language:
+                        item_tags.add(item.primary_language.lower())
+
+                    # Add Implicit Python for PyPI
+                    if hasattr(item, "package_name"):  # It's a PyPI package
+                        item_tags.add("python")
+
+                    # 4. INTERSECTION: Do any search terms exist in item tags?
+                    if not search_terms.isdisjoint(item_tags):
+                        matching_items.append(item)
+
+                    # 5. Check Manual Overrides (related_skills)
+                    if hasattr(item, "related_skills") and item.related_skills:
+                        if skill.name in item.related_skills:
+                            if item not in matching_items:
+                                matching_items.append(item)
+
+                if matching_items:
+                    self.projects_by_skill[skill.name] = matching_items
+
+        # Inject the lookup map into Jinja globals for use in templates
+        self.env.globals["skill_lookup_map"] = self.skill_lookup_map
 
     def build_skill_pages(self):
         """Generates individual HTML pages for skills."""
+        self._map_relationships()
         logger.info("-> Building Skill Detail Pages...")
 
         # Check if template exists
         template_name = "pages/skill_detail.html.j2"
         if not (self.templates_dir / template_name).exists():
             logger.warning(f"Template {template_name} not found, skipping skill pages.")
-            return
+            raise Exception()
 
         template = self.env.get_template(template_name)
 
@@ -130,6 +158,9 @@ class SiteBuilder:
 
         if not self.projects_by_skill:
             logger.warning("No skills found")
+        else:
+            logger.info(f"Processing {len(self.projects_by_skill)}")
+
         for skill_name, specific_projects in self.projects_by_skill.items():
             print(skill_name, len(specific_projects))
             skill_slug = self._slugify(skill_name)
@@ -155,6 +186,7 @@ class SiteBuilder:
         """
         Cleans output directories to ensure a fresh build.
         """
+        logger.info(f"Cleaning paths: {[self.md_out, self.api_out]}")
         for path in [self.md_out, self.api_out]:
             if path.exists():
                 shutil.rmtree(path)
@@ -164,6 +196,7 @@ class SiteBuilder:
         """
         Compiles templates/pages/*.md.j2 into docs/md/*.md
         """
+        self._map_relationships()
         logger.info(
             f"-> Building Markdown Pages (Mode: {self.config.modes.current})..."
         )
@@ -200,6 +233,7 @@ class SiteBuilder:
         """
         Compiles templates/pages/*.html.j2 into docs/*.html for GitHub Pages.
         """
+        self._map_relationships()
         logger.info("-> Building HTML Pages...")
         # Similar logic to markdown, but targets HTML templates if they exist.
         # This aligns with the "Equal Enjoyment" goal of GHIP-001.
@@ -209,6 +243,9 @@ class SiteBuilder:
         count = 0
         for template_path in pages_dir.glob("*.html.j2"):
             template_name = template_path.name
+            # --- Skip the specialized skill template ---
+            if template_name == "skill_detail.html.j2":
+                continue
             target_name = template_name.replace(".j2", "")
 
             template = self.env.get_template(f"pages/{template_name}")
@@ -224,6 +261,7 @@ class SiteBuilder:
         Main entry point for the build process.
         """
         self.clean()
+        self._map_relationships()
         self.build_static_api()
         self.build_markdown_pages()
         self.build_html_pages()

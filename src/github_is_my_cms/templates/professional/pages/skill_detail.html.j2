@@ -12,21 +12,41 @@
 <h1>Projects using {{ skill_name }}</h1>
 
 <div class="project-grid">
-    {% for project in skill_projects %}
+    {% for item in skill_projects %}
     <article>
         <header>
-            <strong><a href="{{ project.url or project.repository_url }}">{{ project.name }}</a></strong>
+            {# Handle Polymorphism: GitHub Project vs PyPI Package #}
+            {% set name = item.name if item.name is defined else item.package_name %}
+            {% set url = item.url or item.repository_url or item.docs_url or ('https://pypi.org/project/' ~ name) %}
+
+            <strong><a href="{{ url }}">{{ name }}</a></strong>
+
+            {# Optional Badge to distinguish type #}
+            {% if item.package_name is defined %}
+                <span class="meta" style="font-size:0.7rem; border:1px solid #ddd; padding:2px 4px; border-radius:3px;">PyPI</span>
+            {% endif %}
         </header>
-        <p>{{ project.description }}</p>
+
+        <p>
+            {{ item.description if item.description is defined else item.summary }}
+        </p>
+
         <footer>
             <small>
-                {% for tag in project.tags %}
+                {% for tag in item.tags %}
                     {% if tag|lower == skill_name|lower %}
                         <strong>#{{ tag }}</strong>
                     {% else %}
                         #{{ tag }}
                     {% endif %}
                 {% endfor %}
+
+                {# Explicitly show language if available on GitHub projects #}
+                {% if item.primary_language and item.primary_language|lower == skill_name|lower %}
+                     <strong>#{{ item.primary_language }}</strong>
+                {% elif item.primary_language %}
+                     #{{ item.primary_language }}
+                {% endif %}
             </small>
         </footer>
     </article>

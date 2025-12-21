@@ -9,29 +9,32 @@
         </article>
     </section>
 
-    <section>
-        <h2>Skills</h2>
-        <table>
-            {% for group in identity.skills %}
-                <tr>
-                    <td style="width: 25%; font-weight: bold;">{{ group.category }}</td>
-                    <td>
-                        {% for skill in group.skills %}
-                            {% if skill.page_slug %}
-                                {# Link to the generated skill page #}
-                                <a href="skills/{{ skill.page_slug }}.html">{{ skill.name }}</a>
-                            {% else %}
-                                {{ skill.name }}
-                            {% endif %}
+<section>
+    <h2>Skills</h2>
+    <table>
+        {# CHANGE: Use the filtered property instead of the raw list #}
+        {% for group in identity.featured_skill_groups %}
+            <tr>
+                <td style="width: 25%; font-weight: bold;">{{ group.category }}</td>
+                <td>
+                    {% for skill in group.skills %}
 
-                            {% if skill.level %} <span class="meta">({{ skill.level }})</span>{% endif %}
-                            {% if not loop.last %}, {% endif %}
-                        {% endfor %}
-                    </td>
-                </tr>
-            {% endfor %}
-        </table>
-    </section>
+                        {% if skill.page_slug %}
+                            <a href="skills/{{ skill.page_slug }}.html" style="text-decoration: none; border-bottom: 1px dotted #666; color: #000;">
+                                {{ skill.name }}
+                            </a>
+                        {% else %}
+                            {{ skill.name }}
+                        {% endif %}
+
+                        {% if skill.level %} <span class="meta">({{ skill.level }})</span>{% endif %}
+                        {% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</section>
 
     {% if config.modes.current == "job_hunting" %}
         <section>
@@ -54,13 +57,22 @@
                 {% endif %}
 
                 {% if role.technologies %}
-                    <div class="tags">Tech: {{ role.technologies | join(", ") }}</div>
-                {% endif %}
-                {% if role.linked_projects %}
-                    <div style="background: #f9f9f9; padding: 0.5rem; border-left: 3px solid #0056b3; margin: 0.5rem 0;">
-                        <strong>Relevant Projects:</strong>
-                        {% for p in role.linked_projects %}
-                            <a href="{{ p.url }}">{{ p.name }}</a>{% if not loop.last %}, {% endif %}
+                    <div class="tags">
+                        <strong>Technologies:</strong>
+                        {% for tech in role.technologies %}
+                            {% set tech_lower = tech|lower %}
+
+                            {# --- FIX: Link Resume Tech to Skill Page --- #}
+                            {% if skill_lookup_map and tech_lower in skill_lookup_map %}
+                                <a href="skills/{{ skill_lookup_map[tech_lower] }}.html" style="color: #444;">
+                                    {{ tech }}
+                                </a>
+                            {% else %}
+                                {{ tech }}
+                            {% endif %}
+                            {# ------------------------------------------- #}
+
+                            {% if not loop.last %}, {% endif %}
                         {% endfor %}
                     </div>
                 {% endif %}
