@@ -22,7 +22,7 @@ from collections import Counter
 
 
 def assign_groups(
-    projects_data: dict, top_n: int = 10, default_group: str = "other"
+    projects_data: dict, top_n: int = 50, default_group: str = "other"
 ) -> dict:
     projects = projects_data
 

@@ -8,12 +8,11 @@ tags = [
     "analytics",
     "handler",
     "hit-counter",
-    "javascript",
     "module",
     "web-development",
 ]
 status = "active"
-primary_language = "N/A"
+primary_language = "JavaScript"
 
 [projects.cms]
 suppress = false
@@ -29,7 +28,6 @@ tags = [
     "artificial-intelligence",
     "game",
     "interactive-fiction",
-    "python",
     "simulation",
     "storytelling",
 ]
@@ -110,7 +108,10 @@ name = "basic_python"
 description = "BASIC interpreter written in python"
 url = "https://github.com/matthewdeanmartin/basic_python"
 repository_url = "https://github.com/matthewdeanmartin/basic_python"
-tags = []
+tags = [
+    "basic",
+    "basic-programming",
+]
 status = "active"
 primary_language = "Python"
 
@@ -182,7 +183,6 @@ tags = [
     "blog",
     "comments",
     "utterances",
-    "web-development",
 ]
 status = "active"
 primary_language = "N/A"
@@ -260,7 +260,6 @@ tags = [
     "aws",
     "cloud-custodian",
     "devops",
-    "example-projects",
     "infrastructure-as-code",
     "scripts",
 ]
@@ -409,11 +408,9 @@ url = "https://github.com/matthewdeanmartin/examexam"
 repository_url = "https://github.com/matthewdeanmartin/examexam"
 tags = [
     "ai",
-    "chatbot",
     "education",
     "exam",
     "llm",
-    "machine-learning",
     "practice",
 ]
 status = "active"
@@ -454,6 +451,7 @@ repository_url = "https://github.com/matthewdeanmartin/falling_food"
 tags = [
     "pygame",
     "pygame-games",
+    "game",
 ]
 status = "active"
 primary_language = "Python"
@@ -563,12 +561,7 @@ description = "attempting to do common git things with python as a learning exer
 url = "https://github.com/matthewdeanmartin/git_help"
 repository_url = "https://github.com/matthewdeanmartin/git_help"
 tags = [
-    "automation",
-    "development",
     "git",
-    "learning",
-    "programming",
-    "python",
     "version-control",
 ]
 status = "active"
@@ -590,7 +583,6 @@ tags = [
     "git",
     "github",
     "repository",
-    "scripting",
     "version-control",
 ]
 status = "active"
@@ -1003,12 +995,9 @@ description = "Suite of tools in python for gnucobol, gcobol development"
 url = "https://github.com/matthewdeanmartin/mainframer"
 repository_url = "https://github.com/matthewdeanmartin/mainframer"
 tags = [
-    "development-tools",
     "gnucobol",
-    "programming",
-    "python",
-    "software-development",
     "gcobol",
+    "cobol",
 ]
 status = "active"
 primary_language = "Python"
@@ -1096,7 +1085,11 @@ name = "mastodon-finder"
 description = "Find people to follow on mastodon."
 url = "https://github.com/matthewdeanmartin/mastodon-finder"
 repository_url = "https://github.com/matthewdeanmartin/mastodon-finder"
-tags = []
+tags = [
+    "mastodon",
+    "mastodon-py",
+    "social-media",
+]
 status = "active"
 primary_language = "Python"
 
@@ -1107,8 +1100,8 @@ package_links = []
 [[projects]]
 slug = "matthewdeanmartin"
 name = "matthewdeanmartin"
-description = "README. NOW."
-url = "https://github.com/matthewdeanmartin/matthewdeanmartin"
+description = "Profile and Portfolio generation tool"
+url = "https://matthewdeanmartin.github.io/matthewdeanmartin/"
 repository_url = "https://github.com/matthewdeanmartin/matthewdeanmartin"
 tags = [
     "matthewdeanmartin",
@@ -1148,7 +1141,9 @@ name = "matthewdeanmartin_pypi"
 description = "The matthewdeanmartin package, sort of the profile page pypi can't make."
 url = "https://github.com/matthewdeanmartin/matthewdeanmartin_pypi"
 repository_url = "https://github.com/matthewdeanmartin/matthewdeanmartin_pypi"
-tags = []
+tags = [
+    "identity",
+]
 status = "active"
 primary_language = "N/A"
 
@@ -1175,7 +1170,11 @@ name = "naive_backlink"
 description = "Uncoordinated, accidental identity and trust. Because Alice and Bob are foreign state actors and this is better than nothing.."
 url = "https://github.com/matthewdeanmartin/naive_backlink"
 repository_url = "https://github.com/matthewdeanmartin/naive_backlink"
-tags = []
+tags = [
+    "identity",
+    "backlinks",
+    "web-crawling",
+]
 status = "active"
 primary_language = "Python"
 
@@ -1193,7 +1192,6 @@ tags = [
     "development",
     "mocking",
     "opensearch",
-    "python",
     "testing",
     "elasticmock",
 ]
@@ -1231,9 +1229,6 @@ url = "https://github.com/matthewdeanmartin/parse_quick_parameters.sh"
 repository_url = "https://github.com/matthewdeanmartin/parse_quick_parameters.sh"
 tags = [
     "bash",
-    "command-line",
-    "documentation",
-    "fork",
     "parameter-parsing",
     "scripting",
     "utilities",
@@ -1447,7 +1442,6 @@ tags = [
     "ai",
     "code-assistance",
     "cython",
-    "machine-learning",
     "performance",
     "programming",
     "python",
@@ -1472,7 +1466,7 @@ tags = [
     "portfolio",
     "projects",
     "resume",
-    "web-development",
+    "novelty",
 ]
 status = "active"
 primary_language = "TypeScript"
@@ -1509,7 +1503,10 @@ name = "skip_trace"
 description = "Who owns your dependencies"
 url = "https://github.com/matthewdeanmartin/skip_trace"
 repository_url = "https://github.com/matthewdeanmartin/skip_trace"
-tags = []
+tags = [
+    "pypi",
+    "supply-chain-security",
+]
 status = "active"
 primary_language = "Python"
 
@@ -1587,11 +1584,7 @@ description = "Bash script to initialize django REST api. Sort of like a cookiec
 url = "https://github.com/matthewdeanmartin/superinit"
 repository_url = "https://github.com/matthewdeanmartin/superinit"
 tags = [
-    "bash",
-    "cookiecutter",
     "django",
-    "rest-api",
-    "script",
     "template",
     "web-development",
 ]
@@ -1611,7 +1604,6 @@ repository_url = "https://github.com/matthewdeanmartin/swimming_game"
 tags = [
     "game",
     "html5",
-    "javascript",
     "multiplayer",
     "music",
     "rhythm-game",
@@ -1696,12 +1688,8 @@ url = "https://github.com/matthewdeanmartin/tkstatistics"
 repository_url = "https://github.com/matthewdeanmartin/tkstatistics"
 tags = [
     "data-analysis",
-    "data-science",
-    "mathematics",
-    "python",
     "statistical-models",
     "statistics",
-    "stdlib",
 ]
 status = "active"
 primary_language = "Python"
@@ -1858,13 +1846,12 @@ description = "Unknown expected value vacation themed lotto scratcher"
 url = "https://github.com/matthewdeanmartin/vacay"
 repository_url = "https://github.com/matthewdeanmartin/vacay"
 tags = [
-    "fun",
     "gaming",
     "lotto",
     "recreation",
     "scratcher",
-    "theme",
     "vacation",
+    "game",
 ]
 status = "active"
 primary_language = "Python"
@@ -1877,12 +1864,9 @@ package_links = []
 slug = "what_is_matt_doing"
 name = "what_is_matt_doing"
 description = "gh action to summarize what I've done for LLM consumption"
-url = "https://github.com/matthewdeanmartin/what_is_matt_doing"
+url = "https://matthewdeanmartin.github.io/what_is_matt_doing/"
 repository_url = "https://github.com/matthewdeanmartin/what_is_matt_doing"
 tags = [
-    "automation",
-    "data-science",
-    "developer-tools",
     "github-actions",
     "llm",
     "productivity",
@@ -1955,6 +1939,7 @@ tags = [
     "python",
     "random",
     "xkcd",
+    "novelty",
 ]
 status = "active"
 primary_language = "Python"
