@@ -108,3 +108,4 @@ venv.bak/
 SOURCE.md
 SOURCE_UI.md
 SOURCE_DATA.md
+/junit.xml

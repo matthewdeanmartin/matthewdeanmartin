@@ -2,6 +2,10 @@
 test:
 	uv run pytest src/tests
 
+coverage:
+	uv run pytest src/tests -vv -n 2 --cov=github_is_my_cms --cov-report=html --cov-fail-under 48 --cov-branch --cov-report=xml --junitxml=junit.xml -o junit_family=legacy --timeout=5 --session-timeout=600
+
+
 .PHONY: format
 format:
 	uv run isort src
