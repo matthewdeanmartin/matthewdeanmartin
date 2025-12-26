@@ -1,3 +1,10 @@
+---
+ci:
+  autoupdate_schedule: monthly
+  autofix_commit_msg: |
+    [pre-commit.ci] Apply automatic pre-commit fixes
+  skip: []
+
 repos:
 #  - repo: local
 #    hooks:
@@ -17,12 +24,12 @@ repos:
       - id: end-of-file-fixer
       - id: check-added-large-files
 
-  - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.46.0
-    hooks:
-      - id: markdownlint
-        # '--fix'
-        args: [ 'content/**/*.md', '--config', '.markdownlintrc']
+#  - repo: https://github.com/igorshubovych/markdownlint-cli
+#    rev: v0.46.0
+#    hooks:
+#      - id: markdownlint
+#        # '--fix'
+#        args: [ 'content/**/*.md', '--config', '.markdownlintrc']
   - repo: https://github.com/executablebooks/mdformat
     rev: 1.0.0  # Use the ref you want to point at
     hooks:
