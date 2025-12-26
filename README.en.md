@@ -13,28 +13,28 @@ Pythonist, Devops Engineer, and Govtech Specialist
 
 *Below are my featured projects. For a complete archive, see [Projects](projects.md).*
 
-| Project | Status | Description |
-|:--------|:-------|:------------|
-| [bash2gitlab](https://bash2gitlab.readthedocs.io/en/latest/) | active | Compile bash to yaml pipelines to get IDE support for bash and import bash from template repos <br> <sub>Tags: gitlab, gitlab-ci</sub> |
-| [bitrab](https://github.com/matthewdeanmartin/bitrab) | active | A pipeline runner that runs Gitlab syntax pipelines without docker or admin rights. Minimal feature set. <br> <sub>Tags: automation, ci, devops, gitlab, minimalism, no-docker, pipeline</sub> |
-| [dashc](https://github.com/matthewdeanmartin/dashc) | active | Compile your code into a `python -c "..."` string executable in shell without filesystem access. <br> <sub>Tags: cli-tools, code-compiler, executable, programming, python, shell, no-filesystem-access</sub> |
-| [examexam](https://github.com/matthewdeanmartin/examexam) | active | Exam practice with LLM (AI) integrations <br> <sub>Tags: ai, education, exam, llm, practice</sub> |
-| [hermetic](https://github.com/matthewdeanmartin/hermetic) | active | run a python tool with certain APIs disabled <br> <sub>Tags: cli-tool, configuration, development-tools, python, security</sub> |
-| [paipi](https://github.com/matthewdeanmartin/paipi) | active | Pypi search, except the backend is an LLM's pixelated memory of Pypi. <br> <sub>Tags: code-generation, llm-search, pypi, python-packaging</sub> |
-| [pycodetags](https://pycodetags.readthedocs.io/en/latest/) | active | PEP350 Code Tags. Data in your comments. <br> <sub>Tags: codetags, pep-350, pep350, pycodetags</sub> |
-| [skip_trace](https://github.com/matthewdeanmartin/skip_trace) | active | Who owns your dependencies <br> <sub>Tags: pypi, supply-chain-security</sub> |
-| [totalhelp](https://github.com/matthewdeanmartin/totalhelp) | active | View help for all commands and subcommands for arbitrary commands or augment your app to do so. <br> <sub>Tags: automation, cli-tools, command-line, documentation, help, user-guide, application-augmentation</sub> |
-| [troml_dev_status](https://troml-dev-status.readthedocs.io/en/latest/) | active | Project inspired by troml to suggest a Development Status based solely on objective criteria. <br> <sub>Tags: development-status, python-packaging, trove-classifiers</sub> |
+| Project                                                                | Status | Description                                                                                                                                                                                                          |
+| :--------------------------------------------------------------------- | :----- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [bash2gitlab](https://bash2gitlab.readthedocs.io/en/latest/)           | active | Compile bash to yaml pipelines to get IDE support for bash and import bash from template repos <br> <sub>Tags: gitlab, gitlab-ci</sub>                                                                               |
+| [bitrab](https://github.com/matthewdeanmartin/bitrab)                  | active | A pipeline runner that runs Gitlab syntax pipelines without docker or admin rights. Minimal feature set. <br> <sub>Tags: automation, ci, devops, gitlab, minimalism, no-docker, pipeline</sub>                       |
+| [dashc](https://github.com/matthewdeanmartin/dashc)                    | active | Compile your code into a `python -c "..."` string executable in shell without filesystem access. <br> <sub>Tags: cli-tools, code-compiler, executable, programming, python, shell, no-filesystem-access</sub>        |
+| [examexam](https://github.com/matthewdeanmartin/examexam)              | active | Exam practice with LLM (AI) integrations <br> <sub>Tags: ai, education, exam, llm, practice</sub>                                                                                                                    |
+| [hermetic](https://github.com/matthewdeanmartin/hermetic)              | active | run a python tool with certain APIs disabled <br> <sub>Tags: cli-tool, configuration, development-tools, python, security</sub>                                                                                      |
+| [paipi](https://github.com/matthewdeanmartin/paipi)                    | active | Pypi search, except the backend is an LLM's pixelated memory of Pypi. <br> <sub>Tags: code-generation, llm-search, pypi, python-packaging</sub>                                                                      |
+| [pycodetags](https://pycodetags.readthedocs.io/en/latest/)             | active | PEP350 Code Tags. Data in your comments. <br> <sub>Tags: codetags, pep-350, pep350, pycodetags</sub>                                                                                                                 |
+| [skip_trace](https://github.com/matthewdeanmartin/skip_trace)          | active | Who owns your dependencies <br> <sub>Tags: pypi, supply-chain-security</sub>                                                                                                                                         |
+| [totalhelp](https://github.com/matthewdeanmartin/totalhelp)            | active | View help for all commands and subcommands for arbitrary commands or augment your app to do so. <br> <sub>Tags: automation, cli-tools, command-line, documentation, help, user-guide, application-augmentation</sub> |
+| [troml_dev_status](https://troml-dev-status.readthedocs.io/en/latest/) | active | Project inspired by troml to suggest a Development Status based solely on objective criteria. <br> <sub>Tags: development-status, python-packaging, trove-classifiers</sub>                                          |
 
 ## Skills
 
 I used to be a full stack developer, I evolved into tech lead and most recently devops work. I write code and know how to ship in a govtech environment.
 
-| Devops | Backend Development | Build Master |
-| -------- | --------------------- | -------------- |
+| Devops                     | Backend Development    | Build Master                     |
+| -------------------------- | ---------------------- | -------------------------------- |
 | 🌐 Typescript - Expert<br> | 🐍 Python - Expert<br> | 🦊 Gitlab Pipelines - Expert<br> |
-| 🪐 Terraform - Expert<br> | 🐘 Postgres<br> | `>_` Bash - Very Good<br> |
-| 🐹 Go - Good enough<br> | 🗄️ DynamoDB<br> | <br> |
+| 🪐 Terraform - Expert<br>  | 🐘 Postgres<br>        | `>_` Bash - Very Good<br>        |
+| 🐹 Go - Good enough<br>    | 🗄️ DynamoDB<br>        | <br>                             |
 
 ______________________________________________________________________
 
