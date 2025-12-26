@@ -1,8 +1,12 @@
+.PHONY: test
+test:
+	uv run pytest src/tests
+
 .PHONY: format
 format:
-	isort src
-	black src
-	mdformat src docs *.md
+	uv run isort src
+	uv run black src
+	uv run mdformat src docs *.md
 
 .PHONY: data
 data:
@@ -19,7 +23,7 @@ everything: data build format
 
 .PHONY: run
 run: everything
-	python -m scripts.open_site
+	uv run python -m scripts.open_site
 
 .PHONY: source
 source:
