@@ -13,6 +13,12 @@ Here is *side project* work. Commits before 2021 are hand written. Commits after
 - [dashc](https://github.com/matthewdeanmartin/dashc) Compile python to a `python -c` invocation. Useful in certain yaml-based CI systems.
 - [bug_trail](https://github.com/matthewdeanmartin/bug_trail) Local error log/logging website for python. Somewhat inspired by .NET's Elmah. Intended to help with logging LLM/Agentic apps.
 
+## YAML Build script tool (Github, Gitlab, etc)
+
+- [Find Zimor/github action flaws in your entire python supply chain](https://github.com/matthewdeanmartin/insecure_tree)
+- [Compile shell and bash to yaml for Gitlab and other CI formats](https://github.com/matthewdeanmartin/bash2yaml)
+- 
+
 ## Identity and Supply Chain
 
 - [naive_backlink](https://github.com/matthewdeanmartin/naive_backlink) Collect backlink info so you can evaluate if bidirectional links might be a sign of identity.
