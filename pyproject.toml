@@ -136,3 +136,6 @@ include = [
     "src/github_is_my_cms/py.typed",
     "/README.md", "LICENSE",
 ]
+
+[tool.uv]
+universal = true
