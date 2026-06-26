@@ -7,6 +7,11 @@ Pythonist, Devops Guy, and Govtech Specialist
 I used to be a full stack developer, I evolved into tech lead and most recently devops work. I write code and know how
 to ship in a govtech environment.
 
+## How To Evaluate this Portfolio
+
+- LLM generated code? This shows how I ship code on a team where I'm not necessarily the developer for all the code. Evaluate based on my demo, screen shots and user count. This was problem for evaluators since forever. Shipping code is a team sport.
+- Handwritten code? See [Interview Challenges](https://github.com/matthewdeanmartin/interview_challenges), which is always going to be handwritten.
+
 | Devops                                  | Backend Development                          | Build Master                         |
 | --------------------------------------- | -------------------------------------------- | ------------------------------------ |
 | 🌐 Typescript for AWS CDK - Expert<br>  | 🐍 Python for Serverless in AWS - Expert<br> | 🦊 Gitlab Pipelines - Expert<br>     |
