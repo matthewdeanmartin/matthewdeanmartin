@@ -6,9 +6,6 @@ resolution-markers = [
     "python_full_version < '3.15'",
 ]
 
-[options]
-exclude-newer = "2026-07-02T13:17:36Z"
-
 [[package]]
 name = "aiohappyeyeballs"
 version = "2.7.1"
@@ -597,7 +594,7 @@ dev = [
     { name = "httpie" },
     { name = "hypothesis", extras = ["cli"], marker = "python_full_version >= '3.8'" },
     { name = "interrogate", marker = "python_full_version >= '3.8'", specifier = ">=1.5.0" },
-    { name = "jiggle-version" },
+    { name = "jiggle-version", specifier = ">=2.2.1" },
     { name = "linkcheckmd" },
     { name = "linkcheckmd", marker = "python_full_version >= '3.8'", specifier = ">=1.4.0" },
     { name = "mdformat" },
@@ -857,7 +854,7 @@ wheels = [
 
 [[package]]
 name = "jiggle-version"
-version = "2.2.0"
+version = "2.2.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "packaging" },
@@ -866,9 +863,9 @@ dependencies = [
     { name = "rich-argparse" },
     { name = "tomlkit" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/56/51/543ffc8975bf64c74f0be4acf071466accc586b4b69606eb66fbfb63b725/jiggle_version-2.2.0.tar.gz", hash = "sha256:b1557d240c616d047496f3cec70cb2f2c5245a6adeda31791ce56e3acadfa4ef", size = 11417530, upload-time = "2026-05-24T23:05:09.269Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/38/87/ec1e111ad375dd55c4de103686a354b6c63dcb6f61379aa8b57ffe8d206a/jiggle_version-2.2.1.tar.gz", hash = "sha256:86ed3e74b5d92ebe82eb7b90b52094c4176349b10746724234ad9cc5fbe7fd12", size = 519163, upload-time = "2026-07-04T21:34:42.986Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/2a/c5/daed0eea4a504f61d0c6bdd4f210913d336ec756bfec1f85fb11304e41e0/jiggle_version-2.2.0-py3-none-any.whl", hash = "sha256:d9f8e095d4bfe4a51474d140afe8a1dc5a3e5d0894264096f209bc327d7f0b0f", size = 33168, upload-time = "2026-05-24T23:05:07.467Z" },
+    { url = "https://files.pythonhosted.org/packages/c6/31/543f9d18a07a134046fc9cbffcce26b67bee1b4f91fb08bae3d2d942a9fa/jiggle_version-2.2.1-py3-none-any.whl", hash = "sha256:f6b0df96eb1879b5bc4569a378362f3873fcfe28ac373ddb542fceee37e2bc06", size = 34321, upload-time = "2026-07-04T21:34:41.613Z" },
 ]
 
 [[package]]

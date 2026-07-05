@@ -54,7 +54,7 @@ dev = [
     "linkcheckmd",
     "typing_extensions",
     "troml-dev-status>0.5.0",
-    "jiggle_version",
+    "jiggle_version>=2.2.1",
     "cffi",
     "pytest-asyncio",
     "httpie",
