@@ -56,3 +56,10 @@ ______________________________________________________________________
 
 pypi-profile-proof: eyJwcm9maWxlX3BhY2thZ2UiOiJweXBpLXByb2ZpbGUtbWF0dGhld2RlYW5tYXJ0aW4iLCJweXBpX3VzZXJuYW1lIjoibWF0dGhld2RlYW5tYXJ0aW4iLCJjbGFpbSI6ImNvbnRyb2xzLXVybCIsInN1YmplY3QiOiJodHRwczovL2dpdGh1Yi5jb20vbWF0dGhld2RlYW5tYXJ0aW4iLCJpc3N1ZWRfYXQiOiIyMDI2LTA1LTE2VDE0OjU4OjI3WiIsImV4cGlyZXNfYXQiOiIyMDI3LTA1LTE2VDE0OjU4OjI3WiIsIm5vbmNlIjoiMGM0YWQxZDItZmUwYi00YTAzLThkYTQtMjlhZmUyODM3YzI2Iiwia2V5X2lkIjoiODRCOUIwMDRBMzVCRTlCMyIsInNpZ25hdHVyZV9iYWNrZW5kIjoibWluaXNpZ24iLCJzaWduYXR1cmUiOiJSVVNFdWJBRW8xdnBzeEMwUGNpUUR5Sm5BaXlHM1NpbnVvTTBkWlE2M2MzSXkwYmQxRG8rN3ROaWpsQkl0S1VkN25rSFNnSDN6amlWOXhuUko2UlJZMHY4bjYrcmhEb1NtUVU9In0
 
+
+
+## HTTPX2 migration verification (2026-10-04)
+
+PyPI discovery uses HTTPX2. Two installed-wheel localhost discovery/cache tests pass on RC3 pre and 3.14. Removed an unused undeclared httpie import that prevented installed startup. Stable RC3 remains Pydantic-core-wheel-blocked.
+
+Dependency locks upgraded and checked. Published dependency wheels only; no native builds or GitHub jobs. Application HTTPX2 objects remain separate from third-party HTTPX objects. Current HTTPX2 releases use the OS trust store. Experimental RC3 tests may require Pydantic prerelease wheels; stable support is reported separately. Changes local; human operators decide releases and upstream reports.

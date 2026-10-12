@@ -12,7 +12,6 @@ import tomllib
 from pathlib import Path
 from typing import Any, Dict
 
-from httpie.output.ui.rich_help import to_help_message
 
 from .models import CMSConfig
 

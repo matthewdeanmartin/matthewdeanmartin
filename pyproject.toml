@@ -35,7 +35,7 @@ dependencies = [
     # config
     "tomli-w",
     # ready pypi
-    "httpx",
+    "httpx2>=2.0,<3",
     "beautifulsoup4",
     # pretty build output
     "colorlog", # could be optional

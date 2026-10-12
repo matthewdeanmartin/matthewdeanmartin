@@ -14,7 +14,7 @@ from datetime import date, datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Set
 
-import httpx
+import httpx2
 import tomli_w
 from bs4 import BeautifulSoup
 
@@ -139,7 +139,7 @@ class PyPIDiscoveryFetcher(BaseFetcher):
             # It is good practice to include a User-Agent
             headers = {"User-Agent": "PyPIDiscoveryFetcher/1.0"}
 
-            with httpx.Client(timeout=10.0) as client:
+            with httpx2.Client(timeout=10.0) as client:
                 response = client.get(target_url, headers=headers)
 
                 if response.status_code == 404:
@@ -168,7 +168,7 @@ class PyPIDiscoveryFetcher(BaseFetcher):
 
             return package_names
 
-        except httpx.HTTPError as e:
+        except httpx2.HTTPError as e:
             logger.error(f"PyPI Discovery HTTP error: {e}")
             return []
         except Exception as e:
